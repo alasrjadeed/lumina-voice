@@ -8,7 +8,7 @@ import { loadStudio, resolveLanguage, resolveVoice } from '../data/voiceStudio'
 import { mimeFor } from '../data/stream'
 import { logger } from '../lib/logger.js'
 import { RADIO_ENABLED } from '../config/features.js'
-import { isAdminEmail } from '../config/auth.js'
+import { isAdminEmail, roleForEmail } from '../config/auth.js'
 import {
   apiConfigured,
   backendLabel,
@@ -35,13 +35,6 @@ import {
 } from '../pwa.js'
 import { subscribeToChanges } from '../data/realtime'
 import { fetchUserState, mergeUserState, saveUserState } from '../data/userState'
-
-// The operator email is always an admin, even if an older Supabase profile row
-// still says "listener" or a late realtime event arrives with that stale role.
-function roleFor(email, profileRole) {
-  if (isAdminEmail(email) || /admin/i.test(email || '')) return 'admin'
-  return profileRole === 'admin' ? 'admin' : profileRole || 'listener'
-}
 
 function isStandalone() {
   if (typeof window === 'undefined') return false
@@ -113,7 +106,7 @@ export function AppProvider({ children }) {
   const { getTitle, titles } = useCatalog()
   const saved = load()
   const [user, setUser] = useState(saved.user
-    ? { ...saved.user, role: roleFor(saved.user.email, saved.user.role) }
+    ? { ...saved.user, role: roleForEmail(saved.user.email) }
     : null)
   const [library, setLibrary] = useState(() => { const base = saved.library || []; if(!base.includes('selected-ghazals-of-ghalib')) return [...base, 'selected-ghazals-of-ghalib']; return base; })
   const [progress, setProgress] = useState(saved.progress || {})
@@ -279,9 +272,9 @@ const [listenedTime, setListenedTime] = useState(() => {
         const profile = await fetchProfile(user.id).catch(() => null)
         if (cancelled || !profile) return
         setUser((prev) => (prev?.id === user.id
-          ? { ...prev, name: profile.username || prev.name, role: roleFor(user.email, profile.role || prev.role) }
+          ? { ...prev, name: profile.username || prev.name, role: roleForEmail(user.email) }
           : prev))
-        if (profile.role === 'admin' || isAdminEmail(user.email)) setPremium(true)
+        if (isAdminEmail(user.email)) setPremium(true)
       }, 300)
     })
     return () => {
@@ -1094,7 +1087,7 @@ const [listenedTime, setListenedTime] = useState(() => {
   }
 
   const login = (email, name) => {
-    setUser({ email, name: name || email.split('@')[0], role: roleFor(email) })
+    setUser({ email, name: name || email.split('@')[0], role: roleForEmail(email) })
   }
 
   // Real Supabase sign-in / sign-up. Falls back to the local demo account when the
@@ -1129,15 +1122,15 @@ const [listenedTime, setListenedTime] = useState(() => {
   }
 
   const applySessionUser = async (sess, fallbackName) => {
-    if (isAdminEmail(sess?.user?.email || fallbackName)) { setPremium(true); setUser(prev => prev ? { ...prev, role: 'admin' } : prev) }
+    if (isAdminEmail(sess?.user?.email)) { setPremium(true); setUser(prev => prev ? { ...prev, role: 'admin' } : prev) }
     const u = sess?.user
     const email = u?.email || ''
-    let role = roleFor(email)
+    let role = roleForEmail(email)
     let name = fallbackName || email.split('@')[0]
     if (u?.id) {
       const profile = await fetchProfile(u.id)
       if (profile) {
-        role = roleFor(email, profile.role || role)
+        role = roleForEmail(email)
         name = profile.username || name
       }
     }

@@ -51,9 +51,9 @@ export default function Auth() {
       }
       return
     }
-    // Device-local operator: info@alasarjadeed.com (or "admin") with the bundled
+    // Device-local operator: only info@alasarjadeed.com with the bundled
     // password. Supabase accounts take over when a backend is configured.
-    if (!authConfigured && (/^admin$/i.test(uname) || isAdminEmail(uname))) {
+    if (!authConfigured && isAdminEmail(uname)) {
       if (pass !== ADMIN_PASSWORD) {
         setErr('Incorrect admin password.')
         return
@@ -122,8 +122,8 @@ export default function Auth() {
           </div>
         ) : null}
         <div className="field">
-          <label>{resetMode || authConfigured ? 'Email' : (/^admin$/i.test(email.trim()) || isAdminEmail(email)) ? 'Admin username / email' : 'Email'}</label>
-          <input type="text" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com · or admin" />
+          <label>Email</label>
+          <input type="text" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" />
         </div>
         {!resetMode ? (
           <div className="field">

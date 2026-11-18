@@ -538,5 +538,6 @@ end $$;
 -- grant select, insert, update, delete on public.user_state to authenticated;
 -- Cross-device local data: complete SQL is in docs/supabase-user-state.sql.
 
--- Make yourself an admin once (run after you sign up):
--- update profiles set role = 'admin' where id = '<your-user-uuid>';`
+-- Admin is fixed to info@alasarjadeed.com. Run docs/supabase-admin-lockdown.sql
+-- in the Supabase SQL Editor; it adds the operator check, repairs stale profile
+-- roles and makes the stories policy use the email, not a writable role column.`

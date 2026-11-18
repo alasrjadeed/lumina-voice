@@ -53,5 +53,11 @@ Connect Lumina Voice web and Android tablet builds to Supabase with maximum usab
 - Fixed in `src/state/AppState.jsx`: `hasPremium` now grants Plus from admin role/operator email, so a stored `premium:false` cannot trigger the lock. All playback/precache/autoplay checks use it. Initial user role is also normalised with `roleFor()` so stored `role:'listener'` cannot hide `/admin`.
 - Verified on rebuilt Docker web with stored `premium:false` and `role:'listener'`: `/title/raat-02` had 6 episodes, 0 locks and no Plus modal; `/admin` opened. Rebuilt and reinstalled the 6.4 MB APK. Lint, 145 tests and build pass.
 
+## Follow-up: single admin + cross-platform sharing
+- User clarified: any email account may sign in, but admin must be only `info@alasarjadeed.com` on GitHub, local web and Supabase; the tablet must keep sharing data with other platforms.
+- Replaced the local `roleFor()` with `roleForEmail()` in `src/config/auth.js`: exact operator email → admin, every other email → listener regardless of profile row or `admin`-looking address. App State and Settings/Admin panels now use it; Supabase profile values can no longer grant admin or Plus in the app.
+- Supabase admin UI now only lets the operator change their own role. Added `docs/supabase-admin-lockdown.sql`: `public.is_operator()`, `enforce_operator_role()` trigger, one-time repair of stale admin rows (e.g. `smoke1`), and stories RLS by operator email. Needs to be run in Supabase SQL Editor because dashboard login is not available here.
+- Cross-platform sharing stays platform-neutral: tablet and web share Supabase REST/Realtime metadata, and `/transfer` exports/imports the same JSON bundle offline.
+
 ## Remembered admin
 - Operator: `info@alasarjadeed.com`. Credential is already in `src/config/auth.js`; not duplicated here.

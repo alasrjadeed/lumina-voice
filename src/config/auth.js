@@ -7,3 +7,7 @@ export const ADMIN_NAME = 'Admin'
 
 export const isAdminEmail = (email) =>
   typeof email === 'string' && email.trim().toLowerCase() === ADMIN_EMAIL
+
+// Exactly one account is an admin. A profile row saying otherwise, or an email
+// that merely contains "admin", must never grant privileges.
+export const roleForEmail = (email) => isAdminEmail(email) ? 'admin' : 'listener'

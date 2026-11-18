@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useApp } from '../state/AppState.jsx'
+import { isAdminEmail } from '../config/auth.js'
 import { apiConfigured, backendLabel, fetchProfiles, healthCheck, rest, updateProfile } from '../data/api'
 import { IcoBolt } from '../ui/Icons'
 
@@ -18,7 +19,8 @@ function Stat({ label, value, sub, tone }) {
 // ratings and reviews. Catalog.jsx handles story CRUD and review moderation;
 // this panel adds profile/role control and a live view of all four tables.
 export default function SupabaseAdmin() {
-  const { isAdmin } = useApp()
+  const { isAdmin, user } = useApp()
+  const operator = isAdmin && isAdminEmail(user?.email)
   const [health, setHealth] = useState(null)
   const [counts, setCounts] = useState(null)
   const [profiles, setProfiles] = useState([])
@@ -57,6 +59,7 @@ export default function SupabaseAdmin() {
   }, [])
 
   const changeRole = async (profile, role) => {
+    if (!operator || profile.id !== user?.id) return
     setBusy(true)
     setMsg('')
     try {
@@ -105,7 +108,7 @@ export default function SupabaseAdmin() {
           <Link to="/settings" className="btn btn-ghost">Account settings</Link>
         </div>
         <p className="meta" style={{ marginTop: 0 }}>
-          Role changes write to the profiles table. Cloud catalog also manages stories and moderates reviews.
+          Admin is fixed to info@alasarjadeed.com everywhere (web, tablet and Supabase). Other accounts can sign in but stay listeners.
         </p>
         {profiles.length ? (
           <div>
@@ -115,23 +118,25 @@ export default function SupabaseAdmin() {
                   <h3>{p.username || p.id.slice(0, 8)}</h3>
                   <p>{p.role || 'listener'} · {p.id.slice(0, 8)}</p>
                 </div>
-                {isAdmin ? (
+                {operator && p.id === user?.id ? (
                   <div style={{ display: 'flex', gap: 6 }}>
                     <button
                       className={`btn ${p.role === 'listener' ? 'btn-primary' : 'btn-ghost'}`}
                       onClick={() => changeRole(p, 'listener')}
-                      disabled={busy}
+                      disabled={busy || p.role !== 'admin'}
                     >
                       Listener
                     </button>
                     <button
                       className={`btn ${p.role === 'admin' ? 'btn-primary' : 'btn-ghost'}`}
                       onClick={() => changeRole(p, 'admin')}
-                      disabled={busy}
+                      disabled={busy || p.role === 'admin'}
                     >
                       Admin
                     </button>
                   </div>
+                ) : operator && p.role === 'admin' && p.id !== user?.id ? (
+                  <span className="meta">stale admin — SQL lock fixes this</span>
                 ) : null}
               </div>
             ))}
