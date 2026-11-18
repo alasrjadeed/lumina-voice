@@ -8,12 +8,27 @@ import { Capacitor } from '@capacitor/core'
 const graphs = new WeakMap()
 const unsupported = new WeakSet()
 
+function canAnalyse(mediaEl) {
+  const src = mediaEl.currentSrc || mediaEl.src || ''
+  if (!/^https?:/i.test(src)) return true
+  try {
+    const u = new URL(src, window.location.href)
+    if (u.origin === window.location.origin) return true
+    // A cross-origin stream is only safe to route through Web Audio when it
+    // was requested with CORS. Otherwise Chrome mutes the analyser output.
+    return mediaEl.crossOrigin === 'anonymous'
+  } catch {
+    return false
+  }
+}
+
 function getGraph(mediaEl) {
   if (!mediaEl || unsupported.has(mediaEl)) return null
   // Android WebView accepts createMediaElementSource() but its destination stays
   // silent: the track advances while nothing is audible. Never hijack the media
   // element on native — the decorative pulse below is used instead.
   if (Capacitor.isNativePlatform()) return null
+  if (!canAnalyse(mediaEl)) return null
   if (graphs.has(mediaEl)) return graphs.get(mediaEl)
 
   let audioCtx = null

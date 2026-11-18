@@ -59,5 +59,11 @@ Connect Lumina Voice web and Android tablet builds to Supabase with maximum usab
 - Supabase admin UI now only lets the operator change their own role. Added `docs/supabase-admin-lockdown.sql`: `public.is_operator()`, `enforce_operator_role()` trigger, one-time repair of stale admin rows (e.g. `smoke1`), and stories RLS by operator email. Needs to be run in Supabase SQL Editor because dashboard login is not available here.
 - Cross-platform sharing stays platform-neutral: tablet and web share Supabase REST/Realtime metadata, and `/transfer` exports/imports the same JSON bundle offline.
 
+## Follow-up: install banner + silent Archive audio
+- User reported two console messages on `http://localhost:4310`: "Banner not shown: beforeinstallpromptevent.preventDefault() called" and "MediaElementAudioSource outputs zeroes due to CORS access restrictions" with no sound.
+- Fixed install warning by no longer cancelling `beforeinstallprompt`; Chrome can show its native banner, and the Settings button still uses the stored event where supported.
+- Fixed muted audio by canonicalizing `www.archive.org/download/...` to `archive.org/download/...` and setting `crossOrigin="anonymous"` only on archive.org hosts before loading. Other external URLs are never hijacked by Web Audio; they use the decorative pulse. Verified both `127.0.0.1:4310/now` and `localhost:4310/now` played Ghalib with `readyState 4`, `currentTime > 4 s`, no error.
+- Rebuilt Docker web and reinstalled the 6.4 MB APK. Lint, 146 tests and build pass.
+
 ## Remembered admin
 - Operator: `info@alasarjadeed.com`. Credential is already in `src/config/auth.js`; not duplicated here.

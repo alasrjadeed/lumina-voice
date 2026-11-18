@@ -36,6 +36,27 @@ import {
 import { subscribeToChanges } from '../data/realtime'
 import { fetchUserState, mergeUserState, saveUserState } from '../data/userState'
 
+// archive.org (including its storage nodes) sends Access-Control-Allow-Origin,
+// so its streams can be loaded with CORS and fed to the Web Audio analyser.
+// Other external hosts must stay plain media loads or they go silent.
+function needsCorsAudio(url) {
+  try {
+    const host = new URL(url, 'http://localhost').hostname.toLowerCase()
+    // www.archive.org redirects first to archive.org without an ACAO header on
+    // that hop, which makes a CORS request fail. Canonicalize it instead.
+    if (host === 'www.archive.org') return false
+    return host === 'archive.org' || /(^|\.)archive\.org$/i.test(host)
+  } catch {
+    return false
+  }
+}
+
+function canonicalArchiveUrl(url) {
+  return typeof url === 'string'
+    ? url.replace(/^(https?:\/\/)www\.archive\.org\//i, '$1archive.org/')
+    : url
+}
+
 function isStandalone() {
   if (typeof window === 'undefined') return false
   if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) return true
@@ -201,7 +222,10 @@ const [listenedTime, setListenedTime] = useState(() => {
     window.addEventListener('offline', goOffline)
 
     const onInstallPrompt = (e) => {
-      e.preventDefault()
+      // Do not cancel the event: Chrome logs "Banner not shown" and suppresses
+      // its native install UI when preventDefault() is called without an
+      // immediate prompt(). Keep the event for the Settings button where the
+      // browser allows a deferred prompt; otherwise let its banner appear.
       installEvent.current = e
       setCanInstall(true)
     }
@@ -749,12 +773,12 @@ const [listenedTime, setListenedTime] = useState(() => {
     }
     if (seq !== loadSeq.current) return
     const isUrl = isDirectSrc(playSrc)
-    const original = playSrc
+    const original = canonicalArchiveUrl(playSrc)
     // archive.org/download redirects to a healthy storage node, while the
     // metadata `d1` host cached by fastArchiveStream can go stale and stall
     // an entire audiobook. Try the redirect URL first, then the direct node.
-    if (isUrl && /archive\.org\/download\//i.test(playSrc)) {
-      playSrc = await fastArchiveStream(playSrc)
+    if (isUrl && /archive\.org\/download\//i.test(original)) {
+      playSrc = await fastArchiveStream(original)
       if (seq !== loadSeq.current) return
     }
     const candidates = isUrl && /archive\.org\/download\//i.test(original)
@@ -770,6 +794,11 @@ const [listenedTime, setListenedTime] = useState(() => {
     }
     const attach = (list) => {
       el.pause()
+      // Must be set before the media resource is selected. Without it Chrome
+      // still plays the file but the Web Audio analyser returns zeroes and
+      // mutes the output ("MediaElementAudioSource outputs zeroes due to CORS").
+      if (list.some((s) => needsCorsAudio(s.src))) el.crossOrigin = 'anonymous'
+      else el.removeAttribute('crossorigin')
       el.removeAttribute('src')
       while (el.firstChild) el.removeChild(el.firstChild)
       list.forEach((s) => {
