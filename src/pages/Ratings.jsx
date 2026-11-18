@@ -14,6 +14,7 @@ import {
   summarise
 } from '../data/ratings'
 import { IcoStar, IcoTrash } from '../ui/Icons'
+import { subscribeToChanges } from '../data/realtime'
 
 function Stars({ value, onChange, size = 22, label }) {
   const [hover, setHover] = useState(0)
@@ -82,6 +83,23 @@ export default function Ratings({ titleId }) {
     load(ac.signal)
     return () => ac.abort()
   }, [load])
+
+  // Live bridge between devices: a rating or review saved on the phone or PC
+  // refreshes this list on the tablet without a reload (and vice versa).
+  useEffect(() => {
+    if (!titleId) return undefined
+    let timer = null
+    const stop = subscribeToChanges(['ratings', 'reviews'], (change) => {
+      const changedTitle = change.record?.title_id || change.oldRecord?.title_id
+      if (changedTitle && changedTitle !== titleId) return
+      clearTimeout(timer)
+      timer = setTimeout(() => load(), 350)
+    })
+    return () => {
+      clearTimeout(timer)
+      stop()
+    }
+  }, [titleId, load])
 
   const summary = summarise(ratings)
   const mine = user ? ratings.find((r) => r.userId === user.id) : null

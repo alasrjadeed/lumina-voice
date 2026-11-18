@@ -42,6 +42,7 @@ Stack: **Vite 8 + React 19 + react-router-dom 7**, plain CSS, no UI framework, n
 ## Current state (v1.0.0)
 - Bundled catalogue: 25 titles, 4 series, 5 authors, 3 poets, 6 voices, 1 radio station ("Sada Bahar").
 - Auth: Supabase (optional) or local demo; email containing `admin` ⇒ admin role.
+- Signed-in devices sync library/progress/history metadata via Supabase `user_state` (audio stays on device); realtime refreshes ratings, reviews, catalogue and profiles.
 - Admin "Broadcast Studio": schedule, rotation, automation rules, advertising, live stream, analytics, storage, logs.
 - Installs as PWA; offline downloads cached by the service worker.
 ---

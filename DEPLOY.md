@@ -17,6 +17,7 @@ streaming server, no paid service, no API key is required to launch.
 | Radio | Fully gated by `VITE_RADIO_ENABLED=false` | zero |
 | Archive library | 100 candidates under review; 0 published until rights are cleared | zero |
 | Data transfer | Settings → Transfer data (`/transfer`) exports/imports a no-loss JSON bundle; no server or account | zero |
+| Cross-device sync | Supabase `user_state` carries only library/progress/history metadata between Android and web; audio stays on device | zero |
 
 `.dockerignore` excludes `.env`, `.env.local`, `.env.development` and
 `.env.*.local`. Only `.env.production` is copied (radio flag `false`). The

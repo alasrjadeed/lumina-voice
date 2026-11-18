@@ -16,6 +16,7 @@ Description: Urdu audio-films, dramas, audiobooks, poetry and Quran Kareem. Libr
 - Subtitles appear automatically from the first saved track (Urdu → English → Arabic preference), with Auto and Off controls. Live speech-to-text of streaming audio is not supported by the Android WebView used here.
 - Archive.org metadata resolution is cached per item and warmed on the title page, so tapping play starts sound in under a second instead of waiting for a metadata round trip.
 - The app is connected to the Supabase `luminavoice` project via Connect → Framework → React → Vite (public URL + publishable key, no SDK needed). With no signal, sign-in falls back to the local demo account and the bundled catalog still works.
+- Signed-in listeners sync library saves, playback positions and history between the Android tablet and the local web app through the Supabase `user_state` table; audio files and downloads remain on each device. Realtime events refresh ratings, reviews, the catalogue and profiles live.
 - Archive.org links stream directly in the app; no audio is copied into app storage. Direct URLs are never rewritten with a `.opus`/`.m4a` suffix.
 - Settings → Transfer data (`/transfer`): no-loss JSON backup/restore of library, edits, history and playback settings on web and Android. The native APK ships only advertisement audio (6.4 MB); catalogue audio is streamed from Archive/RSS via an admin media-base override.
 

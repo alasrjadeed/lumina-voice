@@ -70,6 +70,7 @@ export default function Settings() {
   const app = useApp() || {}
   const user = app.user || null
   const logout = typeof app.logout === 'function' ? app.logout : () => {}
+  const updateName = typeof app.updateName === 'function' ? app.updateName : async () => ({ ok: true, local: true })
   const premium = !!app.premium
   const setPremium = typeof app.setPremium === 'function' ? app.setPremium : () => {}
   const autoplay = app.autoplay !== false
@@ -91,6 +92,9 @@ export default function Settings() {
   const notifSupported = typeof window !== 'undefined' && 'Notification' in window
   const [notifyPerm, setNotifyPerm] = useState(() => (notifSupported ? Notification.permission : 'unsupported'))
   const [roleMsg, setRoleMsg] = useState('')
+  const [nameDraft, setNameDraft] = useState('')
+  const [nameMsg, setNameMsg] = useState('')
+  const [nameBusy, setNameBusy] = useState(false)
   const [installMsg, setInstallMsg] = useState('')
   const streamCfg = useMemo(() => loadStreamConfig(), [])
   const streamMountsList = useMemo(() => (streamCfg.enabled ? streamMounts(streamCfg) : []), [streamCfg])
@@ -127,6 +131,18 @@ export default function Settings() {
     } catch {
       setNotifyPerm('denied')
     }
+  }
+
+  useEffect(() => {
+    setNameDraft(user?.name || '')
+  }, [user?.name])
+
+  const saveName = async () => {
+    setNameBusy(true)
+    setNameMsg('')
+    const res = await updateName(nameDraft)
+    setNameMsg(res.ok ? (res.local ? 'Saved on this device.' : 'Saved to your profile on every device.') : (res.error || 'Could not save that name.'))
+    setNameBusy(false)
   }
 
   const toggleRole = async () => {
@@ -176,6 +192,30 @@ export default function Settings() {
               }}
             >
               Log out
+            </button>
+          </div>
+        ) : null}
+        {user ? (
+          <div className="set-row">
+            <div style={{ flex: 1 }}>
+              <h3>Display name</h3>
+              <p>Shown beside your reviews on every device.</p>
+              <input
+                value={nameDraft}
+                onChange={(e) => setNameDraft(e.target.value)}
+                maxLength={40}
+                placeholder="Your name"
+                aria-label="Display name"
+                style={{ maxWidth: 280, marginTop: 8 }}
+              />
+              {nameMsg ? <p className="meta">{nameMsg}</p> : null}
+            </div>
+            <button
+              className="btn btn-ghost"
+              disabled={nameBusy || !nameDraft.trim() || nameDraft.trim() === (user.name || '')}
+              onClick={saveName}
+            >
+              {nameBusy ? 'Saving…' : 'Save name'}
             </button>
           </div>
         ) : (

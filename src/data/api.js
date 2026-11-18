@@ -32,6 +32,21 @@ export function backendLabel() {
   }
 }
 
+// Realtime speaks the Phoenix protocol over a plain WebSocket, so no SDK is
+// needed. Browsers cannot set headers on a WebSocket: Supabase accepts the
+// publishable key as `apikey` and the signed-in JWT as `access_token`.
+export function realtimeEndpoint(token) {
+  if (!apiConfigured()) return ''
+  try {
+    const u = new URL(URL_)
+    const ws = u.protocol === 'https:' ? 'wss:' : 'ws:'
+    const base = `${ws}//${u.host}/realtime/v1/websocket?apikey=${encodeURIComponent(ANON)}&vsn=1.0.0`
+    return token ? `${base}&access_token=${encodeURIComponent(token)}` : base
+  } catch {
+    return ''
+  }
+}
+
 // A connected app must still work with no signal. Only transport-level failures
 // count as offline — a real Supabase error (wrong password, missing profile)
 // must be shown to the listener instead of being hidden behind demo auth.
@@ -172,6 +187,17 @@ export async function signOut() {
     /* best-effort */
   }
   persistSession(null)
+}
+
+// Supabase sends a one-time recovery link to the address on file. The link
+// opens /auth#access_token=... which consumeOAuthRedirect() already handles,
+// so password reset needs no new route or callback page.
+export async function requestPasswordReset(email) {
+  if (!apiConfigured()) throw new Error('Supabase is not configured')
+  const address = String(email || '').trim()
+  if (!address.includes('@')) throw new Error('Enter your email address.')
+  await authRequest('recover', { body: { email: address } })
+  return true
 }
 
 /* ------------------------------------------------------------------ *
@@ -482,6 +508,35 @@ create policy "admins manage stories" on stories
   for all to authenticated
   using (exists (select 1 from profiles p where p.id = auth.uid() and p.role = 'admin'))
   with check (exists (select 1 from profiles p where p.id = auth.uid() and p.role = 'admin'));
+
+-- Realtime: publish the tables the app listens to, so a change on one device
+-- appears live on the other (web and tablet). Safe to run more than once.
+do $$
+begin
+  if not exists (
+    select 1 from pg_publication_tables
+    where pubname = 'supabase_realtime' and schemaname = 'public' and tablename = 'profiles'
+  ) then alter publication supabase_realtime add table public.profiles; end if;
+  if not exists (
+    select 1 from pg_publication_tables
+    where pubname = 'supabase_realtime' and schemaname = 'public' and tablename = 'stories'
+  ) then alter publication supabase_realtime add table public.stories; end if;
+  if not exists (
+    select 1 from pg_publication_tables
+    where pubname = 'supabase_realtime' and schemaname = 'public' and tablename = 'ratings'
+  ) then alter publication supabase_realtime add table public.ratings; end if;
+  if not exists (
+    select 1 from pg_publication_tables
+    where pubname = 'supabase_realtime' and schemaname = 'public' and tablename = 'reviews'
+  ) then alter publication supabase_realtime add table public.reviews; end if;
+  if not exists (
+    select 1 from pg_publication_tables
+    where pubname = 'supabase_realtime' and schemaname = 'public' and tablename = 'user_state'
+  ) then alter publication supabase_realtime add table public.user_state; end if;
+end $$;
+
+-- grant select, insert, update, delete on public.user_state to authenticated;
+-- Cross-device local data: complete SQL is in docs/supabase-user-state.sql.
 
 -- Make yourself an admin once (run after you sign up):
 -- update profiles set role = 'admin' where id = '<your-user-uuid>';`

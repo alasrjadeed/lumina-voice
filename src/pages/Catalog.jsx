@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useApp } from '../state/AppState.jsx'
 import { titles } from '../data/catalog'
 import {
@@ -17,6 +17,7 @@ import { archiveCoverUrl, isLikelyImageUrl } from '../data/artwork'
 import { CoverArt } from '../art/covers'
 import { IcoPlus, IcoTrash, IcoCloud, IcoInfo } from '../ui/Icons'
 import ReviewModeration from './ReviewModeration.jsx'
+import { subscribeToChanges } from '../data/realtime'
 
 const EMPTY = { title: '', description: '', audioUrl: '', coverUrl: '', duration: '' }
 
@@ -34,7 +35,7 @@ export default function Catalog() {
 
   const configured = apiConfigured()
 
-  const load = async () => {
+  const load = useCallback(async () => {
     if (!configured) {
       setLoading(false)
       return
@@ -48,7 +49,7 @@ export default function Catalog() {
     } finally {
       if (mounted.current) setLoading(false)
     }
-  }
+  }, [configured])
 
   useEffect(() => {
     mounted.current = true
@@ -57,7 +58,22 @@ export default function Catalog() {
     return () => {
       mounted.current = false
     }
-  }, [configured])
+  }, [configured, load])
+
+  // Cloud catalogue edits made in another browser or on the tablet appear here
+  // automatically — one shared library instead of two stale copies.
+  useEffect(() => {
+    if (!configured) return undefined
+    let timer = null
+    const stop = subscribeToChanges(['stories'], () => {
+      clearTimeout(timer)
+      timer = setTimeout(load, 400)
+    })
+    return () => {
+      clearTimeout(timer)
+      stop()
+    }
+  }, [configured, load])
 
   const preview = useMemo(() => (form.audioUrl ? r2Url(form.audioUrl.trim()) : ''), [form.audioUrl])
   const urlValid = form.audioUrl ? isLikelyAudioUrl(preview) : false

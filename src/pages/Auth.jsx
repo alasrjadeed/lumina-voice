@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useApp } from '../state/AppState.jsx'
-import { oauthAuthorizeUrl } from '../data/api'
+import { oauthAuthorizeUrl, requestPasswordReset } from '../data/api'
 import { ADMIN_EMAIL, ADMIN_NAME, ADMIN_PASSWORD, isAdminEmail } from '../config/auth'
 import { BrandMark } from '../art/covers'
 import { IcoGoogle } from '../ui/Icons'
@@ -16,6 +16,7 @@ export default function Auth() {
   const [err, setErr] = useState('')
   const [info, setInfo] = useState('')
   const [busy, setBusy] = useState(false)
+  const resetMode = mode === 'reset'
 
   // After Supabase OAuth redirects back with tokens in the hash, AppState
   // consumes them on boot; once the session lands, continue into the app.
@@ -28,6 +29,28 @@ export default function Auth() {
     setErr('')
     setInfo('')
     const uname = email.trim()
+    if (mode === 'reset') {
+      if (!authConfigured) {
+        setErr('Password recovery needs Supabase. Connect it first in Settings → Supabase.')
+        return
+      }
+      if (!uname.includes('@')) {
+        setErr('Enter your email address.')
+        return
+      }
+      setBusy(true)
+      try {
+        await requestPasswordReset(uname)
+        setInfo('Recovery link sent. Open it on this device or the tablet to choose a new password.')
+        setMode('login')
+        setPass('')
+      } catch (e) {
+        setErr(e.message || 'Could not send the recovery email.')
+      } finally {
+        setBusy(false)
+      }
+      return
+    }
     // Device-local operator: info@alasarjadeed.com (or "admin") with the bundled
     // password. Supabase accounts take over when a backend is configured.
     if (!authConfigured && (/^admin$/i.test(uname) || isAdminEmail(uname))) {
@@ -86,7 +109,7 @@ export default function Auth() {
         <p className="urdu" style={{ textAlign: 'center', fontSize: 18, color: 'var(--gold)', marginTop: -6 }}>
           آنکھیں بند کیجیے، کہانی شروع ہوتی ہے
         </p>
-        <h1>{mode === 'login' ? 'Sign in to your Account' : 'Create your Account'}</h1>
+        <h1>{resetMode ? 'Reset your Password' : mode === 'login' ? 'Sign in to your Account' : 'Create your Account'}</h1>
         <p className="meta" style={{ textAlign: 'center', marginTop: -8 }}>
           {authConfigured ? `Secured by Supabase · ${backend}` : 'Local demo account (no backend configured)'}
         </p>
@@ -99,22 +122,45 @@ export default function Auth() {
           </div>
         ) : null}
         <div className="field">
-          <label>{!authConfigured && (/^admin$/i.test(email.trim()) || isAdminEmail(email)) ? 'Admin username / email' : 'Email'}</label>
+          <label>{resetMode || authConfigured ? 'Email' : (/^admin$/i.test(email.trim()) || isAdminEmail(email)) ? 'Admin username / email' : 'Email'}</label>
           <input type="text" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com · or admin" />
         </div>
-        <div className="field">
-          <label>Password</label>
-          <input type="password" value={pass} onChange={(e) => setPass(e.target.value)} placeholder="••••••••" />
-        </div>
+        {!resetMode ? (
+          <div className="field">
+            <label>Password</label>
+            <input type="password" value={pass} onChange={(e) => setPass(e.target.value)} placeholder="••••••••" />
+          </div>
+        ) : null}
         <button className="btn btn-primary btn-block" type="submit" disabled={busy}>
-          {busy ? 'Please wait…' : mode === 'login' ? 'Login' : 'Register'}
+          {busy ? 'Please wait…' : resetMode ? 'Send recovery link' : mode === 'login' ? 'Login' : 'Register'}
         </button>
-        <div className="or">or Login with</div>
-        <button type="button" className="btn btn-ghost btn-block" onClick={google}>
-          <IcoGoogle /> Google
-        </button>
+        {!resetMode && authConfigured ? (
+          <p className="hint" style={{ marginTop: -4 }}>
+            <a
+              href="#reset"
+              onClick={(e) => { e.preventDefault(); setMode('reset'); setErr(''); setInfo('') }}
+            >
+              Forgot password?
+            </a>
+          </p>
+        ) : null}
+        {!resetMode ? (
+          <>
+            <div className="or">or Login with</div>
+            <button type="button" className="btn btn-ghost btn-block" onClick={google}>
+              <IcoGoogle /> Google
+            </button>
+          </>
+        ) : null}
         <p className="hint">
-          {mode === 'login' ? (
+          {resetMode ? (
+            <>
+              Remembered it?{' '}
+              <a href="#login" onClick={(e) => { e.preventDefault(); setMode('login'); setErr(''); setInfo('') }}>
+                Back to sign in
+              </a>
+            </>
+          ) : mode === 'login' ? (
             <>
               Don&apos;t have an account?{' '}
               <a href="#reg" onClick={(e) => { e.preventDefault(); setMode('register'); setErr(''); setInfo('') }}>
@@ -130,19 +176,21 @@ export default function Auth() {
             </>
           )}
         </p>
-        <button
-          type="button"
-          className="studio-hint"
-          onClick={() => {
-            setEmail(ADMIN_EMAIL)
-            setPass(ADMIN_PASSWORD)
-            setMode('login')
-            setErr('')
-            setInfo('')
-          }}
-        >
-          {`Admin login: ${ADMIN_EMAIL} · password “${ADMIN_PASSWORD}”.`}
-        </button>
+        {!resetMode ? (
+          <button
+            type="button"
+            className="studio-hint"
+            onClick={() => {
+              setEmail(ADMIN_EMAIL)
+              setPass(ADMIN_PASSWORD)
+              setMode('login')
+              setErr('')
+              setInfo('')
+            }}
+          >
+            {`Admin login: ${ADMIN_EMAIL} · password “${ADMIN_PASSWORD}”.`}
+          </button>
+        ) : null}
         <p className="hint" style={{ textAlign: 'center' }}>
           <Link to="/site" className="linkish">View the website — no account needed →</Link>
         </p>

@@ -33,6 +33,8 @@ import {
   registerServiceWorker,
   swSupported
 } from '../pwa.js'
+import { subscribeToChanges } from '../data/realtime'
+import { fetchUserState, mergeUserState, saveUserState } from '../data/userState'
 
 function isStandalone() {
   if (typeof window === 'undefined') return false
@@ -49,6 +51,16 @@ function isIos() {
 const KEY = 'lumina-voice-v1'
 const HISTORY_KEY = 'lumina-history-v1'
 const Ctx = createContext(null)
+
+// One id per app instance. A device ignores the echo of its own cloud write,
+// so a save on the tablet never bounces back and re-renders the tablet.
+const CLIENT_ID = (() => {
+  try {
+    return typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : `client-${Date.now()}`
+  } catch {
+    return `client-${Date.now()}`
+  }
+})()
 
 // Picks a media type from the URL extension so external streams (Opus, AAC, MP3)
 // are offered to the browser with the correct MIME.
@@ -120,6 +132,27 @@ const [listenedTime, setListenedTime] = useState(() => {
   // Playback rate, kept coarse so speech stays intelligible.
   const [rate, setRateState] = useState(() => (typeof saved.rate === 'number' ? saved.rate : 1))
   const languageRef = useRef(saved.language === 'en' ? 'en' : 'ur')
+  // Latest device-first state, kept in a ref so remote updates can merge with
+  // what is actually on screen instead of a stale render closure.
+  const syncStateRef = useRef({ library, progress, history })
+  syncStateRef.current = { library, progress, history }
+
+  const applyRemoteState = (remote) => {
+    if (!remote) return
+    const current = syncStateRef.current
+    const merged = mergeUserState(current, remote)
+    if (JSON.stringify(current.library) !== JSON.stringify(merged.library)) setLibrary(merged.library)
+    if (JSON.stringify(current.progress) !== JSON.stringify(merged.progress)) setProgress(merged.progress)
+    if (JSON.stringify(current.history) !== JSON.stringify(merged.history)) {
+      setHistory(merged.history)
+      const times = {}
+      for (const h of merged.history) {
+        times[h.titleId] = (times[h.titleId] || 0) + Number(h.positionSeconds || 0)
+      }
+      setListenedTime(times)
+    }
+  }
+
   const [offline, setOffline] = useState(!isOnline())
   const [swReady, setSwReady] = useState(false)
   const [downloadProgress, setDownloadProgress] = useState({})
@@ -217,6 +250,78 @@ const [listenedTime, setListenedTime] = useState(() => {
       cancelled = true
     }
   }, [])
+
+  // Profile edits made elsewhere (a new username, or an admin role granted
+  // from the PC) appear here live — no sign-out/sign-in round trip.
+  useEffect(() => {
+    if (!apiConfigured() || !user?.id) return undefined
+    let cancelled = false
+    let timer = null
+    const stop = subscribeToChanges(['profiles'], (change) => {
+      const id = change.record?.id || change.oldRecord?.id
+      if (id && id !== user.id) return
+      clearTimeout(timer)
+      timer = setTimeout(async () => {
+        const profile = await fetchProfile(user.id).catch(() => null)
+        if (cancelled || !profile) return
+        setUser((prev) => (prev?.id === user.id
+          ? { ...prev, name: profile.username || prev.name, role: profile.role || prev.role }
+          : prev))
+        if (profile.role === 'admin' || isAdminEmail(user.email)) setPremium(true)
+      }, 300)
+    })
+    return () => {
+      cancelled = true
+      clearTimeout(timer)
+      stop()
+    }
+  }, [user?.id, user?.email])
+
+  // Send the device-first library, positions and history to Supabase. Debounced
+  // for edits; a 30s heartbeat also catches a position changing every second
+  // during continuous playback, and hiding the app flushes the latest state.
+  useEffect(() => {
+    if (!apiConfigured() || !user?.id) return undefined
+    const timer = setTimeout(() => {
+      saveUserState(user.id, syncStateRef.current, CLIENT_ID).catch(() => {})
+    }, 1500)
+    return () => clearTimeout(timer)
+  }, [user?.id, library, progress, history])
+
+  useEffect(() => {
+    if (!apiConfigured() || !user?.id) return undefined
+    const save = () => { saveUserState(user.id, syncStateRef.current, CLIENT_ID).catch(() => {}) }
+    const interval = setInterval(save, 30000)
+    const onHide = () => { if (typeof document !== 'undefined' && document.visibilityState === 'hidden') save() }
+    if (typeof document !== 'undefined') document.addEventListener('visibilitychange', onHide)
+    return () => {
+      clearInterval(interval)
+      if (typeof document !== 'undefined') document.removeEventListener('visibilitychange', onHide)
+    }
+  }, [user?.id])
+
+  // Receive the same data from the other device. Own writes carry a per-app
+  // client id and are ignored, so a save never bounces back into this app.
+  useEffect(() => {
+    if (!apiConfigured() || !user?.id) return undefined
+    let cancelled = false
+    let timer = null
+    const stop = subscribeToChanges(['user_state'], (change) => {
+      const record = change.record
+      if (!record || record.user_id !== user.id || record.client_id === CLIENT_ID) return
+      clearTimeout(timer)
+      timer = setTimeout(async () => {
+        const remote = await fetchUserState(user.id).catch(() => null)
+        if (cancelled || !remote || remote.clientId === CLIENT_ID) return
+        applyRemoteState(remote)
+      }, 300)
+    })
+    return () => {
+      cancelled = true
+      clearTimeout(timer)
+      stop()
+    }
+  }, [user?.id])
 
   const refreshDownloadStatus = async () => {
     if (!swSupported()) return
@@ -964,6 +1069,9 @@ const [listenedTime, setListenedTime] = useState(() => {
       }
     }
     setUser({ id: u?.id, email, name, role })
+    // Bring the device-first library, positions and history back from the
+    // cloud so signing in on the tablet continues where the web app stopped.
+    if (u?.id) applyRemoteState(await fetchUserState(u.id).catch(() => null))
   }
 
   const logout = async () => {
@@ -990,6 +1098,27 @@ const [listenedTime, setListenedTime] = useState(() => {
     return { ok: true, local: true }
   }
 
+  // Display name lives on the shared profile, so reviews and Settings show
+  // the same identity on web, phone and tablet.
+  const updateName = async (name) => {
+    const clean = String(name || '').trim().slice(0, 40)
+    if (!clean) return { ok: false, error: 'Enter a name.' }
+    const prev = user
+    if (!prev) return { ok: false, error: 'Sign in to change your name.' }
+    setUser({ ...prev, name: clean })
+    if (apiConfigured() && prev.id) {
+      try {
+        const row = await updateProfile(prev.id, { username: clean })
+        if (Array.isArray(row) && row.length === 0) throw new Error('No profile row found for this account')
+        return { ok: true }
+      } catch (e) {
+        setUser(prev)
+        return { ok: false, error: e.message || 'Could not save your name.' }
+      }
+    }
+    return { ok: true, local: true }
+  }
+
   const value = useMemo(
     () => ({
       user,
@@ -999,6 +1128,7 @@ const [listenedTime, setListenedTime] = useState(() => {
       authConfigured: apiConfigured(),
       backend: backendLabel(),
       setRole,
+      updateName,
       logout,
       library,
       toggleLibrary,
@@ -1108,6 +1238,7 @@ export function useApp() {
     language: 'ur',
     setLanguage: () => {},
     setRole: async () => ({ ok: true, local: true }),
+    updateName: async () => ({ ok: true, local: true }),
     logout: () => {},
     clearOffline: async () => {},
     promptInstall: async () => ({ outcome: 'manual' }),
