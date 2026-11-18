@@ -73,5 +73,9 @@ Connect Lumina Voice web and Android tablet builds to Supabase with maximum usab
 - Added `docs/supabase-archive-only.sql` (delete non-Archive rows + URL check constraint) and bumped service-worker shell/static caches to `v7`. Removed `tests/harryPotter.test.js`; added `tests/archiveOnly.test.js`.
 - Verified: `npm run lint` clean, `npm test` 152/152, `npm run build` clean. Docker/APK rebuild, web smoke and tablet CDP smoke (all seven routes, SW `v7`, no `:8080`, no console errors) passed. Deleted the one non-Archive cloud story (`testr` / YouTube) via authenticated REST; Supabase SQL migrations remain unapplied.
 
+## Session close (2026-11-18)
+- Committed as `431eeb5` ("Enforce archive-only catalogue across web, tablet and cloud") and pushed to `origin/main`, which is the repo's default branch. The stray `master` branch created by the first push was deleted; local `master` tracks `origin/main` and the tree is clean.
+- Final state: APK installed and smoke-tested on the tablet, web container rebuilt, cloud catalogue empty of non-Archive rows, 152/152 tests green. Two Supabase DDL migrations remain pending SQL Editor access.
+
 ## Remembered admin
 - Operator: `info@alasarjadeed.com`. Credential is already in `src/config/auth.js`; not duplicated here.
