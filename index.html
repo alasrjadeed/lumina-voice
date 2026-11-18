@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var KEY = 'lumina-sw-bust'
+        function wipe(thenReload) {
+          var go = function () {
+            if (thenReload && !sessionStorage.getItem(KEY)) {
+              sessionStorage.setItem(KEY, '1')
+            }
+          }
+          var hadWorker = false
+          var p = Promise.resolve()
+          if (navigator.serviceWorker) {
+            p = navigator.serviceWorker.getRegistrations().then(function (regs) {
+              hadWorker = regs.length > 0 || !!navigator.serviceWorker.controller
+              return Promise.all(regs.map(function (r) { return r.unregister() }))
+            })
+          }
+          p.then(function () {
+            return window.caches ? caches.keys() : []
+          }).then(function (keys) {
+            return Promise.all((keys || []).map(function (k) { return caches.delete(k) }))
+          }).finally(function () {
+            go()
+            if (!thenReload && hadWorker && !sessionStorage.getItem(KEY)) {
+              sessionStorage.setItem(KEY, '1')
+            }
+          })
+        }
+        window.addEventListener('error', function (e) {
+          var msg = String((e.error && e.error.message) || e.message || '')
+          if (/does not provide an export named|Failed to fetch dynamically imported module|missing AppProvider/.test(msg)) {
+            wipe(true)
+            var root = document.getElementById('root')
+            if (root && sessionStorage.getItem(KEY)) {
+              root.innerHTML = '<div style="min-height:100vh;padding:32px;background:#08070b;color:#f4efe6;font-family:system-ui,sans-serif"><p style="color:#e4c36a;letter-spacing:.16em;font-size:12px">LUMINA VOICE</p><h1 style="font-size:28px">Something went wrong</h1><pre style="white-space:pre-wrap;color:#ef6b6b;font-size:13px">' + msg.replace(/</g, '&lt;') + '</pre><button id="lumina-reset" type="button" style="margin-top:16px;height:44px;padding:0 18px;border-radius:999px;border:0;background:#e4c36a;color:#1a1408;font-weight:600">Reset and reload</button></div>'
+              var btn = document.getElementById('lumina-reset')
+              if (btn) btn.onclick = function () { sessionStorage.removeItem(KEY); wipe(true) }
+            }
+            return
+          }
+          if (e.error) console.error(e.error)
+        })
+      })()
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#08070b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Lumina" />
+    <meta name="description" content="Lumina Voice brings you the finest Urdu audio-films, dramas, series and audiobooks. Close your eyes. The story begins. Streamed as Opus 24–48 kbps mono." />
+    <meta name="author" content="Lumina My Ai" />
+    <meta name="email" content="luminamyai@gmail.com" />
+    <link rel="me" href="https://www.alasarjadeed.com" />
+    <title>Lumina Voice</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:site_name"   content="Lumina Voice" />
+    <meta property="og:title"       content="Lumina Voice — Urdu audio-films, dramas & audiobooks" />
+    <meta property="og:description" content="Close your eyes. The story begins. Urdu audio-films, dramas, series and audiobooks — streamed as Opus 24–48 kbps mono." />
+    <meta property="og:url"         content="https://luminavoice.app/" />
+    <meta property="og:image"       content="https://luminavoice.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt"   content="Lumina Voice — gold wordmark on a dark night-sky background" />
+    <meta property="og:locale"      content="en_US" />
+    <meta property="og:locale:alternate" content="ur_PK" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Lumina Voice — Urdu audio-films, dramas & audiobooks" />
+    <meta name="twitter:description" content="Close your eyes. The story begins. Urdu audio-films, dramas, series and audiobooks." />
+    <meta name="twitter:image"       content="https://luminavoice.app/og.png" />
+    <meta name="twitter:image:alt"   content="Lumina Voice — gold wordmark on a dark night-sky background" />
+
+    <link rel="canonical" href="https://luminavoice.app/" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Lumina Voice LLM summary" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root">
+      <div style="min-height:100vh;display:grid;place-items:center;background:#08070b;color:#f4efe6;font-family:system-ui,sans-serif;">
+        <div style="text-align:center">
+          <p style="letter-spacing:.2em;color:#e4c36a;font-size:12px;">LUMINA VOICE</p>
+          <p>Loading…</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx?v=18"></script>
+  </body>
+</html>

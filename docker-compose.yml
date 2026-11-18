@@ -1,0 +1,14 @@
+services:
+  lumina-voice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL:-}
+        VITE_SUPABASE_PUBLISHABLE_KEY: ${VITE_SUPABASE_PUBLISHABLE_KEY:-}
+        VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY:-}
+    image: lumina-voice:local
+    container_name: lumina-voice
+    ports:
+      - "4310:80"
+    restart: unless-stopped

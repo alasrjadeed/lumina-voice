@@ -1,0 +1,37 @@
+# Lumina Voice
+Website: https://lumina-voice.com
+Description: Urdu audio-films, dramas, audiobooks, poetry and Quran Kareem. Library-only; radio paused.
+
+## Categories
+- Drama, Espionage, Crime, Comedy, Poetry, Quran Kareem, Audiobooks, Autobiography, Music & Beds, IDs & Jingles
+
+## Key Features
+- Quran Kareem with Urdu Translation
+- Audiobook support
+- Natural on-device Urdu speech: Android TTS voice pack, Urdu digits/punctuation and human-like pauses
+- Device Admin → Archive library: read-only review of 100 Internet Archive candidates across six genre shelves. Publishing is gated on item page, MP3, probed duration, Urdu language and explicit reuse rights; 0 records published so far.
+- Device Admin → File library: every file row has an actions menu (play, edit, replace audio, share, open, delete). House titles are edited through local overrides; imported parts can be deleted permanently.
+- Harry Potter: all seven parts are filed under one serial (`hp-01`–`hp-07`) and carry no audio until real Archive.org links are attached in Add content. Audio-less parts are skipped by broadcast rotation and cannot be added to it.
+- On Android, bundled house titles with `/audio/` paths are hidden because that audio is pruned from the APK; the web library still serves them. Now Playing keeps cover art separate: no canvas over the cover, with a labelled audio spectrum strip below it (native uses an animated pulse because the Web Audio analyser mutes device playback).
+- Subtitles appear automatically from the first saved track (Urdu → English → Arabic preference), with Auto and Off controls. Live speech-to-text of streaming audio is not supported by the Android WebView used here.
+- Archive.org metadata resolution is cached per item and warmed on the title page, so tapping play starts sound in under a second instead of waiting for a metadata round trip.
+- The app is connected to the Supabase `luminavoice` project via Connect → Framework → React → Vite (public URL + publishable key, no SDK needed). With no signal, sign-in falls back to the local demo account and the bundled catalog still works.
+- Archive.org links stream directly in the app; no audio is copied into app storage. Direct URLs are never rewritten with a `.opus`/`.m4a` suffix.
+- Settings → Transfer data (`/transfer`): no-loss JSON backup/restore of library, edits, history and playback settings on web and Android. The native APK ships only advertisement audio (6.4 MB); catalogue audio is streamed from Archive/RSS via an admin media-base override.
+
+## Launch
+- Static PWA served by nginx on http://localhost:4310 (also http://192.168.1.152:4310 on the LAN)
+- No VS Code needed: `docker-compose up -d --build`; desktop icon `Lumina Voice.desktop` runs `scripts/open-lumina.sh` to start the container if stopped and open the app
+- Zero-cost: no streaming server, database, API key or paid provider required
+- Observability: pino logs; Sentry alerts disabled without a DSN
+
+## Contact
+studio@lumina-voice.com
+
+## Radio feature — PAUSED (2026-11-17)
+- Public live radio is disabled until broadcast resources are available. Radio source is kept intact for a one-switch relaunch.
+- Feature flag: `VITE_RADIO_ENABLED` (default `false`, set in `.env.production` / `.env.example`). `src/config/features.js` exports `RADIO_ENABLED`.
+- When `false`: no Radio nav tab or `/radio` route (old `/radio` redirects to `/`), no embed page, no Home/Site radio links, no Broadcast Studio (`/admin` opens the radio-free Device Admin for admins), no radio voice commands or alerts, no external-stream stats/embeds, and no requests to `http://192.168.1.166:8080`. `loadStreamConfig()` reports `enabled: false`; `useNowPlaying`, `playExternal`, `playRadio`, `playBroadcast`, AzuraCast API and show reminders are no-ops.
+- All radio code (Broadcast Studio, bundled Sada Bahar desk, AzuraCast config, embeds) stays in the source tree, fully gated — nothing radio-related runs while the flag is off.
+- Relaunch: set `VITE_RADIO_ENABLED=true`, rebuild (`npm run build` / `docker compose up -d --build`) and radio pages, tabs, embeds and stream calls return unchanged.
+- Verified: `npm run lint`, `npm test` (128/128), `npm run build`, `cap sync`, native audio prune, `clean assembleDebug` and fresh APK install. On-device CDP after login rendered `/`, `/explore`, `/library`, `/history`, `/settings`, `/admin`, `/transfer` with zero errors; no radio links, `/radio` → `/`, no `:8080` requests.

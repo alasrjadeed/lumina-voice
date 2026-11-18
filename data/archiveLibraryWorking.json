@@ -1,0 +1,4614 @@
+{
+  "version": 1,
+  "sourcePolicy": "Internet Archive only",
+  "createdAt": "2026-11-17T13:54:12.511Z",
+  "sourceFile": "/home/oem/Downloads/urdu_audiobook_catalogue_100.json",
+  "recordCount": 100,
+  "activeCount": 100,
+  "duplicateCount": 0,
+  "replacementsApplied": [
+    "URD-AUD-100"
+  ],
+  "records": [
+    {
+      "id": "URD-AUD-001",
+      "sourceId": "URD-AUD-001",
+      "title": "Dracula",
+      "urduTitle": "",
+      "author": "Bram Stoker",
+      "reported": {
+        "category": "Horror / vampire",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:29:47",
+        "durationSeconds": 1787,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Dracula\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-002",
+      "sourceId": "URD-AUD-002",
+      "title": "The Turn of the Screw",
+      "urduTitle": "",
+      "author": "Henry James",
+      "reported": {
+        "category": "Horror / supernatural",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:25:45",
+        "durationSeconds": 1545,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Turn%20of%20the%20Screw\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-003",
+      "sourceId": "URD-AUD-003",
+      "title": "The Ash Tree",
+      "urduTitle": "",
+      "author": "M. R. James",
+      "reported": {
+        "category": "Horror / ghost",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:15:35",
+        "durationSeconds": 935,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Ash%20Tree\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-004",
+      "sourceId": "URD-AUD-004",
+      "title": "The Black Cat",
+      "urduTitle": "",
+      "author": "Edgar Allan Poe",
+      "reported": {
+        "category": "Horror / psychological",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:14:21",
+        "durationSeconds": 861,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Black%20Cat\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-005",
+      "sourceId": "URD-AUD-005",
+      "title": "The Canterville Ghost",
+      "urduTitle": "",
+      "author": "Oscar Wilde",
+      "reported": {
+        "category": "Horror / ghost comedy",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:25:06",
+        "durationSeconds": 1506,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Canterville%20Ghost\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-006",
+      "sourceId": "URD-AUD-006",
+      "title": "Casting the Runes",
+      "urduTitle": "",
+      "author": "M. R. James",
+      "reported": {
+        "category": "Horror / supernatural",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:12:51",
+        "durationSeconds": 771,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Casting%20the%20Runes\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-007",
+      "sourceId": "URD-AUD-007",
+      "title": "Frankenstein",
+      "urduTitle": "",
+      "author": "Mary Shelley",
+      "reported": {
+        "category": "Horror / gothic",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:34:09",
+        "durationSeconds": 2049,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Frankenstein\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-008",
+      "sourceId": "URD-AUD-008",
+      "title": "Lost Hearts",
+      "urduTitle": "",
+      "author": "M. R. James",
+      "reported": {
+        "category": "Horror / ghost",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:14:37",
+        "durationSeconds": 877,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Lost%20Hearts\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-009",
+      "sourceId": "URD-AUD-009",
+      "title": "The House on the Borderland",
+      "urduTitle": "",
+      "author": "William Hope Hodgson",
+      "reported": {
+        "category": "Horror / cosmic",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:58:04",
+        "durationSeconds": 3484,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20House%20on%20the%20Borderland\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-010",
+      "sourceId": "URD-AUD-010",
+      "title": "The Fall of the House of Usher",
+      "urduTitle": "",
+      "author": "Edgar Allan Poe",
+      "reported": {
+        "category": "Horror / gothic",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:19:14",
+        "durationSeconds": 1154,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Fall%20of%20the%20House%20of%20Usher\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-011",
+      "sourceId": "URD-AUD-011",
+      "title": "The Gold-Bug",
+      "urduTitle": "",
+      "author": "Edgar Allan Poe",
+      "reported": {
+        "category": "Mystery / suspense",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:09:58",
+        "durationSeconds": 598,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Mystery / detective",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Gold-Bug\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-012",
+      "sourceId": "URD-AUD-012",
+      "title": "The Facts in the Case of M. Valdemar",
+      "urduTitle": "",
+      "author": "Edgar Allan Poe",
+      "reported": {
+        "category": "Horror / supernatural",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:08:23",
+        "durationSeconds": 503,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. The source index labels this recording 'valdemar_poe'; search result is not proof of an active Archive.org item or playable Urdu audio."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Tell-Tale%20Heart\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-013",
+      "sourceId": "URD-AUD-014",
+      "title": "Whistle and I'll Come to You",
+      "urduTitle": "",
+      "author": "M. R. James",
+      "reported": {
+        "category": "Horror / ghost",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:08:57",
+        "durationSeconds": 537,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Whistle%20and%20I%27ll%20Come%20to%20You\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-014",
+      "sourceId": "URD-AUD-015",
+      "title": "The School Story",
+      "urduTitle": "",
+      "author": "M. R. James",
+      "reported": {
+        "category": "Horror / ghost",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:05:22",
+        "durationSeconds": 322,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20School%20Story\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-015",
+      "sourceId": "URD-AUD-016",
+      "title": "Room Number 13",
+      "urduTitle": "",
+      "author": "Montague R. James",
+      "reported": {
+        "category": "Horror / ghost",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:09:22",
+        "durationSeconds": 562,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Room%20Number%2013\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-016",
+      "sourceId": "URD-AUD-017",
+      "title": "Bermuda Triangle",
+      "urduTitle": "",
+      "author": "Unknown / unattributed",
+      "reported": {
+        "category": "Mystery / paranormal",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:12:10",
+        "durationSeconds": 730,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Bermuda%20Triangle\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-017",
+      "sourceId": "URD-AUD-018",
+      "title": "The War of the Worlds",
+      "urduTitle": "",
+      "author": "H. G. Wells",
+      "reported": {
+        "category": "Science fiction / horror",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:31:44",
+        "durationSeconds": 1904,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20War%20of%20the%20Worlds\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-018",
+      "sourceId": "URD-AUD-019",
+      "title": "The Invisible Man",
+      "urduTitle": "",
+      "author": "H. G. Wells",
+      "reported": {
+        "category": "Science fiction / suspense",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "",
+        "durationSeconds": null,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Invisible%20Man\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-019",
+      "sourceId": "URD-AUD-020",
+      "title": "Dr Jekyll and Mr Hyde",
+      "urduTitle": "",
+      "author": "Robert Louis Stevenson",
+      "reported": {
+        "category": "Gothic / psychological horror",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:27:03",
+        "durationSeconds": 1623,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Dr%20Jekyll%20and%20Mr%20Hyde\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-020",
+      "sourceId": "URD-AUD-021",
+      "title": "The Hound of the Baskervilles",
+      "urduTitle": "",
+      "author": "Arthur Conan Doyle",
+      "reported": {
+        "category": "Detective / gothic mystery",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "01:20:16",
+        "durationSeconds": 4816,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Hound%20of%20the%20Baskervilles\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-021",
+      "sourceId": "URD-AUD-022",
+      "title": "The Lost Stradivarius",
+      "urduTitle": "",
+      "author": "J. Meade Falkner",
+      "reported": {
+        "category": "Supernatural / mystery",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:36:05",
+        "durationSeconds": 2165,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Lost%20Stradivarius\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-022",
+      "sourceId": "URD-AUD-023",
+      "title": "The Woman in White",
+      "urduTitle": "",
+      "author": "Wilkie Collins",
+      "reported": {
+        "category": "Gothic / mystery",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:36:44",
+        "durationSeconds": 2204,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Woman%20in%20White\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-023",
+      "sourceId": "URD-AUD-024",
+      "title": "Rebecca",
+      "urduTitle": "",
+      "author": "Daphne du Maurier",
+      "reported": {
+        "category": "Gothic / suspense",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:36:29",
+        "durationSeconds": 2189,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Rebecca\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-024",
+      "sourceId": "URD-AUD-025",
+      "title": "Jamaica Inn",
+      "urduTitle": "",
+      "author": "Daphne du Maurier",
+      "reported": {
+        "category": "Gothic / suspense",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:27:13",
+        "durationSeconds": 1633,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Jamaica%20Inn\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-025",
+      "sourceId": "URD-AUD-026",
+      "title": "My Cousin Rachel",
+      "urduTitle": "",
+      "author": "Daphne du Maurier",
+      "reported": {
+        "category": "Psychological suspense",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:31:30",
+        "durationSeconds": 1890,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Mystery / detective",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"My%20Cousin%20Rachel\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-026",
+      "sourceId": "URD-AUD-027",
+      "title": "The Moonstone",
+      "urduTitle": "",
+      "author": "Wilkie Collins",
+      "reported": {
+        "category": "Mystery",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:38:48",
+        "durationSeconds": 2328,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Mystery / detective",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Moonstone\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-027",
+      "sourceId": "URD-AUD-028",
+      "title": "The House of the Seven Gables",
+      "urduTitle": "",
+      "author": "Nathaniel Hawthorne",
+      "reported": {
+        "category": "Gothic / mystery",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "",
+        "durationSeconds": null,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20House%20of%20the%20Seven%20Gables\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-028",
+      "sourceId": "URD-AUD-029",
+      "title": "The Picture of Dorian Gray",
+      "urduTitle": "",
+      "author": "Oscar Wilde",
+      "reported": {
+        "category": "Gothic / psychological",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:32:14",
+        "durationSeconds": 1934,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Picture%20of%20Dorian%20Gray\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-029",
+      "sourceId": "URD-AUD-030",
+      "title": "The Metamorphosis",
+      "urduTitle": "",
+      "author": "Franz Kafka",
+      "reported": {
+        "category": "Surreal / psychological",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:35:22",
+        "durationSeconds": 2122,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Metamorphosis\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-030",
+      "sourceId": "URD-AUD-031",
+      "title": "Five Weeks in a Balloon",
+      "urduTitle": "",
+      "author": "Jules Verne",
+      "reported": {
+        "category": "Adventure",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:27:09",
+        "durationSeconds": 1629,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Five%20Weeks%20in%20a%20Balloon\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-031",
+      "sourceId": "URD-AUD-032",
+      "title": "Master of the World",
+      "urduTitle": "",
+      "author": "Jules Verne",
+      "reported": {
+        "category": "Adventure / science fiction",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:21:54",
+        "durationSeconds": 1314,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Master%20of%20the%20World\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-032",
+      "sourceId": "URD-AUD-033",
+      "title": "Off on a Comet",
+      "urduTitle": "",
+      "author": "Jules Verne",
+      "reported": {
+        "category": "Adventure / science fiction",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:21:20",
+        "durationSeconds": 1280,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Off%20on%20a%20Comet\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-033",
+      "sourceId": "URD-AUD-034",
+      "title": "Around the World in Eighty Days",
+      "urduTitle": "",
+      "author": "Jules Verne",
+      "reported": {
+        "category": "Adventure",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:33:45",
+        "durationSeconds": 2025,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Around%20the%20World%20in%20Eighty%20Days\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-034",
+      "sourceId": "URD-AUD-035",
+      "title": "The Mysterious Island",
+      "urduTitle": "",
+      "author": "Jules Verne",
+      "reported": {
+        "category": "Adventure",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:36:07",
+        "durationSeconds": 2167,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Mysterious%20Island\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-035",
+      "sourceId": "URD-AUD-036",
+      "title": "Twenty Thousand Leagues Under the Sea",
+      "urduTitle": "",
+      "author": "Jules Verne",
+      "reported": {
+        "category": "Adventure / science fiction",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:29:48",
+        "durationSeconds": 1788,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Twenty%20Thousand%20Leagues%20Under%20the%20Sea\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-036",
+      "sourceId": "URD-AUD-037",
+      "title": "The Underground City",
+      "urduTitle": "",
+      "author": "Jules Verne",
+      "reported": {
+        "category": "Adventure",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:31:06",
+        "durationSeconds": 1866,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Underground%20City\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-037",
+      "sourceId": "URD-AUD-038",
+      "title": "Pride and Prejudice",
+      "urduTitle": "",
+      "author": "Jane Austen",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:23:36",
+        "durationSeconds": 1416,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Pride%20and%20Prejudice\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-038",
+      "sourceId": "URD-AUD-039",
+      "title": "The Swiss Family Robinson",
+      "urduTitle": "",
+      "author": "Johann David Wyss",
+      "reported": {
+        "category": "Adventure",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:15:28",
+        "durationSeconds": 928,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Swiss%20Family%20Robinson\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-039",
+      "sourceId": "URD-AUD-040",
+      "title": "Tess of the d'Urbervilles",
+      "urduTitle": "",
+      "author": "Thomas Hardy",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "01:18:01",
+        "durationSeconds": 4681,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Tess%20of%20the%20d%27Urbervilles\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-040",
+      "sourceId": "URD-AUD-041",
+      "title": "Animal Farm",
+      "urduTitle": "",
+      "author": "George Orwell",
+      "reported": {
+        "category": "Political satire",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "01:12:32",
+        "durationSeconds": 4352,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Animal%20Farm\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-041",
+      "sourceId": "URD-AUD-042",
+      "title": "A Passage to India",
+      "urduTitle": "",
+      "author": "E. M. Forster",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:58:38",
+        "durationSeconds": 3518,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"A%20Passage%20to%20India\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-042",
+      "sourceId": "URD-AUD-043",
+      "title": "Dr Dolittle",
+      "urduTitle": "",
+      "author": "Hugh Lofting",
+      "reported": {
+        "category": "Children's story",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:45:06",
+        "durationSeconds": 2706,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Children's stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Dr%20Dolittle\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-043",
+      "sourceId": "URD-AUD-044",
+      "title": "A Tale of Two Cities",
+      "urduTitle": "",
+      "author": "Charles Dickens",
+      "reported": {
+        "category": "Historical novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:35:58",
+        "durationSeconds": 2158,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"A%20Tale%20of%20Two%20Cities\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-044",
+      "sourceId": "URD-AUD-045",
+      "title": "Adam Bede",
+      "urduTitle": "",
+      "author": "George Eliot",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:35:29",
+        "durationSeconds": 2129,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Adam%20Bede\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-045",
+      "sourceId": "URD-AUD-046",
+      "title": "The Age of Innocence",
+      "urduTitle": "",
+      "author": "Edith Wharton",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:22:08",
+        "durationSeconds": 1328,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Age%20of%20Innocence\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-046",
+      "sourceId": "URD-AUD-047",
+      "title": "Anna Karenina",
+      "urduTitle": "",
+      "author": "Leo Tolstoy",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "01:20:37",
+        "durationSeconds": 4837,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Anna%20Karenina\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-047",
+      "sourceId": "URD-AUD-048",
+      "title": "Arms and the Man",
+      "urduTitle": "",
+      "author": "George Bernard Shaw",
+      "reported": {
+        "category": "Comedy / drama",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:25:28",
+        "durationSeconds": 1528,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Arms%20and%20the%20Man\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-048",
+      "sourceId": "URD-AUD-049",
+      "title": "Candida",
+      "urduTitle": "",
+      "author": "George Bernard Shaw",
+      "reported": {
+        "category": "Comedy / drama",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:57:35",
+        "durationSeconds": 3455,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Candida\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-049",
+      "sourceId": "URD-AUD-050",
+      "title": "Candide",
+      "urduTitle": "",
+      "author": "Voltaire",
+      "reported": {
+        "category": "Satire",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:42:55",
+        "durationSeconds": 2575,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Candide\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-050",
+      "sourceId": "URD-AUD-051",
+      "title": "A Christmas Carol",
+      "urduTitle": "",
+      "author": "Charles Dickens",
+      "reported": {
+        "category": "Ghost story / classic",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:41:20",
+        "durationSeconds": 2480,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"A%20Christmas%20Carol\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-051",
+      "sourceId": "URD-AUD-052",
+      "title": "Great Expectations",
+      "urduTitle": "",
+      "author": "Charles Dickens",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "01:14:27",
+        "durationSeconds": 4467,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Great%20Expectations\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-052",
+      "sourceId": "URD-AUD-053",
+      "title": "Oliver Twist",
+      "urduTitle": "",
+      "author": "Charles Dickens",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:38:26",
+        "durationSeconds": 2306,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Oliver%20Twist\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-053",
+      "sourceId": "URD-AUD-054",
+      "title": "The Decameron",
+      "urduTitle": "",
+      "author": "Giovanni Boccaccio",
+      "reported": {
+        "category": "Short stories",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:15:36",
+        "durationSeconds": 936,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Decameron\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-054",
+      "sourceId": "URD-AUD-055",
+      "title": "Discourse on the Arts and Sciences",
+      "urduTitle": "",
+      "author": "Jean-Jacques Rousseau",
+      "reported": {
+        "category": "Philosophy",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:39:39",
+        "durationSeconds": 2379,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Discourse%20on%20the%20Arts%20and%20Sciences\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-055",
+      "sourceId": "URD-AUD-056",
+      "title": "Ethan Frome",
+      "urduTitle": "",
+      "author": "Edith Wharton",
+      "reported": {
+        "category": "Tragedy / classic",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:25:53",
+        "durationSeconds": 1553,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Ethan%20Frome\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-056",
+      "sourceId": "URD-AUD-057",
+      "title": "Fahrenheit 451",
+      "urduTitle": "",
+      "author": "Ray Bradbury",
+      "reported": {
+        "category": "Dystopian science fiction",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:10:35",
+        "durationSeconds": 635,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Fahrenheit%20451\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-057",
+      "sourceId": "URD-AUD-058",
+      "title": "Fathers and Sons",
+      "urduTitle": "",
+      "author": "Ivan Turgenev",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:23:54",
+        "durationSeconds": 1434,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Fathers%20and%20Sons\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-058",
+      "sourceId": "URD-AUD-059",
+      "title": "Five Children and It",
+      "urduTitle": "",
+      "author": "E. Nesbit",
+      "reported": {
+        "category": "Fantasy / children's story",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:15:11",
+        "durationSeconds": 911,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Children's stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Five%20Children%20and%20It\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-059",
+      "sourceId": "URD-AUD-060",
+      "title": "The French Revolution",
+      "urduTitle": "",
+      "author": "Various / unattributed",
+      "reported": {
+        "category": "History",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:22:02",
+        "durationSeconds": 1322,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20French%20Revolution\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-060",
+      "sourceId": "URD-AUD-061",
+      "title": "Daniel Deronda",
+      "urduTitle": "",
+      "author": "George Eliot",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:25:19",
+        "durationSeconds": 1519,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Daniel%20Deronda\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-061",
+      "sourceId": "URD-AUD-062",
+      "title": "Silas Marner",
+      "urduTitle": "",
+      "author": "George Eliot",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:40:51",
+        "durationSeconds": 2451,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Silas%20Marner\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-062",
+      "sourceId": "URD-AUD-063",
+      "title": "The Epic of Gilgamesh",
+      "urduTitle": "",
+      "author": "Anonymous",
+      "reported": {
+        "category": "Epic / mythology",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:22:04",
+        "durationSeconds": 1324,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Epic%20of%20Gilgamesh\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-063",
+      "sourceId": "URD-AUD-064",
+      "title": "The Inspector General",
+      "urduTitle": "",
+      "author": "Nikolai Gogol",
+      "reported": {
+        "category": "Comedy / satire",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:49:37",
+        "durationSeconds": 2977,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Inspector%20General\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-064",
+      "sourceId": "URD-AUD-065",
+      "title": "The Hackers Story",
+      "urduTitle": "",
+      "author": "Unknown / unattributed",
+      "reported": {
+        "category": "Fiction / technology",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:30:04",
+        "durationSeconds": 1804,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Hackers%20Story\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-065",
+      "sourceId": "URD-AUD-066",
+      "title": "Washington Square",
+      "urduTitle": "",
+      "author": "Henry James",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:30:46",
+        "durationSeconds": 1846,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Washington%20Square\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-066",
+      "sourceId": "URD-AUD-067",
+      "title": "The Heptameron",
+      "urduTitle": "",
+      "author": "Marguerite de Navarre",
+      "reported": {
+        "category": "Short stories",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:21:20",
+        "durationSeconds": 1280,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Heptameron\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-067",
+      "sourceId": "URD-AUD-068",
+      "title": "Hermit Lucas",
+      "urduTitle": "",
+      "author": "Unknown / unattributed",
+      "reported": {
+        "category": "Story",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:05:51",
+        "durationSeconds": 351,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Hermit%20Lucas\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-068",
+      "sourceId": "URD-AUD-069",
+      "title": "2012: End of Time",
+      "urduTitle": "",
+      "author": "Unknown / unattributed",
+      "reported": {
+        "category": "Speculative / suspense",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:23:11",
+        "durationSeconds": 1391,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"2012:%20End%20of%20Time\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-069",
+      "sourceId": "URD-AUD-070",
+      "title": "The Iliad",
+      "urduTitle": "",
+      "author": "Homer",
+      "reported": {
+        "category": "Epic",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "01:04:30",
+        "durationSeconds": 3870,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Iliad\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-070",
+      "sourceId": "URD-AUD-071",
+      "title": "The Illustrious Client",
+      "urduTitle": "",
+      "author": "Arthur Conan Doyle",
+      "reported": {
+        "category": "Detective mystery",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:14:17",
+        "durationSeconds": 857,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Mystery / detective",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Illustrious%20Client\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-071",
+      "sourceId": "URD-AUD-072",
+      "title": "The Importance of Being Earnest",
+      "urduTitle": "",
+      "author": "Oscar Wilde",
+      "reported": {
+        "category": "Comedy",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "01:07:54",
+        "durationSeconds": 4074,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Importance%20of%20Being%20Earnest\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-072",
+      "sourceId": "URD-AUD-073",
+      "title": "Gulliver's Travels",
+      "urduTitle": "",
+      "author": "Jonathan Swift",
+      "reported": {
+        "category": "Satire / adventure",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:28:56",
+        "durationSeconds": 1736,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Gulliver%27s%20Travels\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-073",
+      "sourceId": "URD-AUD-074",
+      "title": "The Life of a Bee Slave",
+      "urduTitle": "",
+      "author": "Unknown / unattributed",
+      "reported": {
+        "category": "Story",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:39:11",
+        "durationSeconds": 2351,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Life%20of%20a%20Bee%20Slave\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-074",
+      "sourceId": "URD-AUD-075",
+      "title": "L'Inondation",
+      "urduTitle": "",
+      "author": "Émile Zola",
+      "reported": {
+        "category": "Short story",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:16:25",
+        "durationSeconds": 985,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"L%27Inondation\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-075",
+      "sourceId": "URD-AUD-076",
+      "title": "Lord of the Flies",
+      "urduTitle": "",
+      "author": "William Golding",
+      "reported": {
+        "category": "Psychological novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:25:39",
+        "durationSeconds": 1539,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Lord%20of%20the%20Flies\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-076",
+      "sourceId": "URD-AUD-077",
+      "title": "The Prince and the Pauper",
+      "urduTitle": "",
+      "author": "Mark Twain",
+      "reported": {
+        "category": "Adventure / classic",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:27:31",
+        "durationSeconds": 1651,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Prince%20and%20the%20Pauper\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-077",
+      "sourceId": "URD-AUD-078",
+      "title": "Doctor Faustus",
+      "urduTitle": "",
+      "author": "Christopher Marlowe",
+      "reported": {
+        "category": "Tragedy / supernatural",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:19:03",
+        "durationSeconds": 1143,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Horror / supernatural",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Doctor%20Faustus\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-078",
+      "sourceId": "URD-AUD-079",
+      "title": "The Mayor of Casterbridge",
+      "urduTitle": "",
+      "author": "Thomas Hardy",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "01:14:46",
+        "durationSeconds": 4486,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Mayor%20of%20Casterbridge\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-079",
+      "sourceId": "URD-AUD-080",
+      "title": "Medea",
+      "urduTitle": "",
+      "author": "Euripides",
+      "reported": {
+        "category": "Tragedy / mythology",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:16:24",
+        "durationSeconds": 984,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Medea\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-080",
+      "sourceId": "URD-AUD-081",
+      "title": "Paradise Lost",
+      "urduTitle": "",
+      "author": "John Milton",
+      "reported": {
+        "category": "Epic / mythology",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:45:46",
+        "durationSeconds": 2746,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Paradise%20Lost\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-081",
+      "sourceId": "URD-AUD-082",
+      "title": "Mirat-ul-Uroos",
+      "urduTitle": "",
+      "author": "Deputy Nazir Ahmad",
+      "reported": {
+        "category": "Urdu classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "03:32:54",
+        "durationSeconds": 12774,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Mirat-ul-Uroos\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-082",
+      "sourceId": "URD-AUD-083",
+      "title": "Moonfleet",
+      "urduTitle": "",
+      "author": "J. Meade Falkner",
+      "reported": {
+        "category": "Adventure / mystery",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:22:33",
+        "durationSeconds": 1353,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Moonfleet\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-083",
+      "sourceId": "URD-AUD-084",
+      "title": "Mutiny on the Bounty",
+      "urduTitle": "",
+      "author": "Charles Nordhoff and James Norman Hall",
+      "reported": {
+        "category": "Historical adventure",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:24:27",
+        "durationSeconds": 1467,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Mutiny%20on%20the%20Bounty\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-084",
+      "sourceId": "URD-AUD-085",
+      "title": "Salome",
+      "urduTitle": "",
+      "author": "Oscar Wilde",
+      "reported": {
+        "category": "Tragedy",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:20:55",
+        "durationSeconds": 1255,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Salome\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-085",
+      "sourceId": "URD-AUD-086",
+      "title": "The Pilgrim's Progress",
+      "urduTitle": "",
+      "author": "John Bunyan",
+      "reported": {
+        "category": "Allegory",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:35:46",
+        "durationSeconds": 2146,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Pilgrim%27s%20Progress\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-086",
+      "sourceId": "URD-AUD-087",
+      "title": "Pinky Jadoo Ke Des Men",
+      "urduTitle": "",
+      "author": "Unknown / unattributed",
+      "reported": {
+        "category": "Fantasy / children's story",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:21:24",
+        "durationSeconds": 1284,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Children's stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Pinky%20Jadoo%20Ke%20Des%20Men\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-087",
+      "sourceId": "URD-AUD-088",
+      "title": "The Red and the Black",
+      "urduTitle": "",
+      "author": "Stendhal",
+      "reported": {
+        "category": "Classic novel",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:36:38",
+        "durationSeconds": 2198,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Red%20and%20the%20Black\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-088",
+      "sourceId": "URD-AUD-089",
+      "title": "The Scarlet Letter",
+      "urduTitle": "",
+      "author": "Nathaniel Hawthorne",
+      "reported": {
+        "category": "Classic / psychological",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:34:00",
+        "durationSeconds": 2040,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Scarlet%20Letter\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-089",
+      "sourceId": "URD-AUD-090",
+      "title": "The Secret Garden",
+      "urduTitle": "",
+      "author": "Frances Hodgson Burnett",
+      "reported": {
+        "category": "Children's story",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:32:20",
+        "durationSeconds": 1940,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Children's stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Secret%20Garden\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-090",
+      "sourceId": "URD-AUD-091",
+      "title": "She",
+      "urduTitle": "",
+      "author": "H. Rider Haggard",
+      "reported": {
+        "category": "Adventure / fantasy",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:36:18",
+        "durationSeconds": 2178,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Adventure / fantasy",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"She\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-091",
+      "sourceId": "URD-AUD-092",
+      "title": "A Scandal in Bohemia",
+      "urduTitle": "",
+      "author": "Arthur Conan Doyle",
+      "reported": {
+        "category": "Detective mystery",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:21:26",
+        "durationSeconds": 1286,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Mystery / detective",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"A%20Scandal%20in%20Bohemia\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-092",
+      "sourceId": "URD-AUD-093",
+      "title": "The Six Napoleons",
+      "urduTitle": "",
+      "author": "Arthur Conan Doyle",
+      "reported": {
+        "category": "Detective mystery",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:13:20",
+        "durationSeconds": 800,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Mystery / detective",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Six%20Napoleons\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-093",
+      "sourceId": "URD-AUD-094",
+      "title": "The Speckled Band",
+      "urduTitle": "",
+      "author": "Arthur Conan Doyle",
+      "reported": {
+        "category": "Detective mystery",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:33:22",
+        "durationSeconds": 2002,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Mystery / detective",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Speckled%20Band\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-094",
+      "sourceId": "URD-AUD-095",
+      "title": "The Sign of Four",
+      "urduTitle": "",
+      "author": "Arthur Conan Doyle",
+      "reported": {
+        "category": "Detective mystery",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:38:03",
+        "durationSeconds": 2283,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Mystery / detective",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"The%20Sign%20of%20Four\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-095",
+      "sourceId": "URD-AUD-096",
+      "title": "Snow White",
+      "urduTitle": "",
+      "author": "Brothers Grimm",
+      "reported": {
+        "category": "Fairy tale",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:09:12",
+        "durationSeconds": 552,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Children's stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Snow%20White\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-096",
+      "sourceId": "URD-AUD-097",
+      "title": "Antigone",
+      "urduTitle": "",
+      "author": "Sophocles",
+      "reported": {
+        "category": "Tragedy",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:25:30",
+        "durationSeconds": 1530,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Antigone\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-097",
+      "sourceId": "URD-AUD-098",
+      "title": "Oedipus at Colonus",
+      "urduTitle": "",
+      "author": "Sophocles",
+      "reported": {
+        "category": "Tragedy",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:33:16",
+        "durationSeconds": 1996,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Oedipus%20at%20Colonus\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-098",
+      "sourceId": "URD-AUD-099",
+      "title": "Oedipus the King",
+      "urduTitle": "",
+      "author": "Sophocles",
+      "reported": {
+        "category": "Tragedy",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:43:33",
+        "durationSeconds": 2613,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Classic novels",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Oedipus%20the%20King\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-099",
+      "sourceId": "URD-AUD-100",
+      "title": "Ten Days in a Mad-House",
+      "urduTitle": "",
+      "author": "Nellie Bly",
+      "reported": {
+        "category": "Nonfiction / investigative",
+        "language": "Urdu (reported by source index; verify per item)",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:58:02",
+        "durationSeconds": 3482,
+        "sourceIndexUrl": "https://hindiaudiobooksfree.wordpress.com/category/uncategorized/",
+        "notes": "Candidate lead only. Search result is not proof that an active Internet Archive item or playable Urdu audio file exists."
+      },
+      "category": {
+        "suggested": "Mystery / detective",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title:(\"Ten%20Days%20in%20a%20Mad-House\")%20AND%20mediatype:audio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    },
+    {
+      "id": "URD-AUD-100",
+      "sourceId": "URD-AUD-101",
+      "title": "Stories for Poor Erum",
+      "urduTitle": "غریب ارم کے لیے کہانیاں",
+      "author": "Syed Irfan Ali",
+      "reported": {
+        "category": "Short stories",
+        "language": "Urdu",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:26:55",
+        "durationSeconds": 1615,
+        "sourceIndexUrl": "https://archive.org/details/3ErumMotherSyedirfanali",
+        "notes": "Replacement lead from Internet Archive item 3ErumMotherSyedirfanali: three Urdu short-story MP3s (about 8-10 minutes each), language urd, no explicit reuse licence in item metadata. Lead only; language, duration and rights still need verification."
+      },
+      "category": {
+        "suggested": "Urdu short stories",
+        "source": "heuristic",
+        "confirmed": false
+      },
+      "language": "",
+      "narrator": "",
+      "durationSeconds": null,
+      "archiveItemUrl": "",
+      "directMp3Url": "",
+      "coverUrl": "",
+      "archiveSearchUrl": "https://archive.org/search?query=title%3A%28%22Syed%20Irfan%20Ali%20Stories%20for%20Poor%20Erum%22%29%20AND%20mediatype%3Aaudio",
+      "verification": {
+        "playback": "unverified",
+        "download": "unverified",
+        "rights": {
+          "status": "unknown",
+          "licenseUrl": "",
+          "attribution": "",
+          "source": "",
+          "verifiedAt": ""
+        },
+        "checkedAt": "",
+        "checkedBy": "",
+        "reasons": []
+      },
+      "status": "candidate",
+      "duplicateOf": "",
+      "excludeFromVerification": false,
+      "replacementNeeded": false
+    }
+  ]
+}

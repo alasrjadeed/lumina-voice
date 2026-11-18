@@ -1,0 +1,2665 @@
+{
+  "version": 1,
+  "sourcePolicy": "Internet Archive only",
+  "checkedAt": "2026-11-18T04:32:12.442Z",
+  "stage": "audio",
+  "recordCount": 100,
+  "results": [
+    {
+      "id": "URD-AUD-001",
+      "title": "Dracula",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:08.081Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 6241,
+      "identifier": "gb-1600-2051-ID4BDVV",
+      "archiveItemUrl": "https://archive.org/details/gb-1600-2051-ID4BDVV",
+      "audioFile": "2017-08-04-8-4_Play_8-4-2017_THIS_DRACULA_HUGS.mp3",
+      "directMp3Url": "https://archive.org/download/gb-1600-2051-ID4BDVV/2017-08-04-8-4_Play_8-4-2017_THIS_DRACULA_HUGS.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Giant Bomb",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:08.081Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-002",
+      "title": "The Turn of the Screw",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:14.022Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 4810,
+      "identifier": "2cxwklmfvblebsn3nu10eqmmnx2sbckrqocs7b5q",
+      "archiveItemUrl": "https://archive.org/details/2cxwklmfvblebsn3nu10eqmmnx2sbckrqocs7b5q",
+      "audioFile": "ahhduld44swevx5-911308534-deathpanel-the-turn-of-the-screw-101520.mp3",
+      "directMp3Url": "https://archive.org/download/2cxwklmfvblebsn3nu10eqmmnx2sbckrqocs7b5q/ahhduld44swevx5-911308534-deathpanel-the-turn-of-the-screw-101520.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Death Panel",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:14.022Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-003",
+      "title": "The Ash Tree",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:19.295Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 6270,
+      "identifier": "391-the-ash-tree",
+      "archiveItemUrl": "https://archive.org/details/391-the-ash-tree",
+      "audioFile": "#391 The Ash Tree.mp3",
+      "directMp3Url": "https://archive.org/download/391-the-ash-tree/%23391%20The%20Ash%20Tree.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:19.295Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-004",
+      "title": "The Black Cat",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:21.831Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null,
+      "identifier": "01track01_201907",
+      "archiveItemUrl": "https://archive.org/details/01track01_201907",
+      "audioFile": "01 Track 01.mp3",
+      "directMp3Url": "https://archive.org/download/01track01_201907/01%20Track%2001.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:21.831Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-005",
+      "title": "The Canterville Ghost",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:24.096Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 3518,
+      "identifier": "20201102_20201102_2309",
+      "archiveItemUrl": "https://archive.org/details/20201102_20201102_2309",
+      "audioFile": "Кентервильское привидение.mp3",
+      "directMp3Url": "https://archive.org/download/20201102_20201102_2309/%D0%9A%D0%B5%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D0%B8%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:24.096Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-006",
+      "title": "Casting the Runes",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:26.020Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 3541,
+      "identifier": "mp-146",
+      "archiveItemUrl": "https://archive.org/details/mp-146",
+      "audioFile": "MP146.mp3",
+      "directMp3Url": "https://archive.org/download/mp-146/MP146.mp3",
+      "rights": {
+        "status": "licensed",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "attribution": "Rick Kabrich; Kurt Kuersteiner",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:26.020Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-007",
+      "title": "Frankenstein",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:26.938Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 3977,
+      "identifier": "c58cb3d7a02e4fe098adda561680a520",
+      "archiveItemUrl": "https://archive.org/details/c58cb3d7a02e4fe098adda561680a520",
+      "audioFile": "009_traffic.libsyn.comsecureshadowtrapST21Frankenstein.mp3",
+      "directMp3Url": "https://archive.org/download/c58cb3d7a02e4fe098adda561680a520/009_traffic.libsyn.comsecureshadowtrapST21Frankenstein.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "The Shadow Trap",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:26.938Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-008",
+      "title": "Lost Hearts",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:28.897Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1496,
+      "identifier": "tkoihl9hadf3p290hbdxhw6md7e66jlkodfqbkqc",
+      "archiveItemUrl": "https://archive.org/details/tkoihl9hadf3p290hbdxhw6md7e66jlkodfqbkqc",
+      "audioFile": "kbipimkkmoo7omy-ghohor049_losthearts_james_sb_64kb.mp3",
+      "directMp3Url": "https://archive.org/download/tkoihl9hadf3p290hbdxhw6md7e66jlkodfqbkqc/kbipimkkmoo7omy-ghohor049_losthearts_james_sb_64kb.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Short Ghost and Horror Collection 049 by Various",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:28.897Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-009",
+      "title": "The House on the Borderland",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:31.068Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1703,
+      "identifier": "the-house-on-the-borderland",
+      "archiveItemUrl": "https://archive.org/details/the-house-on-the-borderland",
+      "audioFile": "1 The Manuscript - 1 of 4.mp3",
+      "directMp3Url": "https://archive.org/download/the-house-on-the-borderland/1%20The%20Manuscript%20-%201%20of%204.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:31.068Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-010",
+      "title": "The Fall of the House of Usher",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:33.537Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 2333,
+      "identifier": "hi23ksp9l7zzrnrbbizt9ajgo1ib21b4k5rfxecu",
+      "archiveItemUrl": "https://archive.org/details/hi23ksp9l7zzrnrbbizt9ajgo1ib21b4k5rfxecu",
+      "audioFile": "ekxzvbhpgacazp4-BDA8447557022.mp3",
+      "directMp3Url": "https://archive.org/download/hi23ksp9l7zzrnrbbizt9ajgo1ib21b4k5rfxecu/ekxzvbhpgacazp4-BDA8447557022.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Scare You To Sleep",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:33.537Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-011",
+      "title": "The Gold-Bug",
+      "category": "Mystery / detective",
+      "checkedAt": "2026-11-17T15:11:35.970Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1580,
+      "identifier": "E.a.poe-TheGoldBug",
+      "archiveItemUrl": "https://archive.org/details/E.a.poe-TheGoldBug",
+      "audioFile": "02-Track2-1.mp3",
+      "directMp3Url": "https://archive.org/download/E.a.poe-TheGoldBug/02-Track2-1.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:35.970Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-012",
+      "title": "The Facts in the Case of M. Valdemar",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:38.494Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1431,
+      "identifier": "TheFactsInTheCaseOfMValdemar",
+      "archiveItemUrl": "https://archive.org/details/TheFactsInTheCaseOfMValdemar",
+      "audioFile": "The Facts in the Case of M Valdemar.mp3",
+      "directMp3Url": "https://archive.org/download/TheFactsInTheCaseOfMValdemar/The%20Facts%20in%20the%20Case%20of%20M%20Valdemar.mp3",
+      "rights": {
+        "status": "licensed",
+        "licenseUrl": "http://creativecommons.org/licenses/by-nc-nd/3.0/",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:38.494Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-013",
+      "title": "Whistle and I'll Come to You",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:39.411Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 818,
+      "identifier": "2559fece-3e26-4711-a8a8-d6ed8669e0c3",
+      "archiveItemUrl": "https://archive.org/details/2559fece-3e26-4711-a8a8-d6ed8669e0c3",
+      "audioFile": "cd64bc863272a617194782c943573d979a8b3b658b28489df103d38f00af30aa.mp3",
+      "directMp3Url": "https://archive.org/download/2559fece-3e26-4711-a8a8-d6ed8669e0c3/cd64bc863272a617194782c943573d979a8b3b658b28489df103d38f00af30aa.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:39.411Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-014",
+      "title": "The School Story",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:42.279Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "no-archive-item-with-audio"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null
+    },
+    {
+      "id": "URD-AUD-015",
+      "title": "Room Number 13",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:42.605Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "no-archive-item-with-audio"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null
+    },
+    {
+      "id": "URD-AUD-016",
+      "title": "Bermuda Triangle",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:42.927Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 487,
+      "identifier": "iyrnwyqxs2jwyjrp5btopmov12nsafctmhjecgy6",
+      "archiveItemUrl": "https://archive.org/details/iyrnwyqxs2jwyjrp5btopmov12nsafctmhjecgy6",
+      "audioFile": "fdaajamtwu0aml6-CORU5899412841.mp3",
+      "directMp3Url": "https://archive.org/download/iyrnwyqxs2jwyjrp5btopmov12nsafctmhjecgy6/fdaajamtwu0aml6-CORU5899412841.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Shaye Ganam",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:42.927Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-017",
+      "title": "The War of the Worlds",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:45.219Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 3330,
+      "identifier": "Program_Iptal_1.1.11_-_The_War_of_the_Worlds",
+      "archiveItemUrl": "https://archive.org/details/Program_Iptal_1.1.11_-_The_War_of_the_Worlds",
+      "audioFile": "program-iptal-01012011-dunyalar-savasi.mp3",
+      "directMp3Url": "https://archive.org/download/Program_Iptal_1.1.11_-_The_War_of_the_Worlds/program-iptal-01012011-dunyalar-savasi.mp3",
+      "rights": {
+        "status": "licensed",
+        "licenseUrl": "http://creativecommons.org/licenses/by-nc-nd/3.0/",
+        "attribution": "Acik Radyo 94.9",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:45.219Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-018",
+      "title": "The Invisible Man",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:11:48.321Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 5272,
+      "identifier": "dah90gchoaqhndhmtc9hnptbigsismi5djwrxric",
+      "archiveItemUrl": "https://archive.org/details/dah90gchoaqhndhmtc9hnptbigsismi5djwrxric",
+      "audioFile": "usfen3vwqkovdig-MDF_161_mixdown_01.mp3",
+      "directMp3Url": "https://archive.org/download/dah90gchoaqhndhmtc9hnptbigsismi5djwrxric/usfen3vwqkovdig-MDF_161_mixdown_01.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Midnight Double Feature - A Film Podcast",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:48.321Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-019",
+      "title": "Dr Jekyll and Mr Hyde",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:50.816Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 764,
+      "identifier": "DrJekyllAndMrHydePage3",
+      "archiveItemUrl": "https://archive.org/details/DrJekyllAndMrHydePage3",
+      "audioFile": "Dr_Jekyll_and_Mr_Hyde.1932.xx.xx_Episode_21.mp3",
+      "directMp3Url": "https://archive.org/download/DrJekyllAndMrHydePage3/Dr_Jekyll_and_Mr_Hyde.1932.xx.xx_Episode_21.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "http://creativecommons.org/licenses/publicdomain/",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:50.816Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-020",
+      "title": "The Hound of the Baskervilles",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:53.264Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 8333,
+      "identifier": "the-hound-of-the-baskervilles_202504",
+      "archiveItemUrl": "https://archive.org/details/the-hound-of-the-baskervilles_202504",
+      "audioFile": "The Hound of the Baskervilles.mp3",
+      "directMp3Url": "https://archive.org/download/the-hound-of-the-baskervilles_202504/The%20Hound%20of%20the%20Baskervilles.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "Murray Burns",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:53.264Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-021",
+      "title": "The Lost Stradivarius",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:56.254Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 16376,
+      "identifier": "synapseml_gutenberg_the_lost_stradivarius_by_john_meade_falk",
+      "archiveItemUrl": "https://archive.org/details/synapseml_gutenberg_the_lost_stradivarius_by_john_meade_falk",
+      "audioFile": "the_lost_stradivarius_by_john_meade_falk.mp3",
+      "directMp3Url": "https://archive.org/download/synapseml_gutenberg_the_lost_stradivarius_by_john_meade_falk/the_lost_stradivarius_by_john_meade_falk.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Falkner, John Meade, 1858-1932",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:56.254Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-022",
+      "title": "The Woman in White",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:57.856Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1125,
+      "identifier": "EileenPDP_31-TheWomaninWhite-Part8",
+      "archiveItemUrl": "https://archive.org/details/EileenPDP_31-TheWomaninWhite-Part8",
+      "audioFile": "PDP32-WC-TheWomaninWhite-Part9.mp3",
+      "directMp3Url": "https://archive.org/download/EileenPDP_31-TheWomaninWhite-Part8/PDP32-WC-TheWomaninWhite-Part9.mp3",
+      "rights": {
+        "status": "licensed",
+        "licenseUrl": "http://creativecommons.org/licenses/by-nc-nd/2.5/",
+        "attribution": "Eileen",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:57.856Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-023",
+      "title": "Rebecca",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:11:59.974Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 244,
+      "identifier": "soundcloud-613697016",
+      "archiveItemUrl": "https://archive.org/details/soundcloud-613697016",
+      "audioFile": "613697016.mp3",
+      "directMp3Url": "https://archive.org/download/soundcloud-613697016/613697016.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "NewsRadio WINA",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:11:59.974Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-024",
+      "title": "Jamaica Inn",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:12:02.174Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "no-archive-item-with-audio"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null
+    },
+    {
+      "id": "URD-AUD-025",
+      "title": "My Cousin Rachel",
+      "category": "Mystery / detective",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1886,
+      "identifier": "MyCousinRachelInUrduServer555",
+      "archiveItemUrl": "https://archive.org/details/MyCousinRachelInUrduServer555",
+      "audioFile": "My_Cousin_Rachel_server555dotcom_Urdu_128kbps.mp3",
+      "directMp3Url": "https://archive.org/download/MyCousinRachelInUrduServer555/My_Cousin_Rachel_server555dotcom_Urdu_128kbps.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali September 22 Syedirfanali.com",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-026",
+      "title": "The Moonstone",
+      "category": "Mystery / detective",
+      "checkedAt": "2026-11-17T15:12:10.988Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1482,
+      "identifier": "d5yza96s7ai1yycdcuwmsirvwu5qazcgl8xvscpz",
+      "archiveItemUrl": "https://archive.org/details/d5yza96s7ai1yycdcuwmsirvwu5qazcgl8xvscpz",
+      "audioFile": "iazbbqvpmcsis2f-Weird_Circle_4x-xx-xx_ep67_The_Moonstone.mp3",
+      "directMp3Url": "https://archive.org/download/d5yza96s7ai1yycdcuwmsirvwu5qazcgl8xvscpz/iazbbqvpmcsis2f-Weird_Circle_4x-xx-xx_ep67_The_Moonstone.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Weird Circle - Single Episodes : Old Time Radio Researchers Group : Free Download, Borrow, and Streaming : Internet Archive",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:10.988Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-027",
+      "title": "The House of the Seven Gables",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:12:14.596Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 3097,
+      "identifier": "bcv2qhdn8itxzhccwutq9ukg068ziavri4bewo0p",
+      "archiveItemUrl": "https://archive.org/details/bcv2qhdn8itxzhccwutq9ukg068ziavri4bewo0p",
+      "audioFile": "ibjrtk1dla4gcon-312-4645728676684593561-the_house_of_the_seven_gables_002_chapter_i_the_old_pyncheon.1746.mp3",
+      "directMp3Url": "https://archive.org/download/bcv2qhdn8itxzhccwutq9ukg068ziavri4bewo0p/ibjrtk1dla4gcon-312-4645728676684593561-the_house_of_the_seven_gables_002_chapter_i_the_old_pyncheon.1746.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Grade 10 Summer Audiobook Sampler",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:14.596Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-028",
+      "title": "The Picture of Dorian Gray",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:12:17.016Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 2264,
+      "identifier": "dorian_gray_librivox",
+      "archiveItemUrl": "https://archive.org/details/dorian_gray_librivox",
+      "audioFile": "picture_of_dorian_grey_01_wilde.mp3",
+      "directMp3Url": "https://archive.org/download/dorian_gray_librivox/picture_of_dorian_grey_01_wilde.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "http://creativecommons.org/licenses/publicdomain/",
+        "attribution": "Oscar Wilde",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:17.016Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-029",
+      "title": "The Metamorphosis",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:12:19.124Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 292,
+      "identifier": "acidplanet-audio-00307812",
+      "archiveItemUrl": "https://archive.org/details/acidplanet-audio-00307812",
+      "audioFile": "00307812.mp3",
+      "directMp3Url": "https://archive.org/download/acidplanet-audio-00307812/00307812.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "jong",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:19.124Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-030",
+      "title": "Five Weeks in a Balloon",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1630,
+      "identifier": "FiveWeeksBalloonUrdu",
+      "archiveItemUrl": "https://archive.org/details/FiveWeeksBalloonUrdu",
+      "audioFile": "Five_Weeks_In_Balloon_Syed_Irfan_Ali_dotcom_Urdu.mp3",
+      "directMp3Url": "https://archive.org/download/FiveWeeksBalloonUrdu/Five_Weeks_In_Balloon_Syed_Irfan_Ali_dotcom_Urdu.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-031",
+      "title": "Master of the World",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:12:28.626Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1558,
+      "identifier": "The_Public_Domain_Podcast_6__The_Master_of_the_World_by_Jules_Verne_Part_1",
+      "archiveItemUrl": "https://archive.org/details/The_Public_Domain_Podcast_6__The_Master_of_the_World_by_Jules_Verne_Part_1",
+      "audioFile": "PDP6JVMasteroftheWorldPart1.mp3",
+      "directMp3Url": "https://archive.org/download/The_Public_Domain_Podcast_6__The_Master_of_the_World_by_Jules_Verne_Part_1/PDP6JVMasteroftheWorldPart1.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:28.626Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-032",
+      "title": "Off on a Comet",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:12:32.589Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 638,
+      "identifier": "off_on_a_comet_1009_librivox",
+      "archiveItemUrl": "https://archive.org/details/off_on_a_comet_1009_librivox",
+      "audioFile": "offonacomet_01_verne.mp3",
+      "directMp3Url": "https://archive.org/download/off_on_a_comet_1009_librivox/offonacomet_01_verne.mp3",
+      "rights": {
+        "status": "cc-by",
+        "licenseUrl": "http://creativecommons.org/licenses/by/3.0/",
+        "attribution": "Jules Verne",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:32.589Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-033",
+      "title": "Around the World in Eighty Days",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:12:38.339Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 233,
+      "identifier": "around-the-world-in-eighty-days_202107",
+      "archiveItemUrl": "https://archive.org/details/around-the-world-in-eighty-days_202107",
+      "audioFile": "01 No 7 Savile Row, Burlington.mp3",
+      "directMp3Url": "https://archive.org/download/around-the-world-in-eighty-days_202107/01%20No%207%20Savile%20Row%2C%20Burlington.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:38.339Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-034",
+      "title": "The Mysterious Island",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:12:43.002Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 2700,
+      "identifier": "blsifl1ify56n339exsjvaq7gfu699vhvdk9o0jb",
+      "archiveItemUrl": "https://archive.org/details/blsifl1ify56n339exsjvaq7gfu699vhvdk9o0jb",
+      "audioFile": "173pe2apcvwzuqb-stream.mp3blsifl1ify56n339exsjvaq7gfu699vhvdk9o0jb.mp3",
+      "directMp3Url": "https://archive.org/download/blsifl1ify56n339exsjvaq7gfu699vhvdk9o0jb/173pe2apcvwzuqb-stream.mp3blsifl1ify56n339exsjvaq7gfu699vhvdk9o0jb.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "CBS Radio Mystery Theater",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:43.002Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-035",
+      "title": "Twenty Thousand Leagues Under the Sea",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:12:45.378Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1184,
+      "identifier": "twentythousandle20000gut",
+      "archiveItemUrl": "https://archive.org/details/twentythousandle20000gut",
+      "audioFile": "mp3/20000-01.mp3",
+      "directMp3Url": "https://archive.org/download/twentythousandle20000gut/mp3%2F20000-01.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "Jules Verne",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:45.378Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-036",
+      "title": "The Underground City",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:12:48.602Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 725,
+      "identifier": "underground_city_1002_librivox",
+      "archiveItemUrl": "https://archive.org/details/underground_city_1002_librivox",
+      "audioFile": "theundergroundcity_01_verne.mp3",
+      "directMp3Url": "https://archive.org/download/underground_city_1002_librivox/theundergroundcity_01_verne.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "http://creativecommons.org/licenses/publicdomain/",
+        "attribution": "Jules Verne",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:48.602Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-037",
+      "title": "Pride and Prejudice",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:12:51.159Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1769,
+      "identifier": "South_Congregational_Church_of_Barnstable_UCC-Pride_and_Prejudice_9_30_26all",
+      "archiveItemUrl": "https://archive.org/details/South_Congregational_Church_of_Barnstable_UCC-Pride_and_Prejudice_9_30_26all",
+      "audioFile": "Pride_and_Prejudice_9_30_26all.mp3",
+      "directMp3Url": "https://archive.org/download/South_Congregational_Church_of_Barnstable_UCC-Pride_and_Prejudice_9_30_26all/Pride_and_Prejudice_9_30_26all.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "South Congregational Church of Barnstable UCC",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:51.159Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-038",
+      "title": "The Swiss Family Robinson",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:12:54.079Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 86,
+      "identifier": "tvtunes_12072",
+      "archiveItemUrl": "https://archive.org/details/tvtunes_12072",
+      "audioFile": "Adventures of the Swiss Family Robinson - Ending.mp3",
+      "directMp3Url": "https://archive.org/download/tvtunes_12072/Adventures%20of%20the%20Swiss%20Family%20Robinson%20-%20Ending.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:54.079Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-039",
+      "title": "Tess of the d'Urbervilles",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:12:56.573Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 60,
+      "identifier": "tessofthedurberv09433gut",
+      "archiveItemUrl": "https://archive.org/details/tessofthedurberv09433gut",
+      "audioFile": "mp3/9433-000.mp3",
+      "directMp3Url": "https://archive.org/download/tessofthedurberv09433gut/mp3%2F9433-000.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Thomas Hardy",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:12:56.573Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-040",
+      "title": "Animal Farm",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-17T15:13:00.927Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 7080,
+      "identifier": "jctqhdcr4n0wwkvpieaqa6ddj7dolnetamjgwtdh",
+      "archiveItemUrl": "https://archive.org/details/jctqhdcr4n0wwkvpieaqa6ddj7dolnetamjgwtdh",
+      "audioFile": "efbvnyy1pd1aoro-ep374.m4a",
+      "directMp3Url": "https://archive.org/download/jctqhdcr4n0wwkvpieaqa6ddj7dolnetamjgwtdh/efbvnyy1pd1aoro-ep374.m4a",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Unsafe Space",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:13:00.927Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-041",
+      "title": "A Passage to India",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 19009,
+      "identifier": "1-a-passage-to-india-e-m-forster-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/1-a-passage-to-india-e-m-forster-syed-irfan-ali",
+      "audioFile": "1 A Passage to India E M Forster Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/1-a-passage-to-india-e-m-forster-syed-irfan-ali/1%20A%20Passage%20to%20India%20E%20M%20Forster%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-042",
+      "title": "Dr Dolittle",
+      "category": "Children's stories",
+      "checkedAt": "2026-11-17T15:13:23.950Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 302,
+      "identifier": "01-02-23_202108",
+      "archiveItemUrl": "https://archive.org/details/01-02-23_202108",
+      "audioFile": "01_01_01.mp3",
+      "directMp3Url": "https://archive.org/download/01-02-23_202108/01_01_01.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:13:23.950Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-043",
+      "title": "A Tale of Two Cities",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:13:27.773Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 368,
+      "identifier": "1btxcficbemlp1ngvpemaxkley3ovzdiuv1zyesz",
+      "archiveItemUrl": "https://archive.org/details/1btxcficbemlp1ngvpemaxkley3ovzdiuv1zyesz",
+      "audioFile": "ayjqenavbhacsry-315-8887541948587281241-a_tale_of_two_cities_001_book_the_first_recalled_to_lifechapter_1_the_period.108.mp3",
+      "directMp3Url": "https://archive.org/download/1btxcficbemlp1ngvpemaxkley3ovzdiuv1zyesz/ayjqenavbhacsry-315-8887541948587281241-a_tale_of_two_cities_001_book_the_first_recalled_to_lifechapter_1_the_period.108.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Grade 9 Summer Audiobook Sampler",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:13:27.773Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-044",
+      "title": "Adam Bede",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 2129,
+      "identifier": "adam-bede-geroge-eliot-urdu-audio-book-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/adam-bede-geroge-eliot-urdu-audio-book-syed-irfan-ali",
+      "audioFile": "Adam Bede Geroge Eliot Urdu Audio Book Syed Irfan Ali.MP3",
+      "directMp3Url": "https://archive.org/download/adam-bede-geroge-eliot-urdu-audio-book-syed-irfan-ali/Adam%20Bede%20Geroge%20Eliot%20Urdu%20Audio%20Book%20Syed%20Irfan%20Ali.MP3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-045",
+      "title": "The Age of Innocence",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:13:40.618Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1154,
+      "identifier": "age_of_innocence_librivox",
+      "archiveItemUrl": "https://archive.org/details/age_of_innocence_librivox",
+      "audioFile": "theageofinnocence_wharton_chapter01.mp3",
+      "directMp3Url": "https://archive.org/download/age_of_innocence_librivox/theageofinnocence_wharton_chapter01.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "http://creativecommons.org/licenses/publicdomain/",
+        "attribution": "Edith Wharton",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:13:40.618Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-046",
+      "title": "Anna Karenina",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:13:44.062Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 7446,
+      "identifier": "sung-vi-trung-.-thep-p-7-ngua-van-nhung-cuoc-hon-nhan-bat-hanh-va-nguyen-ly-anna-karenina_202310",
+      "archiveItemUrl": "https://archive.org/details/sung-vi-trung-.-thep-p-7-ngua-van-nhung-cuoc-hon-nhan-bat-hanh-va-nguyen-ly-anna-karenina_202310",
+      "audioFile": "Súng Vi Trùng . Thép (P6) - Táo hay người Anh-điêng.mp3",
+      "directMp3Url": "https://archive.org/download/sung-vi-trung-.-thep-p-7-ngua-van-nhung-cuoc-hon-nhan-bat-hanh-va-nguyen-ly-anna-karenina_202310/S%C3%BAng%20Vi%20Tr%C3%B9ng%20.%20Th%C3%A9p%20(P6)%20-%20T%C3%A1o%20hay%20ng%C6%B0%E1%BB%9Di%20Anh-%C4%91i%C3%AAng.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:13:44.062Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-047",
+      "title": "Arms and the Man",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1528,
+      "identifier": "arms-and-the-man-by-g.-b.-shaw-urdu-audio-book-syed-irfan-ali_202609",
+      "archiveItemUrl": "https://archive.org/details/arms-and-the-man-by-g.-b.-shaw-urdu-audio-book-syed-irfan-ali_202609",
+      "audioFile": "54_Arms and the Man by G. B. Shaw Urdu Audio Book Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/arms-and-the-man-by-g.-b.-shaw-urdu-audio-book-syed-irfan-ali_202609/54_Arms%20and%20the%20Man%20by%20G.%20B.%20Shaw%20Urdu%20Audio%20Book%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-048",
+      "title": "Candida",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-17T15:13:52.815Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1071,
+      "identifier": "la-decision-de-candida",
+      "archiveItemUrl": "https://archive.org/details/la-decision-de-candida",
+      "audioFile": "La decision de candida.mp3",
+      "directMp3Url": "https://archive.org/download/la-decision-de-candida/La%20decision%20de%20candida.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:13:52.815Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-049",
+      "title": "Candide",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-17T15:13:55.972Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 111,
+      "identifier": "CandideOhHappyWeobc",
+      "archiveItemUrl": "https://archive.org/details/CandideOhHappyWeobc",
+      "audioFile": "03Bernstein_Candide-OhHappyWe.mp3",
+      "directMp3Url": "https://archive.org/download/CandideOhHappyWeobc/03Bernstein_Candide-OhHappyWe.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "D",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:13:55.972Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-050",
+      "title": "A Christmas Carol",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-17T15:13:58.141Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 3457,
+      "identifier": "StoryEuphoria10AChristmasCarolStave3",
+      "archiveItemUrl": "https://archive.org/details/StoryEuphoria10AChristmasCarolStave3",
+      "audioFile": "StoryEuphoria010.mp3",
+      "directMp3Url": "https://archive.org/download/StoryEuphoria10AChristmasCarolStave3/StoryEuphoria010.mp3",
+      "rights": {
+        "status": "licensed",
+        "licenseUrl": "http://creativecommons.org/licenses/by-nc/3.0/",
+        "attribution": "Amanda Haldy",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:13:58.141Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-051",
+      "title": "Great Expectations",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:14:00.083Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1658,
+      "identifier": "GreatExpectationsPart3",
+      "archiveItemUrl": "https://archive.org/details/GreatExpectationsPart3",
+      "audioFile": "great-expectations-part-3.mp3",
+      "directMp3Url": "https://archive.org/download/GreatExpectationsPart3/great-expectations-part-3.mp3",
+      "rights": {
+        "status": "licensed",
+        "licenseUrl": "http://creativecommons.org/licenses/by-nc-nd/3.0/",
+        "attribution": "519 Church",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:14:00.083Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-052",
+      "title": "Oliver Twist",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:14:02.228Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 3491,
+      "identifier": "145bb899-a921-4b74-9a35-8f486c66fad6",
+      "archiveItemUrl": "https://archive.org/details/145bb899-a921-4b74-9a35-8f486c66fad6",
+      "audioFile": "2ed0d2a4f94c300c1672c6b7ecb97b888bdc8ece35d80e630bcd07e3e158fa84.mp3",
+      "directMp3Url": "https://archive.org/download/145bb899-a921-4b74-9a35-8f486c66fad6/2ed0d2a4f94c300c1672c6b7ecb97b888bdc8ece35d80e630bcd07e3e158fa84.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:14:02.228Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-053",
+      "title": "The Decameron",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-17T15:14:04.574Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1747,
+      "identifier": "afac8af6-dfeb-4914-ac48-221034a8c2ef",
+      "archiveItemUrl": "https://archive.org/details/afac8af6-dfeb-4914-ac48-221034a8c2ef",
+      "audioFile": "fe40509f62c31e3b6bb5adbf0bf05d9ba38261993cc2f4cfd586634b93e027e1.mp3",
+      "directMp3Url": "https://archive.org/download/afac8af6-dfeb-4914-ac48-221034a8c2ef/fe40509f62c31e3b6bb5adbf0bf05d9ba38261993cc2f4cfd586634b93e027e1.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:14:04.574Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-054",
+      "title": "Discourse on the Arts and Sciences",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:14:06.945Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "no-archive-item-with-audio"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null
+    },
+    {
+      "id": "URD-AUD-055",
+      "title": "Ethan Frome",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1551,
+      "identifier": "ethan-frome-edith-wharton-urdu-audio-book-syed-irfan-ali_202609",
+      "archiveItemUrl": "https://archive.org/details/ethan-frome-edith-wharton-urdu-audio-book-syed-irfan-ali_202609",
+      "audioFile": "Ethan Frome Edith Wharton Urdu Audio Book Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/ethan-frome-edith-wharton-urdu-audio-book-syed-irfan-ali_202609/Ethan%20Frome%20Edith%20Wharton%20Urdu%20Audio%20Book%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-056",
+      "title": "Fahrenheit 451",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:14:14.119Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 3153,
+      "identifier": "e2wdgoktemhb6l57meag4dhee19nrhl0lx0damhy",
+      "archiveItemUrl": "https://archive.org/details/e2wdgoktemhb6l57meag4dhee19nrhl0lx0damhy",
+      "audioFile": "bcwsgdmxqfq1aqk-https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fproduction%2F2020-6-23%2F92409622-48000-2-c8aebbfa4f8f1.mp3",
+      "directMp3Url": "https://archive.org/download/e2wdgoktemhb6l57meag4dhee19nrhl0lx0damhy/bcwsgdmxqfq1aqk-https%253A%252F%252Fd3ctxlq1ktw2nl.cloudfront.net%252Fproduction%252F2020-6-23%252F92409622-48000-2-c8aebbfa4f8f1.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Car Chit Chats",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:14:14.119Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-057",
+      "title": "Fathers and Sons",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1434,
+      "identifier": "FathersAndSonsIvanTurgenevUrduServer555",
+      "archiveItemUrl": "https://archive.org/details/FathersAndSonsIvanTurgenevUrduServer555",
+      "audioFile": "Fathers_and_sons_Turgenev_server555_128kbps.mp3",
+      "directMp3Url": "https://archive.org/download/FathersAndSonsIvanTurgenevUrduServer555/Fathers_and_sons_Turgenev_server555_128kbps.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-058",
+      "title": "Five Children and It",
+      "category": "Children's stories",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 909,
+      "identifier": "five-children-and-it-by-e.-nesbit-urdu-audio-book-syed-irfan-ali_202609",
+      "archiveItemUrl": "https://archive.org/details/five-children-and-it-by-e.-nesbit-urdu-audio-book-syed-irfan-ali_202609",
+      "audioFile": "Five Children and It by E. Nesbit, Urdu Audio Book Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/five-children-and-it-by-e.-nesbit-urdu-audio-book-syed-irfan-ali_202609/Five%20Children%20and%20It%20by%20E.%20Nesbit%2C%20Urdu%20Audio%20Book%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-059",
+      "title": "The French Revolution",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1322,
+      "identifier": "51-french-revolution-urdu-audio-book-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/51-french-revolution-urdu-audio-book-syed-irfan-ali",
+      "audioFile": "51_French Revolution Urdu Audio Book Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/51-french-revolution-urdu-audio-book-syed-irfan-ali/51_French%20Revolution%20Urdu%20Audio%20Book%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-060",
+      "title": "Daniel Deronda",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:14:41.743Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1182,
+      "identifier": "daniel_deronda_bm_librivox",
+      "archiveItemUrl": "https://archive.org/details/daniel_deronda_bm_librivox",
+      "audioFile": "deronda_01_eliot.mp3",
+      "directMp3Url": "https://archive.org/download/daniel_deronda_bm_librivox/deronda_01_eliot.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "http://creativecommons.org/licenses/publicdomain/",
+        "attribution": "George Eliot",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:14:41.743Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-061",
+      "title": "Silas Marner",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:14:44.854Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1459,
+      "identifier": "txhfpyll11xrjinkkij6untnrffydwdtjmonzdam",
+      "archiveItemUrl": "https://archive.org/details/txhfpyll11xrjinkkij6untnrffydwdtjmonzdam",
+      "audioFile": "jqmxeqnvz9inkgv-301-736318089250850496-silas_marner_001_part_1_chapter_1.4233.mp3",
+      "directMp3Url": "https://archive.org/download/txhfpyll11xrjinkkij6untnrffydwdtjmonzdam/jqmxeqnvz9inkgv-301-736318089250850496-silas_marner_001_part_1_chapter_1.4233.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Grade 12 Summer Audiobook Sampler",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:14:44.854Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-062",
+      "title": "The Epic of Gilgamesh",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:14:46.831Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 2844,
+      "identifier": "xrkibhlpcrz2zdlu6y54efg0dzny6muscuylat9b",
+      "archiveItemUrl": "https://archive.org/details/xrkibhlpcrz2zdlu6y54efg0dzny6muscuylat9b",
+      "audioFile": "The_Epic_of_Gilgamesh.mp3",
+      "directMp3Url": "https://archive.org/download/xrkibhlpcrz2zdlu6y54efg0dzny6muscuylat9b/The_Epic_of_Gilgamesh.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Queer as Fact",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:14:46.831Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-063",
+      "title": "The Inspector General",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-17T15:14:49.053Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null,
+      "identifier": "inspectorgeneral_1605_librivox",
+      "archiveItemUrl": "https://archive.org/details/inspectorgeneral_1605_librivox",
+      "audioFile": "inspectorgeneral_0a_gogol.mp3",
+      "directMp3Url": "https://archive.org/download/inspectorgeneral_1605_librivox/inspectorgeneral_0a_gogol.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "http://creativecommons.org/publicdomain/mark/1.0/",
+        "attribution": "Nikolai Vasilievich Gogol",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:14:49.053Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-064",
+      "title": "The Hackers Story",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:14:51.152Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "no-archive-item-with-audio"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null
+    },
+    {
+      "id": "URD-AUD-065",
+      "title": "Washington Square",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:14:51.488Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 191,
+      "identifier": "loc-jukebox-817341-rose-of-washington-square",
+      "archiveItemUrl": "https://archive.org/details/loc-jukebox-817341-rose-of-washington-square",
+      "audioFile": "jukebox-817341_rose-of-washington-square.mp3",
+      "directMp3Url": "https://archive.org/download/loc-jukebox-817341-rose-of-washington-square/jukebox-817341_rose-of-washington-square.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "attribution": "pinkard, maceo ; hanley, james f. ; kentucky serenaders",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:14:51.488Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-066",
+      "title": "The Heptameron",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-17T15:14:54.166Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null,
+      "identifier": "heptameron_3_1501_librivox",
+      "archiveItemUrl": "https://archive.org/details/heptameron_3_1501_librivox",
+      "audioFile": "heptameron3_01_margaretofnavarre.mp3",
+      "directMp3Url": "https://archive.org/download/heptameron_3_1501_librivox/heptameron3_01_margaretofnavarre.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "http://creativecommons.org/publicdomain/mark/1.0/",
+        "attribution": "Marguerite of Navarre",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:14:54.166Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-067",
+      "title": "Hermit Lucas",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 351,
+      "identifier": "56-hermit-lucas-urdu-audio-book-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/56-hermit-lucas-urdu-audio-book-syed-irfan-ali",
+      "audioFile": "56_hermit_lucas Urdu Audio Book Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/56-hermit-lucas-urdu-audio-book-syed-irfan-ali/56_hermit_lucas%20Urdu%20Audio%20Book%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-068",
+      "title": "2012: End of Time",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1391,
+      "identifier": "57-history-of-year-2012-end-of-time-urdu-audio-book-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/57-history-of-year-2012-end-of-time-urdu-audio-book-syed-irfan-ali",
+      "audioFile": "57_history of  year 2012_end_of_time Urdu Audio Book Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/57-history-of-year-2012-end-of-time-urdu-audio-book-syed-irfan-ali/57_history%20of%20%20year%202012_end_of_time%20Urdu%20Audio%20Book%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-069",
+      "title": "The Iliad",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:15:12.685Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 2755,
+      "identifier": "iliad_of_homer_1011_librivox",
+      "archiveItemUrl": "https://archive.org/details/iliad_of_homer_1011_librivox",
+      "audioFile": "theiliadofhomer_01_homer.mp3",
+      "directMp3Url": "https://archive.org/download/iliad_of_homer_1011_librivox/theiliadofhomer_01_homer.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "http://creativecommons.org/publicdomain/mark/1.0/",
+        "attribution": "Homer",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:15:12.685Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-070",
+      "title": "The Illustrious Client",
+      "category": "Mystery / detective",
+      "checkedAt": "2026-11-17T15:15:16.183Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1807,
+      "identifier": "9l4stfocjwlhiu4iujqkeryvhig7e16xleshu99l",
+      "archiveItemUrl": "https://archive.org/details/9l4stfocjwlhiu4iujqkeryvhig7e16xleshu99l",
+      "audioFile": "SherlockHolmes-TheIllustriousClient5-9-48a.mp3",
+      "directMp3Url": "https://archive.org/download/9l4stfocjwlhiu4iujqkeryvhig7e16xleshu99l/SherlockHolmes-TheIllustriousClient5-9-48a.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Boxcars711 Old Time Radio",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:15:16.183Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-071",
+      "title": "The Importance of Being Earnest",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-17T15:15:17.836Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 6179,
+      "identifier": "wilde-the-importance-of-being-earnest-1953-eddison-fox",
+      "archiveItemUrl": "https://archive.org/details/wilde-the-importance-of-being-earnest-1953-eddison-fox",
+      "audioFile": "Wilde_The Importance Of Being Earnest - 1953 Eddison Fox snt source IA.mp3",
+      "directMp3Url": "https://archive.org/download/wilde-the-importance-of-being-earnest-1953-eddison-fox/Wilde_The%20Importance%20Of%20Being%20Earnest%20-%201953%20Eddison%20Fox%20snt%20source%20IA.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Oscar Wilde",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:15:17.836Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-072",
+      "title": "Gulliver's Travels",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:15:36.640Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1495,
+      "identifier": "GulliversTravels_141",
+      "archiveItemUrl": "https://archive.org/details/GulliversTravels_141",
+      "audioFile": "01-Part1Chapter1.mp3",
+      "directMp3Url": "https://archive.org/download/GulliversTravels_141/01-Part1Chapter1.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:15:36.640Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-073",
+      "title": "The Life of a Bee Slave",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-17T15:15:39.747Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "no-archive-item-with-audio"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null
+    },
+    {
+      "id": "URD-AUD-074",
+      "title": "L'Inondation",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-17T15:15:40.100Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 16,
+      "identifier": "emile-zola-linondation",
+      "archiveItemUrl": "https://archive.org/details/emile-zola-linondation",
+      "audioFile": "STE-000.mp3",
+      "directMp3Url": "https://archive.org/download/emile-zola-linondation/STE-000.mp3",
+      "rights": {
+        "status": "licensed",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "attribution": "Emile Zola",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:15:40.100Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-075",
+      "title": "Lord of the Flies",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 11285,
+      "identifier": "lord-of-the-flies-complete-urdu-audio-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/lord-of-the-flies-complete-urdu-audio-syed-irfan-ali",
+      "audioFile": "Lord of the Flies  complete Urdu Audio Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/lord-of-the-flies-complete-urdu-audio-syed-irfan-ali/Lord%20of%20the%20Flies%20%20complete%20Urdu%20Audio%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-076",
+      "title": "The Prince and the Pauper",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:16:29.727Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null,
+      "identifier": "1990-el-principe-y-el-mendigo-the-prince-and-the-pauper",
+      "archiveItemUrl": "https://archive.org/details/1990-el-principe-y-el-mendigo-the-prince-and-the-pauper",
+      "audioFile": "1990. El príncipe y el mendigo. The Prince and the Pauper. Mono. Cortometrajes Disney.mp3",
+      "directMp3Url": "https://archive.org/download/1990-el-principe-y-el-mendigo-the-prince-and-the-pauper/1990.%20El%20pri%CC%81ncipe%20y%20el%20mendigo.%20The%20Prince%20and%20the%20Pauper.%20Mono.%20Cortometrajes%20Disney.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:16:29.727Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-077",
+      "title": "Doctor Faustus",
+      "category": "Horror / supernatural",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1143,
+      "identifier": "marlowe-doctor-faustus-urdu-book-summary-by-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/marlowe-doctor-faustus-urdu-book-summary-by-syed-irfan-ali",
+      "audioFile": "Marlowe Doctor Faustus Urdu Book Summary  by Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/marlowe-doctor-faustus-urdu-book-summary-by-syed-irfan-ali/Marlowe%20Doctor%20Faustus%20Urdu%20Book%20Summary%20%20by%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-078",
+      "title": "The Mayor of Casterbridge",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:16:40.451Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 60,
+      "identifier": "themayorofcaster09425gut",
+      "archiveItemUrl": "https://archive.org/details/themayorofcaster09425gut",
+      "audioFile": "mp3/9425-000.mp3",
+      "directMp3Url": "https://archive.org/download/themayorofcaster09425gut/mp3%2F9425-000.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Thomas Hardy",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:16:40.451Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-079",
+      "title": "Medea",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 984,
+      "identifier": "medea-euripides-urdu-book-by-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/medea-euripides-urdu-book-by-syed-irfan-ali",
+      "audioFile": "Medea Euripides Urdu Book by Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/medea-euripides-urdu-book-by-syed-irfan-ali/Medea%20Euripides%20Urdu%20Book%20by%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-080",
+      "title": "Paradise Lost",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:16:51.147Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 73,
+      "identifier": "odzpae66dkcdgcxb3bru9lggbsqgxkguvw9cc7mp",
+      "archiveItemUrl": "https://archive.org/details/odzpae66dkcdgcxb3bru9lggbsqgxkguvw9cc7mp",
+      "audioFile": "22nivyyrdlbbhrh-adamandeve_milton_ref_64kb.mp3",
+      "directMp3Url": "https://archive.org/download/odzpae66dkcdgcxb3bru9lggbsqgxkguvw9cc7mp/22nivyyrdlbbhrh-adamandeve_milton_ref_64kb.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Adam and Eve by John Milton (1608 - 1674)",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:16:51.147Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-081",
+      "title": "Mirat-ul-Uroos",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:16:54.173Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "no-archive-item-with-audio"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null
+    },
+    {
+      "id": "URD-AUD-082",
+      "title": "Moonfleet",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1351,
+      "identifier": "MoonfleetSyedirfanalidotcom96kbps",
+      "archiveItemUrl": "https://archive.org/details/MoonfleetSyedirfanalidotcom96kbps",
+      "audioFile": "Moonfleet_syedirfanalidotcom_96kbps.mp3",
+      "directMp3Url": "https://archive.org/download/MoonfleetSyedirfanalidotcom96kbps/Moonfleet_syedirfanalidotcom_96kbps.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali 22 September",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-083",
+      "title": "Mutiny on the Bounty",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:17:01.443Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 878,
+      "identifier": "9f7be9fb-f2ce-478e-8f26-485a59e59fde",
+      "archiveItemUrl": "https://archive.org/details/9f7be9fb-f2ce-478e-8f26-485a59e59fde",
+      "audioFile": "Texaco Town 1938-02-23 (74) Mutiny on the Bounty (2nd half only) - b61735b3ca4c478d.mp3",
+      "directMp3Url": "https://archive.org/download/9f7be9fb-f2ce-478e-8f26-485a59e59fde/Texaco%20Town%201938-02-23%20(74)%20Mutiny%20on%20the%20Bounty%20(2nd%20half%20only)%20-%20b61735b3ca4c478d.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:01.443Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-084",
+      "title": "Salome",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:17:05.535Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1945,
+      "identifier": "hgijji0qoxrwbddq5wdfudpjeuua7f9r0y6vwnfx",
+      "archiveItemUrl": "https://archive.org/details/hgijji0qoxrwbddq5wdfudpjeuua7f9r0y6vwnfx",
+      "audioFile": "erifhwmyqxlpnc4-https3A2F2Fd3ctxlq1ktw2nl.cloudfront.net2Fstaging2F2020-8-142F107259711-44100-2-415aedca80c5d.m4a",
+      "directMp3Url": "https://archive.org/download/hgijji0qoxrwbddq5wdfudpjeuua7f9r0y6vwnfx/erifhwmyqxlpnc4-https3A2F2Fd3ctxlq1ktw2nl.cloudfront.net2Fstaging2F2020-8-142F107259711-44100-2-415aedca80c5d.m4a",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "On The Gal",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:05.535Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-085",
+      "title": "The Pilgrim's Progress",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-17T15:17:07.621Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 2256,
+      "identifier": "pilgrimprogresspart1-3",
+      "archiveItemUrl": "https://archive.org/details/pilgrimprogresspart1-3",
+      "audioFile": "pilgrimprogresspart1-3.mp3",
+      "directMp3Url": "https://archive.org/download/pilgrimprogresspart1-3/pilgrimprogresspart1-3.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "John Bunyan",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:07.621Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-086",
+      "title": "Pinky Jadoo Ke Des Men",
+      "category": "Children's stories",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1281,
+      "identifier": "pinky-jadoo-ke-des-men-urdu-book-by-syed-irfan-ali_202609",
+      "archiveItemUrl": "https://archive.org/details/pinky-jadoo-ke-des-men-urdu-book-by-syed-irfan-ali_202609",
+      "audioFile": "Pinky_Jadoo_Ke_Des_Men Urdu Book by Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/pinky-jadoo-ke-des-men-urdu-book-by-syed-irfan-ali_202609/Pinky_Jadoo_Ke_Des_Men%20Urdu%20Book%20by%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-087",
+      "title": "The Red and the Black",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:17:16.412Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 484,
+      "identifier": "the-red-and-the-blac-31-chapter-30",
+      "archiveItemUrl": "https://archive.org/details/the-red-and-the-blac-31-chapter-30",
+      "audioFile": "The Red and the Blac 01 Introduction.mp3",
+      "directMp3Url": "https://archive.org/download/the-red-and-the-blac-31-chapter-30/The%20Red%20and%20the%20Blac%2001%20Introduction.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "attribution": "Stendhal",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:16.412Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-088",
+      "title": "The Scarlet Letter",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:17:20.228Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 33087,
+      "identifier": "TheScarletLetterTaudio.site",
+      "archiveItemUrl": "https://archive.org/details/TheScarletLetterTaudio.site",
+      "audioFile": "The Scarlet Letter Taudio.site.mp3",
+      "directMp3Url": "https://archive.org/download/TheScarletLetterTaudio.site/The%20Scarlet%20Letter%20Taudio.site.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:20.228Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-089",
+      "title": "The Secret Garden",
+      "category": "Children's stories",
+      "checkedAt": "2026-11-17T15:17:22.479Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 120,
+      "identifier": "12-quite-a-young-someone",
+      "archiveItemUrl": "https://archive.org/details/12-quite-a-young-someone",
+      "audioFile": "01 Prologue.mp3",
+      "directMp3Url": "https://archive.org/download/12-quite-a-young-someone/01%20Prologue.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "Frances Hodgson Burnett",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:22.479Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-090",
+      "title": "She",
+      "category": "Adventure / fantasy",
+      "checkedAt": "2026-11-17T15:17:24.896Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 634,
+      "identifier": "0zcfm1dasmde3djbrbjjoeawqwyxkfcbjfjkpwak",
+      "archiveItemUrl": "https://archive.org/details/0zcfm1dasmde3djbrbjjoeawqwyxkfcbjfjkpwak",
+      "audioFile": "tzode2prhv5bcyr-BKR_BL_Nancy_Temple_R1-22-21_5_RD1.mp3",
+      "directMp3Url": "https://archive.org/download/0zcfm1dasmde3djbrbjjoeawqwyxkfcbjfjkpwak/tzode2prhv5bcyr-BKR_BL_Nancy_Temple_R1-22-21_5_RD1.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "The Becker Group Women&#039;s Leadership Podcast",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:24.896Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-091",
+      "title": "A Scandal in Bohemia",
+      "category": "Mystery / detective",
+      "checkedAt": "2026-11-17T15:17:26.758Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 1671,
+      "identifier": "SherlockHolmes541012AScandalInBohemia",
+      "archiveItemUrl": "https://archive.org/details/SherlockHolmes541012AScandalInBohemia",
+      "audioFile": "Sherlock Holmes 54-10-12 A Scandal In Bohemia.mp3",
+      "directMp3Url": "https://archive.org/download/SherlockHolmes541012AScandalInBohemia/Sherlock%20Holmes%2054-10-12%20A%20Scandal%20In%20Bohemia.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:26.758Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-092",
+      "title": "The Six Napoleons",
+      "category": "Mystery / detective",
+      "checkedAt": "2026-11-17T15:17:34.972Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 859,
+      "identifier": "SherlockHolmesTheSixNapoleonsEpisodes",
+      "archiveItemUrl": "https://archive.org/details/SherlockHolmesTheSixNapoleonsEpisodes",
+      "audioFile": "Sherlock Holmes - The Six Napoleons - Episodes 53-61.mp3",
+      "directMp3Url": "https://archive.org/download/SherlockHolmesTheSixNapoleonsEpisodes/Sherlock%20Holmes%20-%20The%20Six%20Napoleons%20-%20Episodes%2053-61.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "englishprogramme",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:34.972Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-093",
+      "title": "The Speckled Band",
+      "category": "Mystery / detective",
+      "checkedAt": "2026-11-17T15:17:36.899Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 8829,
+      "identifier": "LEP_901",
+      "archiveItemUrl": "https://archive.org/details/LEP_901",
+      "audioFile": "901. Sherlock Holmes The Adventure of The Speckled Band Learn Eng.mp3",
+      "directMp3Url": "https://archive.org/download/LEP_901/901.%20Sherlock%20Holmes%20The%20Adventure%20of%20The%20Speckled%20Band%20Learn%20Eng.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Luke Thompson",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:36.899Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-094",
+      "title": "The Sign of Four",
+      "category": "Mystery / detective",
+      "checkedAt": "2026-11-17T15:17:38.813Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 258,
+      "identifier": "track15_201908",
+      "archiveItemUrl": "https://archive.org/details/track15_201908",
+      "audioFile": "track 01.mp3",
+      "directMp3Url": "https://archive.org/download/track15_201908/track%2001.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:38.813Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-095",
+      "title": "Snow White",
+      "category": "Children's stories",
+      "checkedAt": "2026-11-17T15:17:40.346Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 4645,
+      "identifier": "2jjnirxqwa7cxnl8xnfxaxwppcqhgxbvlguklvxn",
+      "archiveItemUrl": "https://archive.org/details/2jjnirxqwa7cxnl8xnfxaxwppcqhgxbvlguklvxn",
+      "audioFile": "qlrfspn0i3nwvwv-SnowWhiteFinal.mp3",
+      "directMp3Url": "https://archive.org/download/2jjnirxqwa7cxnl8xnfxaxwppcqhgxbvlguklvxn/qlrfspn0i3nwvwv-SnowWhiteFinal.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "Redeemed Otaku",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:40.346Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-096",
+      "title": "Antigone",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:17:42.652Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 2158,
+      "identifier": "antigone_641",
+      "archiveItemUrl": "https://archive.org/details/antigone_641",
+      "audioFile": "antigone.mp3",
+      "directMp3Url": "https://archive.org/download/antigone_641/antigone.mp3",
+      "rights": {
+        "status": "unknown",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:42.652Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-097",
+      "title": "Oedipus at Colonus",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": null,
+      "identifier": "OedipusAtColonusUrduSyedIrfanAli",
+      "archiveItemUrl": "https://archive.org/details/OedipusAtColonusUrduSyedIrfanAli",
+      "audioFile": "Oedipus_at_Colonus_Syed_Irfan_Ali_96kbps.mp3",
+      "directMp3Url": "https://archive.org/download/OedipusAtColonusUrduSyedIrfanAli/Oedipus_at_Colonus_Syed_Irfan_Ali_96kbps.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali September 22",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-098",
+      "title": "Oedipus the King",
+      "category": "Classic novels",
+      "checkedAt": "2026-11-17T15:17:51.854Z",
+      "stage": "audio",
+      "status": "rejected",
+      "reasons": [
+        "language-unconfirmed"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 943,
+      "identifier": "04-oedipus-the-king-4",
+      "archiveItemUrl": "https://archive.org/details/04-oedipus-the-king-4",
+      "audioFile": "01 Oedipus the King 1.mp3",
+      "directMp3Url": "https://archive.org/download/04-oedipus-the-king-4/01%20Oedipus%20the%20King%201.mp3",
+      "rights": {
+        "status": "public-domain",
+        "licenseUrl": "",
+        "attribution": "",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-17T15:17:51.854Z"
+      },
+      "languageEvidence": false
+    },
+    {
+      "id": "URD-AUD-099",
+      "title": "Ten Days in a Mad-House",
+      "category": "Mystery / detective",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 3482,
+      "identifier": "ten-days-in-a-mad-house-urdu-book-by-syed-irfan-ali_202609",
+      "archiveItemUrl": "https://archive.org/details/ten-days-in-a-mad-house-urdu-book-by-syed-irfan-ali_202609",
+      "audioFile": "Ten_days_in_a_mad_house Urdu Book by Syed Irfan Ali.mp3",
+      "directMp3Url": "https://archive.org/download/ten-days-in-a-mad-house-urdu-book-by-syed-irfan-ali_202609/Ten_days_in_a_mad_house%20Urdu%20Book%20by%20Syed%20Irfan%20Ali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    },
+    {
+      "id": "URD-AUD-100",
+      "title": "Stories for Poor Erum",
+      "category": "Urdu short stories",
+      "checkedAt": "2026-11-18T04:32:12.442Z",
+      "stage": "audio",
+      "status": "blocked",
+      "reasons": [
+        "rights-unknown"
+      ],
+      "playback": "unverified",
+      "download": "unverified",
+      "durationSeconds": null,
+      "reportedLengthSeconds": 522,
+      "identifier": "3ErumMotherSyedirfanali",
+      "archiveItemUrl": "https://archive.org/details/3ErumMotherSyedirfanali",
+      "audioFile": "2_Erum_Eidi_syedirfanali.mp3",
+      "directMp3Url": "https://archive.org/download/3ErumMotherSyedirfanali/2_Erum_Eidi_syedirfanali.mp3",
+      "rights": {
+        "status": "unknown",
+        "evidence": "none",
+        "licenseUrl": "",
+        "attribution": "Syed Irfan Ali",
+        "source": "archive-item-metadata",
+        "verifiedAt": "2026-11-18T04:32:12.442Z"
+      },
+      "languageEvidence": true,
+      "rightsRepairedAt": "2026-11-18T04:32:12.442Z"
+    }
+  ],
+  "rightsRepairAt": "2026-11-18T04:32:12.442Z",
+  "rightsRepairNote": "Re-classified published rights without collection tags as evidence; unverified items are blocked."
+}

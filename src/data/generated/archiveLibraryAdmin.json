@@ -1,0 +1,1078 @@
+{
+  "generatedAt": "2026-11-18T04:32:37.543Z",
+  "sourcePolicy": "Internet Archive only",
+  "checkedAt": "2026-11-18T04:32:12.442Z",
+  "stage": "audio",
+  "totals": {
+    "candidates": 100,
+    "verified": 0,
+    "blocked": 19,
+    "rejected": 81,
+    "unchecked": 0,
+    "published": 0
+  },
+  "targets": [
+    {
+      "id": "horror",
+      "label": "Horror / supernatural",
+      "target": 30,
+      "candidates": 26,
+      "verified": 0,
+      "blocked": 1,
+      "rejected": 25,
+      "published": 0
+    },
+    {
+      "id": "mystery",
+      "label": "Mystery / detective",
+      "target": 20,
+      "candidates": 9,
+      "verified": 0,
+      "blocked": 2,
+      "rejected": 7,
+      "published": 0
+    },
+    {
+      "id": "short-stories",
+      "label": "Urdu short stories",
+      "target": 20,
+      "candidates": 14,
+      "verified": 0,
+      "blocked": 4,
+      "rejected": 10,
+      "published": 0
+    },
+    {
+      "id": "classic",
+      "label": "Classic novels",
+      "target": 15,
+      "candidates": 26,
+      "verified": 0,
+      "blocked": 6,
+      "rejected": 20,
+      "published": 0
+    },
+    {
+      "id": "adventure",
+      "label": "Adventure / fantasy",
+      "target": 10,
+      "candidates": 20,
+      "verified": 0,
+      "blocked": 4,
+      "rejected": 16,
+      "published": 0
+    },
+    {
+      "id": "children",
+      "label": "Children's stories",
+      "target": 5,
+      "candidates": 5,
+      "verified": 0,
+      "blocked": 2,
+      "rejected": 3,
+      "published": 0
+    }
+  ],
+  "records": [
+    {
+      "id": "URD-AUD-001",
+      "title": "Dracula",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "gb-1600-2051-ID4BDVV",
+      "archiveItemUrl": "https://archive.org/details/gb-1600-2051-ID4BDVV"
+    },
+    {
+      "id": "URD-AUD-002",
+      "title": "The Turn of the Screw",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "2cxwklmfvblebsn3nu10eqmmnx2sbckrqocs7b5q",
+      "archiveItemUrl": "https://archive.org/details/2cxwklmfvblebsn3nu10eqmmnx2sbckrqocs7b5q"
+    },
+    {
+      "id": "URD-AUD-003",
+      "title": "The Ash Tree",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "391-the-ash-tree",
+      "archiveItemUrl": "https://archive.org/details/391-the-ash-tree"
+    },
+    {
+      "id": "URD-AUD-004",
+      "title": "The Black Cat",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "01track01_201907",
+      "archiveItemUrl": "https://archive.org/details/01track01_201907"
+    },
+    {
+      "id": "URD-AUD-005",
+      "title": "The Canterville Ghost",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "20201102_20201102_2309",
+      "archiveItemUrl": "https://archive.org/details/20201102_20201102_2309"
+    },
+    {
+      "id": "URD-AUD-006",
+      "title": "Casting the Runes",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "licensed",
+      "reason": "language-unconfirmed",
+      "identifier": "mp-146",
+      "archiveItemUrl": "https://archive.org/details/mp-146"
+    },
+    {
+      "id": "URD-AUD-007",
+      "title": "Frankenstein",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "c58cb3d7a02e4fe098adda561680a520",
+      "archiveItemUrl": "https://archive.org/details/c58cb3d7a02e4fe098adda561680a520"
+    },
+    {
+      "id": "URD-AUD-008",
+      "title": "Lost Hearts",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "tkoihl9hadf3p290hbdxhw6md7e66jlkodfqbkqc",
+      "archiveItemUrl": "https://archive.org/details/tkoihl9hadf3p290hbdxhw6md7e66jlkodfqbkqc"
+    },
+    {
+      "id": "URD-AUD-009",
+      "title": "The House on the Borderland",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "the-house-on-the-borderland",
+      "archiveItemUrl": "https://archive.org/details/the-house-on-the-borderland"
+    },
+    {
+      "id": "URD-AUD-010",
+      "title": "The Fall of the House of Usher",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "hi23ksp9l7zzrnrbbizt9ajgo1ib21b4k5rfxecu",
+      "archiveItemUrl": "https://archive.org/details/hi23ksp9l7zzrnrbbizt9ajgo1ib21b4k5rfxecu"
+    },
+    {
+      "id": "URD-AUD-011",
+      "title": "The Gold-Bug",
+      "category": "Mystery / detective",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "E.a.poe-TheGoldBug",
+      "archiveItemUrl": "https://archive.org/details/E.a.poe-TheGoldBug"
+    },
+    {
+      "id": "URD-AUD-012",
+      "title": "The Facts in the Case of M. Valdemar",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "licensed",
+      "reason": "language-unconfirmed",
+      "identifier": "TheFactsInTheCaseOfMValdemar",
+      "archiveItemUrl": "https://archive.org/details/TheFactsInTheCaseOfMValdemar"
+    },
+    {
+      "id": "URD-AUD-013",
+      "title": "Whistle and I'll Come to You",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "2559fece-3e26-4711-a8a8-d6ed8669e0c3",
+      "archiveItemUrl": "https://archive.org/details/2559fece-3e26-4711-a8a8-d6ed8669e0c3"
+    },
+    {
+      "id": "URD-AUD-014",
+      "title": "The School Story",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "no-archive-item-with-audio",
+      "identifier": "",
+      "archiveItemUrl": "https://archive.org/search?query=title:(\"The%20School%20Story\")%20AND%20mediatype:audio"
+    },
+    {
+      "id": "URD-AUD-015",
+      "title": "Room Number 13",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "no-archive-item-with-audio",
+      "identifier": "",
+      "archiveItemUrl": "https://archive.org/search?query=title:(\"Room%20Number%2013\")%20AND%20mediatype:audio"
+    },
+    {
+      "id": "URD-AUD-016",
+      "title": "Bermuda Triangle",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "iyrnwyqxs2jwyjrp5btopmov12nsafctmhjecgy6",
+      "archiveItemUrl": "https://archive.org/details/iyrnwyqxs2jwyjrp5btopmov12nsafctmhjecgy6"
+    },
+    {
+      "id": "URD-AUD-017",
+      "title": "The War of the Worlds",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "licensed",
+      "reason": "language-unconfirmed",
+      "identifier": "Program_Iptal_1.1.11_-_The_War_of_the_Worlds",
+      "archiveItemUrl": "https://archive.org/details/Program_Iptal_1.1.11_-_The_War_of_the_Worlds"
+    },
+    {
+      "id": "URD-AUD-018",
+      "title": "The Invisible Man",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "dah90gchoaqhndhmtc9hnptbigsismi5djwrxric",
+      "archiveItemUrl": "https://archive.org/details/dah90gchoaqhndhmtc9hnptbigsismi5djwrxric"
+    },
+    {
+      "id": "URD-AUD-019",
+      "title": "Dr Jekyll and Mr Hyde",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "DrJekyllAndMrHydePage3",
+      "archiveItemUrl": "https://archive.org/details/DrJekyllAndMrHydePage3"
+    },
+    {
+      "id": "URD-AUD-020",
+      "title": "The Hound of the Baskervilles",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "the-hound-of-the-baskervilles_202504",
+      "archiveItemUrl": "https://archive.org/details/the-hound-of-the-baskervilles_202504"
+    },
+    {
+      "id": "URD-AUD-021",
+      "title": "The Lost Stradivarius",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "synapseml_gutenberg_the_lost_stradivarius_by_john_meade_falk",
+      "archiveItemUrl": "https://archive.org/details/synapseml_gutenberg_the_lost_stradivarius_by_john_meade_falk"
+    },
+    {
+      "id": "URD-AUD-022",
+      "title": "The Woman in White",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "licensed",
+      "reason": "language-unconfirmed",
+      "identifier": "EileenPDP_31-TheWomaninWhite-Part8",
+      "archiveItemUrl": "https://archive.org/details/EileenPDP_31-TheWomaninWhite-Part8"
+    },
+    {
+      "id": "URD-AUD-023",
+      "title": "Rebecca",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "soundcloud-613697016",
+      "archiveItemUrl": "https://archive.org/details/soundcloud-613697016"
+    },
+    {
+      "id": "URD-AUD-024",
+      "title": "Jamaica Inn",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "no-archive-item-with-audio",
+      "identifier": "",
+      "archiveItemUrl": "https://archive.org/search?query=title:(\"Jamaica%20Inn\")%20AND%20mediatype:audio"
+    },
+    {
+      "id": "URD-AUD-025",
+      "title": "My Cousin Rachel",
+      "category": "Mystery / detective",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "MyCousinRachelInUrduServer555",
+      "archiveItemUrl": "https://archive.org/details/MyCousinRachelInUrduServer555"
+    },
+    {
+      "id": "URD-AUD-026",
+      "title": "The Moonstone",
+      "category": "Mystery / detective",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "d5yza96s7ai1yycdcuwmsirvwu5qazcgl8xvscpz",
+      "archiveItemUrl": "https://archive.org/details/d5yza96s7ai1yycdcuwmsirvwu5qazcgl8xvscpz"
+    },
+    {
+      "id": "URD-AUD-027",
+      "title": "The House of the Seven Gables",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "bcv2qhdn8itxzhccwutq9ukg068ziavri4bewo0p",
+      "archiveItemUrl": "https://archive.org/details/bcv2qhdn8itxzhccwutq9ukg068ziavri4bewo0p"
+    },
+    {
+      "id": "URD-AUD-028",
+      "title": "The Picture of Dorian Gray",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "dorian_gray_librivox",
+      "archiveItemUrl": "https://archive.org/details/dorian_gray_librivox"
+    },
+    {
+      "id": "URD-AUD-029",
+      "title": "The Metamorphosis",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "acidplanet-audio-00307812",
+      "archiveItemUrl": "https://archive.org/details/acidplanet-audio-00307812"
+    },
+    {
+      "id": "URD-AUD-030",
+      "title": "Five Weeks in a Balloon",
+      "category": "Adventure / fantasy",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "FiveWeeksBalloonUrdu",
+      "archiveItemUrl": "https://archive.org/details/FiveWeeksBalloonUrdu"
+    },
+    {
+      "id": "URD-AUD-031",
+      "title": "Master of the World",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "The_Public_Domain_Podcast_6__The_Master_of_the_World_by_Jules_Verne_Part_1",
+      "archiveItemUrl": "https://archive.org/details/The_Public_Domain_Podcast_6__The_Master_of_the_World_by_Jules_Verne_Part_1"
+    },
+    {
+      "id": "URD-AUD-032",
+      "title": "Off on a Comet",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "cc-by",
+      "reason": "language-unconfirmed",
+      "identifier": "off_on_a_comet_1009_librivox",
+      "archiveItemUrl": "https://archive.org/details/off_on_a_comet_1009_librivox"
+    },
+    {
+      "id": "URD-AUD-033",
+      "title": "Around the World in Eighty Days",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "around-the-world-in-eighty-days_202107",
+      "archiveItemUrl": "https://archive.org/details/around-the-world-in-eighty-days_202107"
+    },
+    {
+      "id": "URD-AUD-034",
+      "title": "The Mysterious Island",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "blsifl1ify56n339exsjvaq7gfu699vhvdk9o0jb",
+      "archiveItemUrl": "https://archive.org/details/blsifl1ify56n339exsjvaq7gfu699vhvdk9o0jb"
+    },
+    {
+      "id": "URD-AUD-035",
+      "title": "Twenty Thousand Leagues Under the Sea",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "twentythousandle20000gut",
+      "archiveItemUrl": "https://archive.org/details/twentythousandle20000gut"
+    },
+    {
+      "id": "URD-AUD-036",
+      "title": "The Underground City",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "underground_city_1002_librivox",
+      "archiveItemUrl": "https://archive.org/details/underground_city_1002_librivox"
+    },
+    {
+      "id": "URD-AUD-037",
+      "title": "Pride and Prejudice",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "South_Congregational_Church_of_Barnstable_UCC-Pride_and_Prejudice_9_30_26all",
+      "archiveItemUrl": "https://archive.org/details/South_Congregational_Church_of_Barnstable_UCC-Pride_and_Prejudice_9_30_26all"
+    },
+    {
+      "id": "URD-AUD-038",
+      "title": "The Swiss Family Robinson",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "tvtunes_12072",
+      "archiveItemUrl": "https://archive.org/details/tvtunes_12072"
+    },
+    {
+      "id": "URD-AUD-039",
+      "title": "Tess of the d'Urbervilles",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "tessofthedurberv09433gut",
+      "archiveItemUrl": "https://archive.org/details/tessofthedurberv09433gut"
+    },
+    {
+      "id": "URD-AUD-040",
+      "title": "Animal Farm",
+      "category": "Urdu short stories",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "jctqhdcr4n0wwkvpieaqa6ddj7dolnetamjgwtdh",
+      "archiveItemUrl": "https://archive.org/details/jctqhdcr4n0wwkvpieaqa6ddj7dolnetamjgwtdh"
+    },
+    {
+      "id": "URD-AUD-041",
+      "title": "A Passage to India",
+      "category": "Classic novels",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "1-a-passage-to-india-e-m-forster-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/1-a-passage-to-india-e-m-forster-syed-irfan-ali"
+    },
+    {
+      "id": "URD-AUD-042",
+      "title": "Dr Dolittle",
+      "category": "Children's stories",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "01-02-23_202108",
+      "archiveItemUrl": "https://archive.org/details/01-02-23_202108"
+    },
+    {
+      "id": "URD-AUD-043",
+      "title": "A Tale of Two Cities",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "1btxcficbemlp1ngvpemaxkley3ovzdiuv1zyesz",
+      "archiveItemUrl": "https://archive.org/details/1btxcficbemlp1ngvpemaxkley3ovzdiuv1zyesz"
+    },
+    {
+      "id": "URD-AUD-044",
+      "title": "Adam Bede",
+      "category": "Classic novels",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "adam-bede-geroge-eliot-urdu-audio-book-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/adam-bede-geroge-eliot-urdu-audio-book-syed-irfan-ali"
+    },
+    {
+      "id": "URD-AUD-045",
+      "title": "The Age of Innocence",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "age_of_innocence_librivox",
+      "archiveItemUrl": "https://archive.org/details/age_of_innocence_librivox"
+    },
+    {
+      "id": "URD-AUD-046",
+      "title": "Anna Karenina",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "sung-vi-trung-.-thep-p-7-ngua-van-nhung-cuoc-hon-nhan-bat-hanh-va-nguyen-ly-anna-karenina_202310",
+      "archiveItemUrl": "https://archive.org/details/sung-vi-trung-.-thep-p-7-ngua-van-nhung-cuoc-hon-nhan-bat-hanh-va-nguyen-ly-anna-karenina_202310"
+    },
+    {
+      "id": "URD-AUD-047",
+      "title": "Arms and the Man",
+      "category": "Urdu short stories",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "arms-and-the-man-by-g.-b.-shaw-urdu-audio-book-syed-irfan-ali_202609",
+      "archiveItemUrl": "https://archive.org/details/arms-and-the-man-by-g.-b.-shaw-urdu-audio-book-syed-irfan-ali_202609"
+    },
+    {
+      "id": "URD-AUD-048",
+      "title": "Candida",
+      "category": "Urdu short stories",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "la-decision-de-candida",
+      "archiveItemUrl": "https://archive.org/details/la-decision-de-candida"
+    },
+    {
+      "id": "URD-AUD-049",
+      "title": "Candide",
+      "category": "Urdu short stories",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "CandideOhHappyWeobc",
+      "archiveItemUrl": "https://archive.org/details/CandideOhHappyWeobc"
+    },
+    {
+      "id": "URD-AUD-050",
+      "title": "A Christmas Carol",
+      "category": "Horror / supernatural",
+      "status": "rejected",
+      "rightsStatus": "licensed",
+      "reason": "language-unconfirmed",
+      "identifier": "StoryEuphoria10AChristmasCarolStave3",
+      "archiveItemUrl": "https://archive.org/details/StoryEuphoria10AChristmasCarolStave3"
+    },
+    {
+      "id": "URD-AUD-051",
+      "title": "Great Expectations",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "licensed",
+      "reason": "language-unconfirmed",
+      "identifier": "GreatExpectationsPart3",
+      "archiveItemUrl": "https://archive.org/details/GreatExpectationsPart3"
+    },
+    {
+      "id": "URD-AUD-052",
+      "title": "Oliver Twist",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "145bb899-a921-4b74-9a35-8f486c66fad6",
+      "archiveItemUrl": "https://archive.org/details/145bb899-a921-4b74-9a35-8f486c66fad6"
+    },
+    {
+      "id": "URD-AUD-053",
+      "title": "The Decameron",
+      "category": "Urdu short stories",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "afac8af6-dfeb-4914-ac48-221034a8c2ef",
+      "archiveItemUrl": "https://archive.org/details/afac8af6-dfeb-4914-ac48-221034a8c2ef"
+    },
+    {
+      "id": "URD-AUD-054",
+      "title": "Discourse on the Arts and Sciences",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "no-archive-item-with-audio",
+      "identifier": "",
+      "archiveItemUrl": "https://archive.org/search?query=title:(\"Discourse%20on%20the%20Arts%20and%20Sciences\")%20AND%20mediatype:audio"
+    },
+    {
+      "id": "URD-AUD-055",
+      "title": "Ethan Frome",
+      "category": "Classic novels",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "ethan-frome-edith-wharton-urdu-audio-book-syed-irfan-ali_202609",
+      "archiveItemUrl": "https://archive.org/details/ethan-frome-edith-wharton-urdu-audio-book-syed-irfan-ali_202609"
+    },
+    {
+      "id": "URD-AUD-056",
+      "title": "Fahrenheit 451",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "e2wdgoktemhb6l57meag4dhee19nrhl0lx0damhy",
+      "archiveItemUrl": "https://archive.org/details/e2wdgoktemhb6l57meag4dhee19nrhl0lx0damhy"
+    },
+    {
+      "id": "URD-AUD-057",
+      "title": "Fathers and Sons",
+      "category": "Classic novels",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "FathersAndSonsIvanTurgenevUrduServer555",
+      "archiveItemUrl": "https://archive.org/details/FathersAndSonsIvanTurgenevUrduServer555"
+    },
+    {
+      "id": "URD-AUD-058",
+      "title": "Five Children and It",
+      "category": "Children's stories",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "five-children-and-it-by-e.-nesbit-urdu-audio-book-syed-irfan-ali_202609",
+      "archiveItemUrl": "https://archive.org/details/five-children-and-it-by-e.-nesbit-urdu-audio-book-syed-irfan-ali_202609"
+    },
+    {
+      "id": "URD-AUD-059",
+      "title": "The French Revolution",
+      "category": "Urdu short stories",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "51-french-revolution-urdu-audio-book-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/51-french-revolution-urdu-audio-book-syed-irfan-ali"
+    },
+    {
+      "id": "URD-AUD-060",
+      "title": "Daniel Deronda",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "daniel_deronda_bm_librivox",
+      "archiveItemUrl": "https://archive.org/details/daniel_deronda_bm_librivox"
+    },
+    {
+      "id": "URD-AUD-061",
+      "title": "Silas Marner",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "txhfpyll11xrjinkkij6untnrffydwdtjmonzdam",
+      "archiveItemUrl": "https://archive.org/details/txhfpyll11xrjinkkij6untnrffydwdtjmonzdam"
+    },
+    {
+      "id": "URD-AUD-062",
+      "title": "The Epic of Gilgamesh",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "xrkibhlpcrz2zdlu6y54efg0dzny6muscuylat9b",
+      "archiveItemUrl": "https://archive.org/details/xrkibhlpcrz2zdlu6y54efg0dzny6muscuylat9b"
+    },
+    {
+      "id": "URD-AUD-063",
+      "title": "The Inspector General",
+      "category": "Urdu short stories",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "inspectorgeneral_1605_librivox",
+      "archiveItemUrl": "https://archive.org/details/inspectorgeneral_1605_librivox"
+    },
+    {
+      "id": "URD-AUD-064",
+      "title": "The Hackers Story",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "no-archive-item-with-audio",
+      "identifier": "",
+      "archiveItemUrl": "https://archive.org/search?query=title:(\"The%20Hackers%20Story\")%20AND%20mediatype:audio"
+    },
+    {
+      "id": "URD-AUD-065",
+      "title": "Washington Square",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "loc-jukebox-817341-rose-of-washington-square",
+      "archiveItemUrl": "https://archive.org/details/loc-jukebox-817341-rose-of-washington-square"
+    },
+    {
+      "id": "URD-AUD-066",
+      "title": "The Heptameron",
+      "category": "Urdu short stories",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "heptameron_3_1501_librivox",
+      "archiveItemUrl": "https://archive.org/details/heptameron_3_1501_librivox"
+    },
+    {
+      "id": "URD-AUD-067",
+      "title": "Hermit Lucas",
+      "category": "Urdu short stories",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "56-hermit-lucas-urdu-audio-book-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/56-hermit-lucas-urdu-audio-book-syed-irfan-ali"
+    },
+    {
+      "id": "URD-AUD-068",
+      "title": "2012: End of Time",
+      "category": "Adventure / fantasy",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "57-history-of-year-2012-end-of-time-urdu-audio-book-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/57-history-of-year-2012-end-of-time-urdu-audio-book-syed-irfan-ali"
+    },
+    {
+      "id": "URD-AUD-069",
+      "title": "The Iliad",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "iliad_of_homer_1011_librivox",
+      "archiveItemUrl": "https://archive.org/details/iliad_of_homer_1011_librivox"
+    },
+    {
+      "id": "URD-AUD-070",
+      "title": "The Illustrious Client",
+      "category": "Mystery / detective",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "9l4stfocjwlhiu4iujqkeryvhig7e16xleshu99l",
+      "archiveItemUrl": "https://archive.org/details/9l4stfocjwlhiu4iujqkeryvhig7e16xleshu99l"
+    },
+    {
+      "id": "URD-AUD-071",
+      "title": "The Importance of Being Earnest",
+      "category": "Urdu short stories",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "wilde-the-importance-of-being-earnest-1953-eddison-fox",
+      "archiveItemUrl": "https://archive.org/details/wilde-the-importance-of-being-earnest-1953-eddison-fox"
+    },
+    {
+      "id": "URD-AUD-072",
+      "title": "Gulliver's Travels",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "GulliversTravels_141",
+      "archiveItemUrl": "https://archive.org/details/GulliversTravels_141"
+    },
+    {
+      "id": "URD-AUD-073",
+      "title": "The Life of a Bee Slave",
+      "category": "Urdu short stories",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "no-archive-item-with-audio",
+      "identifier": "",
+      "archiveItemUrl": "https://archive.org/search?query=title:(\"The%20Life%20of%20a%20Bee%20Slave\")%20AND%20mediatype:audio"
+    },
+    {
+      "id": "URD-AUD-074",
+      "title": "L'Inondation",
+      "category": "Urdu short stories",
+      "status": "rejected",
+      "rightsStatus": "licensed",
+      "reason": "language-unconfirmed",
+      "identifier": "emile-zola-linondation",
+      "archiveItemUrl": "https://archive.org/details/emile-zola-linondation"
+    },
+    {
+      "id": "URD-AUD-075",
+      "title": "Lord of the Flies",
+      "category": "Classic novels",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "lord-of-the-flies-complete-urdu-audio-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/lord-of-the-flies-complete-urdu-audio-syed-irfan-ali"
+    },
+    {
+      "id": "URD-AUD-076",
+      "title": "The Prince and the Pauper",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "1990-el-principe-y-el-mendigo-the-prince-and-the-pauper",
+      "archiveItemUrl": "https://archive.org/details/1990-el-principe-y-el-mendigo-the-prince-and-the-pauper"
+    },
+    {
+      "id": "URD-AUD-077",
+      "title": "Doctor Faustus",
+      "category": "Horror / supernatural",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "marlowe-doctor-faustus-urdu-book-summary-by-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/marlowe-doctor-faustus-urdu-book-summary-by-syed-irfan-ali"
+    },
+    {
+      "id": "URD-AUD-078",
+      "title": "The Mayor of Casterbridge",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "themayorofcaster09425gut",
+      "archiveItemUrl": "https://archive.org/details/themayorofcaster09425gut"
+    },
+    {
+      "id": "URD-AUD-079",
+      "title": "Medea",
+      "category": "Adventure / fantasy",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "medea-euripides-urdu-book-by-syed-irfan-ali",
+      "archiveItemUrl": "https://archive.org/details/medea-euripides-urdu-book-by-syed-irfan-ali"
+    },
+    {
+      "id": "URD-AUD-080",
+      "title": "Paradise Lost",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "odzpae66dkcdgcxb3bru9lggbsqgxkguvw9cc7mp",
+      "archiveItemUrl": "https://archive.org/details/odzpae66dkcdgcxb3bru9lggbsqgxkguvw9cc7mp"
+    },
+    {
+      "id": "URD-AUD-081",
+      "title": "Mirat-ul-Uroos",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "no-archive-item-with-audio",
+      "identifier": "",
+      "archiveItemUrl": "https://archive.org/search?query=title:(\"Mirat-ul-Uroos\")%20AND%20mediatype:audio"
+    },
+    {
+      "id": "URD-AUD-082",
+      "title": "Moonfleet",
+      "category": "Adventure / fantasy",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "MoonfleetSyedirfanalidotcom96kbps",
+      "archiveItemUrl": "https://archive.org/details/MoonfleetSyedirfanalidotcom96kbps"
+    },
+    {
+      "id": "URD-AUD-083",
+      "title": "Mutiny on the Bounty",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "9f7be9fb-f2ce-478e-8f26-485a59e59fde",
+      "archiveItemUrl": "https://archive.org/details/9f7be9fb-f2ce-478e-8f26-485a59e59fde"
+    },
+    {
+      "id": "URD-AUD-084",
+      "title": "Salome",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "hgijji0qoxrwbddq5wdfudpjeuua7f9r0y6vwnfx",
+      "archiveItemUrl": "https://archive.org/details/hgijji0qoxrwbddq5wdfudpjeuua7f9r0y6vwnfx"
+    },
+    {
+      "id": "URD-AUD-085",
+      "title": "The Pilgrim's Progress",
+      "category": "Urdu short stories",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "pilgrimprogresspart1-3",
+      "archiveItemUrl": "https://archive.org/details/pilgrimprogresspart1-3"
+    },
+    {
+      "id": "URD-AUD-086",
+      "title": "Pinky Jadoo Ke Des Men",
+      "category": "Children's stories",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "pinky-jadoo-ke-des-men-urdu-book-by-syed-irfan-ali_202609",
+      "archiveItemUrl": "https://archive.org/details/pinky-jadoo-ke-des-men-urdu-book-by-syed-irfan-ali_202609"
+    },
+    {
+      "id": "URD-AUD-087",
+      "title": "The Red and the Black",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "the-red-and-the-blac-31-chapter-30",
+      "archiveItemUrl": "https://archive.org/details/the-red-and-the-blac-31-chapter-30"
+    },
+    {
+      "id": "URD-AUD-088",
+      "title": "The Scarlet Letter",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "TheScarletLetterTaudio.site",
+      "archiveItemUrl": "https://archive.org/details/TheScarletLetterTaudio.site"
+    },
+    {
+      "id": "URD-AUD-089",
+      "title": "The Secret Garden",
+      "category": "Children's stories",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "12-quite-a-young-someone",
+      "archiveItemUrl": "https://archive.org/details/12-quite-a-young-someone"
+    },
+    {
+      "id": "URD-AUD-090",
+      "title": "She",
+      "category": "Adventure / fantasy",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "0zcfm1dasmde3djbrbjjoeawqwyxkfcbjfjkpwak",
+      "archiveItemUrl": "https://archive.org/details/0zcfm1dasmde3djbrbjjoeawqwyxkfcbjfjkpwak"
+    },
+    {
+      "id": "URD-AUD-091",
+      "title": "A Scandal in Bohemia",
+      "category": "Mystery / detective",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "SherlockHolmes541012AScandalInBohemia",
+      "archiveItemUrl": "https://archive.org/details/SherlockHolmes541012AScandalInBohemia"
+    },
+    {
+      "id": "URD-AUD-092",
+      "title": "The Six Napoleons",
+      "category": "Mystery / detective",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "SherlockHolmesTheSixNapoleonsEpisodes",
+      "archiveItemUrl": "https://archive.org/details/SherlockHolmesTheSixNapoleonsEpisodes"
+    },
+    {
+      "id": "URD-AUD-093",
+      "title": "The Speckled Band",
+      "category": "Mystery / detective",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "LEP_901",
+      "archiveItemUrl": "https://archive.org/details/LEP_901"
+    },
+    {
+      "id": "URD-AUD-094",
+      "title": "The Sign of Four",
+      "category": "Mystery / detective",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "track15_201908",
+      "archiveItemUrl": "https://archive.org/details/track15_201908"
+    },
+    {
+      "id": "URD-AUD-095",
+      "title": "Snow White",
+      "category": "Children's stories",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "2jjnirxqwa7cxnl8xnfxaxwppcqhgxbvlguklvxn",
+      "archiveItemUrl": "https://archive.org/details/2jjnirxqwa7cxnl8xnfxaxwppcqhgxbvlguklvxn"
+    },
+    {
+      "id": "URD-AUD-096",
+      "title": "Antigone",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "unknown",
+      "reason": "language-unconfirmed",
+      "identifier": "antigone_641",
+      "archiveItemUrl": "https://archive.org/details/antigone_641"
+    },
+    {
+      "id": "URD-AUD-097",
+      "title": "Oedipus at Colonus",
+      "category": "Classic novels",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "OedipusAtColonusUrduSyedIrfanAli",
+      "archiveItemUrl": "https://archive.org/details/OedipusAtColonusUrduSyedIrfanAli"
+    },
+    {
+      "id": "URD-AUD-098",
+      "title": "Oedipus the King",
+      "category": "Classic novels",
+      "status": "rejected",
+      "rightsStatus": "public-domain",
+      "reason": "language-unconfirmed",
+      "identifier": "04-oedipus-the-king-4",
+      "archiveItemUrl": "https://archive.org/details/04-oedipus-the-king-4"
+    },
+    {
+      "id": "URD-AUD-099",
+      "title": "Ten Days in a Mad-House",
+      "category": "Mystery / detective",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "ten-days-in-a-mad-house-urdu-book-by-syed-irfan-ali_202609",
+      "archiveItemUrl": "https://archive.org/details/ten-days-in-a-mad-house-urdu-book-by-syed-irfan-ali_202609"
+    },
+    {
+      "id": "URD-AUD-100",
+      "title": "Stories for Poor Erum",
+      "category": "Urdu short stories",
+      "status": "blocked",
+      "rightsStatus": "unknown",
+      "reason": "rights-unknown",
+      "identifier": "3ErumMotherSyedirfanali",
+      "archiveItemUrl": "https://archive.org/details/3ErumMotherSyedirfanali"
+    }
+  ]
+}

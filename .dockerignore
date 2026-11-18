@@ -1,0 +1,11 @@
+node_modules
+dist
+.git
+*.log
+.DS_Store
+
+# Local dev credentials must never enter the production image.
+.env
+.env.local
+.env.development
+.env.*.local

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "sourcePolicy": "Internet Archive only",
+  "createdAt": "2026-11-17T00:00:00.000Z",
+  "note": "Replacement leads for duplicated rows in the supplied candidate index. The original candidate copy is immutable. These are leads only: rights must still be cleared before publish.",
+  "replacements": [
+    {
+      "replacesSourceId": "URD-AUD-100",
+      "reason": "Supplied URD-AUD-100 duplicated The School Story from URD-AUD-014.",
+      "record": {
+        "id": "URD-AUD-101",
+        "title": "Stories for Poor Erum",
+        "urdu_title": "غریب ارم کے لیے کہانیاں",
+        "author": "Syed Irfan Ali",
+        "category": "Short stories",
+        "language": "Urdu",
+        "narrator": "Syed Irfan Ali (reported by source index)",
+        "duration": "00:26:55",
+        "archive_search_url": "https://archive.org/search?query=title%3A%28%22Syed%20Irfan%20Ali%20Stories%20for%20Poor%20Erum%22%29%20AND%20mediatype%3Aaudio",
+        "source_index_url": "https://archive.org/details/3ErumMotherSyedirfanali",
+        "notes": "Replacement lead from Internet Archive item 3ErumMotherSyedirfanali: three Urdu short-story MP3s (about 8-10 minutes each), language urd, no explicit reuse licence in item metadata. Lead only; language, duration and rights still need verification."
+      }
+    }
+  ]
+}
