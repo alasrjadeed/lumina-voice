@@ -1,16 +1,18 @@
 // Supabase backend for Lumina Voice — Auth + PostgreSQL, spoken to over plain
 // fetch (no SDK), so the bundle stays tiny and there is nothing to tree-shake.
 //
-// Architecture (matches the recommended split):
-//   - Cloudflare R2      stores the audio objects (10 GB free, zero egress). The app
-//                        only ever stores the resulting public URL as text.
+// Architecture:
+//   - Internet Archive   hosts every public-domain audio file. The app only stores
+//                        the direct HTTPS download URL as text.
 //   - Supabase Auth      owns credentials in the protected `auth.users` table.
 //   - Supabase `profiles` links a listener row 1:1 to `auth.users.id`.
-//   - Supabase `stories`  is the library catalogue: title, description, audio_url,
-//                        duration — never the audio bytes themselves.
+//   - Supabase `stories`  is the Archive-only catalogue: title, description,
+//                        audio_url, duration — never the audio bytes themselves.
 //
 // If VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY are absent, every call degrades
 // gracefully so the app runs fully offline on the bundled catalog.
+
+import { canonicalArchiveUrl, isArchiveAudioUrl } from './contentPolicy'
 
 const URL_ = (import.meta.env?.VITE_SUPABASE_URL || '').trim().replace(/\/+$/, '')
 // Supabase's Connect dialog now issues a publishable key (sb_publishable_...).
@@ -354,16 +356,18 @@ export async function updateProfile(userId, patch) {
 }
 
 /* ------------------------------------------------------------------ *
- * stories — the catalogue of titles + R2 audio URLs
+ * stories — the catalogue of titles + Archive.org audio URLs
  * ------------------------------------------------------------------ */
 
 function mapStory(r) {
+  const audioUrl = canonicalArchiveUrl(r.audio_url)
+  if (!isArchiveAudioUrl(audioUrl)) return null
   return {
     id: r.id,
     title: r.title,
     description: r.description,
-    audioUrl: r.audio_url,
-    coverUrl: r.cover_url || '',
+    audioUrl,
+    coverUrl: canonicalArchiveUrl(r.cover_url) || '',
     duration: r.duration,
     authorId: r.author_id,
     createdAt: r.created_at
@@ -372,11 +376,13 @@ function mapStory(r) {
 
 export async function fetchStories(signal) {
   const rows = await rest('stories?select=*&order=created_at.desc', { signal })
-  return (rows || []).map(mapStory)
+  return (rows || []).map(mapStory).filter(Boolean)
 }
 
-// Step 2 of the workflow: log a story whose audio already lives in R2.
+// Log a public-domain recording whose stream already lives on Archive.org.
 export async function createStory({ title, description, audioUrl, coverUrl, duration, authorId }) {
+  const stream = canonicalArchiveUrl(audioUrl)
+  if (!isArchiveAudioUrl(stream)) throw new Error('Only direct Archive.org audio URLs can be saved.')
   const token = await validToken()
   const [row] = await rest('stories', {
     method: 'POST',
@@ -384,8 +390,8 @@ export async function createStory({ title, description, audioUrl, coverUrl, dura
     body: [{
       title,
       description,
-      audio_url: audioUrl,
-      cover_url: coverUrl || null,
+      audio_url: stream,
+      cover_url: canonicalArchiveUrl(coverUrl) || null,
       duration,
       author_id: authorId || null
     }]
@@ -398,8 +404,12 @@ export async function updateStory(id, patch) {
   const payload = {}
   if (patch.title !== undefined) payload.title = patch.title
   if (patch.description !== undefined) payload.description = patch.description
-  if (patch.audioUrl !== undefined) payload.audio_url = patch.audioUrl
-  if (patch.coverUrl !== undefined) payload.cover_url = patch.coverUrl || null
+  if (patch.audioUrl !== undefined) {
+    const stream = canonicalArchiveUrl(patch.audioUrl)
+    if (!isArchiveAudioUrl(stream)) throw new Error('Only direct Archive.org audio URLs can be saved.')
+    payload.audio_url = stream
+  }
+  if (patch.coverUrl !== undefined) payload.cover_url = canonicalArchiveUrl(patch.coverUrl) || null
   if (patch.duration !== undefined) payload.duration = patch.duration
   const [row] = await rest(`stories?id=eq.${encodeURIComponent(id)}`, { method: 'PATCH', token, body: payload })
   return mapStory(row)
@@ -412,11 +422,11 @@ export async function deleteStory(id) {
 }
 
 /* ------------------------------------------------------------------ *
- * R2 helpers
+ * media helpers
  * ------------------------------------------------------------------ */
 
-// Turns a bare key or an already-absolute URL into a playable URL. The R2 custom
-// domain / public bucket URL is exposed as VITE_MEDIA_BASE_URL.
+// Legacy bare-key resolver for non-catalogue media. Archive.org streams are always
+// absolute URLs and are never rewritten through VITE_MEDIA_BASE_URL.
 export function r2Url(keyOrUrl) {
   if (!keyOrUrl) return ''
   if (/^https?:\/\//i.test(keyOrUrl)) return keyOrUrl
@@ -429,12 +439,12 @@ function getMediaBase() {
   return (import.meta.env?.VITE_MEDIA_BASE_URL || '').trim()
 }
 
-// Validates a pasted R2 link before it is written to the database.
+// Validates a pasted Archive.org stream before it is written to the database.
 export function isLikelyAudioUrl(url) {
-  if (!url) return false
-  if (!/^https?:\/\//i.test(url)) return false
-  return /\.(opus|m4a|aac|ogg|mp3|wav)(\?|$)/i.test(url) || url.includes('r2') || url.includes('audio')
+  return isArchiveAudioUrl(canonicalArchiveUrl(url))
 }
+
+export { isArchiveAudioUrl, canonicalArchiveUrl }
 
 export async function healthCheck(signal) {
   if (!apiConfigured()) return { ok: false, reason: 'not-configured' }
@@ -448,7 +458,21 @@ export async function healthCheck(signal) {
 
 // SQL to create the schema (shown in the Studio → Storage tab).
 export const SCHEMA_SQL = `-- Lumina Voice · Supabase schema
--- Audio is NEVER stored here — only the R2 URL as text.
+-- Audio is NEVER stored here — only a direct Archive.org URL as text.
+-- Run docs/supabase-admin-lockdown.sql and docs/supabase-archive-only.sql
+-- after this base schema; they are the authoritative policy migrations.
+
+-- Exactly one operator may administer the shared app.
+create or replace function public.is_operator()
+returns boolean language sql stable security definer
+set search_path = public, auth as $$
+  select exists (
+    select 1 from auth.users
+    where id = auth.uid() and lower(coalesce(email, '')) = lower('info@alasarjadeed.com')
+  );
+$$;
+revoke all on function public.is_operator() from public;
+grant execute on function public.is_operator() to authenticated;
 
 -- Table A · profiles (1:1 with the protected auth.users table)
 create table if not exists profiles (
@@ -463,8 +487,8 @@ create table if not exists stories (
   id uuid primary key default gen_random_uuid(),
   title text not null,
   description text,
-  audio_url text not null,        -- Cloudflare R2 public URL
-  cover_url text,                 -- Archive.org / R2 / any image URL
+  audio_url text not null,        -- https://archive.org/download/<id>/<file>.<ext>
+  cover_url text,                 -- Archive.org image URL
   duration integer,               -- seconds, for fast UI
   author_id uuid references auth.users(id) on delete set null,
   created_at timestamptz default now()
@@ -473,6 +497,10 @@ create table if not exists stories (
 alter table stories add column if not exists cover_url text;
 
 create index if not exists stories_created_idx on stories (created_at desc);
+
+alter table public.stories drop constraint if exists stories_archive_audio_url_chk;
+alter table public.stories add constraint stories_archive_audio_url_chk
+  check (audio_url ~* '^https://archive\\.org/download/[^/]+/.+\\.(mp3|m4a|aac|ogg|oga|opus|flac|wav)(\\?.*)?$');
 
 -- Auto-create a profile row whenever a user signs up.
 create or replace function public.handle_new_user()
@@ -501,13 +529,13 @@ create policy "own profile insert" on profiles
 create policy "own profile writable" on profiles
   for update to authenticated using (auth.uid() = id);
 
--- stories: public read; only admins may write.
+-- stories: public read; only the operator email may write.
 create policy "stories readable" on stories
   for select using (true);
 create policy "admins manage stories" on stories
   for all to authenticated
-  using (exists (select 1 from profiles p where p.id = auth.uid() and p.role = 'admin'))
-  with check (exists (select 1 from profiles p where p.id = auth.uid() and p.role = 'admin'));
+  using (public.is_operator())
+  with check (public.is_operator());
 
 -- Realtime: publish the tables the app listens to, so a change on one device
 -- appears live on the other (web and tablet). Safe to run more than once.

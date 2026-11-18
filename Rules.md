@@ -19,9 +19,9 @@ Binding for every contributor and agent. Read `Brain.md` first, then this.
 12. Routes go in `App.jsx` under `Guard`; nested/admin-only tools stay component-mounted (see `Memory.md` routing gotcha).
 
 ## Audio rules (product identity)
-13. Ship Opus 24–48 kbps mono + `.lo` 24 k + AAC `.m4a`. Generating or committing higher-bitrate audio is a bug.
+13. Catalogue audio is Archive.org-only. Bundled audio is limited to `ad-*`; no demo, house, local or custom story audio may be added to any catalogue.
 14. One `<audio>` element only, owned by `AppState.jsx`. Never create players in pages.
-15. Filename convention `<asset-id>[.en].{opus,lo.opus,m4a}`; keep R2 layout identical (see `backend schema.md` §6).
+15. Store direct `https://archive.org/download/<id>/<file>` URLs only. Never rewrite them through a media base or append `.opus`/`.m4a`.
 16. Every source change must be race-guarded with `loadSeq`.
 
 ## Design rules
@@ -32,11 +32,11 @@ Binding for every contributor and agent. Read `Brain.md` first, then this.
 
 ## Security & repo rules
 21. Never commit `.env`, real keys, tokens, or `service.json`-style secrets (`.gitignore` covers `**/.env*`).
-22. Secrets never reach the client — anon key + RLS only (see `security.md`).
+22. Secrets never reach the client — public publishable key + RLS only (see `security.md`).
 23. Keep `*.py` asset scripts offline-only; don't commit generated audio that isn't referenced by the catalogue.
 
 ## Docs rules
-24. Docs are part of the change: a new route/key/endpoint updates `Memory.md`; a flow change updates `app flow.md`; a token change updates `Design.md`.
+24. Docs are part of the change: a new route/key/endpoint updates `Memory.md`; a flow change updates `app flow.md`; content-policy or SQL changes update `backend schema.md`, `DEPLOY.md`, `llms.txt` and `Auto mcp index.md`.
 25. `Task.md` moves items todo → doing → done with the commit. `Brain.md` stays ≤ one screen.
 26. One claim, one source: don't duplicate SQL/keys across docs — link to `backend schema.md` / `Memory.md`.
 27. Checkboxes are status. Never delete a done item; move it to "Done".

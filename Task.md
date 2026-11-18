@@ -102,17 +102,18 @@ Update this file whenever work starts or lands. Status: `todo` · `doing` · `do
 - [x] Cross-platform data sharing kept platform-neutral: tablet and web use the same Supabase REST + plain-WebSocket Realtime project for library/progress/history, plus `/transfer` JSON export/import as the offline bridge. No admin or data path is Android-only.
 - [x] Archive audio Web Audio fix: cross-origin streams routed through `createMediaElementSource()` without CORS were muted (`MediaElementAudioSource outputs zeroes`). Archive.org URLs are canonicalized from `www.` to `archive.org` and loaded with `crossOrigin="anonymous"`; external non-CORS hosts keep plain media playback and the decorative pulse. Verified at `http://localhost:4310/now`: Ghalib stream played with `readyState 4`, `currentTime > 4 s`, no CORS warning.
 - [x] Install prompt warning removed: the app no longer calls `preventDefault()` on `beforeinstallprompt` without an immediate `prompt()`, so Chrome can show its native banner; the Settings install button still uses a deferred prompt when available. Verified Settings console had no banner warning.
+- [x] Archive-only catalogue cleanup: `src/data/contentPolicy.js` is the single Archive.org URL/title gate; `catalog.js` now ships only `selected-ghazals-of-ghalib` (35 direct MP3 episodes) with no demo, house, Harry Potter or empty serial shells, and ads stay separate. `userCatalog.js` migrates old devices; `playability.js`, Import Studio, Catalog admin, Home and Supabase `stories` read/write use the same gate. `syncBundle.js` strips non-Archive entries and audio bytes; `/transfer` is metadata-only. Service worker shell/static caches bumped to `v7`. Added `docs/supabase-archive-only.sql` and `tests/archiveOnly.test.js`. Verified: lint clean, 152/152 tests, production build, Docker rebuild and web + tablet CDP smoke (all seven routes, SW `v7`, no `:8080` traffic, no console errors). The one non-Archive cloud story (`testr`, YouTube URL) was deleted through the app's authenticated REST path; the cloud catalogue is now empty of non-Archive rows.
 
 ## In progress
-- [ ] Run `docs/supabase-admin-lockdown.sql` in the Supabase SQL Editor (dashboard login was unavailable to the agent). It repairs the stale `smoke1` admin row and makes server-side stories RLS use the operator email.
+- [ ] Run `docs/supabase-admin-lockdown.sql` and `docs/supabase-archive-only.sql` in the Supabase SQL Editor (dashboard login was unavailable to the agent). They repair stale admin rows, make stories RLS use the operator email and add the URL check constraint. The non-Archive cloud row is already removed via REST.
 
 ## Backlog
-- [ ] Rights clearance: no supplied or replacement lead has explicit reuse terms, so 0 records can publish. Stage audio + conversion stay gated on this.
+- [ ] Rights clearance: no supplied or replacement lead has explicit reuse terms, so 0 records from the 100-title plan can publish. Stage audio + conversion stay gated on this.
 - [ ] L6: Tier A APK bundle (12 horror titles), Tier B Docker library, Tier C Archive stream — blocked until verified, rights-cleared titles exist.
-- [ ] L7: final device/browser smoke check after the Docker and APK rebuild.
+- [x] L7: final device/browser smoke check after the Docker and APK rebuild.
 
 ## Blocked
-- [ ] *(none)*
+- [ ] Supabase dashboard login was unavailable; both SQL migrations above remain unapplied.
 ---
 - [x] Added Autobiography category and routing
 

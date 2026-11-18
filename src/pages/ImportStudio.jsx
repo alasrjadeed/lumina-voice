@@ -5,9 +5,9 @@ import { useCatalog } from '../state/Catalog.jsx'
 import { useApp } from '../state/AppState.jsx'
 import { useBroadcast } from '../state/Broadcast.jsx'
 import { archiveCoverUrl, isLikelyImageUrl, readImageFile } from '../data/artwork'
-import { archiveIdentifier, fetchArchiveItem, isArchiveUrl, isAudioUrl, looksLikeArchiveId, searchArchiveAudio } from '../data/archive'
+import { archiveIdentifier, fetchArchiveItem, isArchiveUrl, looksLikeArchiveId, searchArchiveAudio } from '../data/archive'
 import { slugId } from '../data/userCatalog'
-import { deleteLocalFile, putLocalFile } from '../data/localMedia'
+import { canonicalArchiveUrl, isArchiveAudioUrl } from '../data/contentPolicy'
 import { voices } from '../data/voices'
 import { catalogues, getCatalogue, catalogueForTitle } from '../data/catalog'
 import { completeMetadata } from '../data/metadata'
@@ -20,23 +20,8 @@ import {
   IcoRefresh,
   IcoSave,
   IcoTrash,
-  IcoUpload,
   IcoX
 } from '../ui/Icons'
-
-// The genre/kind/role/catalogue block for something being added, completed from
-// whatever the source gave us. Shared by the archive path and the local-file
-// path so a stored file is described as fully as a fetched link.
-function completedForm(item, form = {}) {
-  const done = completeMetadata(item, form)
-  return {
-    kind: done.kind,
-    genre: done.genre,
-    genres: done.genres,
-    catalogue: catalogueForTitle({ kind: done.kind, genres: done.genres }),
-    role: done.role
-  }
-}
 
 const KINDS = ['Audiobook', 'Audio-film', 'Drama', 'Ghazals', 'Quran Kareem']
 const ROLES = ['Author', 'Poet', 'Reciter']
@@ -84,10 +69,8 @@ export default function ImportStudio({ admin = false }) {
   const [busy, setBusy] = useState(false)
   const [msg, setMsg] = useState('')
   const [err, setErr] = useState('')
-  const [localAudioName, setLocalAudioName] = useState('')
   const [hits, setHits] = useState([])
   const [tracks, setTracks] = useState([])
-  const [dropOver, setDropOver] = useState(false)
   const [open, setOpen] = useState(admin)
   const [showAllImports, setShowAllImports] = useState(false)
   const [mode, setMode] = useState('add')
@@ -97,7 +80,6 @@ export default function ImportStudio({ admin = false }) {
   const [editQ, setEditQ] = useState('')
   const lookupSeq = useRef(0)
   const lookupAbort = useRef(null)
-  const localAudioIdRef = useRef('')
 
   const advanced = admin && mode === 'add'
 
@@ -153,42 +135,20 @@ export default function ImportStudio({ admin = false }) {
     }
   }
 
-  const clearLocalAudio = () => {
-    if (localAudioIdRef.current) deleteLocalFile(localAudioIdRef.current).catch(() => {})
-    localAudioIdRef.current = ''
-    setLocalAudioName('')
-  }
 
   const lookup = async () => {
     const raw = form.source.trim()
-    if (!raw) return flash(false, 'Paste an Archive.org URL or identifier, a custom audio URL, or a search phrase.')
+    if (!raw) return flash(false, 'Paste an Archive.org URL, identifier, or search phrase.')
     const { seq, signal } = beginLookup()
     setBusy(true)
     flash(true, '')
     setHits([])
     try {
-      if (isAudioUrl(raw) && !isArchiveUrl(raw)) {
-        let guessed = form.name
-        if (!guessed) {
-          try {
-            const path = new URL(raw).pathname.split('/').pop() || ''
-            guessed = decodeURIComponent(path.replace(/\.[^.]+$/, '')).replace(/[-_]+/g, ' ')
-          } catch {
-            guessed = ''
-          }
-        }
-        set({ source: raw, audioUrl: raw, name: guessed })
-        clearLocalAudio()
-        setTracks([])
-        flash(true, 'Custom audio URL ready. Add a title if needed, then save.')
-        return
-      }
       if (isArchiveUrl(raw) || looksLikeArchiveId(raw)) {
         try {
           const item = await fetchArchiveItem(raw, signal)
           if (seq !== lookupSeq.current) return
           applyArchiveItem(item)
-          clearLocalAudio()
           flash(true, item.tracks?.length > 1 ? `Loaded ${item.name} · ${item.tracks.length} tracks.` : `Loaded ${item.name} from Archive.org.`)
           return
         } catch (e) {
@@ -199,14 +159,13 @@ export default function ImportStudio({ admin = false }) {
       try {
         found = await searchArchiveAudio(raw, 8, signal)
       } catch {
-        throw new Error('Archive.org search is unreachable. Paste an item URL, or add a local file.')
+        throw new Error('Archive.org search is unreachable. Paste an item URL or identifier.')
       }
       if (seq !== lookupSeq.current) return
       if (found.length === 1) {
         const item = await fetchArchiveItem(found[0].identifier, signal)
         if (seq !== lookupSeq.current) return
         applyArchiveItem(item)
-        clearLocalAudio()
         flash(true, item.tracks?.length > 1 ? `Loaded ${item.name} · ${item.tracks.length} tracks.` : `Loaded ${item.name} from Archive.org.`)
         return
       }
@@ -232,7 +191,6 @@ export default function ImportStudio({ admin = false }) {
         coverUrl: /^data:image\//.test(form.coverUrl) ? form.coverUrl : item.coverUrl,
         portraitUrl: form.portraitUrl
       })
-      clearLocalAudio()
       setHits([])
       flash(true, item.tracks?.length > 1 ? `Using ${item.name} · ${item.tracks.length} tracks.` : `Using Archive.org audio: ${item.name}.`)
     } catch (e) {
@@ -242,57 +200,6 @@ export default function ImportStudio({ admin = false }) {
     } finally {
       if (seq === lookupSeq.current) setBusy(false)
     }
-  }
-
-  const takeAudioFile = async (file) => {
-    if (!file) return
-    lookupAbort.current?.abort()
-    lookupSeq.current += 1
-    setBusy(true)
-    try {
-      const id = slugId('audio', file.name)
-      await putLocalFile(id, file)
-      if (localAudioIdRef.current) deleteLocalFile(localAudioIdRef.current).catch(() => {})
-      localAudioIdRef.current = id
-      setLocalAudioName(file.name)
-      const mins = await new Promise((resolve) => {
-        const el = document.createElement('audio')
-        el.preload = 'metadata'
-        const url = URL.createObjectURL(file)
-        el.onloadedmetadata = () => {
-          const m = el.duration && Number.isFinite(el.duration) ? Math.max(1, Math.round(el.duration / 60)) : 0
-          URL.revokeObjectURL(url)
-          resolve(m)
-        }
-        el.onerror = () => {
-          URL.revokeObjectURL(url)
-          resolve(0)
-        }
-        el.src = url
-      })
-      const guessedName = form.name || file.name.replace(/\.[^.]+$/, '')
-      const guessed = { name: guessedName, subject: file.name, description: '' }
-      set({
-        audioUrl: '',
-        name: guessedName,
-        source: '',
-        duration: mins ? String(mins) : '',
-        ...completedForm(guessed)
-      })
-      setTracks([])
-      setHits([])
-      flash(true, 'Audio file stored on this device.')
-    } catch (e2) {
-      flash(false, e2.message || 'Could not store that audio file.')
-    } finally {
-      setBusy(false)
-    }
-  }
-
-  const onAudioFile = async (e) => {
-    const file = e.target.files?.[0]
-    e.target.value = ''
-    await takeAudioFile(file)
   }
 
   const onCoverFile = async (e) => {
@@ -346,13 +253,13 @@ export default function ImportStudio({ admin = false }) {
     const name = form.name.trim()
     const creator = form.creator.trim() || 'Unknown'
     if (!name) return flash(false, 'A title is required.')
-    const localId = localAudioIdRef.current
-    const audio = localId ? `local:${localId}` : form.audioUrl.trim()
-    const rowAudio = admin && epRows.some((r) => (r.audio || '').trim())
-    const customUrl = !localId && !tracks.length && isAudioUrl(audio)
-    if (!audio && !tracks.length && !rowAudio) return flash(false, 'Add Archive.org audio, a custom audio URL, a local file, or an episode audio URL.')
-    if (!localId && !tracks.length && !rowAudio && !isAudioUrl(audio)) {
-      return flash(false, 'That does not look like a playable audio URL.')
+    const localId = ''
+    const audio = canonicalArchiveUrl(form.audioUrl.trim())
+    const rowAudio = admin && epRows.some((r) => isArchiveAudioUrl(canonicalArchiveUrl(r.audio)))
+    const customUrl = !tracks.length && isArchiveAudioUrl(audio)
+    if (!audio && !tracks.length && !rowAudio) return flash(false, 'Add Archive.org audio or an Archive.org episode URL.')
+    if (!tracks.length && !rowAudio && !isArchiveAudioUrl(audio)) {
+      return flash(false, 'Only direct Archive.org audio URLs can be saved.')
     }
     const cover = form.coverUrl.trim()
       ? (/archive\.org/i.test(form.coverUrl) ? archiveCoverUrl(form.coverUrl) : form.coverUrl.trim())
@@ -408,14 +315,14 @@ export default function ImportStudio({ admin = false }) {
         duration: Math.max(0, Number(r.duration) || 0),
         free: r.free !== false,
         asset: '',
-        audio: (r.audio || '').trim(),
+        audio: canonicalArchiveUrl((r.audio || '').trim()),
         codec: 'external',
         kbps: 64,
         channels: 'mono'
       }))
       .filter((e) => e.audio)
     if (!audio && !tracks.length && !customEpisodes.length) {
-      return flash(false, 'Add Archive.org audio, a custom audio URL, a local file, or an episode audio URL.')
+      return flash(false, 'Add Archive.org audio or an Archive.org episode URL.')
     }
     const episodes = advanced && customEpisodes.length ? customEpisodes : builtEpisodes
     const draft = {
@@ -459,8 +366,6 @@ export default function ImportStudio({ admin = false }) {
       return
     }
     setForm(emptyForm())
-    localAudioIdRef.current = ''
-    setLocalAudioName('')
     setHits([])
     setTracks([])
     setEpRows([])
@@ -486,7 +391,7 @@ export default function ImportStudio({ admin = false }) {
       genres: t.genres?.length ? [...t.genres] : ['Poetry'],
       catalogue: catalogueForTitle(t),
       synopsis: t.synopsis || '',
-      audioUrl: (t.episodes || []).map((e) => e.audio).find(isAudioUrl) || '',
+      audioUrl: (t.episodes || []).map((e) => canonicalArchiveUrl(e.audio)).find(isArchiveAudioUrl) || '',
       coverUrl: t.coverUrl || '',
       portraitUrl: '',
       duration: t.episodes?.[0]?.duration ? String(Math.round(t.episodes[0].duration)) : '',
@@ -497,8 +402,6 @@ export default function ImportStudio({ admin = false }) {
       featured: !!t.featured,
       top: !!t.top
     })
-    const localEp = (t.episodes || []).find((e) => (e.asset || '').startsWith('local:'))
-    if (localEp) localAudioIdRef.current = localEp.asset.slice(6)
     setEpRows(
       (t.episodes || []).map((e) => ({
         titleEn: e.titleEn || '',
@@ -509,7 +412,6 @@ export default function ImportStudio({ admin = false }) {
     )
     setTracks([])
     setHits([])
-    setLocalAudioName('')
     setOpen(true)
     flash(true, `Editing ${t.name}.`)
   }
@@ -529,9 +431,9 @@ export default function ImportStudio({ admin = false }) {
       <div style={{ width: '100%' }}>
         <div className="studio-head">
           <div>
-            <h3>Add local or online content</h3>
+            <h3>Add Archive.org content</h3>
             <p>
-              Archive.org, a custom audio URL, or a file on this device.
+              Paste an item URL, identifier, or search phrase. Only Archive.org audio is stored.
               {imported.length ? ` ${imported.length} added on this device.` : ''}
             </p>
           </div>
@@ -604,7 +506,7 @@ export default function ImportStudio({ admin = false }) {
           <div className="art-actions">
             <input
               className="search-input"
-              placeholder="archive.org/details/… · identifier · https://…mp3 · title search"
+              placeholder="archive.org/details/… · identifier · title search"
               value={form.source}
               onChange={(e) => set({ source: e.target.value })}
               onKeyDown={(e) => {
@@ -775,7 +677,7 @@ export default function ImportStudio({ admin = false }) {
           </label>
 
           <label className="field" style={{ marginTop: 12 }}>
-            <span>Audio URL (if not using Archive.org or a local file)</span>
+            <span>Archive.org audio URL (optional override)</span>
             <input
               className="search-input"
               value={form.audioUrl}
@@ -787,39 +689,16 @@ export default function ImportStudio({ admin = false }) {
                   lookupSeq.current += 1
                   setBusy(false)
                   setHits([])
-                  clearLocalAudio()
                 }
                 set({
-                  audioUrl: v,
+                  audioUrl: canonicalArchiveUrl(v),
                   source: v.trim() && (isArchiveUrl(form.source) || looksLikeArchiveId(form.source)) ? '' : form.source
                 })
               }}
-              placeholder="https://… .mp3 / .opus / .m4a"
+              placeholder="https://archive.org/download/item/track.mp3"
             />
           </label>
         </details>
-        <div
-          className={`art-actions import-drop ${dropOver ? 'over' : ''}`}
-          style={{ marginTop: 8 }}
-          onDragOver={(e) => {
-            e.preventDefault()
-            setDropOver(true)
-          }}
-          onDragLeave={() => setDropOver(false)}
-          onDrop={(e) => {
-            e.preventDefault()
-            setDropOver(false)
-            const file = [...(e.dataTransfer.files || [])].find((f) => /audio|opus|mpeg|mp4|ogg|flac|wav/i.test(f.type || f.name))
-            if (file) takeAudioFile(file)
-            else flash(false, 'Drop an audio file (.mp3, .opus, .m4a, .ogg, .flac, .wav).')
-          }}
-        >
-          <label className="btn btn-ghost art-file">
-            <IcoUpload /> {localAudioName ? localAudioName : 'Choose or drop local audio'}
-            <input type="file" accept="audio/*,.opus,.mp3,.m4a,.ogg,.flac,.wav" hidden onChange={onAudioFile} />
-          </label>
-        </div>
-
         {admin ? (
           <div className="ep-builder">
             <div className="row-title" style={{ marginTop: 16, marginBottom: 0 }}>
@@ -955,8 +834,6 @@ export default function ImportStudio({ admin = false }) {
               setEditId('')
               setForm(emptyForm())
               setEpRows([])
-              setLocalAudioName('')
-              localAudioIdRef.current = ''
               flash(true, 'Back to adding a new title.')
             }}
           >

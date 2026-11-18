@@ -1,17 +1,18 @@
 # Lumina Voice
 
-> Urdu-first audio streaming PWA: audio-films, dramas, series and audiobooks. Radio is paused.
-> "Close your eyes. The story begins." Streams as Opus 24–48 kbps mono with an AAC fallback,
-> installs as a Progressive Web App, and works fully offline on a bundled catalogue.
+> Urdu-first audio streaming PWA with an Archive.org-only catalogue. Radio is paused.
+> "Close your eyes. The story begins." Streams public-domain audio directly from Archive.org,
+> installs as a Progressive Web App, and keeps its shell, state, ads and downloads available offline.
 
 Author: Lumina My Ai · Website: www.alasarjadeed.com · Email: luminamyai@gmail.com
 
 Lumina Voice is a private, client-only React application. There is no first-party API server.
-All backends are optional and disabled in the shipped build. The device does the work:
-bundled catalogue and audio, local state, on-device voice and a service-worker audio cache.
+All backends are optional. The device does the work: local state, on-device voice, an
+Archive.org-only catalogue and a service-worker cache for downloaded audio. Advertising is
+kept in a separate data file and the APK ships only `ad-*` audio.
 
 ## Launch
-- Static PWA served by nginx on http://localhost:4310 (also http://192.168.1.152:4310 on the LAN)
+- Static PWA served by nginx on http://localhost:4310 (also http://192.168.1.166:4310 on the LAN)
 - No VS Code needed: `docker-compose up -d --build`; desktop icon `Lumina Voice.desktop` runs `scripts/open-lumina.sh` to start the container if stopped and open the app
 - No streaming server, database, API key or paid provider is required
 - Observability: pino logs; Sentry alerts disabled without a DSN
@@ -31,7 +32,7 @@ bundled catalogue and audio, local state, on-device voice and a service-worker a
 - [TRD.md](https://luminavoice.app/llms.txt): technical requirements, budgets, API surface
 - [Architecture.md](https://luminavoice.app/llms.txt): frontend layers, playback pipeline, service worker
 - [app flow.md](https://luminavoice.app/llms.txt): routes and user journeys
-- [backend schema.md](https://luminavoice.app/llms.txt): Supabase schema, RLS policies, R2 layout
+- [backend schema.md](https://luminavoice.app/llms.txt): Supabase schema, RLS policies, Archive.org URL rules
 - [Rules.md](https://luminavoice.app/llms.txt): build conventions and definition of done
 - [security.md](https://luminavoice.app/llms.txt): threat model, accepted risks, CSP proposal
 

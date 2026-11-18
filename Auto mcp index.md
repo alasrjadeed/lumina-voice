@@ -1,7 +1,7 @@
 # Auto mcp index.md — machine-facing index (MCP / agent interfaces)
 
 Auto-generated inventory of everything an agent or MCP client can hook into for this project.
-Regenerate whenever a server, endpoint, or script changes. Last checked: **2026-11-17**.
+Regenerate whenever a server, endpoint, or script changes. Last checked: **2026-11-18**.
 
 ## 1. MCP servers configured
 | Server | Status | Notes |
@@ -21,7 +21,7 @@ Regenerate whenever a server, endpoint, or script changes. Last checked: **2026-
 }
 ```
 Useful candidates: **Supabase MCP** (schema/auth/RLS ops), **Playwright/Chromium MCP** (UI smoke),
-**R2/S3 MCP** (media uploads), **GitHub MCP** (issues/PRs).
+**Archive.org API** (catalogue verification), **GitHub MCP** (issues/PRs).
 
 ## 2. Local programmatic interfaces (no MCP needed)
 
@@ -68,19 +68,21 @@ Useful candidates: **Supabase MCP** (schema/auth/RLS ops), **Playwright/Chromium
 ## 3. HTTP surfaces (environment-dependent)
 | Surface | Auth | Used by |
 |---|---|---|
-| `{VITE_SUPABASE_URL}/auth/v1/*` | anon key header | `src/data/api.js` |
-| `{VITE_SUPABASE_URL}/rest/v1/{profiles,stories}` | anon key + user JWT, RLS | `src/data/api.js` |
-| `{VITE_MEDIA_BASE_URL}/<asset>.{opus,lo.opus,m4a}` | public read | `src/data/media.js` |
-| `{azuracast}/api/nowplaying/{shortcode}` (+ `X-API-Key` admin) | station-local | `src/data/stream.js` |
-| `{icecast}/status-json.xsl` | public | `src/data/stream.js` |
+| `{VITE_SUPABASE_URL}/auth/v1/*` | publishable key header | `src/data/api.js` |
+| `{VITE_SUPABASE_URL}/rest/v1/{profiles,stories,ratings,reviews,user_state}` | publishable key + user JWT, RLS | `src/data/api.js`, `src/data/ratings.js`, `src/data/userState.js` |
+| `https://archive.org/download/{id}/{file}` | public read | `src/state/AppState.jsx` (catalogue audio) |
+| `{VITE_MEDIA_BASE_URL}/<asset>` | public read | legacy non-catalogue media only |
+| `{azuracast}/api/nowplaying/{shortcode}` (+ `X-API-Key` admin) | station-local, radio off | `src/data/stream.js` |
+| `{icecast}/status-json.xsl` | public, radio off | `src/data/stream.js` |
 | `https://archive.org/metadata/{id}` · `advancedsearch.php` | public (dev-proxied `/import-proxy/archive`) | `src/data/archive.js` |
-| `/llms.txt`, `/manifest.webmanifest`, `/sw.js?v=5` | public | crawler/PWA |
+| `/llms.txt`, `/manifest.webmanifest`, `/sw.js?v=7` | public | crawler/PWA |
 
 ## 4. Agent-readable entry points
 1. `public/llms.txt` — human/LLM product summary served at `/llms.txt`.
 2. `Brain.md` — doc map; `Memory.md` — stable facts (keys, routes, traps).
 3. `Rules.md` — constraints before editing; `Task.md` — current work state.
-4. `backend schema.md` — exact SQL; `Auto mcp index.md` (this file) — interfaces.
+4. `src/data/contentPolicy.js` — single Archive.org-only content gate.
+5. `backend schema.md`, `docs/supabase-admin-lockdown.sql`, `docs/supabase-archive-only.sql`, `docs/supabase-user-state.sql` — SQL policy sources; this file — interfaces.
 
 ## 5. Generated / do-not-edit
 `package-lock.json` · `dist/**` · `public/audio/*` (produced by `scripts/*.py`) ·

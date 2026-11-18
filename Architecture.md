@@ -17,13 +17,14 @@
 └──────┬────────────────┬───────────────────┬─────────────────────────┘
        │ REST (fetch)   │ now-playing       │ media (cache-first)
 ┌──────▼──────┐  ┌──────▼───────────┐  ┌────▼──────────────────────┐
-│  Supabase   │  │ AzuraCast /      │  │ Cloudflare R2  (or        │
-│  Auth + PG  │  │ Icecast          │  │ bundled /public/audio)    │
-│  (optional) │  │ (optional)       │  │ Opus 24–48k + AAC         │
+│  Supabase   │  │ AzuraCast /      │  │ Internet Archive          │
+│  Auth + PG  │  │ Icecast          │  │ direct HTTPS audio        │
+│  (optional) │  │ (gated off)      │  │ canonical + node failover │
 └─────────────┘  └──────────────────┘  └───────────────────────────┘
 ```
 
-All three backends are **optional**. Missing config degrades to the bundled offline catalogue.
+Supabase is optional and the radio source is gated off. Catalogue audio is Archive.org-only;
+offline state, ads and downloaded audio work without a network.
 
 ## 2. Frontend layers
 
@@ -37,30 +38,30 @@ All three backends are **optional**. Missing config degrades to the bundled offl
 ## 3. Playback pipeline
 
 1. `playEpisode / playRadio / playBroadcast / playExternal` in `AppState.jsx`.
-2. `sourceList(assetId, {hq, lang})` (`data/media.js`) builds `<source>` order:
-   `.opus` → `.lo.opus` (when `hq=false`) → `.m4a`; `lang:'en'` prefers `<asset>.en.*`.
-   Local imports resolve to `local:` blobs from IndexedDB (`data/localMedia.js`).
+2. `loadOpus()` canonicalises the Archive URL, tries the `download` redirect first, then the direct
+   storage node after a 15 s no-data watchdog (`data/contentPolicy.js`, `state/AppState.jsx`).
+   `sourceList()` remains only for legacy/bundled ad assets.
 3. `loadSeq` counter guards against race conditions on rapid track changes.
-4. Events: `timeupdate` → `progress[titleId]`, `ended` → autoplay next (free or premium).
-5. SW caches every same-origin audio request cache-first on first play.
+4. Events: `timeupdate` → `progress[titleId]`, `ended` → autoplay next.
+5. SW caches downloaded audio; uncached Archive streams need a network.
 
-External radio mounts (`.opus/.m4a/.mp3`) bypass the proxy and play directly.
+External radio mounts remain in the gated source but make no requests while radio is off.
 
 ## 4. Backend split
 
 - **Supabase Auth** — credentials in `auth.users`; session in `localStorage['lumina-supabase-session-v1']`, refreshed 60 s before expiry.
 - **Supabase Postgres** — `profiles` (1:1 with auth.users, `role`) and `stories` (catalogue text rows). RLS in `backend schema.md`.
-- **Cloudflare R2** — audio objects; the app only stores `VITE_MEDIA_BASE_URL + key` as text.
-- **AzuraCast / Icecast** — live radio now-playing + mounts, polled every 15 s (`state/useNowPlaying.js`).
+- **Internet Archive** — every catalogue audio object; the app stores only a direct URL as text.
+- **AzuraCast / Icecast** — live radio now-playing + mounts, polled every 15 s only when enabled.
 
 No SDKs: everything is plain `fetch` in `src/data/api.js`.
 
-## 5. Service worker (`public/sw.js`, registered `?v=5`)
+## 5. Service worker (`public/sw.js`, registered `?v=7`)
 
 | Cache | Holds |
 |---|---|
-| `lumina-shell-v5` | `index.html` + precached shell |
-| `lumina-static-v5` | hashed `/assets/*`, Google Fonts (stale-while-revalidate) |
+| `lumina-shell-v7` | `index.html` + precached shell |
+| `lumina-static-v7` | hashed `/assets/*`, Google Fonts (stale-while-revalidate) |
 | `lumina-audio-v1` | downloaded/streamed audio (cache-first) |
 
 Message API (from `src/pwa.js`): `CACHE_AUDIO`, `DELETE_AUDIO`, `AUDIO_STATUS`, `CLEAR_AUDIO`, `SKIP_WAITING`.

@@ -58,7 +58,7 @@ describe('custom genres', () => {
 
   it('keeps the rest of the catalogue intact when genres are saved', () => {
     saveUserCatalog({
-      titles: [{ id: 't1' }],
+      titles: [{ id: 't1', authorId: 'a1', episodes: [{ audio: 'https://archive.org/download/item/track.mp3' }] }],
       authors: [{ id: 'a1' }],
       poets: [],
       overrides: { t1: { name: 'X' } },

@@ -1,8 +1,8 @@
 /* Lumina Voice service worker — PWA shell, runtime caching, and offline audio.
  *
  * Caches
- *   lumina-shell-v1   app shell (navigation fallback, manifest, icons)
- *   lumina-static-v1  build assets + web fonts (stale-while-revalidate)
+ *   lumina-shell-v7   app shell (navigation fallback, manifest, icons)
+ *   lumina-static-v7  build assets + web fonts (stale-while-revalidate)
  *   lumina-audio-v1   audio objects (cache-first; explicit downloads)
  *
  * Strategies
@@ -19,8 +19,8 @@
  *   SKIP_WAITING               -> activate a waiting worker immediately
  */
 
-const SHELL = 'lumina-shell-v6'
-const STATIC = 'lumina-static-v6'
+const SHELL = 'lumina-shell-v7'
+const STATIC = 'lumina-static-v7'
 const AUDIO = 'lumina-audio-v1'
 
 const SHELL_ASSETS = [

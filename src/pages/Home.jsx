@@ -1,30 +1,36 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useCatalog } from '../state/Catalog.jsx'
-import { voices } from '../data/voices'
 import { CoverArt } from '../art/covers'
 import { PersonChip, TitleTile, PlayBtn } from '../ui/Bits'
 import { useApp } from '../state/AppState.jsx'
 import { useArtwork } from '../state/Artwork.jsx'
 import { RADIO_ENABLED } from '../config/features.js'
 
-const kinds = [
-  { label: 'Audio-films', kind: 'Audio-film' },
-  { label: 'Series & dramas', kind: 'Drama' },
-  { label: 'Audiobooks', kind: 'Audiobook' },
-  ...(RADIO_ENABLED ? [{ label: 'Live radio', to: '/radio' }] : [])
-]
+function Shelf({ title, to, items }) {
+  if (!items.length) return null
+  return (
+    <>
+      <div className="row-title">
+        <h2>{title}</h2>
+        {to ? <Link to={to}>See all</Link> : null}
+      </div>
+      <div className="h-scroll">
+        {items.map((x) => <TitleTile key={x.id} t={x} />)}
+      </div>
+    </>
+  )
+}
 
 export default function Home() {
-  const { authors, poets, seriesList, titles, hero, getTitle, getAuthor, titlesByKind } = useCatalog()
+  const { authors, poets, seriesList, titles, hero, kinds, getTitle, getAuthor, titlesByKind } = useCatalog()
   const { resumeTitle } = useApp()
   const { coverFor } = useArtwork()
   const nav = useNavigate()
-  // A stale hero id or an empty catalogue must never take down the whole app.
-  const t = getTitle(hero.titleId) || titles.find((x) => x.featured && !x.imported) || titles[0]
-  if (!t) return <div className="panel">No titles are available yet.</div>
+  const t = getTitle(hero.titleId) || titles.find((x) => x.featured) || titles[0]
+  if (!t) return <div className="panel">No Archive.org titles are available yet.</div>
   const author = getAuthor(t.authorId)
-  const featured = titles.filter((x) => x.featured && !x.imported)
-  const top = titles.filter((x) => x.top && !x.imported)
+  const featured = titles.filter((x) => x.featured)
+  const top = titles.filter((x) => x.top)
   const imported = titles.filter((x) => x.imported)
 
   return (
@@ -62,123 +68,69 @@ export default function Home() {
       </div>
 
       <p className="manifesto">
-        Lumina Voice brings you the finest Urdu audio-films, dramas, series, and audiobooks{RADIO_ENABLED ? ', and live radio' : ''}, all in one beautifully crafted app. Close your eyes. The story begins.
+        Lumina Voice is a quiet place to listen. Every recording in the library is streamed directly from the Internet Archive — no house demos, no placeholder stories.
       </p>
-      <p className="manifesto">
-        Dive into a world where sound takes center stage, and let your imagination soar with our exclusive collection of content, carefully curated to keep you entertained, inspired, and engaged. Whether you&apos;re on the go, relaxing at home, or seeking a moment of escape, Lumina Voice offers a rich auditory experience that transports you into the heart of every story.
-      </p>
-      <div className="kind-pills">
-        {kinds.map((k) =>
-          k.to ? (
-            <Link key={k.label} className="kind-pill" to={k.to}>
-              {k.label}
-            </Link>
-          ) : (
-            <Link key={k.label} className="kind-pill" to={`/kind/${encodeURIComponent(k.kind)}`}>
-              {k.label}
-            </Link>
-          )
-        )}
-      </div>
-      <div className="codec-chip">Opus · 24–48 kbps mono · speech-optimised</div>
+      {RADIO_ENABLED ? (
+        <p className="manifesto">Live radio is available from the Radio tab.</p>
+      ) : null}
 
-      {imported.length ? (
+      <div className="kind-pills">
+        {kinds
+          .filter((kind) => titlesByKind(kind).length)
+          .map((kind) => (
+            <Link key={kind} className="kind-pill" to={`/kind/${encodeURIComponent(kind)}`}>{kind}</Link>
+          ))}
+      </div>
+      <div className="codec-chip">Archive.org · public-domain audio · streamed in the browser</div>
+
+      <Shelf title="Added from Settings" to="/settings" items={imported} />
+      {kinds.map((kind) => (
+        <Shelf
+          key={kind}
+          title={kind}
+          to={`/kind/${encodeURIComponent(kind)}`}
+          items={titlesByKind(kind).filter((x) => !x.imported)}
+        />
+      ))}
+      <Shelf title="Featured" to="/explore" items={featured} />
+
+      {seriesList.length ? (
         <>
-          <div className="row-title">
-            <h2>Added from Settings</h2>
-            <Link to="/settings">Manage</Link>
-          </div>
+          <div className="row-title"><h2>Series</h2></div>
           <div className="h-scroll">
-            {imported.map((x) => (
-              <TitleTile key={x.id} t={x} />
-            ))}
+            {seriesList.map((s) => {
+              const first = titles.find((x) => x.seriesId === s.id)
+              return (
+                <Link to={`/series/${s.id}`} className="tile" key={s.id}>
+                  <div className="cover">
+                    <CoverArt id={first?.cover} title={s.name} number="" src={coverFor(first)} t={first} className="cover-art" />
+                  </div>
+                  <div className="name">{s.name}</div>
+                  <div className="sub urdu-inline">{s.nameUr}</div>
+                  <div className="sub">{s.genre} · {titles.filter((x) => x.seriesId === s.id).length} titles</div>
+                </Link>
+              )
+            })}
           </div>
         </>
       ) : null}
 
-      <div className="row-title">
-        <h2>Audio-films</h2>
-        <Link to="/kind/Audio-film">See all</Link>
-      </div>
-      <div className="h-scroll">
-        {titlesByKind('Audio-film').filter((x) => !x.imported).slice(0, 10).map((x) => (
-          <TitleTile key={x.id} t={x} />
-        ))}
-      </div>
+      {authors.length ? (
+        <>
+          <div className="row-title"><h2>Authors</h2></div>
+          <div className="h-scroll">{authors.map((p) => <PersonChip key={p.id} p={p} />)}</div>
+        </>
+      ) : null}
+      {poets.length ? (
+        <>
+          <div className="row-title"><h2>Poets</h2></div>
+          <div className="h-scroll">{poets.map((p) => <PersonChip key={p.id} p={p} />)}</div>
+        </>
+      ) : null}
 
-      <div className="row-title">
-        <h2>Featured</h2>
-        <Link to="/explore">Explore more</Link>
-      </div>
-      <div className="h-scroll">
-        {featured.map((x) => (
-          <TitleTile key={x.id} t={x} />
-        ))}
-      </div>
-
-      <div className="row-title">
-        <h2>Series &amp; dramas</h2>
-      </div>
-      <div className="h-scroll">
-        {seriesList.map((s) => (
-          <Link to={`/series/${s.id}`} className="tile" key={s.id}>
-            <div className="cover">
-              <CoverArt id={titles.find((x) => x.seriesId === s.id)?.cover} title={s.name} number="" src={coverFor(titles.find((x) => x.seriesId === s.id))} t={titles.find((x) => x.seriesId === s.id)} className="cover-art" />
-            </div>
-            <div className="name">{s.name}</div>
-            <div className="sub urdu-inline">{s.nameUr}</div>
-            <div className="sub">{s.genre} · {s.books} titles</div>
-          </Link>
-        ))}
-      </div>
-
-      <div className="row-title">
-        <h2>Audiobooks</h2>
-        <Link to="/kind/Audiobook">See all</Link>
-      </div>
-      <div className="h-scroll">
-        {titlesByKind('Audiobook').filter((x) => !x.imported).map((x) => (
-          <TitleTile key={x.id} t={x} />
-        ))}
-      </div>
-
-      <div className="row-title">
-        <h2>Authors</h2>
-      </div>
-      <div className="h-scroll">
-        {authors.filter((p) => !p.imported).map((p) => (
-          <PersonChip key={p.id} p={p} />
-        ))}
-      </div>
-
-      <div className="row-title">
-        <h2>Poets</h2>
-      </div>
-      <div className="h-scroll">
-        {poets.filter((p) => !p.imported).map((p) => (
-          <PersonChip key={p.id} p={p} />
-        ))}
-      </div>
-
-      <div className="row-title">
-        <h2>Voice artists</h2>
-      </div>
-      <div className="h-scroll">
-        {voices.map((p) => (
-          <PersonChip key={p.id} p={{ ...p, role: p.label }} />
-        ))}
-      </div>
-
-      <div className="row-title">
-        <h2>Continue the night</h2>
-      </div>
-      <div className="h-scroll">
-        {top.map((x) => (
-          <TitleTile key={x.id} t={x} />
-        ))}
-      </div>
+      <Shelf title="Continue the night" items={top} />
       <p className="meta" style={{ marginTop: 24 }}>
-        With {author?.name} and a growing house of original Urdu audio-films.
+        {author ? `Read by the Internet Archive community · ${author.name}.` : 'Audio from the Internet Archive.'}
       </p>
     </>
   )

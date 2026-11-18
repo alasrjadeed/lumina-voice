@@ -2,17 +2,17 @@
 
 ## 1. Architecture assumptions
 - The app is a **static SPA**: everything in `dist/` is public, including JS.
-- The only server-side trust boundary is **Supabase RLS**. Third parties: Cloudflare R2 (public media),
-  AzuraCast/Icecast (public streams), archive.org (public import source).
+- The only server-side trust boundary is **Supabase RLS**. Third parties: Internet Archive (public catalogue
+  audio), AzuraCast/Icecast (gated radio source), archive.org metadata/import APIs.
 - Therefore: **no secret ever ships in the bundle.** `VITE_*` vars are public by design.
 
 ## 2. Controls in place
 | Area | Control | Where |
 |---|---|---|
 | Credentials | Supabase Auth owns hashes in protected `auth.users`; client never sees passwords | `data/api.js` |
-| Data access | RLS on `profiles` + `stories`; writes require `role='admin'` | `SCHEMA_SQL` |
+| Data access | RLS on `profiles` + `stories`; writes require the operator email via `public.is_operator()` | `SCHEMA_SQL`, admin-lockdown SQL |
 | Session | Access + refresh tokens in `localStorage['lumina-supabase-session-v1']`, auto-refresh ≤ 60 s skew, cleared on sign-out | `data/api.js` |
-| Media | R2 objects are public read-only audio; no write credentials in client; URLs validated (`isLikelyAudioUrl`) before persistence | `api.js` |
+| Media | Archive.org audio URLs are public read-only; no media write credentials in client; URLs validated (`isArchiveAudioUrl`) before persistence | `contentPolicy.js`, `api.js` |
 | Stream keys | Station admin API key (`X-API-Key`) stored **locally only** in `lumina-stream-v1`, never logged, never sent anywhere but the station's own host | `data/stream.js` |
 | Imports | archive.org accessed through dev proxy `/import-proxy/archive`; 12 s race timeouts; only metadata + audio URLs parsed, no HTML execution | `data/archive.js` |
 | XSS surface | React default escaping; **no `dangerouslySetInnerHTML`**, no `eval`, no user HTML rendering; embed snippets are shown as **copyable text**, not injected | all pages |
@@ -22,13 +22,11 @@
 | Transport | All endpoints HTTPS in production; dev proxy only rewrites archive.org | `vite.config.js` |
 
 ## 3. Accepted risks / limitations (documented, not bugs)
-1. **Anon key is public** — safe only because RLS governs every table. Never create a table without RLS.
-2. **`role` escalation via `updateProfile`** — the client can PATCH its own profile row (RLS allows own-row
-   update). Postgres RLS does **not** restrict which columns change, so a modified client could set
-   `role='admin'` on its own row. Mitigations: (a) run an `revoke update on profiles` + column-level grant, or
-   (b) trigger that pins `role` unless the caller is already admin. **Action item — see `Task.md`.**
-3. **Demo auth** — local mode trusts an email containing `admin`; fine for offline demo, must never be the
-   production auth path.
+1. **Publishable key is public** — safe only because RLS governs every table. Never create a table without RLS.
+2. **Profile `role` is cosmetic** — own-row updates can still set `role='admin'`, but `roleForEmail()` ignores
+   stored roles and stories RLS calls `public.is_operator()`. Admin access is tied to
+   `info@alasarjadeed.com`; the admin-lockdown migration also repairs stale profile rows.
+3. **Demo auth** — local mode trusts the exact operator email, not any address containing `admin`.
 4. **OAuth stub** — the Google button on `Auth.jsx` is a fake guest login; ship a real provider before launch.
 5. **localStorage tokens** are readable by any script on the origin → keep the origin free of third-party
    scripts (currently: Google Fonts only — consider self-hosting fonts to shrink this to zero).
@@ -39,35 +37,35 @@
      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;
      img-src 'self' data: https:; frame-src 'self'; object-src 'none'; base-uri 'self'
    ```
-   (Adjust hosts to the real deployment; `blob:` is required for local-file playback.)
+   (Adjust hosts to the real deployment; `blob:` is retained for in-memory artwork previews.)
 
 ## 4. Never do
-- Store audio bytes, passwords, or Stripe/SMTP/AWS secrets in Supabase or the bundle.
-- Send the R2/CDN or station admin key to any host other than its own.
+- Store audio bytes, passwords, or Stripe/SMTP/AWS secrets in Supabase, the bundle or the transfer file.
+- Send the station admin key to any host other than its own; Archive.org streams need no key.
 - Render imported HTML/markdown as HTML.
 - Disable RLS "just for testing" in a shared project.
 - Log tokens, `apikey`, or full auth headers.
 
 ## 5. Incident playbook
-1. Suspected key leak → rotate Supabase anon + any station API key; recreate R2 credentials.
+1. Suspected key leak → rotate the Supabase publishable key + any station API key; no media credentials exist.
 2. Bad data writes → verify RLS policies in SQL editor (compare with `backend schema.md`).
 3. App stuck/broken after deploy → bump SW cache names + `?v=` registration; users already have the
    inline "Reset and reload" recovery.
 4. Revoked access → `signOut()` + delete session key; RLS denies on next request.
 
 ## 6. Pre-launch checklist
-- [ ] Column-level protection (or trigger) for `profiles.role` (risk #2)
-- [ ] Real OAuth provider; remove demo admin-email rule in production build
+- [ ] Apply `docs/supabase-admin-lockdown.sql` and `docs/supabase-archive-only.sql`
+- [ ] Optional real OAuth provider; operator email stays the single admin identity
 - [ ] CSP + `Strict-Transport-Security` + `X-Content-Type-Options: nosniff` headers at the host
 - [ ] Self-hosted fonts (drop `fonts.googleapis.com` from `connect`/`style` origins)
-- [ ] RLS test: non-admin client cannot `POST /rest/v1/stories`
+- [ ] RLS test: non-operator client cannot `POST /rest/v1/stories`
 - [ ] `.env` absent from `dist/` and from git history
 ---
 Updated: added Autobiography category and Quran Kareem/Urdu Translation handling.
 
 ## Local server & alerting (2026-11-17)
 - AzuraCast admin key belongs in `.env` (`VITE_AZURACAST_API_KEY`) or the Integrations form — never in docs, logs or screenshots. The public `/api/nowplaying/{shortcode}` route needs no key and is preferred.
-- The browser talks to `192.168.1.166:8080` directly; cross-origin reads require AzuraCast/CasaOS CORS or a proxy. Failures are logged without the key.
+- Radio is paused, so no `:8080` request is made. If relaunched, cross-origin reads require AzuraCast/CasaOS CORS or a proxy; failures are logged without the key.
 - `VITE_SENTRY_DSN` is public by design but should be a project DSN with only the needed environment. Set `VITE_SENTRY_TRACES_SAMPLE_RATE=0` unless tracing is needed.
 - Never put LAN IPs in OG tags or public embeds; use the production domain.
 

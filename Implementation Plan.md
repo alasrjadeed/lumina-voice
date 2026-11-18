@@ -30,16 +30,16 @@ Estimates assume one engineer + AI assistance.
 ## Milestone D — Test & CI (2–3 days)
 | # | Task | Acceptance |
 |---|---|---|
-| D1 | Vitest units: `assembleBreak`, `generateSchedule`, `sourceList`, `r2Url`, `searchCatalog` | ≥ 20 assertions green in CI |
+| D1 | Vitest units: `assembleBreak`, `generateSchedule`, `sourceList`, `canonicalArchiveUrl`, `searchCatalog` | ≥ 20 assertions green in CI |
 | D2 | Playwright smoke: sign-in → play → download → offline → admin tabs | Passes headless on the preview build |
 | D3 | GitHub Action/CI: `npm ci && npm run build && npm test` on push | Red on regression |
 
 ## Milestone E — Backend connect (2–4 days, optional by deployment)
 | # | Task | Acceptance |
 |---|---|---|
-| E1 | Provision Supabase, run `SCHEMA_SQL`, promote admin | Admin → Storage health check `ok` |
-| E2 | Provision R2 bucket, mirror `public/audio` layout, set `VITE_MEDIA_BASE_URL` | Story audio plays from R2; ladder still falls back |
-| E3 | Cloud catalog publish flow end-to-end (create → play → delete under RLS) | Non-admin write rejected |
+| E1 | Provision Supabase, run `SCHEMA_SQL` plus the three `docs/supabase-*.sql` migrations | Operator → Storage health check `ok` |
+| E2 | Verify one Archive.org item's direct audio URL and CORS, then publish the Archive-only catalogue | Stream plays on web and tablet from `archive.org` |
+| E3 | Cloud catalog publish flow end-to-end (create → play → delete under RLS) | Non-operator write rejected |
 
 ## Milestone F — Growth backlog (post-launch)
 Per-title prerendered OG (Option A, `open graph tags.md` §4) · push notifications for scheduled shows ·

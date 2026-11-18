@@ -65,5 +65,13 @@ Connect Lumina Voice web and Android tablet builds to Supabase with maximum usab
 - Fixed muted audio by canonicalizing `www.archive.org/download/...` to `archive.org/download/...` and setting `crossOrigin="anonymous"` only on archive.org hosts before loading. Other external URLs are never hijacked by Web Audio; they use the decorative pulse. Verified both `127.0.0.1:4310/now` and `localhost:4310/now` played Ghalib with `readyState 4`, `currentTime > 4 s`, no error.
 - Rebuilt Docker web and reinstalled the 6.4 MB APK. Lint, 146 tests and build pass.
 
+## Follow-up: archive-only catalogue
+- User asked to keep content from `https://archive.org/` and the adverts, and to remove every other demo/house/local item from the catalogue on web, tablet and cloud.
+- Added `src/data/contentPolicy.js` as the single gate: direct `https://archive.org/download/<id>/<audio>` URLs only, canonicalising `www.archive.org` to `archive.org`. Filtered bundled/generated titles, user catalog (with a startup migration), playability, Import Studio, Supabase story reads/writes and `/transfer` through it.
+- Shipped catalogue is now only `selected-ghazals-of-ghalib` with 35 direct MP3 episodes; demo house titles, Harry Potter shells, demo people/series and `hero.titleId: 'raat-02'` were removed. Ads in `src/data/ads.js` and native `ad-*` audio are untouched.
+- `syncBundle.js` now exports/imports metadata only: old non-Archive catalog entries and any audio bytes are dropped. DataTransfer UI no longer offers an audio toggle.
+- Added `docs/supabase-archive-only.sql` (delete non-Archive rows + URL check constraint) and bumped service-worker shell/static caches to `v7`. Removed `tests/harryPotter.test.js`; added `tests/archiveOnly.test.js`.
+- Verified: `npm run lint` clean, `npm test` 152/152, `npm run build` clean. Docker/APK rebuild, web smoke and tablet CDP smoke (all seven routes, SW `v7`, no `:8080`, no console errors) passed. Deleted the one non-Archive cloud story (`testr` / YouTube) via authenticated REST; Supabase SQL migrations remain unapplied.
+
 ## Remembered admin
 - Operator: `info@alasarjadeed.com`. Credential is already in `src/config/auth.js`; not duplicated here.

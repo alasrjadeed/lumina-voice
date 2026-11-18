@@ -1,16 +1,17 @@
-import { getLocalFile, listLocalFileIds, putLocalFile } from './localMedia'
+import { sanitiseUserCatalog } from './userCatalog'
 
 export const BUNDLE_APP = 'lumina-voice'
 export const BUNDLE_VERSION = 1
 export const MAX_BUNDLE_BYTES = 50 * 1024 * 1024
 
 const APP_KEY = 'lumina-voice-v1'
+const CATALOG_KEY = 'lumina-user-catalog-v1'
 const APP_FIELDS = [
   'library', 'progress', 'premium', 'downloads', 'autoplay', 'hq',
   'language', 'volume', 'muted', 'shuffle', 'repeat', 'rate', 'history'
 ]
 const DATA_KEYS = [
-  'lumina-user-catalog-v1',
+  CATALOG_KEY,
   'lumina-file-library-v1',
   'lumina-site-config',
   'lumina-broadcast-v1',
@@ -33,20 +34,16 @@ function store() {
   return typeof localStorage === 'undefined' ? null : localStorage
 }
 
-function blobToBase64(blob) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader()
-    reader.onload = () => resolve(String(reader.result || '').split(',')[1] || '')
-    reader.onerror = () => reject(reader.error || new Error('Could not read audio file'))
-    reader.readAsDataURL(blob)
-  })
+function cleanValue(key, value) {
+  return key === CATALOG_KEY ? sanitiseUserCatalog(value) : value
 }
 
-function base64ToBlob(base64, type) {
-  const binary = atob(base64)
-  const bytes = new Uint8Array(binary.length)
-  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i)
-  return new Blob([bytes], { type: type || 'application/octet-stream' })
+function readJson(value) {
+  try {
+    return JSON.parse(value)
+  } catch {
+    return value
+  }
 }
 
 export function bundleSummary(bundle) {
@@ -55,34 +52,26 @@ export function bundleSummary(bundle) {
   return {
     keys: keys.length,
     library: Array.isArray(app.library) ? app.library.length : 0,
-    audio: Array.isArray(bundle.audio) ? bundle.audio.length : 0
+    audio: 0
   }
 }
 
-export async function exportBundle({ includeAudio = false } = {}) {
+export async function exportBundle() {
   const ls = store()
   const data = {}
   if (ls) {
     for (const key of DATA_KEYS) {
       const raw = ls.getItem(key)
       if (raw == null) continue
-      try { data[key] = JSON.parse(raw) } catch { data[key] = raw }
+      data[key] = cleanValue(key, readJson(raw))
     }
-    const saved = JSON.parse(ls.getItem(APP_KEY) || '{}')
+    const saved = readJson(ls.getItem(APP_KEY) || '{}')
     const appState = {}
-    for (const field of APP_FIELDS) if (saved[field] !== undefined) appState[field] = saved[field]
+    for (const field of APP_FIELDS) if (saved?.[field] !== undefined) appState[field] = saved[field]
     if (Object.keys(appState).length) data[APP_KEY] = appState
   }
-
-  const audio = []
-  if (includeAudio && typeof indexedDB !== 'undefined') {
-    for (const id of await listLocalFileIds()) {
-      const file = await getLocalFile(id)
-      if (!file) continue
-      audio.push({ id, name: file.name || id, type: file.type || 'application/octet-stream', base64: await blobToBase64(file) })
-    }
-  }
-  return { app: BUNDLE_APP, version: BUNDLE_VERSION, exportedAt: new Date().toISOString(), data, audio }
+  // Audio bytes are never carried: every content title streams from Archive.org.
+  return { app: BUNDLE_APP, version: BUNDLE_VERSION, exportedAt: new Date().toISOString(), data, audio: [] }
 }
 
 export function parseBundle(text) {
@@ -96,10 +85,11 @@ export function parseBundle(text) {
     if (key !== APP_KEY && !DATA_KEYS.includes(key)) throw new Error(`Unexpected backup key: ${key}`)
   }
   if (bundle.audio != null && !Array.isArray(bundle.audio)) throw new Error('Backup audio list is invalid.')
-  for (const item of bundle.audio || []) {
-    if (!item || typeof item.id !== 'string' || typeof item.base64 !== 'string') throw new Error('Backup audio entry is invalid.')
+  return {
+    ...bundle,
+    data: Object.fromEntries(Object.entries(bundle.data).map(([key, value]) => [key, cleanValue(key, value)])),
+    audio: []
   }
-  return bundle
 }
 
 export async function applyBundle(text) {
@@ -108,7 +98,7 @@ export async function applyBundle(text) {
   if (ls) {
     for (const [key, value] of Object.entries(bundle.data)) {
       if (key === APP_KEY) {
-        const current = JSON.parse(ls.getItem(APP_KEY) || '{}')
+        const current = readJson(ls.getItem(APP_KEY) || '{}')
         for (const field of APP_FIELDS) {
           if (value?.[field] !== undefined) current[field] = value[field]
         }
@@ -118,12 +108,5 @@ export async function applyBundle(text) {
       }
     }
   }
-  let audio = 0
-  for (const item of bundle.audio || []) {
-    const blob = base64ToBlob(item.base64, item.type)
-    const file = new File([blob], item.name || item.id, { type: item.type || 'application/octet-stream' })
-    await putLocalFile(item.id, file)
-    audio++
-  }
-  return { ...bundleSummary(bundle), audioImported: audio }
+  return { ...bundleSummary(bundle), audioImported: 0 }
 }

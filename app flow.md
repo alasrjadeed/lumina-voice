@@ -50,21 +50,21 @@ network drops → offline banner → downloaded titles still play; non-downloade
 (`playBroadcast` from bundled `radio-live.opus`) → now-playing polls every 15 s →
 `/radio?embed=1` for third-party iframes (embed snippets generated in `Integrations`).
 
-### D. Listener — import own audio
-`/settings` → Import Studio → Archive.org id/URL/search **or** custom URL **or** local file →
-file stored in IndexedDB (`local:` asset) → episodes created → title appears in Catalog with
-auto kind/genre → plays like any bundled title.
+### D. Listener — import Archive.org audio
+`/settings` → Import Studio → Archive.org item URL/identifier/search → direct download URLs
+resolved → episodes created → title appears in Catalog with auto kind/genre → plays as a
+direct Archive.org stream. Custom URLs, local files and non-Archive entries are rejected.
 
 ### E. Admin — run the station
-`/auth` (admin role) → `/admin` → Overview: on-air card, listeners, daypart, today's timeline →
+`/auth` (operator account) → `/admin` → Overview: on-air card, listeners, daypart, today's timeline →
 Desk: *Start broadcast* / *Take over* / *Skip item* / *Insert station ID* / *Return to AI* →
 Schedule: add slot, 8-hour block, *AI generate week* → Content: rotation weights 1–9 →
 Automation: toggle 7 rules → Advertising: campaigns/spots/CPM, break preview →
 Logs: last 80 entries. The 1-second `BroadcastProvider` tick keeps `onAir/show/progress/remaining` live.
 
 ### F. Admin — add cloud content
-`/admin` → Cloud catalog → `healthCheck` → create story with R2 `audio_url` (+ cover, duration) →
-row written under RLS `admins manage stories` → playable via `VITE_MEDIA_BASE_URL`.
+`/admin` → Cloud catalog → `healthCheck` → create story with a direct Archive.org `audio_url` (+ cover, duration) →
+row written under RLS `admins manage stories` → playable from the canonical `archive.org/download` stream.
 
 ## 4. State machines
 ```

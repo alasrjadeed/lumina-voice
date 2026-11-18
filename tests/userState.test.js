@@ -37,4 +37,22 @@ describe('mergeUserState', () => {
     expect(sameUserState(state, structuredClone(state))).toBe(true)
     expect(sameUserState(state, { ...state, library: ['a', 'b'] })).toBe(false)
   })
+
+  it('drops stale demo/local entries when valid ids are supplied', () => {
+    const merged = mergeUserState(
+      {
+        library: ['bad', 'good'],
+        progress: { bad: { t: 10 }, good: { t: 20 } },
+        history: [
+          { id: 'h1', titleId: 'bad', startedAt: '2026-11-18T00:00:00Z' },
+          { id: 'h2', titleId: 'good', startedAt: '2026-11-18T00:00:00Z' }
+        ]
+      },
+      { library: ['old'], progress: { old: { t: 1 } }, history: [] },
+      new Set(['good'])
+    )
+    expect(merged.library).toEqual(['good'])
+    expect(Object.keys(merged.progress)).toEqual(['good'])
+    expect(merged.history.map((h) => h.titleId)).toEqual(['good'])
+  })
 })

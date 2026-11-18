@@ -1,7 +1,35 @@
+import { filterArchiveTitles } from './contentPolicy'
+
 const KEY = 'lumina-user-catalog-v1'
+const POLICY_KEY = 'lumina-content-policy-v1'
+const POLICY_VERSION = 'archive-only-2'
 
 export function emptyUserCatalog() {
   return { titles: [], authors: [], poets: [], overrides: {}, genres: [] }
+}
+
+// Old devices can hold demo titles, local imports and overrides for content
+// that no longer exists. Every load/write drops them, leaving library,
+// progress, history and advertising storage untouched.
+export function sanitiseUserCatalog(input) {
+  const source = input && typeof input === 'object' ? input : {}
+  const titles = filterArchiveTitles(source.titles)
+  const titleIds = new Set(titles.map((t) => t.id))
+  const authorIds = new Set(titles.map((t) => t.authorId).filter(Boolean))
+  const people = (list) =>
+    (Array.isArray(list) ? list : []).filter((p) => p && authorIds.has(p.id))
+  const overrides = {}
+  for (const [id, patch] of Object.entries(source.overrides || {})) {
+    if (titleIds.has(id) && patch && typeof patch === 'object') overrides[id] = patch
+  }
+  const genres = sanitiseGenreList(source.genres)
+  return {
+    titles,
+    authors: people(source.authors),
+    poets: people(source.poets),
+    overrides,
+    genres
+  }
 }
 
 // Genres an operator added by hand. Kept beside the bundled list so a studio
@@ -32,33 +60,30 @@ export function loadUserCatalog() {
   try {
     if (typeof localStorage === 'undefined') return emptyUserCatalog()
     const raw = localStorage.getItem(KEY)
-    if (!raw) return emptyUserCatalog()
-    const parsed = JSON.parse(raw)
-    return {
-      titles: Array.isArray(parsed.titles) ? parsed.titles : [],
-      authors: Array.isArray(parsed.authors) ? parsed.authors : [],
-      poets: Array.isArray(parsed.poets) ? parsed.poets : [],
-      overrides:
-        parsed.overrides && typeof parsed.overrides === 'object' && !Array.isArray(parsed.overrides)
-          ? parsed.overrides
-          : {},
-      genres: sanitiseGenreList(parsed.genres)
+    if (!raw) {
+      localStorage.setItem(POLICY_KEY, POLICY_VERSION)
+      return emptyUserCatalog()
     }
+    const parsed = JSON.parse(raw)
+    const clean = sanitiseUserCatalog(parsed)
+    const migrated = localStorage.getItem(POLICY_KEY) === POLICY_VERSION
+    if (!migrated || JSON.stringify(clean) !== JSON.stringify(parsed)) {
+      localStorage.setItem(POLICY_KEY, POLICY_VERSION)
+      localStorage.setItem(KEY, JSON.stringify(clean))
+    }
+    return clean
   } catch {
     return emptyUserCatalog()
   }
 }
 
 export function saveUserCatalog(next) {
-  const clean = {
-    titles: next.titles || [],
-    authors: next.authors || [],
-    poets: next.poets || [],
-    overrides: next.overrides && typeof next.overrides === 'object' ? next.overrides : {},
-    genres: sanitiseGenreList(next.genres)
-  }
+  const clean = sanitiseUserCatalog(next)
   try {
-    if (typeof localStorage !== 'undefined') localStorage.setItem(KEY, JSON.stringify(clean))
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(POLICY_KEY, POLICY_VERSION)
+      localStorage.setItem(KEY, JSON.stringify(clean))
+    }
   } catch {
     /* quota */
   }

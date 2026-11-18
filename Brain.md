@@ -8,9 +8,9 @@ Tagline: *"Close your eyes. The story begins."*
 Stack: **Vite 8 + React 19 + react-router-dom 7**, plain CSS, no UI framework, no React SDK for the backend. Route pages are lazy-loaded (`React.lazy` + `Suspense`); JSX transformed by Vite/Oxc.
 
 ## Non-negotiables
-1. Runs **fully offline** on the bundled catalogue — no env vars required.
-2. Audio is **Opus 24–48 kbps mono** (`.opus` / `.lo.opus`) with **AAC `.m4a` fallback**. Never ship video, never ship 128 kbps+ audio.
-3. Audio bytes never enter Supabase — only the text URL (Cloudflare R2 or `/public/audio`).
+1. Runs offline-first: UI, state, ads and downloaded audio work without a network. Catalogue streams come directly from Archive.org — no env vars required.
+2. Catalogue audio is **direct Archive.org HTTPS audio only**. Bundled audio is limited to `ad-*`; never ship video or demo/story audio.
+3. Audio bytes never enter Supabase or the transfer bundle — only the Archive.org URL as text.
 4. Dark, gold-on-ink UI (`#08070b` / `#e4c36a`). No white themes, no default component libraries.
 5. Every persisted value uses a `lumina-*-v1` key (see `Memory.md`).
 6. Never commit `.env`, real keys, or generated media sources.
@@ -21,7 +21,7 @@ Stack: **Vite 8 + React 19 + react-router-dom 7**, plain CSS, no UI framework, n
 | Routes / shell | `src/App.jsx` |
 | Playback + auth + downloads | `src/state/AppState.jsx` |
 | Device voice (browser + Android TTS) | `src/ai/deviceVoice.js`, `src/platform/nativeTts.js`, `UrduTtsPlugin.java` |
-| Bundled catalogue | `src/data/catalog.js` |
+| Archive-only catalogue + policy | `src/data/catalog.js`, `src/data/contentPolicy.js` |
 | Archive library verification | `Audiobook Library 100 Plan.md`, `scripts/verify-archive-library.mjs`, `scripts/convert-archive-library.py`, `data/archiveLibraryWorking.json` |
 | Archive library review UI | `src/pages/ArchiveLibraryAdmin.jsx` (Device Admin → Archive library), `src/data/generated/archiveLibraryAdmin.json` |
 | Supabase (auth + REST + SQL) | `src/data/api.js` |
@@ -40,11 +40,11 @@ Stack: **Vite 8 + React 19 + react-router-dom 7**, plain CSS, no UI framework, n
 `Rules.md` (how we work) · `security.md` · `open graph tags.md` · `llms.txt` · `Auto mcp index.md` · `Memory.md` (facts) · `licence.md`
 
 ## Current state (v1.0.0)
-- Bundled catalogue: 25 titles, 4 series, 5 authors, 3 poets, 6 voices, 1 radio station ("Sada Bahar").
-- Auth: Supabase (optional) or local demo; email containing `admin` ⇒ admin role.
+- Archive-only shipped catalogue: 1 title (`selected-ghazals-of-ghalib`, 35 episodes), 1 poet, 6 voices, 1 gated radio station ("Sada Bahar"). Ads stay in `src/data/ads.js`.
+- Auth: Supabase (optional) or local demo. Any email may sign in; only `info@alasarjadeed.com` is admin.
 - Signed-in devices sync library/progress/history metadata via Supabase `user_state` (audio stays on device); realtime refreshes ratings, reviews, catalogue and profiles.
 - Admin "Broadcast Studio": schedule, rotation, automation rules, advertising, live stream, analytics, storage, logs.
-- Installs as PWA; offline downloads cached by the service worker.
+- Installs as PWA; shell and downloaded audio are cached by the service worker (`v7`).
 ---
 Autobiography category added to broadcast; Holy Quran Urdu Translation in Quran Kareem with Urdu Translation genre.
 

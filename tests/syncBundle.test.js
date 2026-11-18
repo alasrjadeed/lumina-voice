@@ -14,7 +14,9 @@ describe('data bundle', () => {
   beforeEach(() => {
     globalThis.localStorage = fakeStorage({
       'lumina-voice-v1': JSON.stringify({ user: { email: 'admin@example.com' }, library: ['a'], volume: 0.8, autoplay: true }),
-      'lumina-user-catalog-v1': JSON.stringify({ titles: [{ id: 'x' }] }),
+      'lumina-user-catalog-v1': JSON.stringify({
+        titles: [{ id: 'archive-item', episodes: [{ audio: 'https://archive.org/download/item/track.mp3' }] }]
+      }),
       'lumina-site-config': JSON.stringify({ heroTitle: 'Hello' }),
       'lumina-stream-v2': JSON.stringify({ enabled: true })
     })
@@ -46,6 +48,28 @@ describe('data bundle', () => {
     expect(result.library).toBe(1)
     expect(JSON.parse(globalThis.localStorage.getItem('lumina-user-catalog-v1')).titles).toHaveLength(1)
     expect(JSON.parse(globalThis.localStorage.getItem('lumina-voice-v1')).user.email).toBe('device@example.com')
+  })
+
+  it('strips demo catalog titles and audio bytes from an old backup', async () => {
+    const bundle = JSON.stringify({
+      app: 'lumina-voice',
+      version: 1,
+      data: {
+        'lumina-user-catalog-v1': {
+          titles: [
+            { id: 'raat-01', episodes: [{ audio: '/audio/raat-01.opus' }] },
+            { id: 'archive-item', episodes: [{ audio: 'https://www.archive.org/download/item/track.mp3' }] }
+          ]
+        },
+        'lumina-broadcast-v1': { campaigns: [{ id: 'ad-1' }] }
+      },
+      audio: [{ id: 'old', base64: 'AAA' }]
+    })
+    await applyBundle(bundle)
+    const catalog = JSON.parse(globalThis.localStorage.getItem('lumina-user-catalog-v1'))
+    expect(catalog.titles.map((t) => t.id)).toEqual(['archive-item'])
+    expect(catalog.titles[0].episodes[0].audio).toBe('https://archive.org/download/item/track.mp3')
+    expect(JSON.parse(globalThis.localStorage.getItem('lumina-broadcast-v1'))).toEqual({ campaigns: [{ id: 'ad-1' }] })
   })
 
   it('carries history, device voice and AI usage but never session or radio state', async () => {

@@ -12,7 +12,6 @@ import {
   r2Url,
   updateStory
 } from '../data/api'
-import { getMediaBase } from '../data/media'
 import { archiveCoverUrl, isLikelyImageUrl } from '../data/artwork'
 import { CoverArt } from '../art/covers'
 import { IcoPlus, IcoTrash, IcoCloud, IcoInfo } from '../ui/Icons'
@@ -90,7 +89,7 @@ export default function Catalog() {
     setErr('')
     setNotice('')
     if (!form.title.trim()) return setErr('A title is required.')
-    if (!urlValid) return setErr('Paste the public R2 audio URL (ending in .opus / .m4a / .mp3).')
+    if (!urlValid) return setErr('Paste a direct Archive.org audio URL, for example https://archive.org/download/item/track.mp3.')
     setSaving(true)
     try {
       const payload = {
@@ -109,7 +108,7 @@ export default function Catalog() {
       } else {
         const row = await createStory({ ...payload, authorId: user?.id })
         setRows((r) => [row, ...r])
-        setNotice('Story saved — audio_url now points at Cloudflare R2.')
+        setNotice('Story saved — audio_url now points at Archive.org.')
       }
       reset()
     } catch (e2) {
@@ -137,7 +136,7 @@ export default function Catalog() {
     try {
       await deleteStory(row.id)
       setRows((r) => r.filter((x) => x.id !== row.id))
-      setNotice('Story removed from Supabase (the R2 object is untouched).')
+      setNotice('Story removed from Supabase (the Archive.org file is untouched).')
     } catch (e) {
       setErr(e.message)
     }
@@ -145,7 +144,7 @@ export default function Catalog() {
 
   const importBundled = () => {
     setNotice(
-      `The bundled catalogue (${titles.length} titles) always plays offline. Supabase rows are an optional cloud layer on top.`
+      `The local Archive.org catalogue (${titles.length} titles) stays available offline. Supabase rows are an optional cloud layer on top.`
     )
   }
 
@@ -168,13 +167,13 @@ export default function Catalog() {
 
       <div className="arch-flow">
         <div className="arch-node r2">
-          <div className="arch-title">1 · Cloudflare R2</div>
-          <div className="arch-sub">Upload the .opus object, copy its public URL</div>
+          <div className="arch-title">1 · Internet Archive</div>
+          <div className="arch-sub">Copy the public download URL of an audio file</div>
         </div>
         <div className="arch-arrow">→</div>
         <div className="arch-node supa">
           <div className="arch-title">2 · Supabase stories</div>
-          <div className="arch-sub">Save title, summary, duration, audio_url</div>
+          <div className="arch-sub">Save title, summary, duration, Archive.org URL</div>
         </div>
         <div className="arch-arrow">→</div>
         <div className="arch-node">
@@ -187,7 +186,7 @@ export default function Catalog() {
         <Stat label="Backend" value={configured ? 'Supabase' : 'Bundled'} sub={backendLabel()} tone={configured ? 'good' : ''} />
         <Stat label="Cloud stories" value={String(rows.length)} sub="Rows in the stories table" />
         <Stat label="Reachable" value={health ? (health.ok ? 'Yes' : 'No') : '—'} sub={health?.ok ? 'PostgREST healthy' : health?.reason || 'not checked'} tone={health?.ok ? 'good' : ''} />
-        <Stat label="R2 base" value={getMediaBase() ? 'Custom' : 'Bundled'} sub={getMediaBase() || 'set VITE_MEDIA_BASE_URL'} />
+        <Stat label="Source" value="Archive.org" sub="Only Archive.org audio URLs are accepted" />
       </div>
 
       {!configured ? (
@@ -196,12 +195,11 @@ export default function Catalog() {
             <h2>Connect Supabase to enable the cloud catalogue</h2>
           </div>
           <p className="meta" style={{ marginTop: 0 }}>
-            Add your project URL and anon key to <code>.env</code>, then restart. The bundled {titles.length}-title library keeps
-            the app fully functional until then.
+            Add your project URL and publishable key to <code>.env</code>, then restart. The {titles.length} Archive.org
+            title(s) in the local catalogue keep the app fully functional until then.
           </p>
-          <pre className="code-block">{`VITE_MEDIA_BASE_URL=https://media.yourdomain.com/audio
-VITE_SUPABASE_URL=https://<project>.supabase.co
-VITE_SUPABASE_ANON_KEY=<anon-key>`}</pre>
+          <pre className="code-block">{`VITE_SUPABASE_URL=https://<project>.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=<publishable-key>`}</pre>
         </div>
       ) : null}
 
@@ -215,7 +213,7 @@ VITE_SUPABASE_ANON_KEY=<anon-key>`}</pre>
           <div className="camp-grid">
             <label className="ad-field">
               <span>Title</span>
-              <input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Khaamosh Relay — Episode 1" />
+              <input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Selected Ghazals of Ghalib" />
             </label>
             <label className="ad-field">
               <span>Duration (minutes)</span>
@@ -229,15 +227,15 @@ VITE_SUPABASE_ANON_KEY=<anon-key>`}</pre>
               rows={3}
               value={form.description}
               onChange={(e) => setForm({ ...form, description: e.target.value })}
-              placeholder="A sealed drop, a courier, and a city that listens through the rain."
+              placeholder="Public-domain recording, streamed from Archive.org."
             />
           </label>
           <label className="ad-field" style={{ marginTop: 12 }}>
-            <span>Cover URL (Archive.org, R2, or any image)</span>
+            <span>Cover URL (Archive.org image)</span>
             <input
               value={form.coverUrl}
               onChange={(e) => setForm({ ...form, coverUrl: e.target.value })}
-              placeholder="https://archive.org/details/raat-ke-musafir or a direct .jpg"
+              placeholder="https://archive.org/download/item/cover.jpg"
             />
           </label>
           {form.coverUrl ? (
@@ -259,17 +257,17 @@ VITE_SUPABASE_ANON_KEY=<anon-key>`}</pre>
             </div>
           ) : null}
           <label className="ad-field" style={{ marginTop: 12 }}>
-            <span>Audio URL (Cloudflare R2)</span>
+            <span>Audio URL (Archive.org)</span>
             <input
               value={form.audioUrl}
               onChange={(e) => setForm({ ...form, audioUrl: e.target.value })}
-              placeholder="https://media.yourdomain.com/audio/raat-01.opus"
+              placeholder="https://archive.org/download/item/track.mp3"
             />
           </label>
 
           {form.audioUrl ? (
             <div className={`url-check ${urlValid ? 'ok' : 'bad'}`}>
-              {urlValid ? 'Looks like a playable audio URL' : 'Not a recognised audio URL'} · {preview}
+              {urlValid ? 'Archive.org audio URL ready' : 'Use a direct https://archive.org/download/... audio URL'} · {preview}
             </div>
           ) : null}
 
@@ -317,8 +315,8 @@ VITE_SUPABASE_ANON_KEY=<anon-key>`}</pre>
           <h3>{configured ? 'No cloud stories yet' : 'Cloud layer not connected'}</h3>
           <p>
             {configured
-              ? 'Upload an .opus file to R2, paste its public URL above, and save the metadata here.'
-              : 'The bundled catalogue is serving the app. Add Supabase credentials to start a cloud library.'}
+              ? 'Paste a direct Archive.org audio URL above and save the metadata here.'
+              : 'The local Archive.org catalogue is serving the app. Add Supabase credentials to share it across devices.'}
           </p>
           <button className="btn btn-ghost" onClick={reset} style={{ marginTop: 10 }}><IcoPlus /> Add the first story</button>
         </div>

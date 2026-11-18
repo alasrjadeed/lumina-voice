@@ -25,9 +25,32 @@ describe('user catalog overrides', () => {
     expect(emptyUserCatalog().overrides).toEqual({})
   })
 
-  it('round-trips overrides through storage', () => {
-    saveUserCatalog({ ...emptyUserCatalog(), overrides: { 'raat-01': { name: 'New' } } })
-    expect(loadUserCatalog().overrides['raat-01']).toEqual({ name: 'New' })
+  it('round-trips overrides for an Archive.org title', () => {
+    const title = {
+      id: 'archive-item',
+      authorId: 'mirza-ghalib',
+      genres: ['Poetry'],
+      episodes: [{ audio: 'https://archive.org/download/item/track.mp3' }]
+    }
+    saveUserCatalog({ ...emptyUserCatalog(), titles: [title], overrides: { 'archive-item': { name: 'New' } } })
+    expect(loadUserCatalog().overrides['archive-item']).toEqual({ name: 'New' })
+  })
+
+  it('drops demo titles, local files and their overrides on load and save', () => {
+    localStorage.setItem('lumina-user-catalog-v1', JSON.stringify({
+      titles: [
+        { id: 'raat-01', episodes: [{ audio: '/audio/raat-01.opus' }] },
+        { id: 'archive-item', episodes: [{ audio: 'https://www.archive.org/download/item/track.mp3' }] }
+      ],
+      authors: [{ id: 'demo' }, { id: 'mirza-ghalib' }],
+      overrides: { 'raat-01': { name: 'Demo' }, 'archive-item': { name: 'Kept' } }
+    }))
+    const clean = loadUserCatalog()
+    expect(clean.titles.map((t) => t.id)).toEqual(['archive-item'])
+    expect(clean.titles[0].episodes[0].audio).toBe('https://archive.org/download/item/track.mp3')
+    expect(clean.authors).toEqual([])
+    expect(clean.overrides).toEqual({ 'archive-item': { name: 'Kept' } })
+    expect(JSON.parse(localStorage.getItem('lumina-user-catalog-v1'))).toEqual(clean)
   })
 
   it('tolerates a corrupt or missing override map', () => {

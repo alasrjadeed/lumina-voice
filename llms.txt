@@ -1,9 +1,9 @@
 # Lumina Voice
 Website: https://lumina-voice.com
-Description: Urdu audio-films, dramas, audiobooks, poetry and Quran Kareem. Library-only; radio paused.
+Description: Archive.org-only Urdu audio library (ghazals, audiobooks and poetry). Ads are separate; radio paused.
 
 ## Categories
-- Drama, Espionage, Crime, Comedy, Poetry, Quran Kareem, Audiobooks, Autobiography, Music & Beds, IDs & Jingles
+- Archive.org public-domain audio, Poetry, Ghazals, Audiobooks, Drama, Quran Kareem, Advertising IDs & Jingles
 
 ## Key Features
 - Quran Kareem with Urdu Translation
@@ -11,14 +11,14 @@ Description: Urdu audio-films, dramas, audiobooks, poetry and Quran Kareem. Libr
 - Natural on-device Urdu speech: Android TTS voice pack, Urdu digits/punctuation and human-like pauses
 - Device Admin → Archive library: read-only review of 100 Internet Archive candidates across six genre shelves. Publishing is gated on item page, MP3, probed duration, Urdu language and explicit reuse rights; 0 records published so far.
 - Device Admin → File library: every file row has an actions menu (play, edit, replace audio, share, open, delete). House titles are edited through local overrides; imported parts can be deleted permanently.
-- Harry Potter: all seven parts are filed under one serial (`hp-01`–`hp-07`) and carry no audio until real Archive.org links are attached in Add content. Audio-less parts are skipped by broadcast rotation and cannot be added to it.
-- On Android, bundled house titles with `/audio/` paths are hidden because that audio is pruned from the APK; the web library still serves them. Now Playing keeps cover art separate: no canvas over the cover, with a labelled audio spectrum strip below it (native uses an animated pulse because the Web Audio analyser mutes device playback).
+- Archive-only catalogue: every visible title must carry a direct `https://archive.org/download/...` audio URL. `src/data/contentPolicy.js` gates bundled, imported, cloud, playability and transfer data; demo, house, local and custom story audio are removed from web, tablet and Supabase. `www.archive.org` links are canonicalised to `archive.org` for CORS-safe playback.
+- Shipped catalogue: one public-domain title, `selected-ghazals-of-ghalib` (35 LibriVox MP3 episodes). Advertising stays in `src/data/ads.js` and native `ad-*` audio is untouched. Now Playing keeps cover art separate with a labelled spectrum strip below it (native uses an animated pulse because the Web Audio analyser mutes device playback).
 - Subtitles appear automatically from the first saved track (Urdu → English → Arabic preference), with Auto and Off controls. Live speech-to-text of streaming audio is not supported by the Android WebView used here.
 - Archive.org metadata resolution is cached per item and warmed on the title page, so tapping play starts sound in under a second instead of waiting for a metadata round trip.
 - The app is connected to the Supabase `luminavoice` project via Connect → Framework → React → Vite (public URL + publishable key, no SDK needed). With no signal, sign-in falls back to the local demo account and the bundled catalog still works.
 - Signed-in listeners sync library saves, playback positions and history between the Android tablet and the local web app through the Supabase `user_state` table; audio files and downloads remain on each device. Realtime events refresh ratings, reviews, the catalogue and profiles live.
 - Archive.org links stream directly in the app; no audio is copied into app storage. Direct URLs are never rewritten with a `.opus`/`.m4a` suffix. `www.archive.org` links are canonicalized to `archive.org` and requested with CORS so the Web Audio spectrum analyser receives real samples; other external streams use plain audio plus a decorative pulse.
-- Settings → Transfer data (`/transfer`): no-loss JSON backup/restore of library, edits, history and playback settings on web and Android. The native APK ships only advertisement audio (6.4 MB); catalogue audio is streamed from Archive/RSS via an admin media-base override.
+- Settings → Transfer data (`/transfer`): metadata-only JSON backup/restore of Archive.org title links, edits, history and playback settings on web and Android. Audio bytes and non-Archive entries in old backups are ignored; the native APK ships only advertisement audio (~6 MB).
 - Any email account can sign in, but exactly one account is admin: `info@alasarjadeed.com`. That rule is shared by GitHub docs, local web, the tablet and Supabase policies; stale profile roles or addresses containing "admin" never grant privileges. Admin also has Lumina Plus.
 - The tablet is not a data silo. It uses the same Supabase REST + Realtime project as the website for library, progress and history, with `/transfer` JSON export/import as the offline cross-platform bridge.
 
@@ -37,4 +37,4 @@ studio@lumina-voice.com
 - When `false`: no Radio nav tab or `/radio` route (old `/radio` redirects to `/`), no embed page, no Home/Site radio links, no Broadcast Studio (`/admin` opens the radio-free Device Admin for admins), no radio voice commands or alerts, no external-stream stats/embeds, and no requests to `http://192.168.1.166:8080`. `loadStreamConfig()` reports `enabled: false`; `useNowPlaying`, `playExternal`, `playRadio`, `playBroadcast`, AzuraCast API and show reminders are no-ops.
 - All radio code (Broadcast Studio, bundled Sada Bahar desk, AzuraCast config, embeds) stays in the source tree, fully gated — nothing radio-related runs while the flag is off.
 - Relaunch: set `VITE_RADIO_ENABLED=true`, rebuild (`npm run build` / `docker compose up -d --build`) and radio pages, tabs, embeds and stream calls return unchanged.
-- Verified: `npm run lint`, `npm test` (128/128), `npm run build`, `cap sync`, native audio prune, `clean assembleDebug` and fresh APK install. On-device CDP after login rendered `/`, `/explore`, `/library`, `/history`, `/settings`, `/admin`, `/transfer` with zero errors; no radio links, `/radio` → `/`, no `:8080` requests.
+- Verified after archive-only cleanup: `npm run lint`, `npm test` (152/152), `npm run build`, Docker rebuild, web and tablet CDP smoke (all routes, SW `v7`, no `:8080`, zero console errors). Non-Archive cloud story removed via REST; radio remains paused. Applying `docs/supabase-admin-lockdown.sql` and `docs/supabase-archive-only.sql` (DDL) is the remaining cloud step.

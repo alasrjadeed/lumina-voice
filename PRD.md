@@ -24,16 +24,16 @@ experience. Publishers have no simple way to schedule a station, insert ads, and
 
 ## 4. Scope — features
 ### P0 (must ship)
-- Auth (Supabase or local demo) with `admin` role gating
-- Bundled catalogue + search + library + continue-listening progress
-- Single-element audio engine: Opus/.lo/AAC, autoplay-next, language switch
-- Offline: install, download titles, offline banner, cache-first audio
-- Live radio (internal broadcast + external AzuraCast/Icecast mounts, embeddable player)
+- Auth (Supabase or local demo) with one operator account
+- Archive.org-only catalogue + search + library + continue-listening progress
+- Single-element audio engine: direct Archive streams, autoplay-next, language switch
+- Offline: install, download episodes, offline banner, cache-first shell/audio
+- Live radio source kept fully gated but paused
 - Broadcast Studio: schedule, rotation, automation rules, ad breaks, logs
-- Import Studio: Archive.org / URL / local file ingestion
+- Import Studio: Archive.org item URL/identifier/search only
 
 ### P1 (should)
-- Cloud catalogue CRUD (Supabase `stories` + R2 URLs), health check
+- Cloud catalogue CRUD (Supabase `stories` + Archive.org URLs), health check
 - Voice Studio (per-title narrator, language lock, accent rate/pitch)
 - Artwork Studio overrides; procedural SVG fallbacks
 - OG/Twitter cards, canonical + sitemap, `llms.txt` linked

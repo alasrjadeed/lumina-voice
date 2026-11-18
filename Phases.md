@@ -8,9 +8,9 @@ procedural SVG artwork (`src/art/covers.jsx`) · `npm run build` green.
 **Outcome:** app boots, dark shell renders, routes navigate.
 
 ## Phase 1 — Catalogue & playback ✅
-25-title bundled catalogue (`src/data/catalog.js`) · single-`<audio>` engine in `AppState.jsx` ·
-Opus / `.lo` / AAC source ladder · progress persistence + autoplay-next · search, library, title/series/person pages.
-**Outcome:** any bundled title plays offline with resume.
+Archive.org-only catalogue (`src/data/catalog.js`, `src/data/contentPolicy.js`) · single-`<audio>` engine in
+`AppState.jsx` · direct Archive stream + node failover · progress persistence + autoplay-next · search, library and title pages.
+**Outcome:** any Archive.org title plays with resume; shell/state/ads work offline.
 
 ## Phase 2 — PWA & offline ✅
 `manifest.webmanifest` (`standalone`, `ur`, `rtl`) · `sw.js` shell/static/audio caches ·
@@ -19,7 +19,7 @@ index.html cache-bust recovery.
 **Outcome:** installable; downloads play with the network off.
 
 ## Phase 3 — Backend & studio ✅
-Supabase auth + `profiles`/`stories` RLS schema over fetch · Import Studio (Archive.org, URL, local file) ·
+Supabase auth + `profiles`/`stories` RLS schema over fetch · Import Studio (Archive.org only) ·
 Artwork Studio · Voice Studio (narrator, language, accents) · Broadcast Studio with schedule/rotation/
 automation/advertising/analytics/storage/logs · AzuraCast/Icecast integrations.
 **Outcome:** admin can run a station and add content without code.

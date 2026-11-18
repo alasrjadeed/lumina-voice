@@ -1,17 +1,19 @@
-# backend schema.md — Supabase + R2
+# backend schema.md — Supabase + Archive.org
 
-Single source of truth: `SCHEMA_SQL` in `src/data/api.js` (also displayed in Admin → Storage).
-Audio bytes are **never** stored in Supabase — only the text URL pointing at Cloudflare R2.
+Base schema: `SCHEMA_SQL` in `src/data/api.js` (also displayed in Admin → Storage).
+Policy migrations: `docs/supabase-admin-lockdown.sql`, `docs/supabase-archive-only.sql`
+and `docs/supabase-user-state.sql`. Audio bytes are **never** stored in Supabase or
+the transfer bundle — only a direct Archive.org URL as text.
 
 ## 1. Services
 | Service | Owns | Config |
 |---|---|---|
-| Supabase Auth | credentials (`auth.users`, protected) | `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` |
-| Supabase Postgres | `profiles`, `stories` + RLS | same |
-| Cloudflare R2 | audio objects (10 GB free, zero egress) | `VITE_MEDIA_BASE_URL` (public/custom-domain URL) |
-| Supabase Storage / any CDN | cover images (optional) | absolute URL in `stories.cover_url` |
+| Supabase Auth | credentials (`auth.users`, protected) | `VITE_SUPABASE_URL`, publishable key |
+| Supabase Postgres | `profiles`, `stories`, `ratings`, `reviews`, `user_state` + RLS | same |
+| Internet Archive | every catalogue audio file | `https://archive.org/download/<id>/<file>` |
+| Archive covers | cover images | `https://archive.org/services/img/<id>` |
 
-All optional: without env vars the app runs on the bundled catalogue with local demo auth.
+All optional: without env vars the app runs on the archive-only catalogue with local demo auth.
 
 ## 2. Tables
 
@@ -31,14 +33,18 @@ create table if not exists stories (
   id uuid primary key default gen_random_uuid(),
   title text not null,
   description text,
-  audio_url text not null,        -- Cloudflare R2 public URL (text only)
-  cover_url text,                 -- Archive.org / R2 / any image URL
+  audio_url text not null,        -- https://archive.org/download/<id>/<file>.<ext>
+  cover_url text,                 -- Archive.org image URL
   duration integer,               -- seconds, for fast UI
   author_id uuid references auth.users(id) on delete set null,
   created_at timestamptz default now()
 );
 alter table stories add column if not exists cover_url text;
 create index if not exists stories_created_idx on stories (created_at desc);
+
+alter table public.stories drop constraint if exists stories_archive_audio_url_chk;
+alter table public.stories add constraint stories_archive_audio_url_chk
+  check (audio_url ~* '^https://archive\.org/download/[^/]+/.+\.(mp3|m4a|aac|ogg|oga|opus|flac|wav)(\?.*)?$');
 ```
 
 ### Auto-profile trigger
@@ -68,16 +74,13 @@ create policy "profiles readable" on profiles for select using (true);
 create policy "own profile insert" on profiles for insert to authenticated with check (auth.uid() = id);
 create policy "own profile writable" on profiles for update to authenticated using (auth.uid() = id);
 
--- stories: public read; only admins may write.
+-- stories: public read; only the operator email may write.
 create policy "stories readable" on stories for select using (true);
 create policy "admins manage stories" on stories for all to authenticated
-  using (exists (select 1 from profiles p where p.id = auth.uid() and p.role = 'admin'))
-  with check (exists (select 1 from profiles p where p.id = auth.uid() and p.role = 'admin'));
+  using (public.is_operator())
+  with check (public.is_operator());
 ```
-Promote yourself once after signing up:
-```sql
-update profiles set role = 'admin' where id = '<your-user-uuid>';
-```
+Run `docs/supabase-admin-lockdown.sql` for `public.is_operator()`, the role-enforcement trigger and the one-time stale-admin repair. Only `info@alasarjadeed.com` may be admin; all other emails are listeners.
 
 ## 4. Client API (`src/data/api.js`, plain `fetch`, no SDK)
 | Group | Functions | Endpoint |
@@ -86,35 +89,27 @@ update profiles set role = 'admin' where id = '<your-user-uuid>';
 | Auth | `signUp`, `signIn`, `signOut`, `refreshSession`, `getUser` | `POST /auth/v1/signup`, `/auth/v1/token?grant_type=password|refresh_token`, `/auth/v1/logout`, `GET /auth/v1/user` |
 | Profiles | `ensureProfile`, `fetchProfile`, `fetchProfiles`, `updateProfile` | `/rest/v1/profiles` |
 | Stories | `fetchStories`, `createStory`, `updateStory`, `deleteStory` | `/rest/v1/stories` |
-| Helpers | `r2Url`, `isLikelyAudioUrl`, `healthCheck`, `backendLabel`, `apiConfigured` | — |
+| Helpers | `canonicalArchiveUrl`, `isArchiveAudioUrl`, `isLikelyAudioUrl`, `healthCheck`, `backendLabel`, `apiConfigured` | — |
 
 Headers on every REST call: `apikey: <anon>`, `Authorization: Bearer <jwt>`,
 `Prefer: return=representation` (writes). Errors surface as `Supabase <status>: <body>`.
 
 ## 5. Media URL resolution
 ```
-audio_url in stories  ──r2Url()──▶  absolute http(s) URL
-  ├─ already absolute  → used as-is
-  └─ bare key           → `${VITE_MEDIA_BASE_URL}/${key}`
-bundled assets         → `/audio/<id>.opus` | `.lo.opus` | `.m4a` | `.en.*`
+stories.audio_url → canonicalArchiveUrl() → https://archive.org/download/<id>/<file>
+                  → isArchiveAudioUrl()  → accepted only if direct audio file
+                  → AppState.loadOpus()  → canonical stream, then direct-node failover
 ```
-Source ladder is built by `sourceList()` in `src/data/media.js` (see `TRD.md` FR-1).
+`www.archive.org` is rewritten to `archive.org` before storage and playback so CORS and cloud rows match. Non-Archive URLs are filtered on read and rejected on write.
 
-## 6. R2 bucket layout (convention)
-```
-audio/
-  <asset-id>.opus          48k mono
-  <asset-id>.lo.opus       24k data-saver
-  <asset-id>.m4a           AAC fallback
-  <asset-id>.en.*          English variants
-```
-Same filenames as `public/audio/`, so switching bases is a one-variable change.
+## 6. Bundled audio
+Only `ad-*` files are bundled in web and native builds. Catalogue audio is never copied into `public/audio`, IndexedDB, Supabase or the transfer bundle.
 
 ## 7. Setup checklist
-1. Create Supabase project → copy URL + anon key to `.env`.
-2. Run `SCHEMA_SQL` in the SQL editor (tables, index, trigger, RLS).
-3. Sign up, promote yourself to admin (SQL above).
-4. Create R2 bucket → set public/custom-domain base URL → `VITE_MEDIA_BASE_URL`.
+1. Create/use the Supabase project → copy the public URL + publishable key to `.env`.
+2. Run `SCHEMA_SQL` in the SQL editor, then `docs/supabase-admin-lockdown.sql`, `docs/supabase-archive-only.sql` and `docs/supabase-user-state.sql`.
+3. Sign in with `info@alasarjadeed.com`; no other account can be admin.
+4. Keep Archive.org URLs direct; do not set a media base for catalogue audio.
 5. Admin → Storage → **Test Supabase connection** must return `ok`.
 6. Never commit `.env` (`.gitignore` already excludes `**/.env*`).
 ---

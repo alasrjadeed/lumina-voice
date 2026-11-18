@@ -35,26 +35,17 @@ import {
 } from '../pwa.js'
 import { subscribeToChanges } from '../data/realtime'
 import { fetchUserState, mergeUserState, saveUserState } from '../data/userState'
+import { canonicalArchiveUrl, isArchiveHost } from '../data/contentPolicy'
 
 // archive.org (including its storage nodes) sends Access-Control-Allow-Origin,
 // so its streams can be loaded with CORS and fed to the Web Audio analyser.
-// Other external hosts must stay plain media loads or they go silent.
+// Other hosts stay plain media loads or they go silent.
 function needsCorsAudio(url) {
   try {
-    const host = new URL(url, 'http://localhost').hostname.toLowerCase()
-    // www.archive.org redirects first to archive.org without an ACAO header on
-    // that hop, which makes a CORS request fail. Canonicalize it instead.
-    if (host === 'www.archive.org') return false
-    return host === 'archive.org' || /(^|\.)archive\.org$/i.test(host)
+    return isArchiveHost(new URL(url, 'http://localhost').hostname) && !/^www\.archive\.org$/i.test(new URL(url, 'http://localhost').hostname)
   } catch {
     return false
   }
-}
-
-function canonicalArchiveUrl(url) {
-  return typeof url === 'string'
-    ? url.replace(/^(https?:\/\/)www\.archive\.org\//i, '$1archive.org/')
-    : url
 }
 
 function isStandalone() {
@@ -129,13 +120,20 @@ export function AppProvider({ children }) {
   const [user, setUser] = useState(saved.user
     ? { ...saved.user, role: roleForEmail(saved.user.email) }
     : null)
-  const [library, setLibrary] = useState(() => { const base = saved.library || []; if(!base.includes('selected-ghazals-of-ghalib')) return [...base, 'selected-ghazals-of-ghalib']; return base; })
-  const [progress, setProgress] = useState(saved.progress || {})
-const [history, setHistory] = useState(saved.history || [])
-let wakeLock = null
-const [listenedTime, setListenedTime] = useState(() => {
+  const initialHistory = (saved.history || []).filter((entry) => entry && getTitle(entry.titleId))
+  const [library, setLibrary] = useState(() => {
+    const base = (saved.library || []).filter((id) => getTitle(id))
+    if (!base.includes('selected-ghazals-of-ghalib')) return [...base, 'selected-ghazals-of-ghalib']
+    return base
+  })
+  const [progress, setProgress] = useState(() =>
+    Object.fromEntries(Object.entries(saved.progress || {}).filter(([id]) => getTitle(id)))
+  )
+  const [history, setHistory] = useState(initialHistory)
+  let wakeLock = null
+  const [listenedTime, setListenedTime] = useState(() => {
     const out = {}
-    for (const s of (saved.history || [])) {
+    for (const s of initialHistory) {
       out[s.titleId] = (out[s.titleId] || 0) + Number(s.positionSeconds || 0)
     }
     return out
@@ -166,7 +164,7 @@ const [listenedTime, setListenedTime] = useState(() => {
   const applyRemoteState = (remote) => {
     if (!remote) return
     const current = syncStateRef.current
-    const merged = mergeUserState(current, remote)
+    const merged = mergeUserState(current, remote, new Set(titles.map((t) => t.id)))
     if (JSON.stringify(current.library) !== JSON.stringify(merged.library)) setLibrary(merged.library)
     if (JSON.stringify(current.progress) !== JSON.stringify(merged.progress)) setProgress(merged.progress)
     if (JSON.stringify(current.history) !== JSON.stringify(merged.history)) {
@@ -212,7 +210,18 @@ const [listenedTime, setListenedTime] = useState(() => {
     } catch {
       /* ignore quota / private mode */
     }
-  }, [user, library, progress, premium, downloads, autoplay, hq, language, volume, muted, shuffle, repeat, rate])
+  }, [user, library, progress, premium, downloads, autoplay, hq, language, volume, muted, shuffle, repeat, rate, history])
+
+  useEffect(() => {
+    try {
+      if (typeof localStorage === 'undefined') return
+      const stored = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]')
+      const clean = stored.filter((entry) => entry && getTitle(entry.titleId))
+      if (clean.length !== stored.length) localStorage.setItem(HISTORY_KEY, JSON.stringify(clean))
+    } catch {
+      /* ignore quota / private mode */
+    }
+  }, [])
 
   useEffect(() => {
     let cancelled = false

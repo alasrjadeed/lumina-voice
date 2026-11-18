@@ -1,7 +1,7 @@
 # Lumina Voice — zero-cost, library-only launch
 
-The app ships as a **static PWA**. The device does the work: bundled catalogue,
-procedural artwork, on-device voice, local state and service-worker audio cache.
+The app ships as a **static PWA**. The device does the work: local state, procedural
+artwork, on-device voice, ads, downloaded audio and an Archive.org-only catalogue.
 The provider runs one small nginx container on port **4310**. No database, no
 streaming server, no paid service, no API key is required to launch.
 
@@ -11,12 +11,12 @@ streaming server, no paid service, no API key is required to launch.
 |---|---|---|
 | Build | `node:22-alpine` + Vite 8 (pinned so the engine floor cannot drift) | build-time only |
 | Runtime | `nginx:1.27-alpine`, static `dist/`, SPA fallback | one small container |
-| Content | 111 bundled audio files in `public/audio` + bundled catalogue | already in the repo |
+| Content | 1 Archive.org title with 35 direct MP3 episodes; only `ad-*` audio bundled | zero |
 | Auth | Supabase Auth (free tier) with local demo fallback when offline | zero |
 | Logs/alerts | pino at `warn`; Sentry disabled without a DSN | zero |
 | Radio | Fully gated by `VITE_RADIO_ENABLED=false` | zero |
-| Archive library | 100 candidates under review; 0 published until rights are cleared | zero |
-| Data transfer | Settings → Transfer data (`/transfer`) exports/imports a no-loss JSON bundle; no server or account | zero |
+| Archive library | 100-title plan on hold; 0 rights-cleared records published | zero |
+| Data transfer | Settings → Transfer data (`/transfer`) exports/imports metadata-only JSON; no audio bytes | zero |
 | Cross-device sync | Supabase `user_state` carries only library/progress/history metadata between Android and web; audio stays on device | zero |
 
 `.dockerignore` excludes `.env`, `.env.local`, `.env.development` and
@@ -65,13 +65,13 @@ and opens the existing image.
 
 The PWA is wrapped with Capacitor 8 so the tablet runs a real installed app with
 all web assets bundled locally. To keep the APK small (~6 MB), catalogue audio is
-**not** bundled: only the `ad-*` advertisement files ship. Set an audio base URL
-in Device Admin → Storage (or build with `VITE_MEDIA_BASE_URL`) to stream the
-catalogue from Archive/RSS or the LAN container at `http://192.168.1.166:4310`.
+**not** bundled: only the `ad-*` advertisement files ship. Every title streams
+from a direct `https://archive.org/download/...` URL; no media-base override or
+bundled `/audio/` story path is used.
 
 ```sh
 # one-time, after changing web code:
-npm run build                        # uses .env.local: Supabase URL + anon key
+npm run build                        # uses .env.local: Supabase URL + publishable key
 npx cap sync android                 # copy dist/ + plugins into android/
 node scripts/prune-native-audio.mjs  # keep only ad-*.opus/.m4a in the APK
 
@@ -100,21 +100,22 @@ Test on the target tablet in both orientations. The layout has a bottom nav at
 `<=900px` and touch-sized controls; portrait and landscape both matter.
 
 1. **Install as PWA** — open the site, use the browser's *Add to Home screen*,
-   launch from the icon. Manifest, icons and `/sw.js?v=6` must all load.
+   launch from the icon. Manifest, icons and `/sw.js?v=7` must all load.
 2. **Navigate** — `/site` is public; `/` redirects to `/site` when signed out.
    Bottom nav reaches Search / Library / Settings (plus Device Admin for admins). No Radio tab.
 3. **Radio is gone** — no "Radio", "Sada Bahar", "ON AIR" or "Studio" text;
    `/radio` redirects to `/`; `/admin` opens Device Admin for admins; zero requests to `:8080`.
-4. **Play** — open a title from the bundled catalogue, play `.opus` (AAC
-   fallback on Safari), check MiniBar + `/now`, pause/resume and seek.
-5. **Offline** — after first load, switch the tablet to airplane mode and
-   replay a cached title. The bundled catalogue and cached audio must work.
+4. **Play** — open `Selected Ghazals of Ghalib`, play an Archive.org MP3,
+   check MiniBar + `/now`, pause/resume and seek. No demo/house/local titles may appear.
+5. **Offline** — after first load, switch the tablet to airplane mode. The shell,
+   ads, saved state and previously downloaded audio must work; uncached Archive streams need a network.
 6. **Touch** — bottom nav, toggles, sliders and player buttons are reachable
    with a thumb; no clipped text in landscape.
 7. **Data transfer** — as admin, open Device Admin → Data transfer. Export
    creates `backups/lumina-voice-*.json` in app storage and offers a share sheet;
-   import reads a `.json` file or pasted JSON and reloads with the new catalog,
-   artwork, website copy and preferences. The signed-in user is never copied.
+   import reads a `.json` file or pasted JSON and reloads with Archive.org links,
+   artwork, website copy and preferences. Audio bytes, non-Archive entries and
+   the signed-in user are never copied.
 8. **Urdu voice** — in the native APK, Settings → Device voice shows
    `Android voice ready · com.google.android.tts` and lists local `ur-PK` /
    `ur-IN` voices. Tap Test and confirm the Urdu sentence is spoken. Android
@@ -130,8 +131,8 @@ Test on the target tablet in both orientations. The layout has a bottom nav at
 ```sh
 npm ci
 npm run lint     # clean
-npm test         # 107 passing
-npm run build    # main ~316 KB gz ~100 KB; Admin/Radio/Sentry split out
+npm test         # 150 passing
+npm run build    # main bundle + lazy Admin/Radio/Sentry chunks
 ```
 
 Then `docker build -t lumina-voice:local .` and a browser smoke test at

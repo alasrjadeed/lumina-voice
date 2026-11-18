@@ -55,19 +55,27 @@ export async function saveUserState(userId, data, clientId) {
 
 // Union for saves (an offline addition is never lost), newest position per
 // title for playback, de-duplicated recent history. Pure so it can be tested
-// without a backend.
-export function mergeUserState(local = {}, remote = {}) {
-  const library = [...new Set([...(local.library || []), ...(remote.library || [])])].filter(Boolean)
+// without a backend. `validIds` drops stale demo/local entries from old devices.
+export function mergeUserState(local = {}, remote = {}, validIds = null) {
+  const allowed = validIds instanceof Set ? validIds : Array.isArray(validIds) ? new Set(validIds) : null
+  const keep = (id) => !allowed || allowed.has(id)
 
-  const progress = { ...(local.progress || {}) }
+  const library = [...new Set([...(local.library || []), ...(remote.library || [])])]
+    .filter((id) => id && keep(id))
+
+  const progress = {}
+  for (const [id, entry] of Object.entries(local.progress || {})) {
+    if (keep(id)) progress[id] = entry
+  }
   for (const [id, entry] of Object.entries(remote.progress || {})) {
+    if (!keep(id)) continue
     const current = progress[id]
     if (!current || Number(entry?.t || 0) > Number(current.t || 0)) progress[id] = entry
   }
 
   const byId = new Map()
   for (const entry of [...(local.history || []), ...(remote.history || [])]) {
-    if (!entry?.id) continue
+    if (!entry?.id || !keep(entry.titleId)) continue
     const previous = byId.get(entry.id)
     if (!previous || new Date(entry.startedAt || 0) >= new Date(previous.startedAt || 0)) byId.set(entry.id, entry)
   }

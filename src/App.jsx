@@ -171,7 +171,7 @@ function RoutesRoot() {
           path="transfer"
           element={
             <ErrorBoundary>
-              <DataTransfer defaultIncludeAudio />
+              <DataTransfer />
             </ErrorBoundary>
           }
         />

@@ -2,8 +2,7 @@ import { useState } from 'react'
 import { applyBundle, bundleSummary, exportBundle, parseBundle } from '../data/syncBundle'
 import { pickBundleFile, saveBundleFile } from '../platform/fileTransfer'
 
-export default function DataTransfer({ defaultIncludeAudio = false } = {}) {
-  const [includeAudio, setIncludeAudio] = useState(defaultIncludeAudio)
+export default function DataTransfer() {
   const [busy, setBusy] = useState(false)
   const [status, setStatus] = useState('')
   const [error, setError] = useState('')
@@ -16,10 +15,10 @@ export default function DataTransfer({ defaultIncludeAudio = false } = {}) {
   const doExport = async () => {
     clear(); setBusy(true)
     try {
-      const bundle = await exportBundle({ includeAudio })
+      const bundle = await exportBundle()
       const name = `lumina-voice-${new Date().toISOString().slice(0, 10)}.json`
       const where = await saveBundleFile(name, JSON.stringify(bundle))
-      setStatus(`Saved ${name} (${bundleSummary(bundle).keys} settings${includeAudio ? `, ${bundle.audio.length} audio files` : ''}) to ${where}.`)
+      setStatus(`Saved ${name} (${bundleSummary(bundle).keys} settings, metadata only) to ${where}.`)
     } catch (e) {
       setError(e.message || 'Could not export the backup.')
     } finally { setBusy(false) }
@@ -52,7 +51,7 @@ export default function DataTransfer({ defaultIncludeAudio = false } = {}) {
     clear(); setBusy(true)
     try {
       const result = await applyBundle(pending)
-      setStatus(`Restored ${result.keys} settings, ${result.library} library titles and ${result.audioImported} audio files. Reloading…`)
+      setStatus(`Restored ${result.keys} settings and ${result.library} library titles. Audio streams from Archive.org. Reloading…`)
       setTimeout(() => window.location.reload(), 700)
     } catch (e) {
       setError(e.message || 'Could not restore that backup.')
@@ -74,17 +73,13 @@ export default function DataTransfer({ defaultIncludeAudio = false } = {}) {
       <div className="dt-grid">
         <section className="panel dt-card">
           <h3>Export from this device</h3>
-          <p className="meta">Saves titles, edits, artwork, website copy, subtitles, listening history, playback prefs and library progress as one JSON file. Signed-in user and radio state stay on the device.</p>
-          <label className="dt-check">
-            <input type="checkbox" checked={includeAudio} onChange={(e) => setIncludeAudio(e.target.checked)} />
-            Include imported audio files (larger backup)
-          </label>
+          <p className="meta">Saves Archive.org title links, edits, artwork, website copy, subtitles, listening history, playback prefs and library progress as one metadata-only JSON file. Audio, signed-in user and radio state stay on the device.</p>
           <button className="btn btn-primary" onClick={doExport} disabled={busy}>{busy ? 'Working…' : 'Export backup'}</button>
         </section>
 
         <section className="panel dt-card">
           <h3>Import on this device</h3>
-          <p className="meta">Restoring replaces the matching settings on this device. Your signed-in user and radio settings are never copied.</p>
+          <p className="meta">Restoring replaces the matching metadata on this device. Non-Archive entries and audio bytes in old backups are ignored; your signed-in user and radio settings are never copied.</p>
           <button className="btn btn-ghost" onClick={chooseFile} disabled={busy}>Choose backup file</button>
           <textarea
             className="dt-paste"
@@ -96,7 +91,7 @@ export default function DataTransfer({ defaultIncludeAudio = false } = {}) {
           <button className="btn btn-ghost" onClick={() => prepare(paste)} disabled={!paste.trim() || busy}>Check pasted backup</button>
           {preview ? (
             <div className="dt-preview">
-              Ready: {preview.keys} settings · {preview.library} library titles · {preview.audio} audio files.
+              Ready: {preview.keys} settings · {preview.library} library titles · metadata only.
               <button className="btn btn-primary" onClick={doImport} disabled={busy}>Replace and reload</button>
             </div>
           ) : null}
