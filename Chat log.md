@@ -48,5 +48,10 @@ Connect Lumina Voice web and Android tablet builds to Supabase with maximum usab
 - Web admin: Supabase profile was already `admin`; added `roleFor()` so the operator email cannot be demoted by a stale profile or realtime event. Verified `/admin` on the rebuilt Docker web app.
 - Rebuilt and installed the 6.4 MB APK; rebuilt the Docker web container. Lint, 145 tests and build pass.
 
+## Follow-up: Plus gate on admin email
+- User reported `/title/hp-01` still showed the Lumina Plus modal for `info@alasarjadeed.com`.
+- Fixed in `src/state/AppState.jsx`: `hasPremium` now grants Plus from admin role/operator email, so a stored `premium:false` cannot trigger the lock. All playback/precache/autoplay checks use it. Initial user role is also normalised with `roleFor()` so stored `role:'listener'` cannot hide `/admin`.
+- Verified on rebuilt Docker web with stored `premium:false` and `role:'listener'`: `/title/raat-02` had 6 episodes, 0 locks and no Plus modal; `/admin` opened. Rebuilt and reinstalled the 6.4 MB APK. Lint, 145 tests and build pass.
+
 ## Remembered admin
 - Operator: `info@alasarjadeed.com`. Credential is already in `src/config/auth.js`; not duplicated here.

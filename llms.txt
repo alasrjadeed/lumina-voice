@@ -19,6 +19,7 @@ Description: Urdu audio-films, dramas, audiobooks, poetry and Quran Kareem. Libr
 - Signed-in listeners sync library saves, playback positions and history between the Android tablet and the local web app through the Supabase `user_state` table; audio files and downloads remain on each device. Realtime events refresh ratings, reviews, the catalogue and profiles live.
 - Archive.org links stream directly in the app; no audio is copied into app storage. Direct URLs are never rewritten with a `.opus`/`.m4a` suffix.
 - Settings → Transfer data (`/transfer`): no-loss JSON backup/restore of library, edits, history and playback settings on web and Android. The native APK ships only advertisement audio (6.4 MB); catalogue audio is streamed from Archive/RSS via an admin media-base override.
+- The operator email is the built-in admin on both web and tablet. Admin role and Plus access are derived from the signed-in identity, so stale saved profile or membership flags cannot demote the account or show the Lumina Plus paywall to it.
 
 ## Launch
 - Static PWA served by nginx on http://localhost:4310 (also http://192.168.1.152:4310 on the LAN)

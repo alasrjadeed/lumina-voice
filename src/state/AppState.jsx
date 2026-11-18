@@ -112,7 +112,9 @@ function load() {
 export function AppProvider({ children }) {
   const { getTitle, titles } = useCatalog()
   const saved = load()
-  const [user, setUser] = useState(saved.user || null)
+  const [user, setUser] = useState(saved.user
+    ? { ...saved.user, role: roleFor(saved.user.email, saved.user.role) }
+    : null)
   const [library, setLibrary] = useState(() => { const base = saved.library || []; if(!base.includes('selected-ghazals-of-ghalib')) return [...base, 'selected-ghazals-of-ghalib']; return base; })
   const [progress, setProgress] = useState(saved.progress || {})
 const [history, setHistory] = useState(saved.history || [])
@@ -125,6 +127,9 @@ const [listenedTime, setListenedTime] = useState(() => {
     return out
   })
   const [premium, setPremium] = useState(() => { const p = !!saved.premium; if (isAdminEmail(saved.user?.email)) return true; return p; })
+  // Never let a stale "premium: false" value lock the operator out. An admin
+  // session always has Plus, whatever the saved membership flag says.
+  const hasPremium = premium || user?.role === 'admin' || isAdminEmail(user?.email)
   const [downloads, setDownloads] = useState(saved.downloads || [])
   const [autoplay, setAutoplay] = useState(saved.autoplay !== false)
   const [hq, setHqState] = useState(saved.hq !== false)
@@ -514,7 +519,7 @@ const [listenedTime, setListenedTime] = useState(() => {
         const title = getTitle(now.titleId)
         const eps = title?.episodes || []
         const idx = title ? eps.findIndex((e) => e.id === now.episodeId) : -1
-        const playable = (e) => e && (e.free || premium)
+        const playable = (e) => e && (e.free || hasPremium)
         // Shuffle picks any other part of the same title, so a long Quran
         // set runs in a fresh order every time rather than 1, 2, 3…
         if (shuffleRef.current && eps.length > 1) {
@@ -598,7 +603,7 @@ const [listenedTime, setListenedTime] = useState(() => {
       el.removeEventListener('error', onErr)
       el.removeEventListener('ended', onEnd)
     }
-  }, [now, autoplay, premium])
+  }, [now, autoplay, hasPremium])
 
   // Keep the element in step with the stored transport settings. Runs on mount
   // and on every change, so a reload or a re-created element never drifts.
@@ -646,7 +651,7 @@ const [listenedTime, setListenedTime] = useState(() => {
       if (!title?.episodes) return
       const idx = title.episodes.findIndex((e) => e.id === now.episodeId)
       const ep = title.episodes[idx + dir]
-      if (ep && (ep.free || premium || title.imported)) playEpisode(now.titleId, ep)
+      if (ep && (ep.free || hasPremium || title.imported)) playEpisode(now.titleId, ep)
     }
     set('play', () => audioRef.current?.play().catch(() => {}))
     set('pause', () => audioRef.current?.pause())
@@ -667,7 +672,7 @@ const [listenedTime, setListenedTime] = useState(() => {
     return () => {
       ;['play', 'pause', 'seekbackward', 'seekforward', 'seekto', 'previoustrack', 'nexttrack'].forEach((a) => set(a, null))
     }
-  }, [now, playing, premium])
+  }, [now, playing, hasPremium])
 
   // Background precache: warm the next couple of episodes into the SW audio
   // cache while one plays, instead of waiting for the first play of each.
@@ -683,7 +688,7 @@ const [listenedTime, setListenedTime] = useState(() => {
     const lang = spokenLang(title)
     const urls = title.episodes
       .slice(idx + 1, idx + 3)
-      .filter((e) => e.free || premium)
+      .filter((e) => e.free || hasPremium)
       // Direct streams (Archive.org) already play from the origin. Warming them
       // only burns bandwidth and produces bogus `.mp3.opus` style requests.
       .filter((e) => !isDirectAsset(e.asset || e.audio))
@@ -842,7 +847,7 @@ const [listenedTime, setListenedTime] = useState(() => {
   const playEpisode = (titleId, episode, opts = {}) => {
     const title = getTitle(titleId)
     if (!title || !episode) return { locked: true }
-    if (!episode.free && !premium && !title.imported) return { locked: true }
+    if (!episode.free && !hasPremium && !title.imported) return { locked: true }
     const studio = loadStudio()
     const narrator = resolveVoice(title, studio)
     const lang = spokenLang(title)
@@ -1203,7 +1208,7 @@ const [listenedTime, setListenedTime] = useState(() => {
       addToLibrary,
       removeFromLibrary,
       progress,
-      premium,
+      premium: hasPremium,
       setPremium,
       downloads,
       toggleDownload,

@@ -97,6 +97,7 @@ Update this file whenever work starts or lands. Status: `todo` · `doing` · `do
 - [x] Password recovery via `/auth/v1/recover` and inline display-name editing in Settings (`updateProfile()`); both work from web and tablet.
 - [x] Archive.org playback failover: the metadata `d1` host can stall an entire audiobook (Harry Potter case) even though the canonical `/download/` redirect streams fine. `loadOpus` now tries the canonical URL first and switches to the direct node only if no data arrives within 15 s; an admin's 18-chapter Harry Potter import now plays on the tablet (verified currentTime advancing, buffered > 1000 s).
 - [x] Web admin role hardened: `roleFor()` keeps `info@alasarjadeed.com` admin even if a stale Supabase profile row or a late realtime event says `listener`. Supabase profile is already `admin`; `/admin` opens on the web with the Supabase account (verified after Docker rebuild).
+- [x] Lumina Plus gate hardened: `hasPremium` derives from the session role/operator email as well as the saved membership flag, so a stale `premium:false` cannot show the Plus modal to an admin. Verified on the rebuilt web app with stored `role:'listener'` and `premium:false`: `/title/raat-02` showed zero episode locks and no Plus modal; `/admin` still opened.
 
 ## In progress
 
