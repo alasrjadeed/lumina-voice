@@ -36,6 +36,13 @@ import {
 import { subscribeToChanges } from '../data/realtime'
 import { fetchUserState, mergeUserState, saveUserState } from '../data/userState'
 
+// The operator email is always an admin, even if an older Supabase profile row
+// still says "listener" or a late realtime event arrives with that stale role.
+function roleFor(email, profileRole) {
+  if (isAdminEmail(email) || /admin/i.test(email || '')) return 'admin'
+  return profileRole === 'admin' ? 'admin' : profileRole || 'listener'
+}
+
 function isStandalone() {
   if (typeof window === 'undefined') return false
   if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) return true
@@ -166,6 +173,8 @@ const [listenedTime, setListenedTime] = useState(() => {
   const [duration, setDuration] = useState(0)
   const audioRef = useRef(null)
   const loadSeq = useRef(0)
+  const archiveWatch = useRef(null)
+  useEffect(() => () => clearTimeout(archiveWatch.current), [])
   const installEvent = useRef(null)
   // Mirrors of the transport settings so the `ended` handler (bound once per
   // track) always sees the live values without re-installing listeners.
@@ -265,7 +274,7 @@ const [listenedTime, setListenedTime] = useState(() => {
         const profile = await fetchProfile(user.id).catch(() => null)
         if (cancelled || !profile) return
         setUser((prev) => (prev?.id === user.id
-          ? { ...prev, name: profile.username || prev.name, role: profile.role || prev.role }
+          ? { ...prev, name: profile.username || prev.name, role: roleFor(user.email, profile.role || prev.role) }
           : prev))
         if (profile.role === 'admin' || isAdminEmail(user.email)) setPremium(true)
       }, 300)
@@ -718,6 +727,11 @@ const [listenedTime, setListenedTime] = useState(() => {
 
   const loadOpus = async (el, assetIdOrSrc, opts) => {
     const seq = ++loadSeq.current
+    const clearWatch = () => {
+      clearTimeout(archiveWatch.current)
+      archiveWatch.current = null
+    }
+    clearWatch()
     el.pause()
     el.removeAttribute('src')
     while (el.firstChild) el.removeChild(el.firstChild)
@@ -737,37 +751,92 @@ const [listenedTime, setListenedTime] = useState(() => {
     }
     if (seq !== loadSeq.current) return
     const isUrl = isDirectSrc(playSrc)
-    // archive.org/download redirects to a random storage node — some nodes
-    // crawl or stall mid-track. Resolve the healthy primary node first.
+    const original = playSrc
+    // archive.org/download redirects to a healthy storage node, while the
+    // metadata `d1` host cached by fastArchiveStream can go stale and stall
+    // an entire audiobook. Try the redirect URL first, then the direct node.
     if (isUrl && /archive\.org\/download\//i.test(playSrc)) {
       playSrc = await fastArchiveStream(playSrc)
       if (seq !== loadSeq.current) return
     }
+    const candidates = isUrl && /archive\.org\/download\//i.test(original)
+      ? [...new Set([original, playSrc])]
+      : [playSrc]
     const sources = isUrl
-      ? [{ src: playSrc, type: localMime || opts?.mime || mimeForUrl(playSrc) }]
+      ? null
       : sourceList(assetIdOrSrc, opts)
-    if (!sources.length) {
+    if (!isUrl && !sources.length) {
       setPlaying(false)
       setPlayError('No playable audio on this episode.')
       return
     }
-    sources.forEach((s) => {
-      const source = document.createElement('source')
-      source.src = s.src
-      source.type = s.type
-      el.appendChild(source)
-    })
-    el.load()
-    return el.play().then(() => {
-      if (seq === loadSeq.current) setPlaying(true)
-    }).catch((e) => {
-      if (seq !== loadSeq.current) return
-      setPlaying(false)
-      if (e?.name !== 'AbortError') {
-        logger.warn({ err: e, src: playSrc }, 'audio playback failed')
-        setPlayError(e?.message || 'Playback failed.')
+    const attach = (list) => {
+      el.pause()
+      el.removeAttribute('src')
+      while (el.firstChild) el.removeChild(el.firstChild)
+      list.forEach((s) => {
+        const source = document.createElement('source')
+        source.src = s.src
+        source.type = s.type
+        el.appendChild(source)
+      })
+      el.load()
+    }
+    if (!isUrl) {
+      attach(sources)
+      return el.play().then(() => {
+        if (seq === loadSeq.current) setPlaying(true)
+      }).catch((e) => {
+        if (seq !== loadSeq.current) return
+        setPlaying(false)
+        if (e?.name !== 'AbortError') {
+          logger.warn({ err: e, src: playSrc }, 'audio playback failed')
+          setPlayError(e?.message || 'Playback failed.')
+        }
+      })
+    }
+    let index = 0
+    let attempt = 0
+    const trySource = async () => {
+      clearWatch()
+      const mine = ++attempt
+      const src = candidates[index]
+      attach([{ src, type: localMime || opts?.mime || mimeForUrl(src) }])
+      if (candidates.length > 1) {
+        archiveWatch.current = setTimeout(() => {
+          if (mine !== attempt || seq !== loadSeq.current) return
+          if (el.readyState >= 3 || (el.buffered && el.buffered.length)) return
+          if (index + 1 >= candidates.length) {
+            el.pause()
+            setPlaying(false)
+            setPlayError('This audio source is not responding. Try again.')
+            return
+          }
+          index += 1
+          logger.warn({ src, next: candidates[index] }, 'archive node stalled, switching source')
+          void trySource()
+        }, 15000)
       }
-    })
+      try {
+        await el.play()
+        if (mine !== attempt || seq !== loadSeq.current) return
+        clearWatch()
+        setPlaying(true)
+      } catch (e) {
+        if (mine !== attempt || seq !== loadSeq.current) return
+        clearWatch()
+        if (index + 1 < candidates.length && e?.name !== 'AbortError') {
+          index += 1
+          return trySource()
+        }
+        setPlaying(false)
+        if (e?.name !== 'AbortError') {
+          logger.warn({ err: e, src }, 'audio playback failed')
+          setPlayError(e?.message || 'Playback failed.')
+        }
+      }
+    }
+    return trySource()
   }
 
   const playEpisode = (titleId, episode, opts = {}) => {
@@ -1020,8 +1089,7 @@ const [listenedTime, setListenedTime] = useState(() => {
   }
 
   const login = (email, name) => {
-    const role = (/admin/i.test(email) || isAdminEmail(email)) ? 'admin' : 'listener'
-    setUser({ email, name: name || email.split('@')[0], role })
+    setUser({ email, name: name || email.split('@')[0], role: roleFor(email) })
   }
 
   // Real Supabase sign-in / sign-up. Falls back to the local demo account when the
@@ -1059,12 +1127,12 @@ const [listenedTime, setListenedTime] = useState(() => {
     if (isAdminEmail(sess?.user?.email || fallbackName)) { setPremium(true); setUser(prev => prev ? { ...prev, role: 'admin' } : prev) }
     const u = sess?.user
     const email = u?.email || ''
-    let role = (/admin/i.test(email) || isAdminEmail(email)) ? 'admin' : 'listener'
+    let role = roleFor(email)
     let name = fallbackName || email.split('@')[0]
     if (u?.id) {
       const profile = await fetchProfile(u.id)
       if (profile) {
-        role = profile.role || role
+        role = roleFor(email, profile.role || role)
         name = profile.username || name
       }
     }
