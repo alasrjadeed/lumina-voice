@@ -116,7 +116,9 @@ export default function ArchiveLibraryAdmin() {
                   <td className="al-mono">{row.id}</td>
                   <td>
                     <span className="al-title">{row.title}</span>
-                    {row.identifier ? <span className="meta">{row.identifier}</span> : null}
+                    {row.archiveItemUrl && /^https:\/\/archive\.org\/details\//.test(row.archiveItemUrl) ? (
+                      <a className="al-link" href={row.archiveItemUrl} target="_blank" rel="noreferrer">Archive item</a>
+                    ) : null}
                   </td>
                   <td>{row.category}</td>
                   <td><span className={`al-state ${row.status}`}>{row.status}</span></td>

@@ -246,6 +246,11 @@ export default function Integrations() {
           >
             Disconnect
           </button>
+          {cfg.baseUrl ? (
+            <a className="btn btn-ghost" href={cfg.baseUrl} target="_blank" rel="noreferrer noopener">
+              Open station dashboard ↗
+            </a>
+          ) : null}
         </div>
       </div>
 
