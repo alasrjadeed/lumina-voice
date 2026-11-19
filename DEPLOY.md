@@ -38,7 +38,7 @@ docker compose up -d
 docker ps            # lumina-voice: 0.0.0.0:4310->80/tcp, restart unless-stopped
 ```
 
-Open `http://192.168.1.166:4310` from a device on the LAN. Port 80 stays with
+Open `http://192.168.1.152:4310` from a device on the LAN. Port 80 stays with
 CasaOS; no reverse proxy is needed. The build container exits after producing
 `dist/`, so steady-state resource use is just nginx plus static files.
 
@@ -83,7 +83,7 @@ runtime.
 snapshot on sign-in, on resume and every 15 minutes; Supabase Realtime also
 refreshes an open tab. `VITE_CATALOGUE_SNAPSHOT_URL` defaults to `/catalogue.json`
 on the web; `.env.production` points the APK at
-`http://192.168.1.166:4310/catalogue.json`. A transient failure keeps the last
+`http://192.168.1.152:4310/catalogue.json`. A transient failure keeps the last
 cached snapshot under `lumina-cloud-catalogue-v1`.
 
 ## 3. Native Android tablet build (Capacitor)

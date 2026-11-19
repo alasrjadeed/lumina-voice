@@ -38,6 +38,18 @@ describe('mergeUserState', () => {
     expect(sameUserState(state, { ...state, library: ['a', 'b'] })).toBe(false)
   })
 
+  it('carries the full metadata bundle without polluting playback progress', () => {
+    const bundle = { app: 'lumina-voice', data: { 'lumina-user-catalog-v1': { titles: [] } } }
+    const merged = mergeUserState(
+      { library: [], progress: { a: { t: 5 } }, history: [] },
+      { library: [], progress: { a: { t: 7 }, __sync_bundle: bundle }, history: [], bundle }
+    )
+    expect(merged.bundle).toEqual(bundle)
+    expect(Object.keys(merged.progress)).toEqual(['a'])
+    expect(sameUserState({ bundle }, { bundle })).toBe(true)
+    expect(sameUserState({ bundle }, { bundle: { ...bundle, data: {} } })).toBe(false)
+  })
+
   it('drops stale demo/local entries when valid ids are supplied', () => {
     const merged = mergeUserState(
       {

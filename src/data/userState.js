@@ -4,6 +4,11 @@
 // the Android tablet and continue in the local web app, or the other way round.
 import { apiConfigured, rest, validToken } from './api'
 
+// The rest of the device metadata (imported Archive titles, artwork, ratings,
+// reviews and settings) rides inside the existing progress JSONB column under
+// a reserved key. Keeps every device in sync without a new database column.
+export const SYNC_BUNDLE_KEY = '__sync_bundle'
+
 export function userStateConfigured() {
   return apiConfigured()
 }
@@ -17,10 +22,12 @@ export async function fetchUserState(userId, signal) {
     )
     const row = (rows || [])[0]
     if (!row) return null
+    const progress = row.progress && typeof row.progress === 'object' ? row.progress : {}
     return {
       library: Array.isArray(row.library) ? row.library : [],
-      progress: row.progress && typeof row.progress === 'object' ? row.progress : {},
+      progress,
       history: Array.isArray(row.history) ? row.history : [],
+      bundle: progress[SYNC_BUNDLE_KEY] || null,
       clientId: row.client_id || '',
       updatedAt: row.updated_at || null
     }
@@ -30,10 +37,13 @@ export async function fetchUserState(userId, signal) {
   }
 }
 
-export async function saveUserState(userId, data, clientId) {
+export async function saveUserState(userId, data, clientId, bundle) {
   if (!apiConfigured() || !userId) return { ok: false, local: true }
   try {
     const token = await validToken()
+    const progress = { ...(data.progress || {}) }
+    if (bundle?.app === 'lumina-voice') progress[SYNC_BUNDLE_KEY] = bundle
+    else delete progress[SYNC_BUNDLE_KEY]
     await rest('user_state?on_conflict=user_id', {
       method: 'POST',
       token,
@@ -41,7 +51,7 @@ export async function saveUserState(userId, data, clientId) {
       body: {
         user_id: userId,
         library: data.library || [],
-        progress: data.progress || {},
+        progress,
         history: data.history || [],
         client_id: clientId || '',
         updated_at: new Date().toISOString()
@@ -65,9 +75,11 @@ export function mergeUserState(local = {}, remote = {}, validIds = null) {
 
   const progress = {}
   for (const [id, entry] of Object.entries(local.progress || {})) {
+    if (id === SYNC_BUNDLE_KEY) continue
     if (keep(id)) progress[id] = entry
   }
   for (const [id, entry] of Object.entries(remote.progress || {})) {
+    if (id === SYNC_BUNDLE_KEY) continue
     if (!keep(id)) continue
     const current = progress[id]
     if (!current || Number(entry?.t || 0) > Number(current.t || 0)) progress[id] = entry
@@ -83,13 +95,15 @@ export function mergeUserState(local = {}, remote = {}, validIds = null) {
     .sort((a, b) => new Date(b.startedAt || 0) - new Date(a.startedAt || 0))
     .slice(0, 200)
 
-  return { library, progress, history }
+  const bundle = remote.bundle || local.bundle || progress[SYNC_BUNDLE_KEY] || null
+  return { library, progress, history, bundle }
 }
 
 export function sameUserState(a = {}, b = {}) {
   return (
     JSON.stringify(a.library || []) === JSON.stringify(b.library || []) &&
     JSON.stringify(a.progress || {}) === JSON.stringify(b.progress || {}) &&
-    JSON.stringify(a.history || []) === JSON.stringify(b.history || [])
+    JSON.stringify(a.history || []) === JSON.stringify(b.history || []) &&
+    JSON.stringify(a.bundle || null) === JSON.stringify(b.bundle || null)
   )
 }

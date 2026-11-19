@@ -18,6 +18,7 @@ import { loadStudio, resolveVoice } from '../data/voiceStudio'
 import {
   loadUserCatalog,
   saveUserCatalog,
+  sanitiseUserCatalog,
   slugId,
   nextPalette,
   sanitiseTitlePatch,
@@ -89,6 +90,26 @@ export function CatalogProvider({ children }) {
     setUser(clean)
     return clean
   }
+
+  // Another device pushed a fresh metadata bundle through Supabase user_state.
+  // Merge its imported titles into the live catalog without a page reload.
+  useEffect(() => {
+    const onSync = (event) => {
+      const incoming = sanitiseUserCatalog(event.detail)
+      setUser((current) => {
+        const ids = new Set((current.titles || []).map((t) => t.id))
+        const merged = {
+          ...incoming,
+          titles: [...(current.titles || []), ...(incoming.titles || []).filter((t) => !ids.has(t.id))],
+          authors: [...(current.authors || []), ...(incoming.authors || []).filter((a) => !(current.authors || []).some((x) => x.id === a.id))],
+          poets: [...(current.poets || []), ...(incoming.poets || []).filter((p) => !(current.poets || []).some((x) => x.id === p.id))]
+        }
+        return saveUserCatalog(merged)
+      })
+    }
+    window.addEventListener('lumina:catalog-sync', onSync)
+    return () => window.removeEventListener('lumina:catalog-sync', onSync)
+  }, [])
 
   const native = Capacitor.isNativePlatform()
   const merged = useMemo(() => merge(user, native, cloudTitles), [user, native, cloudTitles])

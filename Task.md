@@ -106,8 +106,12 @@ Update this file whenever work starts or lands. Status: `todo` · `doing` · `do
 
 - [x] Cloud catalogue delivery + local website restored: reverted the outbound-link trim so the private dashboard/site keeps all features. Admin → Cloud catalogue manages Archive.org story links with a `published` draft/live switch (`docs/supabase-cloud-catalogue.sql`); `scripts/export-cloud-catalogue.mjs` publishes only live archive-only rows to `public/catalogue.json` every 15 minutes (`scripts/install-catalogue-cron.sh`), nginx serves it `no-store`, and `CatalogProvider` maps the snapshot into Home/Search/Title with a cached offline fallback. The APK fetches the LAN snapshot via `VITE_CATALOGUE_SNAPSHOT_URL`; audio still streams direct from archive.org. Added `tests/cloudCatalogue.test.js`. Verified: lint clean, 155/155 tests, production build.
 
+- [x] Full device-to-web metadata sync: `user_state` now carries the complete metadata bundle (imported Archive titles, artwork, subtitles, history, settings) inside the existing `progress` JSONB under a reserved key, so no new SQL column is needed. `userState.js` fetch/save/merge handles the bundle; `AppState` pushes `exportBundle()` on the 1.5 s debounce, 30 s heartbeat and on hide, and pulls on sign-in + Realtime; `CatalogProvider` merges remote imported titles into live state via the `lumina:catalog-sync` event. Fixed two data-loss races: a fresh device now waits for the initial cloud read before writing (`cloudReady` state), and imported-title IDs from the bundle count as valid during merge. Verified: lint clean, 156/156 tests, web + tablet rebuild, Docker rebuild, CDP smoke — tablet data (11 saved titles, 10 imported Archive titles) appeared on the web app after a clean localStorage, cloud row stayed intact, no console errors, SW `v7`, no `:8080` requests.
+
+- [x] Tablet smoke after final rebuild: `0102MT2504242159060` (Wi-Fi `192.168.1.183`), APK 6.4 MB installed and launched. Routes `/`, `/library`, `/title/…`, `/settings`, `/admin`, `/radio→/` render with zero errors; imported Potter/Hobbit titles visible; no Radio nav, no AzuraCast traffic; catalogue snapshot cached and fetched once; `sw.js?v=7` active. Web origin at `http://192.168.1.152:4310` verified with a clean localStorage: pulled the same 11 titles + 10 imports from Supabase, no overwrite, zero errors.
+
 ## In progress
-- [ ] Run `docs/supabase-admin-lockdown.sql` and `docs/supabase-archive-only.sql` in the Supabase SQL Editor (dashboard login was unavailable to the agent). They repair stale admin rows, make stories RLS use the operator email and add the URL check constraint. The non-Archive cloud row is already removed via REST.
+- [ ] Apply `docs/supabase-admin-lockdown.sql`, `docs/supabase-archive-only.sql` and `docs/supabase-cloud-catalogue.sql` in the Supabase SQL Editor (dashboard login was unavailable to the agent; only the public URL and publishable key are in the environment). They repair stale admin rows, make stories RLS use the operator email, add the Archive URL check constraint and add the `published` column the admin/exporter already write. `user_state.sql` is applied — grants and RLS work over authenticated REST. The non-Archive cloud row is already removed via REST.
 
 ## Backlog
 - [ ] Rights clearance: no supplied or replacement lead has explicit reuse terms, so 0 records from the 100-title plan can publish. Stage audio + conversion stay gated on this.
@@ -115,7 +119,7 @@ Update this file whenever work starts or lands. Status: `todo` · `doing` · `do
 - [x] L7: final device/browser smoke check after the Docker and APK rebuild.
 
 ## Blocked
-- [ ] Supabase dashboard login was unavailable; both SQL migrations above remain unapplied.
+- [ ] Supabase dashboard login / management token was unavailable; the three SQL migrations above remain unapplied. The current publishable-key REST path cannot run DDL.
 ---
 - [x] Added Autobiography category and routing
 

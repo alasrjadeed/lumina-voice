@@ -35,7 +35,10 @@ import {
 } from '../pwa.js'
 import { subscribeToChanges } from '../data/realtime'
 import { fetchUserState, mergeUserState, saveUserState } from '../data/userState'
+import { exportBundle } from '../data/syncBundle'
 import { canonicalArchiveUrl, isArchiveHost } from '../data/contentPolicy'
+
+const USER_CATALOG_KEY = 'lumina-user-catalog-v1'
 
 // archive.org (including its storage nodes) sends Access-Control-Allow-Origin,
 // so its streams can be loaded with CORS and fed to the Web Audio analyser.
@@ -160,11 +163,19 @@ export function AppProvider({ children }) {
   // what is actually on screen instead of a stale render closure.
   const syncStateRef = useRef({ library, progress, history })
   syncStateRef.current = { library, progress, history }
+  // A fresh device must read the cloud before it writes to it; otherwise its
+  // empty local state would overwrite the good copy from another device.
+  // State (not just a ref) so the save effects re-run once the read completes.
+  const [cloudReady, setCloudReady] = useState(false)
 
   const applyRemoteState = (remote) => {
     if (!remote) return
     const current = syncStateRef.current
-    const merged = mergeUserState(current, remote, new Set(titles.map((t) => t.id)))
+    // Imported Archive titles live in the cloud bundle, not in the bundled
+    // catalog yet, so their ids must count as valid when merging on a fresh
+    // device — otherwise the title list would be dropped as "stale".
+    const bundleIds = remote.bundle?.data?.[USER_CATALOG_KEY]?.titles?.map((t) => t.id) || []
+    const merged = mergeUserState(current, remote, new Set([...titles.map((t) => t.id), ...bundleIds]))
     if (JSON.stringify(current.library) !== JSON.stringify(merged.library)) setLibrary(merged.library)
     if (JSON.stringify(current.progress) !== JSON.stringify(merged.progress)) setProgress(merged.progress)
     if (JSON.stringify(current.history) !== JSON.stringify(merged.history)) {
@@ -174,6 +185,13 @@ export function AppProvider({ children }) {
         times[h.titleId] = (times[h.titleId] || 0) + Number(h.positionSeconds || 0)
       }
       setListenedTime(times)
+    }
+    // Imported Archive titles travel with the same row. Pass the catalog to
+    // the catalog context directly; writing localStorage here would be
+    // overwritten by the live React state on the next render.
+    const remoteCatalog = remote.bundle?.data?.[USER_CATALOG_KEY]
+    if (remoteCatalog) {
+      window.dispatchEvent(new CustomEvent('lumina:catalog-sync', { detail: remoteCatalog }))
     }
   }
 
@@ -321,16 +339,24 @@ export function AppProvider({ children }) {
   // for edits; a 30s heartbeat also catches a position changing every second
   // during continuous playback, and hiding the app flushes the latest state.
   useEffect(() => {
-    if (!apiConfigured() || !user?.id) return undefined
-    const timer = setTimeout(() => {
-      saveUserState(user.id, syncStateRef.current, CLIENT_ID).catch(() => {})
+    if (!apiConfigured() || !user?.id || !cloudReady) return undefined
+    const timer = setTimeout(async () => {
+      try {
+        const bundle = await exportBundle()
+        await saveUserState(user.id, syncStateRef.current, CLIENT_ID, bundle)
+      } catch { /* local sync is best-effort */ }
     }, 1500)
     return () => clearTimeout(timer)
-  }, [user?.id, library, progress, history])
+  }, [user?.id, library, progress, history, cloudReady])
 
   useEffect(() => {
-    if (!apiConfigured() || !user?.id) return undefined
-    const save = () => { saveUserState(user.id, syncStateRef.current, CLIENT_ID).catch(() => {}) }
+    if (!apiConfigured() || !user?.id || !cloudReady) return undefined
+    const save = async () => {
+      try {
+        const bundle = await exportBundle()
+        await saveUserState(user.id, syncStateRef.current, CLIENT_ID, bundle)
+      } catch { /* local sync is best-effort */ }
+    }
     const interval = setInterval(save, 30000)
     const onHide = () => { if (typeof document !== 'undefined' && document.visibilityState === 'hidden') save() }
     if (typeof document !== 'undefined') document.addEventListener('visibilitychange', onHide)
@@ -338,7 +364,7 @@ export function AppProvider({ children }) {
       clearInterval(interval)
       if (typeof document !== 'undefined') document.removeEventListener('visibilitychange', onHide)
     }
-  }, [user?.id])
+  }, [user?.id, cloudReady])
 
   // Receive the same data from the other device. Own writes carry a per-app
   // client id and are ignored, so a save never bounces back into this app.
@@ -1175,10 +1201,15 @@ export function AppProvider({ children }) {
     setUser({ id: u?.id, email, name, role })
     // Bring the device-first library, positions and history back from the
     // cloud so signing in on the tablet continues where the web app stopped.
-    if (u?.id) applyRemoteState(await fetchUserState(u.id).catch(() => null))
+    if (u?.id) {
+      const remote = await fetchUserState(u.id).catch(() => null)
+      applyRemoteState(remote)
+      setCloudReady(true)
+    }
   }
 
   const logout = async () => {
+    setCloudReady(false)
     setUser(null)
     if (apiConfigured() && isSignedIn()) await signOut()
   }

@@ -43,7 +43,7 @@ Stack: **Vite 8 + React 19 + react-router-dom 7**, plain CSS, no UI framework, n
 ## Current state (v1.0.0)
 - Archive-only shipped catalogue: 1 title (`selected-ghazals-of-ghalib`, 35 episodes), 1 poet, 6 voices, 1 gated radio station ("Sada Bahar"). Ads stay in `src/data/ads.js`.
 - Auth: Supabase (optional) or local demo. Any email may sign in; only `info@alasarjadeed.com` is admin.
-- Signed-in devices sync library/progress/history metadata via Supabase `user_state` (audio stays on device); realtime refreshes ratings, reviews, catalogue and profiles.
+- Signed-in devices sync the full metadata bundle via Supabase `user_state` — library/progress/history plus imported Archive titles, artwork, subtitles and settings under `progress.__sync_bundle` (audio stays on device). `cloudReady` gates writes until the first cloud read finishes; realtime refreshes ratings, reviews, catalogue and profiles.
 - Admin → Cloud catalogue edits Archive.org story links with a `published` draft/live switch; a 15-minute cron publishes only live rows to `/catalogue.json` (`lumina-cloud-catalogue-v1` cache) so the tablet and web app pick up new content without a rebuild. Local website links/features stay intact.
 - Admin "Broadcast Studio": schedule, rotation, automation rules, advertising, live stream, analytics, storage, logs.
 - Installs as PWA; shell and downloaded audio are cached by the service worker (`v7`).
@@ -52,7 +52,7 @@ Autobiography category added to broadcast; Holy Quran Urdu Translation in Quran 
 
 ## Local broadcast deployment (2026-11-17)
 - CasaOS UI: `http://192.168.1.166` (port 80). AzuraCast: `http://192.168.1.166:8080` — station `lumina_voice` (id `2`).
-- Web app container: `http://192.168.1.166:4310` (`docker-compose up -d --build`; `Dockerfile` + `nginx.conf`).
+- Web app container: `http://192.168.1.152:4310` (`docker-compose up -d --build`; `Dockerfile` + `nginx.conf`). CasaOS `192.168.1.166` is not reachable from this host.
 - `src/data/stream.js` keeps the API base and the listener base separate; both default to port **8080**, because port 80 belongs to CasaOS.
 - Mounts: `/listen/{shortcode}/live`, `/listen/{shortcode}live`, `radio.opus`, `radio.m4a`, `radio.mp3`; config key `lumina-stream-v2`.
 - Observability: `src/lib/logger.js` (pino browser logging) + optional Sentry alerts via `VITE_SENTRY_DSN`. See `Pino logs.md`, `Sentry alerts.md`, `DEPLOY.md`.
