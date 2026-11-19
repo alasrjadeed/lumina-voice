@@ -370,7 +370,9 @@ function mapStory(r) {
     coverUrl: canonicalArchiveUrl(r.cover_url) || '',
     duration: r.duration,
     authorId: r.author_id,
-    createdAt: r.created_at
+    createdAt: r.created_at,
+    // Old rows without the column stay published until explicitly unchecked.
+    published: r.published !== false
   }
 }
 
@@ -380,7 +382,7 @@ export async function fetchStories(signal) {
 }
 
 // Log a public-domain recording whose stream already lives on Archive.org.
-export async function createStory({ title, description, audioUrl, coverUrl, duration, authorId }) {
+export async function createStory({ title, description, audioUrl, coverUrl, duration, authorId, published = true }) {
   const stream = canonicalArchiveUrl(audioUrl)
   if (!isArchiveAudioUrl(stream)) throw new Error('Only direct Archive.org audio URLs can be saved.')
   const token = await validToken()
@@ -393,7 +395,8 @@ export async function createStory({ title, description, audioUrl, coverUrl, dura
       audio_url: stream,
       cover_url: canonicalArchiveUrl(coverUrl) || null,
       duration,
-      author_id: authorId || null
+      author_id: authorId || null,
+      published
     }]
   })
   return mapStory(row)
@@ -411,6 +414,7 @@ export async function updateStory(id, patch) {
   }
   if (patch.coverUrl !== undefined) payload.cover_url = canonicalArchiveUrl(patch.coverUrl) || null
   if (patch.duration !== undefined) payload.duration = patch.duration
+  if (patch.published !== undefined) payload.published = !!patch.published
   const [row] = await rest(`stories?id=eq.${encodeURIComponent(id)}`, { method: 'PATCH', token, body: payload })
   return mapStory(row)
 }
@@ -491,10 +495,12 @@ create table if not exists stories (
   cover_url text,                 -- Archive.org image URL
   duration integer,               -- seconds, for fast UI
   author_id uuid references auth.users(id) on delete set null,
-  created_at timestamptz default now()
+  created_at timestamptz default now(),
+  published boolean not null default true
 );
 
 alter table stories add column if not exists cover_url text;
+alter table stories add column if not exists published boolean not null default true;
 
 create index if not exists stories_created_idx on stories (created_at desc);
 

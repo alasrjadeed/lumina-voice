@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from 'react'
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { Capacitor } from '@capacitor/core'
 import {
   authors as bundledAuthors,
@@ -26,19 +26,25 @@ import {
 } from '../data/userCatalog'
 import { deleteLocalFile, isLocalAsset, localId } from '../data/localMedia'
 import { titlePlayableOnDevice } from '../data/playability'
+import { fetchCatalogue, loadCachedCatalogue } from '../data/cloudCatalogue'
+import { subscribeToChanges } from '../data/realtime'
 
 const Ctx = createContext(null)
 
-function merge(user, native = false) {
+function merge(user, native = false, cloud = []) {
   const authors = [...bundledAuthors, ...(user.authors || [])]
   const poets = [...bundledPoets, ...(user.poets || [])]
   const overrides = user.overrides || {}
-  // An override applies on top of whichever title it names — bundled or
+  // An override applies on top of whichever title it names — bundled, cloud or
   // imported — so the studio can correct any entry in the catalogue.
   const applyOverride = (t) => (overrides[t.id] ? { ...t, ...overrides[t.id] } : t)
+  // A cloud row replaces the bundled fallback for the same Archive item; a
+  // device import keeps priority so an operator's local edits still win.
+  const cloudSources = new Set(cloud.map((t) => t.sourceUrl))
+  const bundled = bundledTitles.filter((t) => !cloudSources.has(t.sourceUrl))
   // The APK ships no house audio. On a device, hide entries that could only
   // produce "no audio on this device" instead of cluttering every shelf.
-  const titles = [...bundledTitles, ...(user.titles || [])]
+  const titles = [...bundled, ...cloud, ...(user.titles || [])]
     .map(applyOverride)
     .filter((t) => titlePlayableOnDevice(t, { native }))
   return { authors, poets, titles }
@@ -46,6 +52,37 @@ function merge(user, native = false) {
 
 export function CatalogProvider({ children }) {
   const [user, setUser] = useState(() => loadUserCatalog())
+  const [cloudTitles, setCloudTitles] = useState(() => loadCachedCatalogue())
+
+  // Cron publishes the snapshot; devices pull it. Realtime is a bonus for an
+  // open tab, and the cached copy keeps the catalogue alive with no signal.
+  const refreshCatalogue = useCallback(async () => {
+    try {
+      setCloudTitles(await fetchCatalogue())
+    } catch {
+      /* keep the last good snapshot */
+    }
+  }, [])
+
+  useEffect(() => {
+    let mounted = true
+    const run = () => {
+      if (mounted) refreshCatalogue()
+    }
+    run()
+    const onVisible = () => {
+      if (typeof document !== 'undefined' && document.visibilityState === 'visible') run()
+    }
+    if (typeof document !== 'undefined') document.addEventListener('visibilitychange', onVisible)
+    const timer = setInterval(run, 15 * 60 * 1000)
+    const stop = subscribeToChanges(['stories'], run)
+    return () => {
+      mounted = false
+      if (typeof document !== 'undefined') document.removeEventListener('visibilitychange', onVisible)
+      clearInterval(timer)
+      stop()
+    }
+  }, [refreshCatalogue])
 
   const persist = (next) => {
     const clean = saveUserCatalog(next)
@@ -54,7 +91,7 @@ export function CatalogProvider({ children }) {
   }
 
   const native = Capacitor.isNativePlatform()
-  const merged = useMemo(() => merge(user, native), [user, native])
+  const merged = useMemo(() => merge(user, native, cloudTitles), [user, native, cloudTitles])
 
   // Every genre the library knows about: the bundled shelves, the ones added by
   // hand, and any that a title already carries — so a name typed straight into

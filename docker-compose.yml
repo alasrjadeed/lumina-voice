@@ -11,4 +11,7 @@ services:
     container_name: lumina-voice
     ports:
       - "4310:80"
+    volumes:
+      # `npm run catalogue:export` updates this file without a rebuild.
+      - ./public/catalogue.json:/usr/share/nginx/html/catalogue.json:ro
     restart: unless-stopped

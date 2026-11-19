@@ -25,6 +25,7 @@ Stack: **Vite 8 + React 19 + react-router-dom 7**, plain CSS, no UI framework, n
 | Archive library verification | `Audiobook Library 100 Plan.md`, `scripts/verify-archive-library.mjs`, `scripts/convert-archive-library.py`, `data/archiveLibraryWorking.json` |
 | Archive library review UI | `src/pages/ArchiveLibraryAdmin.jsx` (Device Admin → Archive library), `src/data/generated/archiveLibraryAdmin.json` |
 | Supabase (auth + REST + SQL) | `src/data/api.js` |
+| Cloud catalogue snapshot | `src/data/cloudCatalogue.js`, `src/state/Catalog.jsx`, `scripts/export-cloud-catalogue.mjs`, `scripts/install-catalogue-cron.sh` |
 | Radio stream (AzuraCast/Icecast) | `src/data/stream.js` |
 | Broadcast automation + ads | `src/data/broadcast.js`, `src/data/ads.js` |
 | PWA / service worker | `src/pwa.js`, `public/sw.js` |
@@ -43,6 +44,7 @@ Stack: **Vite 8 + React 19 + react-router-dom 7**, plain CSS, no UI framework, n
 - Archive-only shipped catalogue: 1 title (`selected-ghazals-of-ghalib`, 35 episodes), 1 poet, 6 voices, 1 gated radio station ("Sada Bahar"). Ads stay in `src/data/ads.js`.
 - Auth: Supabase (optional) or local demo. Any email may sign in; only `info@alasarjadeed.com` is admin.
 - Signed-in devices sync library/progress/history metadata via Supabase `user_state` (audio stays on device); realtime refreshes ratings, reviews, catalogue and profiles.
+- Admin → Cloud catalogue edits Archive.org story links with a `published` draft/live switch; a 15-minute cron publishes only live rows to `/catalogue.json` (`lumina-cloud-catalogue-v1` cache) so the tablet and web app pick up new content without a rebuild. Local website links/features stay intact.
 - Admin "Broadcast Studio": schedule, rotation, automation rules, advertising, live stream, analytics, storage, logs.
 - Installs as PWA; shell and downloaded audio are cached by the service worker (`v7`).
 ---

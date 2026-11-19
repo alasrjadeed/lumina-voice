@@ -53,6 +53,7 @@ Updated: added Autobiography category and Quran Kareem/Urdu Translation handling
 32. Sentry calls must go through `captureException`/`captureMessage` and stay inert without `VITE_SENTRY_DSN`.
 33. Never log API keys, tokens or full URLs containing credentials. Local endpoint is `http://192.168.1.166:8080` — never silent-fallback to port 80.
 34. Deployment changes must update `DEPLOY.md`, `Auto mcp index.md` and this doc set in the same change.
+35. The local website is a private-use dashboard: keep its existing links and features. Content updates go through Admin → Cloud catalogue + cron; do not strip the site down to a public link.
 
 ## Radio feature — PAUSED (2026-11-17)
 - Public live radio is disabled until broadcast resources are available. Radio source is kept intact for a one-switch relaunch.

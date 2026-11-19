@@ -45,6 +45,8 @@ Useful candidates: **Supabase MCP** (schema/auth/RLS ops), **Playwright/Chromium
 | `scripts/build-library-catalogue.mjs` | Generate `src/data/generated/archiveLibrary.js` from `src/data/archiveLibraryVerified.json` | Run only after a reviewed publish; generated file is imported by `src/data/catalog.js` |
 | `scripts/build-library-admin-summary.mjs` | Generate `src/data/generated/archiveLibraryAdmin.json` (targets, totals, review queue) from working + verification + manifest | Imported by the read-only Archive library tab in Device Admin |
 | `scripts/prune-native-audio.mjs` | Delete every native APK audio file except `ad-*` after `cap sync` | Required before every `clean assembleDebug`; cuts the APK from ~341 MB to ~6 MB |
+| `scripts/export-cloud-catalogue.mjs` | Publish published archive-only Supabase `stories` rows to `public/catalogue.json` | `npm run catalogue:export`; skips drafts; uses the publishable/anon key only, never a service key |
+| `scripts/install-catalogue-cron.sh` | Install the 15-minute catalogue publisher crontab entry | Idempotent; reads `.env.local` from the project root |
 | `scripts/convert-archive-library.py` | Convert verified, rights-cleared MP3s to Opus 32k/24k mono + AAC 48k fallback | `--limit`, `--id`, `--out-dir`, `--dry-run`, `--force`; skips anything without explicit reuse rights |
 
 ### Native Android plugin (local, no npm package)
@@ -70,6 +72,7 @@ Useful candidates: **Supabase MCP** (schema/auth/RLS ops), **Playwright/Chromium
 |---|---|---|
 | `{VITE_SUPABASE_URL}/auth/v1/*` | publishable key header | `src/data/api.js` |
 | `{VITE_SUPABASE_URL}/rest/v1/{profiles,stories,ratings,reviews,user_state}` | publishable key + user JWT, RLS | `src/data/api.js`, `src/data/ratings.js`, `src/data/userState.js` |
+| `/catalogue.json` (or `VITE_CATALOGUE_SNAPSHOT_URL`) | public, `no-store` | `src/data/cloudCatalogue.js`, `src/state/Catalog.jsx`; written by cron |
 | `https://archive.org/download/{id}/{file}` | public read | `src/state/AppState.jsx` (catalogue audio) |
 | `{VITE_MEDIA_BASE_URL}/<asset>` | public read | legacy non-catalogue media only |
 | `{azuracast}/api/nowplaying/{shortcode}` (+ `X-API-Key` admin) | station-local, radio off | `src/data/stream.js` |
@@ -82,10 +85,10 @@ Useful candidates: **Supabase MCP** (schema/auth/RLS ops), **Playwright/Chromium
 2. `Brain.md` — doc map; `Memory.md` — stable facts (keys, routes, traps).
 3. `Rules.md` — constraints before editing; `Task.md` — current work state.
 4. `src/data/contentPolicy.js` — single Archive.org-only content gate.
-5. `backend schema.md`, `docs/supabase-admin-lockdown.sql`, `docs/supabase-archive-only.sql`, `docs/supabase-user-state.sql` — SQL policy sources; this file — interfaces.
+5. `backend schema.md`, `docs/supabase-admin-lockdown.sql`, `docs/supabase-archive-only.sql`, `docs/supabase-cloud-catalogue.sql`, `docs/supabase-user-state.sql` — SQL policy sources; this file — interfaces.
 
 ## 5. Generated / do-not-edit
-`package-lock.json` · `dist/**` · `public/audio/*` (produced by `scripts/*.py`) ·
+`package-lock.json` · `dist/**` · `public/catalogue.json` (produced by `catalogue:export`) · `public/audio/*` (produced by `scripts/*.py`) ·
 `public/icon-*.png` · `node_modules/**` · `src/data/generated/archiveLibrary.js` (produced by `build-library-catalogue.mjs`) ·
 `src/data/generated/archiveLibraryAdmin.json` (produced by `build-library-admin-summary.mjs`) ·
 `data/archiveLibraryWorking.json`, `data/archiveLibraryVerification.json` and `data/libraryConversionReport.json` (produced by the library scripts).

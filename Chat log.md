@@ -79,3 +79,11 @@ Connect Lumina Voice web and Android tablet builds to Supabase with maximum usab
 
 ## Remembered admin
 - Operator: `info@alasarjadeed.com`. Credential is already in `src/config/auth.js`; not duplicated here.
+
+## Cloud catalogue rollout (2026-11-19)
+- User rejected trimming the local website: it stays a private, full-featured dashboard. Reverted the outbound-link cleanup so GitHub/Deploy/llms, station-dashboard and archive-item links are back.
+- Kept the Archive-only gate intact. Admin → Cloud catalogue remains the single place to add/edit Archive.org links; rows still show the `Audiobook · archive.org` details link.
+- Added a `published` draft/live switch to Admin → Cloud catalogue (`docs/supabase-cloud-catalogue.sql`) and made the exporter skip drafts.
+- Added a cron-published snapshot: `scripts/export-cloud-catalogue.mjs` (`npm run catalogue:export`) writes `public/catalogue.json`; `scripts/install-catalogue-cron.sh` installs a 15-minute job. nginx serves the file `no-store` through a compose bind mount, so content updates need no rebuild.
+- `src/data/cloudCatalogue.js` maps each story row to one playable app title and caches the last snapshot under `lumina-cloud-catalogue-v1`; `CatalogProvider` pulls on mount/resume/timer plus Realtime. The APK uses the LAN snapshot URL from `.env.production`.
+- Verified: lint clean, 155/155 tests, production build, live snapshot export (0 archive rows currently in Supabase).

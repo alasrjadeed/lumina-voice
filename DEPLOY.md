@@ -61,6 +61,31 @@ location (the project directory name ends in a space). To rebuild after code
 changes, run `docker-compose up -d --build` once; the launcher then just starts
 and opens the existing image.
 
+### Cloud catalogue updates (admin → cron → devices)
+
+The local website's **Device Admin → Cloud catalogue** page remains the place to
+add, edit, publish/unpublish and delete Archive.org story links. Each save writes
+metadata only to Supabase `stories`; no audio file is uploaded. Apply
+`docs/supabase-cloud-catalogue.sql` once to add the `published` flag. A 15-minute
+cron job publishes the published archive-only rows as a static snapshot:
+
+```sh
+npm run catalogue:export          # writes public/catalogue.json now
+bash scripts/install-catalogue-cron.sh   # installs the 15-minute crontab entry
+```
+
+Run `npm run catalogue:export` before `npm run build` when packaging the APK so
+its bundled fallback snapshot is current; the app still refreshes from the LAN at
+runtime.
+
+`docker-compose.yml` mounts `public/catalogue.json` into nginx, so the site serves
+`/catalogue.json` with `Cache-Control: no-store` without a rebuild. Apps pull the
+snapshot on sign-in, on resume and every 15 minutes; Supabase Realtime also
+refreshes an open tab. `VITE_CATALOGUE_SNAPSHOT_URL` defaults to `/catalogue.json`
+on the web; `.env.production` points the APK at
+`http://192.168.1.166:4310/catalogue.json`. A transient failure keeps the last
+cached snapshot under `lumina-cloud-catalogue-v1`.
+
 ## 3. Native Android tablet build (Capacitor)
 
 The PWA is wrapped with Capacitor 8 so the tablet runs a real installed app with

@@ -13,12 +13,13 @@ import {
   updateStory
 } from '../data/api'
 import { archiveCoverUrl, isLikelyImageUrl } from '../data/artwork'
+import { archiveDetailsUrl } from '../data/cloudCatalogue'
 import { CoverArt } from '../art/covers'
 import { IcoPlus, IcoTrash, IcoCloud, IcoInfo } from '../ui/Icons'
 import ReviewModeration from './ReviewModeration.jsx'
 import { subscribeToChanges } from '../data/realtime'
 
-const EMPTY = { title: '', description: '', audioUrl: '', coverUrl: '', duration: '' }
+const EMPTY = { title: '', description: '', audioUrl: '', coverUrl: '', duration: '', published: true }
 
 export default function Catalog() {
   const { user } = useApp()
@@ -99,7 +100,8 @@ export default function Catalog() {
         coverUrl: form.coverUrl.trim()
           ? (/archive\.org/i.test(form.coverUrl) ? archiveCoverUrl(form.coverUrl.trim()) : form.coverUrl.trim())
           : '',
-        duration: form.duration ? Math.round(Number(form.duration) * 60) : null
+        duration: form.duration ? Math.round(Number(form.duration) * 60) : null,
+        published: form.published
       }
       if (editing) {
         const row = await updateStory(editing, payload)
@@ -125,11 +127,22 @@ export default function Catalog() {
       description: row.description || '',
       audioUrl: row.audioUrl || '',
       coverUrl: row.coverUrl || '',
-      duration: row.duration ? String(Math.round(row.duration / 60)) : ''
+      duration: row.duration ? String(Math.round(row.duration / 60)) : '',
+      published: row.published !== false
     })
     setNotice('')
     setErr('')
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const togglePublish = async (row) => {
+    try {
+      const updated = await updateStory(row.id, { published: !row.published })
+      setRows((r) => r.map((x) => (x.id === row.id ? updated : x)))
+      setNotice(updated.published ? 'Story published to devices.' : 'Story saved as a draft.')
+    } catch (e) {
+      setErr(e.message)
+    }
   }
 
   const remove = async (row) => {
@@ -219,6 +232,13 @@ VITE_SUPABASE_PUBLISHABLE_KEY=<publishable-key>`}</pre>
               <span>Duration (minutes)</span>
               <input type="number" min="0" value={form.duration} onChange={(e) => setForm({ ...form, duration: e.target.value })} placeholder="22" />
             </label>
+            <label className="ad-field">
+              <span>Visibility</span>
+              <select className="select" value={form.published ? 'published' : 'draft'} onChange={(e) => setForm({ ...form, published: e.target.value === 'published' })}>
+                <option value="published">Published · reaches devices</option>
+                <option value="draft">Draft · admin only</option>
+              </select>
+            </label>
           </div>
           <label className="ad-field" style={{ marginTop: 12 }}>
             <span>Description</span>
@@ -299,11 +319,18 @@ VITE_SUPABASE_PUBLISHABLE_KEY=<publishable-key>`}</pre>
                 <div className="story-title">{r.title}</div>
                 <div className="story-url">{r.audioUrl}</div>
                 <div className="story-sub">
+                  {r.published === false ? 'Draft · ' : 'Published · '}
                   {r.duration ? `${Math.round(r.duration / 60)} min · ` : ''}
                   {r.description || 'No description'}
                 </div>
+                {archiveDetailsUrl(r.audioUrl) ? (
+                  <a className="al-link" href={archiveDetailsUrl(r.audioUrl)} target="_blank" rel="noreferrer">
+                    Audiobook · archive.org
+                  </a>
+                ) : null}
               </div>
               <audio className="story-audio" controls preload="none" src={r.audioUrl} />
+              <button className="btn btn-ghost" onClick={() => togglePublish(r)}>{r.published === false ? 'Publish' : 'Unpublish'}</button>
               <button className="btn btn-ghost" onClick={() => startEdit(r)}>Edit</button>
               <button className="icon-btn" onClick={() => remove(r)} aria-label="Delete story"><IcoTrash /></button>
             </div>

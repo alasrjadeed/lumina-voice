@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0 --port 4310",
     "test": "vitest run",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "catalogue:export": "node scripts/export-cloud-catalogue.mjs"
   },
   "dependencies": {
     "@capacitor/core": "^8.6.2",

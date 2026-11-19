@@ -15,6 +15,7 @@ kept in a separate data file and the APK ships only `ad-*` audio.
 - Static PWA served by nginx on http://localhost:4310 (also http://192.168.1.166:4310 on the LAN)
 - No VS Code needed: `docker-compose up -d --build`; desktop icon `Lumina Voice.desktop` runs `scripts/open-lumina.sh` to start the container if stopped and open the app
 - No streaming server, database, API key or paid provider is required
+- Admin → Cloud catalogue manages Archive.org links in Supabase with a published/draft switch; a 15-minute cron publishes metadata-only `/catalogue.json` that the web app and tablet pull (audio still streams directly from archive.org)
 - Observability: pino logs; Sentry alerts disabled without a DSN
 - Natural on-device Urdu speech: Android TTS voice pack, Urdu digits/punctuation and human-like pauses (no key, no network)
 

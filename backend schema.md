@@ -1,8 +1,8 @@
 # backend schema.md — Supabase + Archive.org
 
 Base schema: `SCHEMA_SQL` in `src/data/api.js` (also displayed in Admin → Storage).
-Policy migrations: `docs/supabase-admin-lockdown.sql`, `docs/supabase-archive-only.sql`
-and `docs/supabase-user-state.sql`. Audio bytes are **never** stored in Supabase or
+Policy migrations: `docs/supabase-admin-lockdown.sql`, `docs/supabase-archive-only.sql`,
+`docs/supabase-cloud-catalogue.sql` and `docs/supabase-user-state.sql`. Audio bytes are **never** stored in Supabase or
 the transfer bundle — only a direct Archive.org URL as text.
 
 ## 1. Services
@@ -46,6 +46,16 @@ alter table public.stories drop constraint if exists stories_archive_audio_url_c
 alter table public.stories add constraint stories_archive_audio_url_chk
   check (audio_url ~* '^https://archive\.org/download/[^/]+/.+\.(mp3|m4a|aac|ogg|oga|opus|flac|wav)(\?.*)?$');
 ```
+
+`stories.published` (boolean, default true) is the publish switch. Draft rows stay
+visible in Admin → Cloud catalogue but are skipped by the exporter and by the app.
+Apply `docs/supabase-cloud-catalogue.sql` once to add it to an existing project.
+Every published archive-only row is also exported to `public/catalogue.json` by
+`npm run catalogue:export` (install with `scripts/install-catalogue-cron.sh` for a
+15-minute cron). The snapshot holds `{version, generatedAt, source, stories}` —
+metadata only. `src/data/cloudCatalogue.js` maps each row to one app title with a
+single playable episode and an `Audiobook · archive.org` source link; devices
+pull the snapshot and keep the last good copy in `lumina-cloud-catalogue-v1`.
 
 ### Auto-profile trigger
 ```sql
