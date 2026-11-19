@@ -110,16 +110,15 @@ Update this file whenever work starts or lands. Status: `todo` · `doing` · `do
 
 - [x] Tablet smoke after final rebuild: `0102MT2504242159060` (Wi-Fi `192.168.1.183`), APK 6.4 MB installed and launched. Routes `/`, `/library`, `/title/…`, `/settings`, `/admin`, `/radio→/` render with zero errors; imported Potter/Hobbit titles visible; no Radio nav, no AzuraCast traffic; catalogue snapshot cached and fetched once; `sw.js?v=7` active. Web origin at `http://192.168.1.152:4310` verified with a clean localStorage: pulled the same 11 titles + 10 imports from Supabase, no overwrite, zero errors.
 
+- [x] Supabase migrations applied (2026-11-19): `docs/supabase-cloud-catalogue.sql`, `docs/supabase-archive-only.sql` and `docs/supabase-admin-lockdown.sql` were run through the Management API (`POST /v1/projects/ueiwzhjruyijtssysekq/database/query`) with a user-supplied PAT. Verified in Postgres: `published` column, `stories_archive_audio_url_chk`, `is_operator()`, role trigger, operator RLS policy, exactly one admin row, zero stray admins. `stories?select=id,published` returns 200 through the app's publishable key.
+
+- [x] Rights review completed with a definitive result: Archive.org has **no** explicit-licensed Urdu fiction for any of the six 100-title-plan buckets (0 hits for `subject:fiction`, story/novel titles, audiobook collections, horror/mystery/detective; no LibriVox Urdu items). 72 CC/PD Urdu audio items exist but are religious lectures, which the plan excludes. One genuine CC0 Urdu audiobook with a playable MP3 was added to the live cloud catalogue with its licence URL and item page recorded in the description. Exporter published it to `public/catalogue.json`, Docker serves it, and both web and tablet show it with library 11 + 10 imports intact. The plan's gate stays at 0 records — no fiction title can be relabelled to fill a bucket.
+
 ## In progress
-- [ ] Apply `docs/supabase-admin-lockdown.sql`, `docs/supabase-archive-only.sql` and `docs/supabase-cloud-catalogue.sql` in the Supabase SQL Editor (dashboard login was unavailable to the agent; only the public URL and publishable key are in the environment). They repair stale admin rows, make stories RLS use the operator email, add the Archive URL check constraint and add the `published` column the admin/exporter already write. `user_state.sql` is applied — grants and RLS work over authenticated REST. The non-Archive cloud row is already removed via REST.
+- [ ] L6: Tier A APK bundle (12 horror titles), Tier B Docker library, Tier C Archive stream — still blocked because the six fiction buckets have no rights-cleared Urdu titles.
 
 ## Backlog
-- [ ] Rights clearance: no supplied or replacement lead has explicit reuse terms, so 0 records from the 100-title plan can publish. Stage audio + conversion stay gated on this.
-- [ ] L6: Tier A APK bundle (12 horror titles), Tier B Docker library, Tier C Archive stream — blocked until verified, rights-cleared titles exist.
-- [x] L7: final device/browser smoke check after the Docker and APK rebuild.
-
-## Blocked
-- [ ] Supabase dashboard login / management token was unavailable; the three SQL migrations above remain unapplied. The current publishable-key REST path cannot run DDL.
+- [ ] Rights clearance requires new source material: rights-cleared Urdu fiction (written permission or an explicit reuse licence) before any of the six target buckets can publish.
 ---
 - [x] Added Autobiography category and routing
 

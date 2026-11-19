@@ -1,6 +1,18 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-19T05:58:07.046Z",
+  "generatedAt": "2026-11-19T06:51:00.337Z",
   "source": "https://ueiwzhjruyijtssysekq.supabase.co",
-  "stories": []
+  "stories": [
+    {
+      "id": "ba86a1a6-6491-44fe-8b68-aad39a77feb4",
+      "title": "Iqbal Qaid E Azam Awr Pakistan",
+      "description": "Verified Urdu audiobook from the Internet Archive. Item: https://archive.org/details/IqbalQaidEAzamAwrPakistan. Reuse terms: CC0 1.0 — http://creativecommons.org/publicdomain/zero/1.0/. Rights verified 2026-11-19 from the item metadata licenseurl; no audio bytes are stored in Supabase.",
+      "audio_url": "https://archive.org/download/IqbalQaidEAzamAwrPakistan/Book%20Iqbal%20Qaid%20E%20Azam%20Awr%20Pakistan%20Page%2020.mp3",
+      "cover_url": "https://archive.org/services/img/IqbalQaidEAzamAwrPakistan",
+      "duration": 1791,
+      "author_id": null,
+      "created_at": "2026-11-19T06:50:53.030379+00:00",
+      "published": true
+    }
+  ]
 }

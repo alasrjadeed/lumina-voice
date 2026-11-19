@@ -11,13 +11,13 @@ streaming server, no paid service, no API key is required to launch.
 |---|---|---|
 | Build | `node:22-alpine` + Vite 8 (pinned so the engine floor cannot drift) | build-time only |
 | Runtime | `nginx:1.27-alpine`, static `dist/`, SPA fallback | one small container |
-| Content | 1 Archive.org title with 35 direct MP3 episodes; only `ad-*` audio bundled | zero |
+| Content | 2 Archive.org titles (Ghalib's 35 direct MP3 episodes + one CC0 Urdu audiobook); only `ad-*` audio bundled | zero |
 | Auth | Supabase Auth (free tier) with local demo fallback when offline | zero |
 | Logs/alerts | pino at `warn`; Sentry disabled without a DSN | zero |
 | Radio | Fully gated by `VITE_RADIO_ENABLED=false` | zero |
-| Archive library | 100-title plan on hold; 0 rights-cleared records published | zero |
+| Archive library | 100-title plan on hold; 0 rights-cleared fiction records (no explicit-licensed Urdu fiction exists on Archive.org) | zero |
 | Data transfer | Settings → Transfer data (`/transfer`) exports/imports metadata-only JSON; no audio bytes | zero |
-| Cross-device sync | Supabase `user_state` carries only library/progress/history metadata between Android and web; audio stays on device | zero |
+| Cross-device sync | Supabase `user_state` carries the full metadata bundle (library/progress/history plus imported titles, artwork, subtitles and settings) between Android and web; audio stays on device | zero |
 
 `.dockerignore` excludes `.env`, `.env.local`, `.env.development` and
 `.env.*.local`. Only `.env.production` is copied (radio flag `false`). The
@@ -65,9 +65,10 @@ and opens the existing image.
 
 The local website's **Device Admin → Cloud catalogue** page remains the place to
 add, edit, publish/unpublish and delete Archive.org story links. Each save writes
-metadata only to Supabase `stories`; no audio file is uploaded. Apply
-`docs/supabase-cloud-catalogue.sql` once to add the `published` flag. A 15-minute
-cron job publishes the published archive-only rows as a static snapshot:
+metadata only to Supabase `stories`; no audio file is uploaded. The three schema
+migrations (`supabase-cloud-catalogue.sql`, `supabase-archive-only.sql`,
+`supabase-admin-lockdown.sql`) are applied and verified. A 15-minute cron job
+publishes the published archive-only rows as a static snapshot:
 
 ```sh
 npm run catalogue:export          # writes public/catalogue.json now
