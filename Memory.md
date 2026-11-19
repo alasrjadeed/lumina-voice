@@ -37,8 +37,8 @@ Facts an agent must not rediscover. Read before changing anything.
 | IndexedDB `lumina-local-media-v1`, store `files` | `data/localMedia.js` | legacy local blobs (not catalogue audio; archive-only policy rejects local imports) |
 
 ## Service worker caches
-`lumina-shell-v7`, `lumina-static-v7`, `lumina-audio-v1` — registered as `/sw.js?v=7`.
-Bumping the cache name is how a stale-cache bug ships. The `v7` bump forces devices off the old demo catalogue.
+`lumina-shell-v8`, `lumina-static-v8`, `lumina-audio-v1` — registered as `/sw.js?v=7`.
+Bumping the cache name is how a stale-cache bug ships. The `v8` bump forces devices off the old demo catalogue.
 
 ## Audio conventions
 - Catalogue audio is direct `https://archive.org/download/<id>/<file>.{mp3,opus,...}`; no local story audio is shipped.
@@ -124,6 +124,7 @@ Bumping the cache name is how a stale-cache bug ships. The `v7` bump forces devi
 - PWA install: do not `preventDefault()` on `beforeinstallprompt` unless calling `prompt()` immediately; otherwise Chrome logs "Banner not shown" and suppresses its banner. Deferred Settings button still works where supported.
 - Supabase DDL without dashboard login (2026-11-19): a Management API PAT works via `POST https://api.supabase.com/v1/projects/ueiwzhjruyijtssysekq/database/query` with `Authorization: Bearer sbp_…` and body `{"query":"<SQL file>"}`. The read-only variant is `/database/query/read-only`. The app's `authenticated` JWT is NOT accepted here (401). All three pending migration files were applied this way and verified in `information_schema`/`pg_constraint`.
 - Rights clearance (2026-11-19): Archive.org's `advancedsearch` has 0 explicit-licensed Urdu fiction items for the six 100-title-plan buckets (subject:fiction, story/novel titles, audiobooks, horror/mystery/detective all 0; LibriVox has no Urdu). 72 CC/PD Urdu audio items are religious lectures and are excluded by the plan — never relabel them to fill a fiction bucket. `IqbalQaidEAzamAwrPakistan` is the one genuine CC0 Urdu audiobook with a playable MP3; it lives in Supabase `stories` (not the plan manifest) with the licence URL in its description and is published through the 15-minute snapshot. The 100-title plan's manifest stays at 0 records.
+- Developer/SEO (2026-11-19): public identity is AL ASAR JADEED · www.alasarjadeed.com. Keep it in `index.html`, `docs/index.html`, `src/data/site.js`, Settings footer and `public/llms.txt`. Both hosts have canonical/OG/Twitter tags, JSON-LD (Organization/WebApplication/FAQPage), `robots.txt` and `sitemap.xml`. Multi-account answer for docs/UI: anyone may register; catalogue is shared; `user_state` is private per `auth.uid()`; ratings/reviews are public-read but author-only writes; only the exact operator email is admin. Do not restore the admin password shortcut to `/auth`.
 
 ## Archive-only content policy (2026-11-18)
 - `src/data/contentPolicy.js` is the only place that decides whether content is publishable: a title needs at least one direct `https://archive.org/download/<id>/<audio-file>` URL. `www.` is canonicalised to `archive.org` so CORS and Supabase rows match.

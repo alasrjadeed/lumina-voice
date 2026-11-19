@@ -13,7 +13,7 @@ export const DEFAULT_SITE = {
   aboutTitle: 'An audio library run by ears, not eyes',
   aboutBody:
     'Lumina Voice is a hand-crafted library of Urdu audio drama, series and audiobooks. Listen on the web, on mobile, or install it like an app — your place is saved on the device and follows you wherever you listen.',
-  footerNote: '© Lumina Voice · by Lumina My Ai · www.alasarjadeed.com · luminamyai@gmail.com · Streamed in Opus mono',
+  footerNote: '© AL ASAR JADEED · Web: www.alasarjadeed.com · Lumina Voice · Audio streamed from Archive.org',
   showFeatured: true,
   showLiveStrip: true
 }

@@ -600,7 +600,9 @@ export default function Settings() {
       </Group>
 
       <p className="settings-foot meta">
-        The finest Urdu audio-films, dramas, series, and audiobooks{RADIO_ENABLED ? ', and live radio' : ''}. Close your eyes. The story begins. Version 1.0.0
+        Developed by AL ASAR JADEED · <a href="https://www.alasarjadeed.com" target="_blank" rel="noopener">www.alasarjadeed.com</a>
+        <br />
+        Urdu audio-films, dramas, series and audiobooks{RADIO_ENABLED ? ', and live radio' : ''} from Archive.org. Close your eyes. The story begins. Version 1.0.0
       </p>
     </div>
   )

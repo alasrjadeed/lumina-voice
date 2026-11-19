@@ -4,6 +4,7 @@
 > "Close your eyes. The story begins." Streams public-domain audio directly from Archive.org,
 > installs as a Progressive Web App, and keeps its shell, state, ads and downloads available offline.
 
+Developer: AL ASAR JADEED · Web: www.alasarjadeed.com · Email: luminamyai@gmail.com
 Author: Lumina My Ai · Website: www.alasarjadeed.com · Email: luminamyai@gmail.com
 
 Lumina Voice is a private, client-only React application. There is no first-party API server.
@@ -18,6 +19,14 @@ kept in a separate data file and the APK ships only `ad-*` audio.
 - Admin → Cloud catalogue manages Archive.org links in Supabase with a published/draft switch; a 15-minute cron publishes metadata-only `/catalogue.json` that the web app and tablet pull (audio still streams directly from archive.org)
 - Observability: pino logs; Sentry alerts disabled without a DSN
 - Natural on-device Urdu speech: Android TTS voice pack, Urdu digits/punctuation and human-like pauses (no key, no network)
+
+## Accounts and saved data
+
+- Anyone may create a free profile with their own email in the app; no invitation is required. The public media catalogue comes from Archive.org and every account sees the same public titles.
+- Only `info@alasarjadeed.com` is the operator/admin across web, tablet and Supabase. All other emails are listeners, even if a profile row claims another role.
+- A listener's library, playback positions, history, imported Archive titles, artwork, subtitles and settings are stored in that account's own Supabase `user_state` row. RLS limits read/write to `auth.uid() = user_id`, so another account cannot read or edit them.
+- Ratings and reviews are public to read, but only their author can edit or delete them. No audio bytes are uploaded or stored in Supabase; only metadata syncs.
+- On a shared device, sign out before handing it over. A device's local browser cache can still hold the last listener's metadata until it is cleared.
 
 ## Product
 

@@ -126,7 +126,7 @@ Test on the target tablet in both orientations. The layout has a bottom nav at
 `<=900px` and touch-sized controls; portrait and landscape both matter.
 
 1. **Install as PWA** — open the site, use the browser's *Add to Home screen*,
-   launch from the icon. Manifest, icons and `/sw.js?v=7` must all load.
+   launch from the icon. Manifest, icons and `/sw.js?v=8` must all load.
 2. **Navigate** — `/site` is public; `/` redirects to `/site` when signed out.
    Bottom nav reaches Search / Library / Settings (plus Device Admin for admins). No Radio tab.
 3. **Radio is gone** — no "Radio", "Sada Bahar", "ON AIR" or "Studio" text;
@@ -157,7 +157,7 @@ Test on the target tablet in both orientations. The layout has a bottom nav at
 ```sh
 npm ci
 npm run lint     # clean
-npm test         # 150 passing
+npm test         # 156 passing
 npm run build    # main bundle + lazy Admin/Radio/Sentry chunks
 ```
 
@@ -176,4 +176,12 @@ Then `docker build -t lumina-voice:local .` and a browser smoke test at
 ## 7. Rollback
 
 `docker compose down` → restore the previous image or `dist/` → `docker compose up -d`.
-There are no migrations, so rollback is image-only.
+Database migrations are additive and already applied; rollback of the app itself is image-only.
+
+## 8. Public discovery / SEO
+
+The app shell (`index.html`) and the GitHub Pages landing page (`docs/index.html`) carry
+descriptive titles, canonical/OG/Twitter tags, Organization + WebApplication JSON-LD and
+a FAQ. Each host serves its own `robots.txt` and `sitemap.xml` (`public/` for the app,
+`docs/` for GitHub Pages). The public identity is AL ASAR JADEED · www.alasarjadeed.com;
+keep it in both HTML files, the site footer config and `public/llms.txt`.

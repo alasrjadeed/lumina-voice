@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alasrjadeed.github.io/lumina-voice/sitemap.xml

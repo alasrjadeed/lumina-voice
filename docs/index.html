@@ -3,19 +3,81 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lumina Voice — Close your eyes. The story begins.</title>
-  <meta name="description" content="Lumina Voice is an offline-first Urdu audio book library for web and Android. Stories, dramas and ghazals — streamed light, kept forever." />
+  <title>Lumina Voice — Urdu Audiobooks, Ghazals &amp; Audio Dramas</title>
+  <meta name="description" content="Lumina Voice is a free offline-first Urdu audio library for web and Android. Stream ghazals, stories, dramas and audiobooks from Archive.org; save your place on every device." />
+  <meta name="author" content="AL ASAR JADEED" />
+  <meta name="keywords" content="Urdu audiobooks, Urdu audio dramas, Urdu ghazals, offline audio player, Archive.org audio, Lumina Voice" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#08070b" />
+  <link rel="canonical" href="https://alasrjadeed.github.io/lumina-voice/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Lumina Voice" />
-  <meta property="og:title" content="Lumina Voice — Urdu audio stories, offline-first" />
-  <meta property="og:description" content="Close your eyes. The story begins. An offline-first Urdu audio book library for web and Android." />
+  <meta property="og:title" content="Lumina Voice — Urdu audiobooks, ghazals &amp; audio dramas" />
+  <meta property="og:description" content="Close your eyes. The story begins. A free offline-first Urdu audio library for web and Android, streamed from Archive.org." />
   <meta property="og:url" content="https://alasrjadeed.github.io/lumina-voice/" />
   <meta property="og:image" content="https://raw.githubusercontent.com/alasrjadeed/lumina-voice/main/public/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lumina Voice — Urdu audiobooks, ghazals &amp; audio dramas" />
+  <meta name="twitter:description" content="A free offline-first Urdu audio library for web and Android. Stream from Archive.org and keep your place on every device." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/alasrjadeed/lumina-voice/main/public/og.png" />
   <link rel="icon" href="https://raw.githubusercontent.com/alasrjadeed/lumina-voice/main/public/icon-512.png" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.alasarjadeed.com/#organization",
+          "name": "AL ASAR JADEED",
+          "url": "https://www.alasarjadeed.com",
+          "email": "luminamyai@gmail.com"
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Lumina Voice",
+          "url": "https://alasrjadeed.github.io/lumina-voice/",
+          "description": "A free offline-first Urdu audio library for ghazals, stories, dramas and audiobooks, streamed from Archive.org.",
+          "applicationCategory": "AudioApplication",
+          "operatingSystem": "Web, Android",
+          "inLanguage": ["en", "ur"],
+          "isAccessibleForFree": true,
+          "author": { "@id": "https://www.alasarjadeed.com/#organization" },
+          "publisher": { "@id": "https://www.alasarjadeed.com/#organization" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Who developed Lumina Voice?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Lumina Voice was developed by AL ASAR JADEED. Web: www.alasarjadeed.com."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can anyone sign in to Lumina Voice with a different email?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Anyone can create a free profile with their own email. Everyone sees the same public Archive.org catalogue, while only info@alasarjadeed.com has admin access."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What saved data can another listener see?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Another listener sees only the public catalogue and public ratings and reviews. Their library, playback positions, history, imported Archive titles, artwork, subtitles and settings are saved to their own account and cannot be edited by other accounts. Audio files are never uploaded to Supabase; only metadata syncs."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
   <style>
     :root {
       --bg: #08070b;
@@ -264,6 +326,7 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#features">Features</a>
         <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
         <a href="#start">Get started</a>
         <a class="btn btn-gold btn-sm" href="https://github.com/alasrjadeed/lumina-voice" target="_blank" rel="noopener">View on GitHub ↗</a>
       </nav>
@@ -371,6 +434,30 @@
       </div>
     </section>
 
+    <section id="faq">
+      <div class="wrap">
+        <div class="head">
+          <div class="kicker">Questions</div>
+          <h2>Who can listen, and what is saved?</h2>
+          <p>Clear answers for listeners and new contributors.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Who developed Lumina Voice?</h3>
+            <p>AL ASAR JADEED developed Lumina Voice. Web: <a href="https://www.alasarjadeed.com" target="_blank" rel="noopener">www.alasarjadeed.com</a>.</p>
+          </article>
+          <article class="card">
+            <h3>Can another person sign in with a different email?</h3>
+            <p>Yes. Anyone can create a free profile with their own email. Everyone sees the same public Archive.org catalogue; only <b>info@alasarjadeed.com</b> has admin access.</p>
+          </article>
+          <article class="card">
+            <h3>What saved data can another listener see?</h3>
+            <p>Your library, playback positions, history, imported Archive titles, artwork, subtitles and settings belong to your own account and cannot be edited by other accounts. Public ratings, reviews and the shared catalogue are visible to everyone. No audio files are uploaded; only metadata syncs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="start">
       <div class="wrap">
         <div class="head">
@@ -413,6 +500,7 @@ npm run lint &amp;&amp; npm test &amp;&amp; npm run build
       <div>
         <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">✦</span><span>LUMINA VOICE</span></a>
         <p>Close your eyes. The story begins.</p>
+        <p>Developed by AL ASAR JADEED · <a href="https://www.alasarjadeed.com" target="_blank" rel="noopener">www.alasarjadeed.com</a></p>
       </div>
       <div class="foot-links">
         <a href="https://github.com/alasrjadeed/lumina-voice" target="_blank" rel="noopener">GitHub</a>

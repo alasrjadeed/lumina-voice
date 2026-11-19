@@ -207,7 +207,7 @@ Rules:
 - Bundle metadata/covers for all 100; audio is cached on first play or explicit Download.
 - Keep `lumina-library-cache-v1` as the planned key for cached asset ids + byte totals; add it to `Memory.md` in the implementation commit.
 - Add the new key to `syncBundle.js` allowlist only if cache state should transfer; never transfer audio bytes by default.
-- Bump service worker to `/sw.js?v=7` and shell/static cache names when shipping new assets.
+- Bump service worker to `/sw.js?v=8` and shell/static cache names when shipping new assets.
 - Respect the existing download button, SW `CACHE_AUDIO` API and data-saver `hq` switch.
 
 ## 8. UI changes

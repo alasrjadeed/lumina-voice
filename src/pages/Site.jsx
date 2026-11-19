@@ -28,6 +28,7 @@ export default function Site() {
         <nav className="site-nav" aria-label="Site">
           <a href="#shows">Shows</a>
           <a href="#about">About</a>
+          <a href="#accounts">Accounts</a>
           {RADIO_ENABLED ? <Link to="/radio?embed=1">Live radio</Link> : null}
         </nav>
         <div className="site-auth">
@@ -106,6 +107,17 @@ export default function Site() {
           <Link to="/auth" className="btn btn-primary">{user ? 'Open the app' : 'Create your profile'}</Link>
           {RADIO_ENABLED && user?.role === 'admin' ? <Link to="/admin" className="btn btn-ghost">Open Broadcast Studio</Link> : null}
         </div>
+      </section>
+
+      <section className="site-section" id="accounts">
+        <div className="section-head">
+          <h2>Listen with your own profile</h2>
+        </div>
+        <p className="site-about">
+          Anyone can create a free account with their own email. The Archive.org catalogue is shared, but each
+          listener&apos;s library, saved positions, history and imported titles belong to their own account. Only
+          info@alasarjadeed.com can manage the cloud catalogue. No audio bytes are uploaded — only metadata syncs.
+        </p>
       </section>
 
       <footer className="site-footer">{cfg.footerNote}</footer>

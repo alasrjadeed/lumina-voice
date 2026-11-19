@@ -27,7 +27,7 @@ export function registerServiceWorker() {
   if (readyPromise) return readyPromise
   readyPromise = (async () => {
     try {
-      const reg = await navigator.serviceWorker.register('/sw.js?v=7', { scope: '/', updateViaCache: 'none' })
+      const reg = await navigator.serviceWorker.register('/sw.js?v=8', { scope: '/', updateViaCache: 'none' })
       // If a newer worker is waiting, hand over to it on the next load.
       if (reg.waiting && navigator.serviceWorker.controller) {
         reg.waiting.postMessage({ type: 'SKIP_WAITING' })

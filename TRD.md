@@ -47,7 +47,7 @@
 ## 4. Data & storage
 - localStorage keys and IndexedDB schema: `Memory.md`.
 - Supabase schema/RLS: `backend schema.md` (`SCHEMA_SQL` in `src/data/api.js`).
-- Service worker caches: `lumina-shell-v7` / `lumina-static-v7` / `lumina-audio-v1`.
+- Service worker caches: `lumina-shell-v8` / `lumina-static-v8` / `lumina-audio-v1`.
 
 ## 5. API surface consumed
 | Endpoint | Purpose |
@@ -77,7 +77,7 @@ No first-party server exists; do not invent one.
 - Release gate: `npm run build` + the manual script (see `Phases.md` gate rules).
 
 ## 8. Versioning
-App `package.json` version; storage keys `-v1`; SW caches `-v7/-v1`; registration query `?v=7`.
+App `package.json` version; storage keys `-v1`; SW caches `-v8/-v1`; registration query `?v=7`.
 Any breaking storage change bumps the key suffix and writes a migration note in `Memory.md`.
 ---
 Updated: added Autobiography category and Quran Kareem/Urdu Translation handling.

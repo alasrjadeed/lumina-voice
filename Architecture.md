@@ -60,8 +60,8 @@ No SDKs: everything is plain `fetch` in `src/data/api.js`.
 
 | Cache | Holds |
 |---|---|
-| `lumina-shell-v7` | `index.html` + precached shell |
-| `lumina-static-v7` | hashed `/assets/*`, Google Fonts (stale-while-revalidate) |
+| `lumina-shell-v8` | `index.html` + precached shell |
+| `lumina-static-v8` | hashed `/assets/*`, Google Fonts (stale-while-revalidate) |
 | `lumina-audio-v1` | downloaded/streamed audio (cache-first) |
 
 Message API (from `src/pwa.js`): `CACHE_AUDIO`, `DELETE_AUDIO`, `AUDIO_STATUS`, `CLEAR_AUDIO`, `SKIP_WAITING`.

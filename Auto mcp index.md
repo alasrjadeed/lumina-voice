@@ -78,7 +78,7 @@ Useful candidates: **Supabase MCP** (schema/auth/RLS ops), **Playwright/Chromium
 | `{azuracast}/api/nowplaying/{shortcode}` (+ `X-API-Key` admin) | station-local, radio off | `src/data/stream.js` |
 | `{icecast}/status-json.xsl` | public, radio off | `src/data/stream.js` |
 | `https://archive.org/metadata/{id}` · `advancedsearch.php` | public (dev-proxied `/import-proxy/archive`) | `src/data/archive.js` |
-| `/llms.txt`, `/manifest.webmanifest`, `/sw.js?v=7` | public | crawler/PWA |
+| `/llms.txt`, `/manifest.webmanifest`, `/sw.js?v=8` | public | crawler/PWA |
 
 ## 4. Agent-readable entry points
 1. `public/llms.txt` — human/LLM product summary served at `/llms.txt`.

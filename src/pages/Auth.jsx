@@ -176,21 +176,11 @@ export default function Auth() {
             </>
           )}
         </p>
-        {!resetMode ? (
-          <button
-            type="button"
-            className="studio-hint"
-            onClick={() => {
-              setEmail(ADMIN_EMAIL)
-              setPass(ADMIN_PASSWORD)
-              setMode('login')
-              setErr('')
-              setInfo('')
-            }}
-          >
-            {`Admin login: ${ADMIN_EMAIL} · password “${ADMIN_PASSWORD}”.`}
-          </button>
-        ) : null}
+        <p className="hint" style={{ textAlign: 'center' }}>
+          {authConfigured
+            ? 'Your own email creates your own saved library. The shared Archive.org catalogue is visible to everyone; only the operator account can manage it.'
+            : 'Local demo mode: your library stays on this device unless Supabase is connected.'}
+        </p>
         <p className="hint" style={{ textAlign: 'center' }}>
           <Link to="/site" className="linkish">View the website — no account needed →</Link>
         </p>
