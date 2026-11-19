@@ -144,12 +144,9 @@ export default function Title() {
             ))}
           </div>
           <p className="synopsis">{t.synopsis}</p>
-          {t.imported && t.sourceUrl ? (
+          {t.sourceUrl && /^https:\/\/(www\.)?archive\.org\/details\//i.test(t.sourceUrl) ? (
             <p className="meta" style={{ marginTop: -8 }}>
-              Source:{' '}
-              <a href={t.sourceUrl} target="_blank" rel="noreferrer">
-                {t.source || t.sourceUrl}
-              </a>
+              <a href={t.sourceUrl} target="_blank" rel="noreferrer">Audiobook · archive.org</a>
             </p>
           ) : null}
           {!t.imported && narrator ? (
