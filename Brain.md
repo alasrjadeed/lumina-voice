@@ -49,7 +49,7 @@ Stack: **Vite 8 + React 19 + react-router-dom 7**, plain CSS, no UI framework, n
 - Admin "Broadcast Studio": schedule, rotation, automation rules, advertising, live stream, analytics, storage, logs.
 - Installs as PWA; shell and downloaded audio are cached by the service worker (`v8`).
 - Public discovery: app and GitHub Pages site carry function-led SEO/AEO metadata, JSON-LD, canonical URLs, `robots.txt` and `sitemap.xml`. The public FAQ documents developer identity, offline/Archive.org features and multi-account data rules.
-- APK deletes and history clearing use `src/ui/ConfirmDialog.jsx`; Android WebView ignores native `window.confirm`.
+- APK deletes and history clearing use `src/ui/ConfirmDialog.jsx`; Android WebView ignores native `window.confirm`. Every File Library part is deletable: imports are removed outright, bundled/cloud parts hidden by a local title override.
 ---
 Autobiography category added to broadcast; Holy Quran Urdu Translation in Quran Kareem with Urdu Translation genre.
 

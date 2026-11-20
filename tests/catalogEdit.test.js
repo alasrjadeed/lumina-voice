@@ -4,6 +4,7 @@ import {
   emptyUserCatalog,
   loadUserCatalog,
   sanitiseTitlePatch,
+  sanitiseUserCatalog,
   saveUserCatalog,
   withEpisodePatch
 } from '../src/data/userCatalog'
@@ -51,6 +52,26 @@ describe('user catalog overrides', () => {
     expect(clean.authors).toEqual([])
     expect(clean.overrides).toEqual({ 'archive-item': { name: 'Kept' } })
     expect(JSON.parse(localStorage.getItem('lumina-user-catalog-v1'))).toEqual(clean)
+  })
+
+  it('keeps overrides for bundled and cached cloud titles', () => {
+    localStorage.setItem('lumina-cloud-catalogue-v1', JSON.stringify({
+      version: 1,
+      stories: [{
+        id: 'story-1',
+        title: 'A free audiobook',
+        audio_url: 'https://archive.org/download/some_item/track.mp3'
+      }]
+    }))
+    const clean = sanitiseUserCatalog({
+      overrides: {
+        'selected-ghazals-of-ghalib': { name: 'Ghalib edited' },
+        'cloud-story-1': { name: 'Cloud edited' },
+        'raat-01': { name: 'Demo' }
+      }
+    })
+    expect(Object.keys(clean.overrides).sort()).toEqual(['cloud-story-1', 'selected-ghazals-of-ghalib'])
+    expect(clean.overrides['cloud-story-1'].name).toBe('Cloud edited')
   })
 
   it('tolerates a corrupt or missing override map', () => {

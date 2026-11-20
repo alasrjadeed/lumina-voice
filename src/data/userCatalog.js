@@ -1,4 +1,6 @@
 import { filterArchiveTitles } from './contentPolicy'
+import { titles as bundledTitles } from './catalog'
+import { loadCachedCatalogue } from './cloudCatalogue'
 
 const KEY = 'lumina-user-catalog-v1'
 const POLICY_KEY = 'lumina-content-policy-v1'
@@ -18,9 +20,19 @@ export function sanitiseUserCatalog(input) {
   const authorIds = new Set(titles.map((t) => t.authorId).filter(Boolean))
   const people = (list) =>
     (Array.isArray(list) ? list : []).filter((p) => p && authorIds.has(p.id))
+  // Overrides also hide/edit bundled and cloud titles, which are not stored in
+  // the user catalog. Keep patches for any known catalogue id and drop only
+  // stale demo/custom ids so a deleted part stays hidden after a reload.
+  const knownIds = new Set([
+    ...titleIds,
+    ...bundledTitles.map((t) => t.id),
+    ...loadCachedCatalogue().map((t) => t.id)
+  ])
   const overrides = {}
   for (const [id, patch] of Object.entries(source.overrides || {})) {
-    if (titleIds.has(id) && patch && typeof patch === 'object') overrides[id] = patch
+    if (!knownIds.has(id) || !patch || typeof patch !== 'object') continue
+    const clean = sanitiseTitlePatch(patch)
+    if (Object.keys(clean).length) overrides[id] = clean
   }
   const genres = sanitiseGenreList(source.genres)
   return {

@@ -83,18 +83,17 @@ export function folderStats(titles) {
   return { books: titles.length, files }
 }
 
-// Shared by the per-file action menu and its tests. House files can be edited,
-// replaced and shared through local overrides, but shipped catalogue entries
-// cannot be deleted; only imported parts can be removed permanently.
-export function fileActionOptions(title) {
-  const removable = !!title?.imported
+// Shared by the per-file action menu and its tests. Every part can be deleted
+// from the device: imported parts are removed outright, while bundled and cloud
+// parts are hidden through a local title override (the shared catalogue stays).
+export function fileActionOptions() {
   return [
     { id: 'play', label: 'Play part' },
     { id: 'edit', label: 'Edit name' },
     { id: 'replace', label: 'Replace audio' },
     { id: 'share', label: 'Share file' },
     { id: 'open', label: 'Open title' },
-    { id: 'delete', label: removable ? 'Delete part' : 'Bundled file — cannot delete', disabled: !removable }
+    { id: 'delete', label: 'Delete part' }
   ]
 }
 

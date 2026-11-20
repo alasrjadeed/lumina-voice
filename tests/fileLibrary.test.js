@@ -14,12 +14,12 @@ describe('file library actions', () => {
     ])
   })
 
-  it('only allows permanent deletion for imported parts', () => {
+  it('allows deletion for every part', () => {
     const house = fileActionOptions({ imported: false }).find((a) => a.id === 'delete')
     const imported = fileActionOptions({ imported: true }).find((a) => a.id === 'delete')
-    expect(house.disabled).toBe(true)
-    expect(house.label).toBe('Bundled file — cannot delete')
-    expect(imported.disabled).toBe(false)
+    expect(house.disabled).toBeUndefined()
+    expect(imported.disabled).toBeUndefined()
+    expect(house.label).toBe('Delete part')
     expect(imported.label).toBe('Delete part')
   })
 })

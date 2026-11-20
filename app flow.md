@@ -66,6 +66,10 @@ Logs: last 80 entries. The 1-second `BroadcastProvider` tick keeps `onAir/show/p
 `/admin` → Cloud catalog → `healthCheck` → create story with a direct Archive.org `audio_url` (+ cover, duration) →
 row written under RLS `admins manage stories` → playable from the canonical `archive.org/download` stream.
 
+### G. Admin — delete a file
+`/admin` → Content → Actions → *Delete part* → confirm in the in-app dialog. Imported parts are removed from the
+device; bundled and cloud parts are hidden through a local title override, leaving the shared catalogue unchanged.
+
 ## 4. State machines
 ```
 Auth:    signed-out ─ signIn/signUp ─▶ session ─ refresh(≤60 s skew) ─▶ session

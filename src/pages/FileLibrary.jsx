@@ -313,7 +313,8 @@ export default function FileLibrary() {
     if (isLocalAsset(ep.asset)) await deleteLocalFile(localId(ep.asset)).catch(() => {})
     const episodes = (title.episodes || []).filter((e) => e.id !== ep.id)
     if (!episodes.length) {
-      await removeImportedTitle(title.id)
+      if (title.imported) await removeImportedTitle(title.id)
+      else patchTitle(title.id, { episodes: [] })
       removeFromLibrary(title.id)
       setSelected((s) => (s?.title.id === title.id ? null : s))
       setNotice(`Deleted ${title.name} and its last part.`)
@@ -337,7 +338,7 @@ export default function FileLibrary() {
     else if (id === 'replace') chooseReplace(title, ep)
     else if (id === 'share') shareFile(title, ep)
     else if (id === 'open') nav(`/title/${title.id}`)
-    else if (id === 'delete' && title.imported) {
+    else if (id === 'delete') {
       setPendingDelete({ title, ep, name: episodeFileName(ep, partIndex(title, ep), title) })
     }
   }
@@ -625,7 +626,7 @@ export default function FileLibrary() {
                 </div>
               ) : null}
               <p className="meta" style={{ marginTop: 12 }}>
-                Changes to house files are saved as local overrides. Only imported parts can be deleted.
+                Deletes stay on this device. Imported parts are removed outright; bundled or cloud parts are hidden with a local override, so the shared catalogue is unchanged.
               </p>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 14 }}>
                 <button className="btn btn-primary" onClick={() => play(liveTitle, liveEp)}>
@@ -640,18 +641,16 @@ export default function FileLibrary() {
                 <button className="btn btn-ghost" onClick={() => nav(`/title/${liveTitle.id}`)}>
                   Open title
                 </button>
-                {liveTitle.imported ? (
-                  <button
-                    className="btn btn-ghost danger"
-                    onClick={() => setPendingDelete({
-                      title: liveTitle,
-                      ep: liveEp,
-                      name: episodeFileName(liveEp, partIndex(liveTitle, liveEp), liveTitle)
-                    })}
-                  >
-                    <IcoTrash /> Delete part
-                  </button>
-                ) : null}
+                <button
+                  className="btn btn-ghost danger"
+                  onClick={() => setPendingDelete({
+                    title: liveTitle,
+                    ep: liveEp,
+                    name: episodeFileName(liveEp, partIndex(liveTitle, liveEp), liveTitle)
+                  })}
+                >
+                  <IcoTrash /> Delete part
+                </button>
               </div>
             </>
           ) : (
@@ -665,7 +664,9 @@ export default function FileLibrary() {
       {pendingDelete ? (
         <ConfirmDialog
           title="Delete this part?"
-          message={`“${pendingDelete.name}” will be removed from this device. This cannot be undone.`}
+          message={pendingDelete.title.imported
+            ? `“${pendingDelete.name}” will be removed from this device. This cannot be undone.`
+            : `“${pendingDelete.name}” will be hidden on this device only. The shared Archive.org catalogue is not changed.`}
           confirmLabel="Delete part"
           onCancel={() => setPendingDelete(null)}
           onConfirm={async () => {
