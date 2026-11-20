@@ -1,7 +1,7 @@
 {
   "name": "Lumina Voice",
   "short_name": "Lumina",
-  "description": "The finest Urdu audio-films, dramas, series and audiobooks. Close your eyes. The story begins.",
+  "description": "A free offline-first Urdu audiobook, ghazal and audio-drama player. Stream Archive.org audio, save episodes offline, sync your place and use subtitles.",
   "author": "Lumina My Ai",
   "id": "/",
   "start_url": "/",

@@ -94,7 +94,7 @@ export function fileActionOptions(title) {
     { id: 'replace', label: 'Replace audio' },
     { id: 'share', label: 'Share file' },
     { id: 'open', label: 'Open title' },
-    { id: 'delete', label: removable ? 'Delete part' : 'Delete (house file)', disabled: !removable }
+    { id: 'delete', label: removable ? 'Delete part' : 'Bundled file — cannot delete', disabled: !removable }
   ]
 }
 

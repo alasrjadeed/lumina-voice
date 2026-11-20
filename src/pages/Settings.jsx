@@ -599,8 +599,25 @@ export default function Settings() {
         </ErrorBoundary>
       </Group>
 
+      <Group label="Developer">
+        <div className="set-row">
+          <div>
+            <h3>AL ASAR JADEED</h3>
+            <p>
+              WEBSITE:{' '}
+              <a className="linkish" href="https://www.alasarjadeed.com" target="_blank" rel="noopener">
+                www.alasarjadeed.com
+              </a>
+            </p>
+          </div>
+          <a className="btn btn-ghost" href="https://www.alasarjadeed.com" target="_blank" rel="noopener">
+            Open website
+          </a>
+        </div>
+      </Group>
+
       <p className="settings-foot meta">
-        Developed by AL ASAR JADEED · <a href="https://www.alasarjadeed.com" target="_blank" rel="noopener">www.alasarjadeed.com</a>
+        AL ASAR JADEED · WEBSITE: <a href="https://www.alasarjadeed.com" target="_blank" rel="noopener">www.alasarjadeed.com</a>
         <br />
         Urdu audio-films, dramas, series and audiobooks{RADIO_ENABLED ? ', and live radio' : ''} from Archive.org. Close your eyes. The story begins. Version 1.0.0
       </p>

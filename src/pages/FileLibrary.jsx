@@ -16,6 +16,7 @@ import {
   virtualPath
 } from '../data/fileLibrary'
 import { IcoEdit, IcoLink, IcoMore, IcoPlay, IcoGrid, IcoTrash, IcoUpload } from '../ui/Icons'
+import ConfirmDialog from '../ui/ConfirmDialog.jsx'
 import { slugId } from '../data/userCatalog'
 import { deleteLocalFile, getLocalFile, isLocalAsset, localId, putLocalFile } from '../data/localMedia'
 import { shareMedia } from '../platform/fileTransfer'
@@ -62,6 +63,7 @@ export default function FileLibrary() {
   const [authorName, setAuthorName] = useState('')
   const [dragOver, setDragOver] = useState('')
   const [menuFor, setMenuFor] = useState('')
+  const [pendingDelete, setPendingDelete] = useState(null)
   const [notice, setNotice] = useState('')
   const replaceRef = useRef(null)
   const audioInputRef = useRef(null)
@@ -308,7 +310,6 @@ export default function FileLibrary() {
 
   const deletePart = async (title, ep) => {
     const name = episodeFileName(ep, partIndex(title, ep), title)
-    if (!window.confirm(`Delete "${name}"? This cannot be undone.`)) return
     if (isLocalAsset(ep.asset)) await deleteLocalFile(localId(ep.asset)).catch(() => {})
     const episodes = (title.episodes || []).filter((e) => e.id !== ep.id)
     if (!episodes.length) {
@@ -336,7 +337,9 @@ export default function FileLibrary() {
     else if (id === 'replace') chooseReplace(title, ep)
     else if (id === 'share') shareFile(title, ep)
     else if (id === 'open') nav(`/title/${title.id}`)
-    else if (id === 'delete') deletePart(title, ep)
+    else if (id === 'delete' && title.imported) {
+      setPendingDelete({ title, ep, name: episodeFileName(ep, partIndex(title, ep), title) })
+    }
   }
 
   const actionIcon = (id) =>
@@ -638,7 +641,14 @@ export default function FileLibrary() {
                   Open title
                 </button>
                 {liveTitle.imported ? (
-                  <button className="btn btn-ghost danger" onClick={() => deletePart(liveTitle, liveEp)}>
+                  <button
+                    className="btn btn-ghost danger"
+                    onClick={() => setPendingDelete({
+                      title: liveTitle,
+                      ep: liveEp,
+                      name: episodeFileName(liveEp, partIndex(liveTitle, liveEp), liveTitle)
+                    })}
+                  >
                     <IcoTrash /> Delete part
                   </button>
                 ) : null}
@@ -652,6 +662,19 @@ export default function FileLibrary() {
           )}
         </div>
       </div>
+      {pendingDelete ? (
+        <ConfirmDialog
+          title="Delete this part?"
+          message={`“${pendingDelete.name}” will be removed from this device. This cannot be undone.`}
+          confirmLabel="Delete part"
+          onCancel={() => setPendingDelete(null)}
+          onConfirm={async () => {
+            const { title, ep } = pendingDelete
+            setPendingDelete(null)
+            await deletePart(title, ep)
+          }}
+        />
+      ) : null}
     </>
   )
 }

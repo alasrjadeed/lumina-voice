@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useApp } from '../state/AppState.jsx'
 import { useCatalog } from '../state/Catalog.jsx'
 import { IcoDelete, IcoHistory } from '../ui/Icons'
+import ConfirmDialog from '../ui/ConfirmDialog.jsx'
 
 function fmtDate(iso) {
   if (!iso) return ''
@@ -20,10 +22,11 @@ function fmtDate(iso) {
 export default function History() {
   const { history, getHistory, setHistory } = useApp()
   const { getTitle, getAuthor } = useCatalog()
+  const [confirmClear, setConfirmClear] = useState(false)
   const items = getHistory()
 
-  const clearHistory = async () => {
-    if (!window.confirm('Clear all listening history?')) return
+  const clearHistory = () => {
+    setConfirmClear(false)
     setHistory([])
     try {
       if (typeof localStorage !== 'undefined') localStorage.removeItem('lumina-history-v1')
@@ -62,7 +65,7 @@ export default function History() {
       ) : (
         <>
           <div className="h-scroll">
-            <button className="btn btn-ghost btn-block" onClick={clearHistory}>
+            <button className="btn btn-ghost btn-block" onClick={() => setConfirmClear(true)}>
               <IcoDelete /> Clear history
             </button>
           </div>
@@ -110,6 +113,15 @@ export default function History() {
           </div>
         </>
       )}
+      {confirmClear ? (
+        <ConfirmDialog
+          title="Clear all history?"
+          message="Every saved listening session on this device will be removed. Your library and downloaded audio stay untouched."
+          confirmLabel="Clear history"
+          onCancel={() => setConfirmClear(false)}
+          onConfirm={clearHistory}
+        />
+      ) : null}
     </>
   )
 }

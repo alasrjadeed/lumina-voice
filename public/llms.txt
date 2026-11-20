@@ -1,10 +1,11 @@
 # Lumina Voice
 
-> Urdu-first audio streaming PWA with an Archive.org-only catalogue. Radio is paused.
-> "Close your eyes. The story begins." Streams public-domain audio directly from Archive.org,
-> installs as a Progressive Web App, and keeps its shell, state, ads and downloads available offline.
+> Free offline-first Urdu audiobook, ghazal and audio-drama app for web and Android.
+> Streams public audio directly from Archive.org, saves episodes for offline listening, syncs the
+> listener's place between devices, supports saved subtitles, and installs as a PWA or native APK.
+> Radio is paused.
 
-Developer: AL ASAR JADEED · Web: www.alasarjadeed.com · Email: luminamyai@gmail.com
+Developer: AL ASAR JADEED · WEBSITE: www.alasarjadeed.com · Email: luminamyai@gmail.com
 Author: Lumina My Ai · Website: www.alasarjadeed.com · Email: luminamyai@gmail.com
 
 Lumina Voice is a private, client-only React application. There is no first-party API server.
@@ -19,6 +20,15 @@ kept in a separate data file and the APK ships only `ad-*` audio.
 - Admin → Cloud catalogue manages Archive.org links in Supabase with a published/draft switch; a 15-minute cron publishes metadata-only `/catalogue.json` that the web app and tablet pull (audio still streams directly from archive.org)
 - Observability: pino logs; Sentry alerts disabled without a DSN
 - Natural on-device Urdu speech: Android TTS voice pack, Urdu digits/punctuation and human-like pauses (no key, no network)
+
+## Functions (SEO/AEO summary)
+
+- Free Urdu audiobook, ghazal and audio-drama player: browse curated Archive.org titles and stream direct MP3/Opus audio.
+- Offline listening: download episodes to the device; the app shell, saved position and subtitles remain available without a connection.
+- Import Archive.org links: only items with direct `archive.org/download/...` audio URLs pass the content policy.
+- Cross-device sync: library, playback positions, history, imported titles, artwork, subtitles and settings ride in Supabase `user_state`; no audio bytes are uploaded.
+- Installable PWA and native Android APK (Capacitor 8); media keys, safe-area layout and a small ~6 MB APK.
+- Saved subtitles in Urdu, English and Arabic with Auto/Off selection; on-device Urdu TTS for UI prompts.
 
 ## Accounts and saved data
 

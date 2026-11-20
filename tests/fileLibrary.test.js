@@ -18,6 +18,7 @@ describe('file library actions', () => {
     const house = fileActionOptions({ imported: false }).find((a) => a.id === 'delete')
     const imported = fileActionOptions({ imported: true }).find((a) => a.id === 'delete')
     expect(house.disabled).toBe(true)
+    expect(house.label).toBe('Bundled file — cannot delete')
     expect(imported.disabled).toBe(false)
     expect(imported.label).toBe('Delete part')
   })

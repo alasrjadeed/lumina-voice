@@ -37,7 +37,7 @@ Facts an agent must not rediscover. Read before changing anything.
 | IndexedDB `lumina-local-media-v1`, store `files` | `data/localMedia.js` | legacy local blobs (not catalogue audio; archive-only policy rejects local imports) |
 
 ## Service worker caches
-`lumina-shell-v8`, `lumina-static-v8`, `lumina-audio-v1` — registered as `/sw.js?v=7`.
+`lumina-shell-v8`, `lumina-static-v8`, `lumina-audio-v1` — registered as `/sw.js?v=8`.
 Bumping the cache name is how a stale-cache bug ships. The `v8` bump forces devices off the old demo catalogue.
 
 ## Audio conventions

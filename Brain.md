@@ -42,13 +42,14 @@ Stack: **Vite 8 + React 19 + react-router-dom 7**, plain CSS, no UI framework, n
 
 ## Current state (v1.0.0)
 - Archive-only shipped catalogue: 1 bundled title (`selected-ghazals-of-ghalib`, 35 episodes) plus 1 cloud-published CC0 Urdu audiobook (`IqbalQaidEAzamAwrPakistan`), 1 poet, 6 voices, 1 gated radio station ("Sada Bahar"). Ads stay in `src/data/ads.js`. The 100-title plan has 0 rights-cleared fiction records — no explicit-licensed Urdu fiction exists on Archive.org.
-- Auth: Supabase (optional) or local demo. Any email may sign in; only `info@alasarjadeed.com` is admin. Each account's `user_state` is private to its `auth.uid()`; the catalogue is shared and ratings/reviews are public to read. Public identity: AL ASAR JADEED · www.alasarjadeed.com.
+- Auth: Supabase (optional) or local demo. Any email may sign in; only `info@alasarjadeed.com` is admin. Each account's `user_state` is private to its `auth.uid()`; the catalogue is shared and ratings/reviews are public to read. Public identity: AL ASAR JADEED · WEBSITE: www.alasarjadeed.com.
 - Signed-in devices sync the full metadata bundle via Supabase `user_state` — library/progress/history plus imported Archive titles, artwork, subtitles and settings under `progress.__sync_bundle` (audio stays on device). `cloudReady` gates writes until the first cloud read finishes; realtime refreshes ratings, reviews, catalogue and profiles.
 - Admin → Cloud catalogue edits Archive.org story links with a `published` draft/live switch; a 15-minute cron publishes only live rows to `/catalogue.json` (`lumina-cloud-catalogue-v1` cache) so the tablet and web app pick up new content without a rebuild. Local website links/features stay intact.
 - Supabase migrations are applied and verified: `published` column, Archive URL check constraint, `is_operator()` RLS + role trigger, single-admin rows. DDL was run through the Management API query endpoint with a PAT; the app itself still uses only the publishable key.
 - Admin "Broadcast Studio": schedule, rotation, automation rules, advertising, live stream, analytics, storage, logs.
 - Installs as PWA; shell and downloaded audio are cached by the service worker (`v8`).
-- Public discovery: app and GitHub Pages site carry SEO/AEO metadata, JSON-LD, canonical URLs, `robots.txt` and `sitemap.xml`. The public FAQ documents developer identity and multi-account data rules.
+- Public discovery: app and GitHub Pages site carry function-led SEO/AEO metadata, JSON-LD, canonical URLs, `robots.txt` and `sitemap.xml`. The public FAQ documents developer identity, offline/Archive.org features and multi-account data rules.
+- APK deletes and history clearing use `src/ui/ConfirmDialog.jsx`; Android WebView ignores native `window.confirm`.
 ---
 Autobiography category added to broadcast; Holy Quran Urdu Translation in Quran Kareem with Urdu Translation genre.
 
