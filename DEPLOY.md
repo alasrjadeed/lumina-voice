@@ -185,3 +185,26 @@ descriptive titles, canonical/OG/Twitter tags, Organization + WebApplication JSO
 a FAQ. Each host serves its own `robots.txt` and `sitemap.xml` (`public/` for the app,
 `docs/` for GitHub Pages). The public identity is AL ASAR JADEED · www.alasarjadeed.com;
 keep it in both HTML files, the site footer config and `public/llms.txt`.
+
+## 9. Huawei AppGallery store build
+
+Store builds use a separate Vite mode so the local website/tablet LAN behaviour stays intact:
+
+```bash
+npm run catalogue:export
+npm run build:store
+npx cap sync android
+node scripts/prune-native-audio.mjs
+cd android
+JAVA_HOME=/tmp/opencode/jdk21 ANDROID_HOME=/home/oem/Android/Sdk ./gradlew clean bundleRelease --no-daemon
+```
+
+`build:store` runs `scripts/prepare-store-env.mjs`, which generates `.env.store` from the public
+Supabase values and blanks every AzuraCast/radio variable. It forces `VITE_RADIO_ENABLED=false`
+and `VITE_CATALOGUE_SNAPSHOT_URL=/catalogue.json` so the APK uses the bundled snapshot and makes
+no cleartext LAN request or private-key leak. The release source set disables cleartext traffic;
+the debug/local build is unchanged.
+
+Release signing is read from `~/.android/lumina-voice-release.properties` (or
+`LUMINA_KEYSTORE_PROPERTIES`). Keep the keystore and passwords outside the repo and back them up.
+Listing copy, rights checklist and submission steps are in `docs/store/huawei-appgallery.md`.

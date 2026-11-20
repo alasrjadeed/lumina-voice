@@ -19,6 +19,7 @@ import {
   streamMounts
 } from '../data/stream.js'
 import ErrorBoundary from '../ui/ErrorBoundary.jsx'
+import ConfirmDialog from '../ui/ConfirmDialog.jsx'
 import {
   listVoices,
   listVoicesAsync,
@@ -96,6 +97,8 @@ export default function Settings() {
   const [nameMsg, setNameMsg] = useState('')
   const [nameBusy, setNameBusy] = useState(false)
   const [installMsg, setInstallMsg] = useState('')
+  const [deleteOpen, setDeleteOpen] = useState(false)
+  const [deleteMsg, setDeleteMsg] = useState('')
   const streamCfg = useMemo(() => loadStreamConfig(), [])
   const streamMountsList = useMemo(() => (streamCfg.enabled ? streamMounts(streamCfg) : []), [streamCfg])
   const [mountId, setMountId] = useState(() => loadPreferredMount())
@@ -143,6 +146,22 @@ export default function Settings() {
     const res = await updateName(nameDraft)
     setNameMsg(res.ok ? (res.local ? 'Saved on this device.' : 'Saved to your profile on every device.') : (res.error || 'Could not save that name.'))
     setNameBusy(false)
+  }
+
+  const requestDeletion = () => {
+    setDeleteOpen(false)
+    setDeleteMsg('Request prepared. Send the email to complete your deletion request.')
+    const subject = encodeURIComponent(`Lumina Voice account deletion — ${user?.email || 'account'}`)
+    const body = encodeURIComponent(
+      `Please delete my Lumina Voice account and all cloud-synced metadata.\n\n` +
+      `Account email: ${user?.email || ''}\nUser ID: ${user?.id || ''}\n\n` +
+      `I understand offline files on this device must be deleted separately from the File Library.`
+    )
+    try {
+      window.location.href = `mailto:info@alasarjadeed.com?subject=${subject}&body=${body}`
+    } catch {
+      /* WebView may have no mail app — the support address stays on screen. */
+    }
   }
 
   const toggleRole = async () => {
@@ -229,6 +248,21 @@ export default function Settings() {
             </button>
           </div>
         )}
+        {user ? (
+          <div className="set-row">
+            <div>
+              <h3>Delete account</h3>
+              <p>
+                Removes your profile, cloud-synced library, history, ratings and reviews. Offline files stay on
+                this device until you delete them from the File Library.
+              </p>
+              {deleteMsg ? <p className="meta">{deleteMsg}</p> : null}
+            </div>
+            <button className="btn btn-ghost danger" onClick={() => setDeleteOpen(true)}>
+              Delete account
+            </button>
+          </div>
+        ) : null}
 
         <div className="premium-banner compact">
           <div className="kicker">{premium ? 'ACTIVE' : 'LUMINA PLUS'}</div>
@@ -599,6 +633,16 @@ export default function Settings() {
         </ErrorBoundary>
       </Group>
 
+      <Group label="Privacy">
+        <div className="set-row">
+          <div>
+            <h3>Privacy policy</h3>
+            <p>What Lumina Voice stores, syncs and never uploads.</p>
+          </div>
+          <Link className="btn btn-ghost" to="/privacy">Read policy</Link>
+        </div>
+      </Group>
+
       <Group label="Developer">
         <div className="set-row">
           <div>
@@ -616,10 +660,20 @@ export default function Settings() {
         </div>
       </Group>
 
+      {deleteOpen ? (
+        <ConfirmDialog
+          title="Delete your account?"
+          message="This prepares a deletion request to info@alasarjadeed.com. Your profile and cloud-synced metadata are removed after the request is processed. Offline files stay on this device."
+          confirmLabel="Prepare request"
+          onCancel={() => setDeleteOpen(false)}
+          onConfirm={requestDeletion}
+        />
+      ) : null}
+
       <p className="settings-foot meta">
         AL ASAR JADEED · WEBSITE: <a href="https://www.alasarjadeed.com" target="_blank" rel="noopener">www.alasarjadeed.com</a>
         <br />
-        Urdu audio-films, dramas, series and audiobooks{RADIO_ENABLED ? ', and live radio' : ''} from Archive.org. Close your eyes. The story begins. Version 1.0.0
+        <Link to="/privacy">Privacy policy</Link> · Urdu audio-films, dramas, series and audiobooks{RADIO_ENABLED ? ', and live radio' : ''} from Archive.org. Close your eyes. The story begins. Version 1.0.0
       </p>
     </div>
   )

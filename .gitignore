@@ -179,6 +179,7 @@
 # Keep only the documented example; every real .env stays local.
 .env*
 !.env.example
+!.env.store.example
 
 # Generated audio (336 MB in public/ and dist/) is never committed.
 public/audio/

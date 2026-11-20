@@ -24,6 +24,7 @@ const Admin = lazy(() => import('./pages/Admin'))
 const DeviceAdmin = lazy(() => import('./pages/DeviceAdmin'))
 const DataTransfer = lazy(() => import('./pages/DataTransfer'))
 const Site = lazy(() => import('./pages/Site'))
+const Privacy = lazy(() => import('./pages/Privacy'))
 import ErrorBoundary from './ui/ErrorBoundary'
 import { RADIO_ENABLED } from './config/features.js'
 
@@ -147,6 +148,7 @@ function RoutesRoot() {
     <Routes>
       <Route path="/auth" element={<Auth />} />
       <Route path="/site" element={<Site />} />
+      <Route path="/privacy" element={<Privacy />} />
       <Route
         path="/"
         element={

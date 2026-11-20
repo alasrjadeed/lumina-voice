@@ -128,6 +128,8 @@ Update this file whenever work starts or lands. Status: `todo` · `doing` · `do
 - [x] CasaOS deployment artifacts: `Dockerfile`, `nginx.conf`, `docker-compose.yml`, `.dockerignore`, `.env.production`, `DEPLOY.md` (app on `:4310`).
 - [x] Observability: pino browser logger in `src/lib/logger.js`, optional Sentry via `VITE_SENTRY_DSN`, global error/rejection hooks, ErrorBoundary capture, stream/playback warn logs. `npm run lint`, `npm test` (97), `npm run build`, Docker image smoke test all pass.
 
+- [x] Huawei AppGallery store readiness: public `/privacy` route, in-app privacy/account-deletion entries, store-only Vite build with generated `.env.store` (broadcast keys blanked), release cleartext overlay, out-of-repo release signing, versionCode 2/versionName 1.0.0, signed AAB + APK, listing/checklist docs and guard tests. Local website/tablet behaviour unchanged.
+
 ## Radio feature — PAUSED (2026-11-17)
 - Public live radio is disabled until broadcast resources are available. Radio source is kept intact for a one-switch relaunch.
 - Feature flag: `VITE_RADIO_ENABLED` (default `false`, set in `.env.production` / `.env.example`). `src/config/features.js` exports `RADIO_ENABLED`.

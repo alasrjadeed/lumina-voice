@@ -24,8 +24,8 @@ const QUALITY_KEY = 'lumina-stream-quality-v1'
 function localDefaults() {
   const hostname = typeof window !== 'undefined' ? window.location.hostname : ''
   const env = import.meta.env || {}
-  const apiBase = env.VITE_AZURACAST_BASE_URL || (hostname ? `http://${hostname}:8080` : 'http://192.168.1.166:8080')
-  const listenBase = env.VITE_STREAM_LISTEN_BASE || (hostname ? `http://${hostname}:8080` : 'http://192.168.1.166:8080')
+  const apiBase = env.VITE_AZURACAST_BASE_URL || (RADIO_ENABLED && hostname ? `http://${hostname}:8080` : '')
+  const listenBase = env.VITE_STREAM_LISTEN_BASE || (RADIO_ENABLED && hostname ? `http://${hostname}:8080` : '')
   return {
     enabled: RADIO_ENABLED,
     provider: env.VITE_STREAM_PROVIDER || 'azuracast',
@@ -33,7 +33,7 @@ function localDefaults() {
     streamBaseUrl: listenBase,
     shortcode: env.VITE_AZURACAST_SHORTCODE || 'lumina_voice',
     stationId: env.VITE_AZURACAST_STATION_ID || '2',
-    apiKey: env.VITE_AZURACAST_API_KEY || '8d5eaee6a93d7ad8:c25693153bbfc766f884bd1b92ab0ce5',
+    apiKey: env.VITE_AZURACAST_API_KEY || '',
     mount: '',
     listenUrl: env.VITE_STREAM_LISTEN_URL || '',
     autoRefresh: true

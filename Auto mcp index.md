@@ -116,3 +116,9 @@ Updated: local broadcast deployment, pino logs, Sentry alerts, Autobiography cat
 - All radio code (Broadcast Studio, bundled Sada Bahar desk, AzuraCast config, embeds) stays in the source tree, fully gated — nothing radio-related runs while the flag is off.
 - Relaunch: set `VITE_RADIO_ENABLED=true`, rebuild (`npm run build` / `docker compose up -d --build`) and radio pages, tabs, embeds and stream calls return unchanged.
 - Verified: `npm run lint`, `npm test` (107/107), `npm run build`; browser smoke test confirmed no radio links, `/radio` → `/`, no `:8080` requests.
+
+## Huawei AppGallery launch (2026-11-20)
+- Public `/privacy` route, Settings privacy link and deletion request; privacy URL `https://www.alasarjadeed.com/privacy`.
+- `npm run build:store` generates `.env.store`: bundled catalogue, radio/broadcast keys blanked, no LAN fetch; release manifest disables cleartext.
+- Signed AAB via JDK 21 `./gradlew clean bundleRelease`; keystore outside repo; `versionCode 2` / `versionName 1.0.0`.
+- Full listing pack and submission checklist: `docs/store/huawei-appgallery.md`.

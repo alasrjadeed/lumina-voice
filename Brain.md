@@ -67,3 +67,9 @@ Autobiography category added to broadcast; Holy Quran Urdu Translation in Quran 
 - All radio code (Broadcast Studio, bundled Sada Bahar desk, AzuraCast config, embeds) stays in the source tree, fully gated — nothing radio-related runs while the flag is off.
 - Relaunch: set `VITE_RADIO_ENABLED=true`, rebuild (`npm run build` / `docker compose up -d --build`) and radio pages, tabs, embeds and stream calls return unchanged.
 - Verified: `npm run lint`, `npm test` (107/107), `npm run build`; browser smoke test confirmed no radio links, `/radio` → `/`, no `:8080` requests.
+
+## Huawei AppGallery readiness (2026-11-20)
+- Public `/privacy` route and Settings → Privacy / Account → Delete account request; privacy URL is `https://www.alasarjadeed.com/privacy`.
+- `npm run build:store` generates `.env.store` from public Supabase values, blanks broadcast keys, bundles `/catalogue.json`, and keeps radio off. Store release manifest disables cleartext; debug/local behaviour is unchanged.
+- Hardcoded AzuraCast IP/API key removed from `src/data/stream.js`; release signing uses `~/.android/lumina-voice-release.*`, never repo files.
+- Store description, rights checklist, rating answers and release commands are in `docs/store/huawei-appgallery.md`.

@@ -154,7 +154,7 @@ export default function Integrations() {
                 const baseUrl = e.target.value
                 update({ baseUrl, provider: detectProvider(baseUrl) })
               }}
-              placeholder="http://192.168.1.166:8080"
+              placeholder="https://radio.example.com:8080"
             />
           </label>
           <label className="ad-field">
@@ -162,7 +162,7 @@ export default function Integrations() {
             <input
               value={cfg.streamBaseUrl || ''}
               onChange={(e) => update({ streamBaseUrl: e.target.value })}
-              placeholder="http://192.168.1.166:8080"
+              placeholder="https://radio.example.com:8080"
             />
           </label>
           <label className="ad-field">
@@ -170,7 +170,7 @@ export default function Integrations() {
             <input
               value={cfg.listenUrl || ''}
               onChange={(e) => update({ listenUrl: e.target.value })}
-              placeholder="http://192.168.1.166:8080/listen/lumina_voice/live"
+              placeholder="https://radio.example.com:8080/listen/lumina_voice/live"
             />
           </label>
           {cfg.provider === 'azuracast' ? (

@@ -2623,6 +2623,14 @@ button.art-row {
   font-size: 12.5px;
   text-align: center;
 }
+.legal-page .legal-hero { padding-top: 34px; }
+.legal-page h1 { font-size: clamp(28px, 5vw, 44px); margin: 8px 0 14px; }
+.legal-page h2 { font-size: 18px; margin-bottom: 8px; }
+.legal-page a { color: var(--accent, #8b7cf6); }
+.legal-section { padding-top: 28px; }
+.legal-section p, .legal-section li { color: var(--muted); line-height: 1.75; max-width: 78ch; }
+.legal-section ul { padding-left: 20px; }
+.legal-section strong { color: var(--text); }
 
 /* ---------- Device voice (mic button) ---------- */
 .mic-btn {

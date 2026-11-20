@@ -120,7 +120,11 @@ export default function Site() {
         </p>
       </section>
 
-      <footer className="site-footer">{cfg.footerNote}</footer>
+      <footer className="site-footer">
+        {cfg.footerNote}
+        <br />
+        <Link to="/privacy">Privacy policy</Link>
+      </footer>
     </div>
   )
 }

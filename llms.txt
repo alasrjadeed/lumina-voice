@@ -24,7 +24,7 @@ Description: Archive.org-only Urdu audio library (ghazals, audiobooks and poetry
 - Admin → Cloud catalogue manages Archive.org links in Supabase with a published/draft switch. A 15-minute cron publishes published archive-only stories as metadata-only `/catalogue.json`; web and tablet pull it on login/resume/timer and fall back to the last cached snapshot. Local website links and private-use admin features remain intact.
 
 ## Launch
-- Static PWA served by nginx on http://localhost:4310 (also http://192.168.1.152:4310 on the LAN)
+- Static PWA served by nginx on localhost (private LAN access is configured locally)
 - No VS Code needed: `docker-compose up -d --build`; desktop icon `Lumina Voice.desktop` runs `scripts/open-lumina.sh` to start the container if stopped and open the app
 - Zero-cost: no streaming server, database, API key or paid provider required
 - Observability: pino logs; Sentry alerts disabled without a DSN
@@ -35,7 +35,13 @@ studio@lumina-voice.com
 ## Radio feature — PAUSED (2026-11-17)
 - Public live radio is disabled until broadcast resources are available. Radio source is kept intact for a one-switch relaunch.
 - Feature flag: `VITE_RADIO_ENABLED` (default `false`, set in `.env.production` / `.env.example`). `src/config/features.js` exports `RADIO_ENABLED`.
-- When `false`: no Radio nav tab or `/radio` route (old `/radio` redirects to `/`), no embed page, no Home/Site radio links, no Broadcast Studio (`/admin` opens the radio-free Device Admin for admins), no radio voice commands or alerts, no external-stream stats/embeds, and no requests to `http://192.168.1.166:8080`. `loadStreamConfig()` reports `enabled: false`; `useNowPlaying`, `playExternal`, `playRadio`, `playBroadcast`, AzuraCast API and show reminders are no-ops.
+- When `false`: no Radio nav tab or `/radio` route (old `/radio` redirects to `/`), no embed page, no Home/Site radio links, no Broadcast Studio (`/admin` opens the radio-free Device Admin for admins), no radio voice commands or alerts, no external-stream stats/embeds, and no broadcast-server requests. `loadStreamConfig()` reports `enabled: false`; `useNowPlaying`, `playExternal`, `playRadio`, `playBroadcast`, AzuraCast API and show reminders are no-ops.
 - All radio code (Broadcast Studio, bundled Sada Bahar desk, AzuraCast config, embeds) stays in the source tree, fully gated — nothing radio-related runs while the flag is off.
 - Relaunch: set `VITE_RADIO_ENABLED=true`, rebuild (`npm run build` / `docker compose up -d --build`) and radio pages, tabs, embeds and stream calls return unchanged.
 - Verified after archive-only cleanup and cloud-catalogue delivery: `npm run lint`, `npm test` (155/155), `npm run build`, Docker rebuild. Non-Archive cloud story removed via REST; radio remains paused. Applying `docs/supabase-admin-lockdown.sql` and `docs/supabase-archive-only.sql` (DDL) is the remaining cloud step.
+
+## Huawei AppGallery release
+- Public privacy policy: `https://www.alasarjadeed.com/privacy`; Settings → Privacy and Account → Delete account link to it or prepare a deletion request.
+- Store build: `npm run build:store` generates `.env.store` with bundled `/catalogue.json`, radio off and broadcast keys blanked; release manifest disables cleartext traffic.
+- Signed AAB: JDK 21 `./gradlew clean bundleRelease`; keystore outside repo; `versionCode 2`, `versionName 1.0.0`.
+- Submission pack: `docs/store/huawei-appgallery.md` (English/Urdu copy, screenshots, rights, rating answers).
