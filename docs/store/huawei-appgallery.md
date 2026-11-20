@@ -216,3 +216,32 @@ If AGC's generated rating is higher than 3+ because of public reviews, accept th
 - Sign in to Huawei Developer/AGC and create the app with the exact package above.
 - Capture screenshots from a release device with no copyrighted imports.
 - Confirm the two-catalogue rights list is acceptable, then upload the AAB and submit.
+
+## 9. AGC App Signing (required for AAB)
+
+AGC → Apps and atomic services → Android → **Lumina Voice** → Distribute → Services → **App Signing**.
+
+1. Sign the app signing service agreement when prompted.
+2. For a new app, select **Method 1: AppGallery Connect creates and manages signature keys**.
+3. Under **Upload key certificate**, upload:
+   `/home/oem/.android/lumina-upload-certificate.pem`
+4. Click **Submit**, wait for AGC to create its managed signing key, then upload
+   `android/app/build/outputs/bundle/release/app-release.aab`.
+5. Future updates must be signed with the same local keystore
+   (`~/.android/lumina-voice-release.jks`, alias `lumina`) because its certificate was uploaded.
+
+The uploaded file is a **public certificate only**. Never upload the `.jks`, the properties file, or passwords.
+
+Upload key SHA-256:
+`2F:8C:2C:08:68:3C:85:7B:30:11:3E:41:ED:55:FE:1F:B4:87:D1:6D:58:CC:B0:37:3C:B9:57:EF:75:C3:F0:FF`
+
+Regenerate the certificate if needed:
+
+```bash
+. ~/.android/lumina-voice-release.properties
+/tmp/opencode/jdk21/bin/keytool -export -rfc \
+  -keystore "$storeFile" -alias "$keyAlias" -storepass "$storePassword" \
+  -file ~/.android/lumina-upload-certificate.pem
+```
+
+If Method 1 is unavailable, an APK was already associated with the app; use Method 2 with `pepk.jar` and the same keystore instead.
